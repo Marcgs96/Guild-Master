@@ -4,22 +4,36 @@ Grungeon is a Fantasy game where the player manages a village via characters cal
 
 ## Game areas
 
-* ### The Dungeon
+* ### The Town Hall
+
+This is where the player can send heroes to do quests.
+
+* ### The Dungeons
+
+Those are the areas where the heroes will be questing.
 
 * ### The Tabern
 
+Heroes rest room. Regenerates fatigue value investing time.
+
+It's also the Bards training building, here's were the player will be able to lvl up bard class and optain different abilities.
+
 * ### The Arena
+
+Warriors training building, here's were the player will be able to lvl up warrior class and optain different abilities.
 
 * ### The Library
 
+Mages training building, here's were the player will be able to lvl up mage class and optain different abilities.
+
+* ### The Forest
+
+Hunters training area, here's were the player will be able to lvl up hunter class and optain different abilities.
+
+* ### The Sinks
+
+Mages training building, here's were the player will be able to lvl up assasin class and optain different abilities.
+
 ## AI Archetypes
 
-* ### Warrior
-
-* ### Mage
-
-* ### Hunter
-
-* ### Assasin
-
-* ### Bard
+PERSONALITY TRAITS.
