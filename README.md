@@ -12,6 +12,14 @@ This is where the player can send heroes to do quests.
 
 Those are the areas where the heroes will be questing.
 
+* ### Market
+
+Area where characters can buy support items such as potions.
+
+* ### Blacksmith
+
+Area where characters can buy armor items.
+
 * ### The Tabern
 
 Heroes rest room. Regenerates fatigue value investing time.
@@ -32,9 +40,32 @@ Hunters training area, here's were the player will be able to lvl up hunter clas
 
 * ### The Sinks
 
-Mages training building, here's were the player will be able to lvl up assasin class and optain different abilities.
+Assasins training area, here's were the player will be able to lvl up assasin class and optain different abilities.
+
 
 ## AI Archetypes
+
+* ## Classes
+
+* ### Mage
+
+
+
+* ### Hunter 
+
+* ### Warrior 
+
+* ### Mage 
+
+* ### Assasin
+
+* Traits
+
+* ### Glutton
+
+* ### Fancy 
+
+Wastes too much money in armor.
 
 * ### Lazy
 
