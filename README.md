@@ -36,4 +36,8 @@ Mages training building, here's were the player will be able to lvl up assasin c
 
 ## AI Archetypes
 
-PERSONALITY TRAITS.
+* ### Lazy
+
+AI with this trait enjoys spending time at the tabern, needs more hours to sleep than usual.
+
+* ### 
