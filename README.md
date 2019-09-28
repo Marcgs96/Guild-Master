@@ -1,78 +1,29 @@
-# Guild Master
+# RTARENA
 
-Grungeon is a Fantasy game where the player takes the rol of a guild master, the player must organize and manage the guild to keep its members happy and make the greatest guild ever.
+RTARENA is a real time arena simulator, the player will choose a fighter between 3 fighter types WARRIOR, ROGUE, MAGICIAN to represent him in the arena. Each fighter has a different kind of fighting style. Winning the arena will provide the player with a new item for his fighter.
 
 ## Archetypes
 
+WARRIOR: Focuses in pure strength, plays only close combat, always tries to approach to his opponent so he can deal tons of damage.
+
+MAGICIAN: Focuses in intelligence, plays only ranged combat, always tries to kite his opponent so he gets enough distance to make a powerful attack without interruption.
+
+ROGUE: The Versatile fighter, adapts to his enemy fighting style, always analyze his opponent to have an initial advantage, he can perform ranged and close combat attacks.
 
 
 ## Game areas
 
-* ### The Town Hall
+There will be three different arenas with different distribution of obstacles, highgrounds, danger zones.
 
-This is where the player can send heroes to do quests.
+* ### Obstacles
 
-* ### The Dungeons
+Columns, rocks, walls...  Cover zones usefull for fighters to evade attacks or hide.
 
-Those are the areas where the heroes will be questing.
+* ### Highgrounds
 
-* ### Market
+Elevated areas that can provide an advantage in a strategic way for the fighters.
 
-Area where characters can buy support items such as potions.
+* ### Danger Zones
 
-* ### Blacksmith
+Lava, spikes, thorns, fire... Areas where fighters recieve damage. The fighters try to evade this areas.
 
-Area where characters can buy armor items.
-
-* ### The Tabern
-
-Heroes rest room. Regenerates fatigue value investing time.
-
-It's also the Bards training building, here's were the player will be able to lvl up bard class and optain different abilities.
-
-* ### The Arena
-
-Warriors training building, here's were the player will be able to lvl up warrior class and optain different abilities.
-
-* ### The Library
-
-Mages training building, here's were the player will be able to lvl up mage class and optain different abilities.
-
-* ### The Forest
-
-Hunters training area, here's were the player will be able to lvl up hunter class and optain different abilities.
-
-* ### The Sinks
-
-Assasins training area, here's were the player will be able to lvl up assasin class and optain different abilities.
-
-
-## AI Archetypes
-
-* ## Classes
-
-* ### Mage
-
-
-
-* ### Hunter 
-
-* ### Warrior 
-
-* ### Mage 
-
-* ### Assasin
-
-* Traits
-
-* ### Glutton
-
-* ### Fancy 
-
-Wastes too much money in armor.
-
-* ### Lazy
-
-AI with this trait enjoys spending time at the tabern, needs more hours to sleep than usual.
-
-* ### 
