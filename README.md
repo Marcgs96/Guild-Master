@@ -8,19 +8,29 @@ Guild Master is a fantasy game where the player takes control of a collective of
 ## Game areas
 
 
-* ### Guild house: Heroes' rest area and guild building.
+* ### Guild house 
 
-* ### Tavern: Resting area.
+Heroes' rest area and guild building.
 
-* ### Blacksmith: Place where the player can use resources to buy items that have a passive effect in the heroes statistics.
+* ### Tavern
 
-* ### Training camp (Warriors only): Warrior training zone.
+Eating area.
 
-* ### Alchemy tower (Wizards only): Training and manufacturing potions zone for magicians.
+* ### Blacksmith
 
-* ### Forest (Hunters only): Training zone and collection of skins / meats for hunters.
+Place where the player can use resources to buy items that have a passive effect in the heroes statistics.
 
- 
+* ### Training camp (Warriors only)
+
+Warrior training zone.
+
+* ### Alchemy tower (Wizards only)
+
+Training and manufacturing potions zone for magicians.
+
+* ### Forest (Hunters only)
+
+Training zone and collection of skins / meats for hunters.
 
 AI Archetypes:
 
