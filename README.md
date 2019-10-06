@@ -30,7 +30,7 @@ Training and manufacturing potions zone for magicians.
 
 Training zone and collection of skins / meats for hunters.
 
-AI Archetypes:
+## AI Archetypes
 
 
 * ### Warrior
@@ -44,4 +44,17 @@ AI Archetypes:
 * ### Hunter: 
 
  * Routine: Wake up guild house, visit the blacksmith (if you have improvements, notify the player with a snack on his head), go to the forest and collect / place traps and resources (skins / meat) then eat in the tavern and sleep in the guild house
+ 
+ 
+ ## Player Interactions
+ 
+The player is able to:
+
+ * Select the heroes and resources necessaries to start the daily quest.
+ 
+ * Upgrade the guild house and the blacksmith building using the resources gathered by the quests.
+ 
+ * Recuit heroes to expand the guild.
+ 
+ * Buy items from the blacksmith to obtain upgrades for his guild members.
 
