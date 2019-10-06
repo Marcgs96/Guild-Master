@@ -1,29 +1,39 @@
-# RTARENA
+	
+Guild Master is a fantasy game where the player takes control of a collective of heroes who are part of a brotherhood. The game consists of the heroes collecting the necessary resources to leave the expedition / mission, getting rewards with which the player can improve the guild / brotherhood and equipment improvements for the heroes.
 
-RTARENA is a real time arena simulator, the player will choose a fighter between 3 fighter types WARRIOR, ROGUE, MAGICIAN to represent him in the arena. Each fighter has a different kind of fighting style. Winning the arena will provide the player with a new item for his fighter.
+ 
 
-## Archetypes
-
-WARRIOR: Focuses in pure strength, plays only close combat, always tries to approach to his opponent so he can deal tons of damage.
-
-MAGICIAN: Focuses in intelligence, plays only ranged combat, always tries to kite his opponent so he gets enough distance to make a powerful attack without interruption.
-
-ROGUE: The Versatile fighter, adapts to his enemy fighting style, always analyze his opponent to have an initial advantage, he can perform ranged and close combat attacks.
+Game areas:
 
 
-## Game areas
+-Guild house: Heroes' rest area and guild building.
 
-There will be three different arenas with different distribution of obstacles, highgrounds, danger zones.
+- Tavern: Eating area.
+- Blacksmithing: Object improvement area.
 
-* ### Obstacles
+- Training camp (Warriors only): Warrior training zone.
 
-Columns, rocks, walls...  Cover zones usefull for fighters to evade attacks or hide.
+- Potions zone (Wizards only): Training and manufacturing potions zone for magicians.
 
-* ### Highgrounds
+- Forest (Hunters only): Training zone and collection of skins / meats for hunters.
 
-Elevated areas that can provide an advantage in a strategic way for the fighters.
+ 
 
-* ### Danger Zones
+AI Archetypes:
 
-Lava, spikes, thorns, fire... Areas where fighters recieve damage. The fighters try to evade this areas.
+
+- Warrior
+
+ * Routine: Wake up guild house, visit the blacksmith (if you have improvements let the player know with a snack on his head), then visit the training camp> train, then go to the tavern to eat, and at night go to the guild House to sleep.
+
+
+- Wizard
+
+ * Routine: Wake up guild house, visit the blacksmith (if you have improvements, let the player know with a snack on his head), go to the potions room where he creates potions (necessary resources for missions), then eat in the tavern and sleep in the guild house
+
+ 
+
+- Hunter: 
+
+ * Routine: Wake up guild house, visit the blacksmith (if you have improvements, notify the player with a snack on his head), go to the forest and collect / place traps and resources (skins / meat) then eat in the tavern and sleep in the guild house
 
