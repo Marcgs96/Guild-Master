@@ -56,5 +56,5 @@ The player is able to:
  
  * Recuit heroes to expand the guild.
  
- * Buy items from the blacksmith to obtain upgrades for his guild members.
+ * Buy upgrades from the blacksmith to strengthen his guild members.
 
