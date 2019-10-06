@@ -20,7 +20,7 @@ Place where the player can use resources to buy items that have a passive effect
 
 * ### Training camp (Warriors only)
 
-Warrior training zone.
+Warrior training zone, warriors training makes them gain a battle shout that increases the succes chance in the daily quest.
 
 * ### Alchemy tower (Wizards only)
 
@@ -35,15 +35,15 @@ Training zone and collection of skins / meats for hunters.
 
 * ### Warrior
 
- * Routine: Wake up guild house, visit the blacksmith (if you have improvements let the player know with a snack on his head), then visit the training camp> train, then go to the tavern to eat, and at night go to the guild House to sleep.
+**Routine:** Wake up guild house, visit the blacksmith (if you have improvements let the player know with a snack on his head), then visit the training camp > train, then go to the tavern to eat, and at night go to the guild House to sleep.
 
 * ### Wizard
 
- * Routine: Wake up guild house, visit the blacksmith (if you have improvements, let the player know with a snack on his head), go to the potions room where he creates potions (necessary resources for missions), then eat in the tavern and sleep in the guild house
+**Routine:** Wake up guild house, visit the blacksmith (if you have improvements, let the player know with a snack on his head), go to the potions room where he creates potions (necessary resources for missions), then eat in the tavern and sleep in the guild house
 
 * ### Hunter: 
 
- * Routine: Wake up guild house, visit the blacksmith (if you have improvements, notify the player with a snack on his head), go to the forest and collect / place traps and resources (skins / meat) then eat in the tavern and sleep in the guild house
+**Routine:** Wake up guild house, visit the blacksmith (if you have improvements, notify the player with a snack on his head), go to the forest and collect / place traps and resources (skins / meat) then eat in the tavern and sleep in the guild house
  
  
  ## Player Interactions
