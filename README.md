@@ -1,9 +1,7 @@
 	
 ### Guild Master
 
-Guild Master is a fantasy game where the player takes control of a collective of heroes who are part of a brotherhood. The game consists of the heroes collecting the necessary resources to leave the expedition / mission, getting rewards with which the player can improve the guild / brotherhood and equipment improvements for the heroes.
-
- 
+Guild Master is a fantasy game where the player takes control of a collective of heroes who are part of a brotherhood. The game consists of the heroes collecting the necessary resources to complete the daily mission allowing the player gather rewards to improve the guild house building. Improving the guild house allows the player to recuit more heroes for the brotherhood making the guild stronger and respected.
 
 ## Game areas
 
