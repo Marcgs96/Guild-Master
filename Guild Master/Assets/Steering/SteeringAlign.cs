@@ -18,7 +18,7 @@ public class SteeringAlign : Steering
 	// Update is called once per frame
 	void Update () 
 	{
-		// Orientation we are trying to match
+        /*// Orientation we are trying to match
         float delta_angle = Vector3.SignedAngle(transform.forward, move.target.transform.forward, new Vector3(0.0f, 1.0f, 0.0f));
 
 
@@ -41,6 +41,26 @@ public class SteeringAlign : Steering
 		if(delta_angle < 0)
 			angular_acceleration = -angular_acceleration;
 
-		move.AccelerateRotation(Mathf.Clamp(angular_acceleration, -move.max_rot_acceleration, move.max_rot_acceleration), priority);
-	}
+		move.AccelerateRotation(Mathf.Clamp(angular_acceleration, -move.max_rot_acceleration, move.max_rot_acceleration), priority);*/
+
+
+
+
+       /* Vector3 diff = target - transform.position;
+
+        if (diff.magnitude < min_distance)
+            move.SetMovementVelocity(Vector3.zero);
+
+        Vector3 wanted_velocity = diff.normalized * move.max_mov_speed;
+        if (diff.magnitude <= slow_distance)
+        {
+            wanted_velocity *= diff.magnitude / slow_distance;
+        }
+
+        Vector3 desired_acceleration = (wanted_velocity - move.current_velocity) / time_to_target;
+        Vector3 clamped_acceleration = desired_acceleration.normalized * Mathf.Clamp(desired_acceleration.magnitude, 0.0f, move.max_mov_acceleration);
+        move.AccelerateMovement(clamped_acceleration, priority);*/
+
+
+    }
 }
