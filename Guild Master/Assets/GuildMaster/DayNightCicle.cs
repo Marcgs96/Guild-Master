@@ -54,4 +54,9 @@ public class DayNightCicle : MonoBehaviour
         StartCoroutine("Sunrise");
     }
 
+    float GetHour()
+    {
+        return hour;
+    }
+
 }
