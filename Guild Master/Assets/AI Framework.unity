@@ -107,15 +107,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 1
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 40
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -1371,6 +1371,8 @@ GameObject:
   - component: {fileID: 653852233}
   - component: {fileID: 653852216}
   - component: {fileID: 653852215}
+  - component: {fileID: 653852235}
+  - component: {fileID: 653852234}
   m_Layer: 8
   m_Name: Agent 01
   m_TagString: Untagged
@@ -1407,7 +1409,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1258218286}
   aim: {fileID: 1399630582}
-  arrow: {fileID: 1007177281}
   max_mov_speed: 5
   max_mov_acceleration: 0.1
   max_rot_speed: 50
@@ -1423,13 +1424,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653852214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fdb74c0d43ad45458532f1a1ff22e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 0
-  path: {fileID: 0}
+  path: {fileID: 1079148646}
   ratio_increment: 0.1
   min_distance: 1
 --- !u!114 &653852218
@@ -1590,7 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612fefe37772540c8bb2bcc1639f521e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 0
+  priority: 1
 --- !u!114 &653852227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,6 +1696,43 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   search_radius: 5
+--- !u!195 &653852234
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653852214}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 0
+  m_Acceleration: 0
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 0
+  m_AutoBraking: 0
+  m_AutoRepath: 0
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &653852235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653852214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb11e672eda6f945b918a515c6a1407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 1
+  ratio_increment: 0.01
+  min_distance: 2
 --- !u!1 &663359549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,6 +2248,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1816550083}
     m_Modifications:
+    - target: {fileID: 100000, guid: e307cb54b57a59342868ad47d1ed0c30, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e307cb54b57a59342868ad47d1ed0c30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e307cb54b57a59342868ad47d1ed0c30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.024708
@@ -2241,14 +2287,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: e307cb54b57a59342868ad47d1ed0c30, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: e307cb54b57a59342868ad47d1ed0c30, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: e307cb54b57a59342868ad47d1ed0c30, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e307cb54b57a59342868ad47d1ed0c30, type: 3}
@@ -3184,7 +3222,7 @@ MonoBehaviour:
     showTransformField: 0
     existing: 1
   mode2D: 2
-  closed: 1
+  closed: 0
   points:
   - controlType: 1
     positionLocal: {x: -2.4276628, y: 0, z: 13.246078}
@@ -4604,7 +4642,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1258218286}
   aim: {fileID: 270995537}
-  arrow: {fileID: 705626895}
   max_mov_speed: 5
   max_mov_acceleration: 1
   max_rot_speed: 10
@@ -4852,6 +4889,49 @@ MonoBehaviour:
     m_Bits: 512
   avoid_distance: 5
   rays: []
+--- !u!1 &1606703906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1606703908}
+  - component: {fileID: 1606703907}
+  m_Layer: 0
+  m_Name: Curve Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1606703907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606703906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df816f0412c59d4d9b00ae687d2504c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1606703908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606703906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1621344713
 GameObject:
   m_ObjectHideFlags: 0
