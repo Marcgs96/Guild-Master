@@ -58,17 +58,16 @@ public class SteeringArrive : Steering {
         move.AccelerateMovement(acceleration);*/
 
 
-
-
-
-
         if (!move)
             move = GetComponent<Move>();
 
         Vector3 diff = target - transform.position;
 
         if (diff.magnitude < min_distance)
+        {
             move.SetMovementVelocity(Vector3.zero);
+            return;
+        }
 
         Vector3 wanted_velocity = diff.normalized * move.max_mov_speed;
         if (diff.magnitude <= slow_distance)

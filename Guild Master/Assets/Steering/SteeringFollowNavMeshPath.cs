@@ -13,6 +13,7 @@ public class SteeringFollowNavMeshPath : Steering
     Move move;
     SteeringArrive arrive;
     SteeringSeek seek;
+    SteeringAlign align;
     NavMeshAgent agent;
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class SteeringFollowNavMeshPath : Steering
         move = GetComponent<Move>();
         arrive = GetComponent<SteeringArrive>();
         seek = GetComponent<SteeringSeek>();
+        align = GetComponent<SteeringAlign>();
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -34,17 +36,16 @@ public class SteeringFollowNavMeshPath : Steering
        
         if (agent.hasPath)
         {
-            Debug.Log(agent.path.corners.Length);
             if (agent.path.corners.Length > 2)
             {
-                Debug.Log("seek");
                 seek.Steer(agent.path.corners[1]);
             }
             else
             {
-                Debug.Log("arrive");
                 arrive.Steer(agent.path.corners[1]);
             }
+
+            align.Steer(agent.path.corners[1]);
         }
     }
 
