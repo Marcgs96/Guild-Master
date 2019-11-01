@@ -59,7 +59,7 @@ public class Move : MonoBehaviour {
 
         for (int i = SteeringConf.num_priorities - 1; i >= 0; i--)
         {
-            if (rotation_velocity[i] > 0.0f)
+            if (rotation_velocity[i] != 0.0f)
             {
                 current_rotation_speed += rotation_velocity[i];
                 break;
@@ -77,18 +77,17 @@ public class Move : MonoBehaviour {
 
 		// rotate the arrow
 		float angle = Mathf.Atan2(current_velocity.x, current_velocity.z);
-		//aim.transform.rotation = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);
+        //aim.transform.rotation = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);
 
-		// strech it
-	//	arrow.value = current_velocity.magnitude * 4;
+        // strech it
+        //arrow.value = current_velocity.magnitude * 4;
 
-		// final rotate
+        // final rotate
+        Debug.Log("rotation speed " + current_rotation_speed);
 		transform.rotation *= Quaternion.AngleAxis(current_rotation_speed * Time.deltaTime, Vector3.up);
 
 		// finally move
 		transform.position += current_velocity * Time.deltaTime;
-
-
 
 
         for (int i = SteeringConf.num_priorities - 1; i > 0; i--)
