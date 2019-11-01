@@ -13,6 +13,8 @@ public class CharacterManager : MonoBehaviour
     {
         move = this.GetComponent<Move>();
         anim = this.GetComponent<Animator>();
+
+        anim.SetInteger("char_type", (int)type);
     }
 
     // Update is called once per frame
@@ -28,4 +30,10 @@ public class CharacterManager : MonoBehaviour
             anim.SetBool("moving", false);
         }
     }
+
+    public void DoAction(bool mode)
+    {
+        anim.SetBool("doing_action", mode);
+    }
+
 }

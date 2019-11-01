@@ -20,7 +20,7 @@ public class SteeringArrive : Steering {
 		Steer(move.target.transform.position);
 	}
 
-	public void Steer(Vector3 target)
+	public bool Steer(Vector3 target)
 	{
        // PROFE
        /* if (!move)
@@ -66,7 +66,7 @@ public class SteeringArrive : Steering {
         if (diff.magnitude < min_distance)
         {
             move.SetMovementVelocity(Vector3.zero);
-            return;
+            return true;
         }
 
         Vector3 wanted_velocity = diff.normalized * move.max_mov_speed;
@@ -78,6 +78,8 @@ public class SteeringArrive : Steering {
         Vector3 desired_acceleration = (wanted_velocity - move.current_velocity) / time_to_target;
         Vector3 clamped_acceleration = desired_acceleration.normalized * Mathf.Clamp(desired_acceleration.magnitude, 0.0f, move.max_mov_acceleration);
         move.AccelerateMovement(clamped_acceleration, priority);
+
+        return false;
     }
 
 	void OnDrawGizmosSelected() 

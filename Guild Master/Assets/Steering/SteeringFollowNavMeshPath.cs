@@ -14,6 +14,8 @@ public class SteeringFollowNavMeshPath : Steering
     SteeringAlign align;
     NavMeshAgent agent;
 
+    public bool arrived;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,8 @@ public class SteeringFollowNavMeshPath : Steering
             }
             else
             {
-                arrive.Steer(agent.path.corners[1]);
+                if (arrive.Steer(agent.path.corners[1]))
+                    arrived = true;
             }
 
             align.Steer(agent.path.corners[1]);
@@ -44,6 +47,7 @@ public class SteeringFollowNavMeshPath : Steering
 
     public void CreatePath(Vector3 pos)
     {
+        arrived = false;
         agent.ResetPath();
         agent.SetDestination(pos);
     }

@@ -83,7 +83,6 @@ public class Move : MonoBehaviour {
         //arrow.value = current_velocity.magnitude * 4;
 
         // final rotate
-        Debug.Log("rotation speed " + current_rotation_speed);
 		transform.rotation *= Quaternion.AngleAxis(current_rotation_speed * Time.deltaTime, Vector3.up);
 
 		// finally move
