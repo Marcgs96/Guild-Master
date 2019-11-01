@@ -4428,6 +4428,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3884174375481114004, guid: f20846793d7bc7249b73d1704edbf0ba,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884174375481114004, guid: f20846793d7bc7249b73d1704edbf0ba,
+        type: 3}
+      propertyPath: m_Speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884174375481114004, guid: f20846793d7bc7249b73d1704edbf0ba,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884174375481114004, guid: f20846793d7bc7249b73d1704edbf0ba,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884174375481114004, guid: f20846793d7bc7249b73d1704edbf0ba,
+        type: 3}
+      propertyPath: m_AutoTraverseOffMeshLink
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884174375481114004, guid: f20846793d7bc7249b73d1704edbf0ba,
+        type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884174375481114004, guid: f20846793d7bc7249b73d1704edbf0ba,
+        type: 3}
+      propertyPath: m_AutoRepath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884174375481114004, guid: f20846793d7bc7249b73d1704edbf0ba,
+        type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3884174375481114091, guid: f20846793d7bc7249b73d1704edbf0ba,
         type: 3}
       propertyPath: location
@@ -4441,12 +4481,12 @@ PrefabInstance:
     - target: {fileID: 3884174375481114088, guid: f20846793d7bc7249b73d1704edbf0ba,
         type: 3}
       propertyPath: max_rot_speed
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3884174375481114088, guid: f20846793d7bc7249b73d1704edbf0ba,
         type: 3}
       propertyPath: max_rot_acceleration
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f20846793d7bc7249b73d1704edbf0ba, type: 3}
