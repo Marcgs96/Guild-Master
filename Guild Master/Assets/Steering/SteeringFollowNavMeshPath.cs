@@ -8,8 +8,6 @@ using BansheeGz.BGSpline.Curve;
 
 public class SteeringFollowNavMeshPath : Steering
 {
-    public Transform location;
-
     Move move;
     SteeringArrive arrive;
     SteeringSeek seek;
@@ -28,12 +26,7 @@ public class SteeringFollowNavMeshPath : Steering
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            MoveTo(location.position);
-        }
-       
+    {    
         if (agent.hasPath)
         {
             if (agent.path.corners.Length > 2)
@@ -49,9 +42,8 @@ public class SteeringFollowNavMeshPath : Steering
         }
     }
 
-    void MoveTo(Vector3 pos)
+    public void CreatePath(Vector3 pos)
     {
-        Debug.Log("Setting path");
         agent.ResetPath();
         agent.SetDestination(pos);
     }
