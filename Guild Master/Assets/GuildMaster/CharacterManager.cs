@@ -20,11 +20,12 @@ public class CharacterManager : MonoBehaviour
     {
         if(move.current_velocity.magnitude > 0)
         {
-            anim.SetBool("movement", true);
+            Debug.Log("Moving at speed: " + move.current_velocity.magnitude);
+            anim.SetBool("moving", true);
             anim.SetFloat("speed", move.current_velocity.magnitude);
         }else
         {
-            anim.SetBool("movement", false);
+            anim.SetBool("moving", false);
         }
     }
 }
