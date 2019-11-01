@@ -41,7 +41,7 @@ public class DayNightCicle : MonoBehaviour
 
     IEnumerator NightFall()
     {
-        hour = 15;
+        hour = 12;
         for (float i = 2; i > 0.2; i -= 0.01f)
         {
             light_intensity = i;
