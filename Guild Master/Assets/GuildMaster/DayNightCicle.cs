@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DayNightCicle : MonoBehaviour
 {
     public Light main_light;
+    public Text hours_text;
     float light_intensity;
     float hour = 0; // 1 hour equals 7.5 seconds
     float current_cicle_time = 0;
@@ -25,6 +27,8 @@ public class DayNightCicle : MonoBehaviour
             hour++;
             current_cicle_time = 0;
         }
+
+        hours_text.text = "Current hour: " + hour;
     }
 
     IEnumerator Sunrise()
@@ -48,6 +52,11 @@ public class DayNightCicle : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         StartCoroutine("Sunrise");
+    }
+
+    float GetHour()
+    {
+        return hour;
     }
 
 }
