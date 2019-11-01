@@ -18,7 +18,7 @@ public class SteeringPursue : Steering
 	// Update is called once per frame
 	void Update () 
 	{
-		Steer(move.target.transform.position, move.target.GetComponent<Move>().current_velocity);
+		//Steer(move.target.transform.position, move.target.GetComponent<Move>().current_velocity);
 	}
 
 	public void Steer(Vector3 target, Vector3 velocity)

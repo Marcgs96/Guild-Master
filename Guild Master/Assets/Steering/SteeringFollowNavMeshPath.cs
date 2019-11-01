@@ -48,7 +48,6 @@ public class SteeringFollowNavMeshPath : Steering
         }
     }
 
-
     void MoveTo(Vector3 pos)
     {
         Debug.Log("Setting path");
