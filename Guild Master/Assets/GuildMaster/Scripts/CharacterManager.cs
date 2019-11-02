@@ -13,13 +13,18 @@ public class CharacterManager : MonoBehaviour
     
     public GameObject model;
 
-    enum CHARACTER_ACTION { NONE, DISAPPEAR, TYPE_ACTION, TALK };
+    enum CHARACTER_ACTION { NONE, ENTER_TAVERN, ENTER_GUILD_HALL, TYPE_ACTION, BLACKSMITH };
     CHARACTER_ACTION current_action;
 
     public enum CHARACTER_TYPE {NONE, KNIGHT, HUNTER, MAGE};
     public CHARACTER_TYPE type;
 
-    public GameObject bubble;
+    GameObject action_bubble;
+    GameObject blacksmith_bubble;
+    public GameObject tavern_bubble;
+    public GameObject guild_hall_bubble;
+
+
     public enum LOCATION_TYPE {TABERN, GUILD_HALL, BLACKSMITH, CLASS};
 
     // Start is called before the first frame update
@@ -35,6 +40,10 @@ public class CharacterManager : MonoBehaviour
         steer = GetComponent<SteeringFollowNavMeshPath>();
         steer.OnReachEnd += DoAction;
 
+        action_bubble = transform.Find("ActionBubble").gameObject;
+        blacksmith_bubble = transform.Find("BlacksmithBubble").gameObject;
+
+
         anim.SetInteger("char_type", (int)type);
     }
 
@@ -48,15 +57,44 @@ public class CharacterManager : MonoBehaviour
     {
         switch (current_action)
         {
-            case CHARACTER_ACTION.DISAPPEAR:
+            case CHARACTER_ACTION.ENTER_TAVERN:
                 Disappear(true);
+                tavern_bubble.SetActive(true);
                 break;
-            case CHARACTER_ACTION.TALK:
-
+            case CHARACTER_ACTION.ENTER_GUILD_HALL:
+                Disappear(true);
+                guild_hall_bubble.SetActive(true);
+                break;
+            case CHARACTER_ACTION.BLACKSMITH:
+                blacksmith_bubble.SetActive(true);
                 break;
             case CHARACTER_ACTION.TYPE_ACTION:
                 anim.SetBool("type_action", true);
-                bubble.SetActive(true);
+                action_bubble.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void StopAction()
+    {
+        switch (current_action)
+        {
+            case CHARACTER_ACTION.ENTER_TAVERN:
+                Disappear(false);
+                tavern_bubble.SetActive(false);
+                break;
+            case CHARACTER_ACTION.ENTER_GUILD_HALL:
+                Disappear(false);
+                guild_hall_bubble.SetActive(false);
+                break;
+            case CHARACTER_ACTION.BLACKSMITH:
+                blacksmith_bubble.SetActive(false);
+                break;
+            case CHARACTER_ACTION.TYPE_ACTION:
+                anim.SetBool("type_action", false);
+                action_bubble.SetActive(false);
                 break;
             default:
                 break;
@@ -103,43 +141,44 @@ public class CharacterManager : MonoBehaviour
         {
             case 6:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                Disappear(false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tabern
                 break;
             case 8:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
-                Disappear(false);
                 // go blacksmith
                 break;
             case 10:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.BLACKSMITH].transform.position);
-                current_action = CHARACTER_ACTION.TALK;
-                anim.SetBool("type_action", false);
+                StopAction();
+                current_action = CHARACTER_ACTION.BLACKSMITH;
                 //go train
                 break;
             case 12:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tabern
                 break;
             case 14:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
-                Disappear(false);
                 // go train
                 break;
             case 19:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                anim.SetBool("type_action", false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 //go tabern
                 break;
             case 22:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.GUILD_HALL].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                Disappear(false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_GUILD_HALL;
                 //go sleep
                 break;
         }
@@ -151,43 +190,44 @@ public class CharacterManager : MonoBehaviour
         {
             case 6:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                Disappear(false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tabern
                 break;
             case 8:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
-                Disappear(false);
                 // go blacksmith
                 break;
             case 13:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                anim.SetBool("type_action", false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tabern
                 break;
             case 16:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
-                Disappear(false);
                 // go train
                 break;
             case 19:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.BLACKSMITH].transform.position);
-                current_action = CHARACTER_ACTION.TALK;
-                anim.SetBool("type_action", false);
+                StopAction();
+                current_action = CHARACTER_ACTION.BLACKSMITH;
                 // go blacksmith
                 break;
             case 21:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 //go tabern
                 break;
             case 23:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.GUILD_HALL].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                Disappear(false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_GUILD_HALL;
                 //go sleep
                 break;
         }
@@ -199,45 +239,45 @@ public class CharacterManager : MonoBehaviour
         {
             case 6:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                Disappear(false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tabern
                 break;
             case 8:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.BLACKSMITH].transform.position);
-                current_action = CHARACTER_ACTION.TALK;
-                Disappear(false);
+                StopAction();
+                current_action = CHARACTER_ACTION.BLACKSMITH;
                 // go blacksmith
                 break;
             case 10:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 //go train
                 break;
             case 13:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                anim.SetBool("type_action", false);
-                bubble.SetActive(false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tabern
                 break;
             case 16:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 Disappear(false);
                 // go train
                 break;
             case 20:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                anim.SetBool("type_action", false);
-                bubble.SetActive(false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 //go tabern
                 break;
             case 23:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.GUILD_HALL].transform.position);
-                current_action = CHARACTER_ACTION.DISAPPEAR;
-                Disappear(false);
+                StopAction();
+                current_action = CHARACTER_ACTION.ENTER_GUILD_HALL;
                 //go sleep
                 break;
         }
