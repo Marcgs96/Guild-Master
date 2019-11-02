@@ -54,7 +54,7 @@ public class SteeringSeparation : Steering {
             {
                 if (c.gameObject != gameObject)
                 {
-                    Vector3 direction = -(c.transform.position - transform.position);
+                    Vector3 direction = -new Vector3(c.transform.position.x - transform.position.x, 0, c.transform.position.z - transform.position.z);
                     sum_vector += direction.normalized * ((1.0f - strength.Evaluate(direction.magnitude / search_radius)) * move.max_mov_acceleration);
                 }
             }

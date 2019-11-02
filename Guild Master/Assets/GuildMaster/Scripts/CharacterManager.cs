@@ -9,8 +9,8 @@ public class CharacterManager : MonoBehaviour
     SteeringFollowNavMeshPath steer;
     Collider coll;
     DayNightCicle time;
-
-    public GameObject locations;
+    public Transform[] locations;
+    
     public GameObject model;
 
     enum CHARACTER_ACTION { NONE, DISAPPEAR, TYPE_ACTION, TALK };
@@ -20,7 +20,7 @@ public class CharacterManager : MonoBehaviour
     public CHARACTER_TYPE type;
 
     public GameObject bubble;
-    string type_string;
+    public enum LOCATION_TYPE {TABERN, GUILD_HALL, BLACKSMITH, CLASS};
 
     // Start is called before the first frame update
     void Start()
@@ -35,19 +35,6 @@ public class CharacterManager : MonoBehaviour
         steer = GetComponent<SteeringFollowNavMeshPath>();
         steer.OnReachEnd += DoAction;
 
-
-        switch (type)
-        {
-            case CHARACTER_TYPE.KNIGHT:
-                type_string = "Warrior";
-                break;
-            case CHARACTER_TYPE.HUNTER:
-                type_string = "Hunter";
-                break;
-            case CHARACTER_TYPE.MAGE:
-                type_string = "Mage";
-                break;
-        }
         anim.SetInteger("char_type", (int)type);
     }
 
@@ -92,47 +79,163 @@ public class CharacterManager : MonoBehaviour
 
     void ChangeAction()
     {
+        switch (type)
+        {
+            case CHARACTER_TYPE.NONE:
+                break;
+            case CHARACTER_TYPE.KNIGHT:
+                WarriorsRoutine();
+                break;
+            case CHARACTER_TYPE.HUNTER:
+                HuntersRoutine();
+                break;
+            case CHARACTER_TYPE.MAGE:
+                MagesRoutine();
+                break;
+            default:
+                break;
+        }
+    }
+
+    void MagesRoutine()
+    {
         switch (time.GetHour())
         {
             case 6:
-                steer.CreatePath(locations.transform.Find("Tabern Location").transform.position);
+                steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
                 Disappear(false);
                 // go tabern
                 break;
             case 8:
-                steer.CreatePath(locations.transform.Find("Blacksmith Location").transform.position);
+                steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                current_action = CHARACTER_ACTION.TYPE_ACTION;
+                Disappear(false);
+                // go blacksmith
+                break;
+            case 10:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.BLACKSMITH].transform.position);
+                current_action = CHARACTER_ACTION.TALK;
+                anim.SetBool("type_action", false);
+                //go train
+                break;
+            case 12:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
+                current_action = CHARACTER_ACTION.DISAPPEAR;
+                // go tabern
+                break;
+            case 14:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                current_action = CHARACTER_ACTION.TYPE_ACTION;
+                Disappear(false);
+                // go train
+                break;
+            case 19:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
+                current_action = CHARACTER_ACTION.DISAPPEAR;
+                anim.SetBool("type_action", false);
+                //go tabern
+                break;
+            case 22:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.GUILD_HALL].transform.position);
+                current_action = CHARACTER_ACTION.DISAPPEAR;
+                Disappear(false);
+                //go sleep
+                break;
+        }
+    }
+
+    void WarriorsRoutine()
+    {
+        switch (time.GetHour())
+        {
+            case 6:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
+                current_action = CHARACTER_ACTION.DISAPPEAR;
+                Disappear(false);
+                // go tabern
+                break;
+            case 8:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                current_action = CHARACTER_ACTION.TYPE_ACTION;
+                Disappear(false);
+                // go blacksmith
+                break;
+            case 13:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
+                current_action = CHARACTER_ACTION.DISAPPEAR;
+                anim.SetBool("type_action", false);
+                // go tabern
+                break;
+            case 16:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
+                current_action = CHARACTER_ACTION.TYPE_ACTION;
+                Disappear(false);
+                // go train
+                break;
+            case 19:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.BLACKSMITH].transform.position);
+                current_action = CHARACTER_ACTION.TALK;
+                anim.SetBool("type_action", false);
+                // go blacksmith
+                break;
+            case 21:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
+                current_action = CHARACTER_ACTION.DISAPPEAR;
+                //go tabern
+                break;
+            case 23:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.GUILD_HALL].transform.position);
+                current_action = CHARACTER_ACTION.DISAPPEAR;
+                Disappear(false);
+                //go sleep
+                break;
+        }
+    }
+
+    void HuntersRoutine()
+    {
+        switch (time.GetHour())
+        {
+            case 6:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
+                current_action = CHARACTER_ACTION.DISAPPEAR;
+                Disappear(false);
+                // go tabern
+                break;
+            case 8:
+                steer.CreatePath(locations[(int)LOCATION_TYPE.BLACKSMITH].transform.position);
                 current_action = CHARACTER_ACTION.TALK;
                 Disappear(false);
                 // go blacksmith
                 break;
             case 10:
-                steer.CreatePath(locations.transform.Find(type_string + " Location").transform.position);
+                steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 //go train
                 break;
             case 13:
-                steer.CreatePath(locations.transform.Find("Tabern Location").transform.position);
+                steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
                 anim.SetBool("type_action", false);
                 bubble.SetActive(false);
                 // go tabern
                 break;
             case 16:
-                steer.CreatePath(locations.transform.Find(type_string + " Location").transform.position);
+                steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 Disappear(false);
                 // go train
                 break;
             case 20:
-                steer.CreatePath(locations.transform.Find("Tabern Location").transform.position);
+                steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
                 anim.SetBool("type_action", false);
                 bubble.SetActive(false);
                 //go tabern
                 break;
             case 23:
-                steer.CreatePath(locations.transform.Find("Guild Hall Location").transform.position);
+                steer.CreatePath(locations[(int)LOCATION_TYPE.GUILD_HALL].transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
                 Disappear(false);
                 //go sleep
