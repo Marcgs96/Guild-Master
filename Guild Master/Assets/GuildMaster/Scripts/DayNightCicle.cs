@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DayNightCicle : MonoBehaviour
 {
     public Light main_light;
+    public GameObject[] lights;
     public Text hours_text;
     float light_intensity;
     int hour = 0; // 1 hour equals 15 seconds
@@ -20,6 +21,7 @@ public class DayNightCicle : MonoBehaviour
         light_intensity = main_light.intensity;
         hour = 5;
         InvokeRepeating("IncreaseTime", 1.50f, 1.50f);
+        lights = GameObject.FindGameObjectsWithTag("Light");
     }
 
     // Update is called once per frame
@@ -49,6 +51,22 @@ public class DayNightCicle : MonoBehaviour
         else
         {
             DecreaseIntensity();
+        }
+
+        if(hour == 6)
+        {
+            foreach (GameObject l in lights)
+            {
+                l.GetComponent<Light>().enabled = false;
+            }
+        }
+
+        if (hour == 18)
+        {
+            foreach (GameObject l in lights)
+            {
+                l.GetComponent<Light>().enabled = true;
+            }
         }
     }
 
