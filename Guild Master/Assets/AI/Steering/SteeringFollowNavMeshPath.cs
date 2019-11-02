@@ -15,7 +15,7 @@ public class SteeringFollowNavMeshPath : Steering
     NavMeshPath path;
 
     public float min_distance;
-    int current_point = 0;
+    int current_point = 1;
 
 
     public delegate void ReachAction();
@@ -49,7 +49,7 @@ public class SteeringFollowNavMeshPath : Steering
             {
                 if (arrive.Steer(path.corners[current_point]))
                 {
-                    current_point = 0;
+                    current_point = 1;
                     OnReachEnd();
                     path.ClearCorners();
                 }
