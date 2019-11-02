@@ -111,18 +111,18 @@ public class CharacterManager : MonoBehaviour
                 Disappear(false);
                 // go blacksmith
                 break;
-            case 10:
+            case 11:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.BLACKSMITH].transform.position);
                 current_action = CHARACTER_ACTION.TALK;
                 anim.SetBool("type_action", false);
                 //go train
                 break;
-            case 12:
+            case 14:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
                 // go tabern
                 break;
-            case 14:
+            case 16:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 Disappear(false);
@@ -153,7 +153,7 @@ public class CharacterManager : MonoBehaviour
                 Disappear(false);
                 // go tabern
                 break;
-            case 8:
+            case 9:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 Disappear(false);
@@ -165,7 +165,7 @@ public class CharacterManager : MonoBehaviour
                 anim.SetBool("type_action", false);
                 // go tabern
                 break;
-            case 16:
+            case 15:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 Disappear(false);
@@ -218,13 +218,13 @@ public class CharacterManager : MonoBehaviour
                 anim.SetBool("type_action", false);
                 // go tabern
                 break;
-            case 16:
+            case 17:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.CLASS].transform.position);
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 Disappear(false);
                 // go train
                 break;
-            case 20:
+            case 21:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
                 anim.SetBool("type_action", false);
