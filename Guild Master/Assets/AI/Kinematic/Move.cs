@@ -12,8 +12,8 @@ public class Move : MonoBehaviour {
 	public float max_rot_speed = 10.0f; // in degrees / second
 	public float max_rot_acceleration = 0.1f; // in degrees
 
-    public Vector3[] movement_velocity;
-    public float[] rotation_velocity;
+    Vector3[] movement_velocity;
+    float[] rotation_velocity;
 
     [Header("-------- Read Only --------")]
 	public Vector3 current_velocity = Vector3.zero;

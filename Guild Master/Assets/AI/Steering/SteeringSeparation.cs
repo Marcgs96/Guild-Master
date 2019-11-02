@@ -8,10 +8,12 @@ public class SteeringSeparation : Steering {
     public AnimationCurve strength;
 
     Move move;
+    Collider coll;
 
 	// Use this for initialization
 	void Start () {
 		move = GetComponent<Move>();
+        coll = GetComponent<Collider>();
 	}
 
 	// Update is called once per frame
@@ -43,20 +45,22 @@ public class SteeringSeparation : Steering {
             move.AccelerateMovement(final, priority);
         }*/
 
-
-        Collider[] hit_agents = Physics.OverlapSphere(transform.position, search_radius, mask.value);
-        Vector3 sum_vector = Vector3.zero;
-      
-        foreach (Collider c in hit_agents)
+        if(coll.enabled)
         {
-            if (c.gameObject != gameObject)
+            Collider[] hit_agents = Physics.OverlapSphere(transform.position, search_radius, mask.value);
+            Vector3 sum_vector = Vector3.zero;
+
+            foreach (Collider c in hit_agents)
             {
-                Vector3 direction = -Vector3.Normalize(c.transform.position - transform.position);
-                sum_vector += direction * strength.Evaluate(direction.magnitude/search_radius);
+                if (c.gameObject != gameObject)
+                {
+                    Vector3 direction = -(c.transform.position - transform.position);
+                    sum_vector += direction.normalized * ((1.0f - strength.Evaluate(direction.magnitude / search_radius)) * move.max_mov_acceleration);
+                }
             }
+            Vector3 result = Vector3.Normalize(sum_vector) * (Mathf.Clamp(sum_vector.magnitude, 0, move.max_mov_acceleration));
+            move.AccelerateMovement(result, priority);
         }
-        Vector3 result = Vector3.Normalize(sum_vector) * (Mathf.Clamp(sum_vector.magnitude, 0, move.max_mov_acceleration));
-        move.AccelerateMovement(result, priority);
 
     }
 

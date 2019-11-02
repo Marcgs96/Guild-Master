@@ -7,8 +7,8 @@ public class CharacterManager : MonoBehaviour
     Move move;
     Animator anim;
     SteeringFollowNavMeshPath steer;
+    Collider coll;
     DayNightCicle time;
-
 
     public GameObject locations;
     public GameObject model;
@@ -24,12 +24,14 @@ public class CharacterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        coll = GetComponent<Collider>();
         move = this.GetComponent<Move>();
         anim = this.GetComponent<Animator>();
-        steer = GetComponent<SteeringFollowNavMeshPath>();
+        
         time = GameObject.Find("GameManager").GetComponent<DayNightCicle>();
 
         DayNightCicle.OnHourChange += ChangeAction;
+        steer = GetComponent<SteeringFollowNavMeshPath>();
         steer.OnReachEnd += DoAction;
 
 
@@ -59,7 +61,7 @@ public class CharacterManager : MonoBehaviour
         switch (current_action)
         {
             case CHARACTER_ACTION.DISAPPEAR:
-                model.SetActive(false);
+                Disappear(true);
                 break;
             case CHARACTER_ACTION.TALK:
 
@@ -72,6 +74,20 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    void Disappear(bool mode)
+    {
+        if(mode)
+        {
+            model.SetActive(false);
+            coll.enabled = false;
+        }          
+        else
+        {
+            model.SetActive(true);
+            coll.enabled = true;
+        }
+    }
+
     void ChangeAction()
     {
         switch (time.GetHour())
@@ -79,13 +95,13 @@ public class CharacterManager : MonoBehaviour
             case 6:
                 steer.CreatePath(locations.transform.Find("Tabern Location").transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
-                model.SetActive(true);
+                Disappear(false);
                 // go tabern
                 break;
             case 8:
                 steer.CreatePath(locations.transform.Find("Blacksmith Location").transform.position);
                 current_action = CHARACTER_ACTION.TALK;
-                model.SetActive(true);
+                Disappear(false);
                 // go blacksmith
                 break;
             case 10:
@@ -102,7 +118,7 @@ public class CharacterManager : MonoBehaviour
             case 16:
                 steer.CreatePath(locations.transform.Find(type_string + " Location").transform.position);
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
-                model.SetActive(true);
+                Disappear(false);
                 // go train
                 break;
             case 20:
@@ -111,10 +127,10 @@ public class CharacterManager : MonoBehaviour
                 anim.SetBool("type_action", false);
                 //go tabern
                 break;
-            case 22:
+            case 23:
                 steer.CreatePath(locations.transform.Find("Guild Hall Location").transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
-                model.SetActive(true);
+                Disappear(false);
                 //go sleep
                 break;
         }
