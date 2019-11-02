@@ -19,6 +19,7 @@ public class CharacterManager : MonoBehaviour
     public enum CHARACTER_TYPE {NONE, KNIGHT, HUNTER, MAGE};
     public CHARACTER_TYPE type;
 
+    public GameObject bubble;
     string type_string;
 
     // Start is called before the first frame update
@@ -68,6 +69,7 @@ public class CharacterManager : MonoBehaviour
                 break;
             case CHARACTER_ACTION.TYPE_ACTION:
                 anim.SetBool("type_action", true);
+                bubble.SetActive(true);
                 break;
             default:
                 break;
@@ -113,6 +115,7 @@ public class CharacterManager : MonoBehaviour
                 steer.CreatePath(locations.transform.Find("Tabern Location").transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
                 anim.SetBool("type_action", false);
+                bubble.SetActive(false);
                 // go tabern
                 break;
             case 16:
@@ -125,6 +128,7 @@ public class CharacterManager : MonoBehaviour
                 steer.CreatePath(locations.transform.Find("Tabern Location").transform.position);
                 current_action = CHARACTER_ACTION.DISAPPEAR;
                 anim.SetBool("type_action", false);
+                bubble.SetActive(false);
                 //go tabern
                 break;
             case 23:
