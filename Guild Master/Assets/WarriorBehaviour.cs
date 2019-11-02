@@ -56,35 +56,36 @@ public class WarriorBehaviour : MonoBehaviour
     {
         switch (time.GetHour())
         {
-            case 9:
+            case 6:
                 steer.CreatePath(locations.transform.Find("Tabern Location").transform.position);
                 action = CHARACTER_ACTION.DISAPPEAR;
+                model.SetActive(true);
                 // go tabern
                 break;
-            case 10:
+            case 8:
                 steer.CreatePath(locations.transform.Find("Blacksmith Location").transform.position);
                 action = CHARACTER_ACTION.TALK;
                 model.SetActive(true);
                 // go blacksmith
                 break;
-            case 11:
+            case 10:
                 steer.CreatePath(locations.transform.Find("Warrior Location").transform.position);
                 action = CHARACTER_ACTION.TRAIN;
                 //go train
                 break;
-            case 14:
+            case 13:
                 steer.CreatePath(locations.transform.Find("Tabern Location").transform.position);
                 action = CHARACTER_ACTION.DISAPPEAR;
                 char_manager.DoAction(false);
                 // go tabern
                 break;
-            case 15:
+            case 16:
                 steer.CreatePath(locations.transform.Find("Warrior Location").transform.position);
                 action = CHARACTER_ACTION.TRAIN;
                 model.SetActive(true);
                 // go train
                 break;
-            case 21:
+            case 20:
                 steer.CreatePath(locations.transform.Find("Tabern Location").transform.position);
                 action = CHARACTER_ACTION.DISAPPEAR;
                 char_manager.DoAction(false);
