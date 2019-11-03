@@ -13,11 +13,12 @@ public class Building : MonoBehaviour
     public float exit_time = 0.5f;
     float exit_timer = 0.0f;
 
-    void Start()
+    void Awake()
     {
         agents = new List<CharacterManager>();
         release_queue = new Queue<CharacterManager>();
     }
+
 
     // Update is called once per frame
     void Update()
