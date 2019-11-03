@@ -55,12 +55,6 @@ public class SteeringAlign : Steering
             return;
         }
 
-        //if the character is rotated 180º from the target direction, make it look at the target.
-        if (Mathf.Abs(angle) > 170)
-        {
-            transform.LookAt(target, Vector3.up);
-        }
-
         float angular_acceleration = move.max_rot_speed / time_to_accel;
 
         if (angle < 0.0f)

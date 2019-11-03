@@ -69,7 +69,7 @@ public class DayNightCicle : MonoBehaviour
             skybox.material = skybox_materials[(int)CYCLE_SKYBOX.MORNING];
         }
 
-        if (hour == 18)
+        if (hour == 21)
         {
             foreach (GameObject l in lights)
             {
