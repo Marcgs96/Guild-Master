@@ -9,6 +9,7 @@ public class Building : MonoBehaviour
     List<CharacterManager> agents;
 
     public GameObject bubble;
+    public AudioSource sound;
 
     public float exit_time = 0.5f;
     float exit_timer = 0.0f;
@@ -63,5 +64,6 @@ public class Building : MonoBehaviour
     void BubbleCheck()
     {
         bubble.SetActive(agents.Count > 0 ? true : false);
+        sound.enabled = agents.Count > 0 ? true : false;
     }
 }

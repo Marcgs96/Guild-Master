@@ -14,8 +14,9 @@ public class CharacterManager : MonoBehaviour
 
     public Building tavern;
     public Building guild_hall;
-    
 
+
+    public AudioSource sound;
     public GameObject model;
 
     enum CHARACTER_ACTION { NONE, ENTER_TAVERN, ENTER_GUILD_HALL, TYPE_ACTION, BLACKSMITH };
@@ -75,6 +76,7 @@ public class CharacterManager : MonoBehaviour
                 blacksmith_bubble.SetActive(true);
                 break;
             case CHARACTER_ACTION.TYPE_ACTION:
+                sound.enabled = true;
                 anim.SetBool("type_action", true);
                 action_bubble.SetActive(true);
                 break;
@@ -97,6 +99,7 @@ public class CharacterManager : MonoBehaviour
                 blacksmith_bubble.SetActive(false);
                 break;
             case CHARACTER_ACTION.TYPE_ACTION:
+                sound.enabled = false;
                 anim.SetBool("type_action", false);
                 action_bubble.SetActive(false);
                 break;
