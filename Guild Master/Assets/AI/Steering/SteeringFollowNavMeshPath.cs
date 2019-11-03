@@ -68,4 +68,14 @@ public class SteeringFollowNavMeshPath : Steering
         path.ClearCorners();
         NavMesh.CalculatePath(transform.position, pos, (1 << NavMesh.GetAreaFromName("Walkable")) | (1 << NavMesh.GetAreaFromName("OffRoad")), path);
     }
+
+    public Vector3 GetPathPosition()
+    {
+        if(path.status == NavMeshPathStatus.PathComplete)
+        {
+            return path.corners[current_point];
+        }
+
+        return Vector3.zero;
+    }
 }

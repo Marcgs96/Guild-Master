@@ -107,6 +107,7 @@ public class CharacterManager : MonoBehaviour
 
     public void OnBuildingExit()
     {
+        transform.LookAt(steer.GetPathPosition());
         Disappear(false);
         steer.enabled = true;
     }
