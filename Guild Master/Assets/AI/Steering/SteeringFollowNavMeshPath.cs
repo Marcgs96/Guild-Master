@@ -21,8 +21,8 @@ public class SteeringFollowNavMeshPath : Steering
     public delegate void ReachAction();
     public event ReachAction OnReachEnd;
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         move = GetComponent<Move>();
         arrive = GetComponent<SteeringArrive>();
@@ -63,7 +63,6 @@ public class SteeringFollowNavMeshPath : Steering
     {
         current_point = 1;
         once = false;
-        path.ClearCorners();
         NavMesh.CalculatePath(transform.position, pos, (1 << NavMesh.GetAreaFromName("Walkable")) | (1 << NavMesh.GetAreaFromName("OffRoad")), path);
     }
 
