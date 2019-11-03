@@ -37,7 +37,7 @@ public class CharacterManager : MonoBehaviour
         move = this.GetComponent<Move>();
         anim = this.GetComponent<Animator>();
         
-        time = GameObject.Find("GameManager").GetComponent<DayNightCicle>();
+        time = GameObject.Find("Main Camera").GetComponent<DayNightCicle>();
 
         DayNightCicle.OnHourChange += ChangeAction;
         steer = GetComponent<SteeringFollowNavMeshPath>();

@@ -5,23 +5,29 @@ using UnityEngine.UI;
 
 public class DayNightCicle : MonoBehaviour
 {
+    enum CYCLE_SKYBOX { MORNING, AFTERNOON, NIGHT};
     public Light main_light;
     public GameObject[] lights;
     public Text hours_text;
     float light_intensity;
     int hour = 0; // 1 hour equals 15 seconds
+    int minute = -1;
     float hour_count = 0.0f;
-
+    public Material[] skybox_materials;
+    Skybox skybox;
     public delegate void HourAction();
     public static event HourAction OnHourChange;
 
     // Start is called before the first frame update
     void Start()
     {
+        skybox = GetComponent<Skybox>();
         light_intensity = main_light.intensity;
         hour = 5;
         InvokeRepeating("IncreaseTime", 1.50f, 1.50f);
+        InvokeRepeating("Minutes", 0.25f, 0.25f);
         lights = GameObject.FindGameObjectsWithTag("Light");
+        StartCoroutine("Minutes");
     }
 
     // Update is called once per frame
@@ -30,7 +36,7 @@ public class DayNightCicle : MonoBehaviour
         main_light.intensity = light_intensity;
 
 
-        hours_text.text = "Current hour: " + Mathf.FloorToInt(hour);
+        hours_text.text = "Current time: " + Mathf.FloorToInt(hour) + ":" + minute;
     }
 
     void IncreaseTime()
@@ -43,6 +49,7 @@ public class DayNightCicle : MonoBehaviour
                 hour = 0;
             OnHourChange?.Invoke();
             hour_count = 0;
+            minute = -1;
         }
         if(hour <= 12)
         {
@@ -59,6 +66,7 @@ public class DayNightCicle : MonoBehaviour
             {
                 l.GetComponent<Light>().enabled = false;
             }
+            skybox.material = skybox_materials[(int)CYCLE_SKYBOX.MORNING];
         }
 
         if (hour == 18)
@@ -67,7 +75,11 @@ public class DayNightCicle : MonoBehaviour
             {
                 l.GetComponent<Light>().enabled = true;
             }
+            skybox.material = skybox_materials[(int)CYCLE_SKYBOX.AFTERNOON];
         }
+
+        if(hour == 23) skybox.material = skybox_materials[(int)CYCLE_SKYBOX.NIGHT];
+
     }
 
     void IncreaseIntensity()
@@ -83,5 +95,10 @@ public class DayNightCicle : MonoBehaviour
     public int GetHour()
     {
         return hour;
+    }
+
+    void Minutes()
+    {
+       minute++;
     }
 }
