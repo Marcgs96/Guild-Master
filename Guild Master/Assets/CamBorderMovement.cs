@@ -6,19 +6,12 @@ public class CamBorderMovement : MonoBehaviour
 {
     public float movement_speed;
     public float offset;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         float x = Input.mousePosition.x;
         float y = Input.mousePosition.y;
-
-
 
         if (x <= 0 + offset)
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + movement_speed * Time.deltaTime);      

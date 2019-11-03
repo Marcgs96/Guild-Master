@@ -54,10 +54,7 @@ public class SteeringFollowNavMeshPath : Steering
                         OnReachEnd();
                         once = true;
                     }
-
                 }
-                else
-                    once = false;
             }
         }
     }
@@ -65,6 +62,7 @@ public class SteeringFollowNavMeshPath : Steering
     public void CreatePath(Vector3 pos)
     {
         current_point = 1;
+        once = false;
         path.ClearCorners();
         NavMesh.CalculatePath(transform.position, pos, (1 << NavMesh.GetAreaFromName("Walkable")) | (1 << NavMesh.GetAreaFromName("OffRoad")), path);
     }
