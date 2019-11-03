@@ -358,8 +358,8 @@ GameObject:
   - component: {fileID: 394837902946301966}
   - component: {fileID: 3511705570259308823}
   - component: {fileID: 3818901909021934644}
-  - component: {fileID: 358461246195747829}
   - component: {fileID: 358461246195747833}
+  - component: {fileID: 358461246195747829}
   - component: {fileID: 358461246195747822}
   - component: {fileID: 358461246195747828}
   m_Layer: 9
@@ -506,6 +506,17 @@ MonoBehaviour:
   max_rot_acceleration: 1
   current_velocity: {x: 0, y: 0, z: 0}
   current_rotation_speed: 0
+--- !u!154 &358461246195747833
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6084457698102720306}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 0}
+  m_EnableTreeColliders: 1
 --- !u!65 &358461246195747829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -519,17 +530,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.2662115, z: 1}
   m_Center: {x: 0, y: 1.5886788, z: 0}
---- !u!154 &358461246195747833
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6084457698102720306}
-  m_Material: {fileID: 0}
-  m_Enabled: 1
-  m_TerrainData: {fileID: 0}
-  m_EnableTreeColliders: 1
 --- !u!114 &358461246195747822
 MonoBehaviour:
   m_ObjectHideFlags: 0
