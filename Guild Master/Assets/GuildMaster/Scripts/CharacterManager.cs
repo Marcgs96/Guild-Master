@@ -11,6 +11,8 @@ public class CharacterManager : MonoBehaviour
     DayNightCicle time;
     public Transform[] locations;
 
+    public GameObject weapon;
+
 
     public Building tavern;
     public Building guild_hall;
@@ -79,6 +81,7 @@ public class CharacterManager : MonoBehaviour
                 sound.enabled = true;
                 anim.SetBool("type_action", true);
                 action_bubble.SetActive(true);
+                weapon.SetActive(true);
                 break;
             default:
                 break;
@@ -102,6 +105,7 @@ public class CharacterManager : MonoBehaviour
                 sound.enabled = false;
                 anim.SetBool("type_action", false);
                 action_bubble.SetActive(false);
+                weapon.SetActive(false);
                 break;
             default:
                 break;
