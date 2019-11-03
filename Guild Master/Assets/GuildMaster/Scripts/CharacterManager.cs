@@ -292,7 +292,7 @@ public class CharacterManager : MonoBehaviour
                 Disappear(false);
                 // go train
                 break;
-            case 21:
+            case 20:
                 steer.CreatePath(locations[(int)LOCATION_TYPE.TABERN].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.ENTER_TAVERN;

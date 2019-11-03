@@ -84,12 +84,12 @@ public class DayNightCicle : MonoBehaviour
 
     void IncreaseIntensity()
     {
-        light_intensity += 0.015f;
+        light_intensity += 0.010f;
     }
 
     void DecreaseIntensity()
     {
-        light_intensity -= 0.015f;
+        light_intensity -= 0.010f;
     }
 
     public int GetHour()
