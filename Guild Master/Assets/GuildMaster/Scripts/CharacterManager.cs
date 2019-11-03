@@ -10,7 +10,12 @@ public class CharacterManager : MonoBehaviour
     Collider coll;
     DayNightCicle time;
     public Transform[] locations;
+
+
+    public Building tavern;
+    public Building guild_hall;
     
+
     public GameObject model;
 
     enum CHARACTER_ACTION { NONE, ENTER_TAVERN, ENTER_GUILD_HALL, TYPE_ACTION, BLACKSMITH };
@@ -21,8 +26,6 @@ public class CharacterManager : MonoBehaviour
 
     GameObject action_bubble;
     GameObject blacksmith_bubble;
-    public GameObject tavern_bubble;
-    public GameObject guild_hall_bubble;
 
 
     public enum LOCATION_TYPE {TABERN, GUILD_HALL, BLACKSMITH, CLASS};
@@ -44,7 +47,10 @@ public class CharacterManager : MonoBehaviour
         blacksmith_bubble = transform.Find("BlacksmithBubble").gameObject;
 
 
+        //Setup state
         anim.SetInteger("char_type", (int)type);
+        current_action = CHARACTER_ACTION.ENTER_GUILD_HALL;
+        DoAction();
     }
 
     // Update is called once per frame
@@ -58,12 +64,12 @@ public class CharacterManager : MonoBehaviour
         switch (current_action)
         {
             case CHARACTER_ACTION.ENTER_TAVERN:
-                Disappear(true);
-                tavern_bubble.SetActive(true);
+                tavern.EnterBuilding(this);
+                OnBuildingEnter();
                 break;
             case CHARACTER_ACTION.ENTER_GUILD_HALL:
-                Disappear(true);
-                guild_hall_bubble.SetActive(true);
+                guild_hall.EnterBuilding(this);
+                OnBuildingEnter();
                 break;
             case CHARACTER_ACTION.BLACKSMITH:
                 blacksmith_bubble.SetActive(true);
@@ -82,12 +88,10 @@ public class CharacterManager : MonoBehaviour
         switch (current_action)
         {
             case CHARACTER_ACTION.ENTER_TAVERN:
-                Disappear(false);
-                tavern_bubble.SetActive(false);
+                tavern.RequestExit(this);
                 break;
             case CHARACTER_ACTION.ENTER_GUILD_HALL:
-                Disappear(false);
-                guild_hall_bubble.SetActive(false);
+                guild_hall.RequestExit(this);
                 break;
             case CHARACTER_ACTION.BLACKSMITH:
                 blacksmith_bubble.SetActive(false);
@@ -99,6 +103,18 @@ public class CharacterManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void OnBuildingExit()
+    {
+        Disappear(false);
+        steer.enabled = true;
+    }
+
+    public void OnBuildingEnter()
+    {
+        Disappear(true);
+        steer.enabled = false;
     }
 
     void Disappear(bool mode)
