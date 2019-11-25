@@ -16,43 +16,43 @@ public class KnightMember : Member
         switch (hour)
         {
             case 6:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.TAVERN].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.TAVERN].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tavern
                 break;
             case 9:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.KNIGHT_LOCATION].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.KNIGHT_LOCATION].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 // go blacksmith
                 break;
             case 13:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.TAVERN].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.TAVERN].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tabern
                 break;
             case 15:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.KNIGHT_LOCATION].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.KNIGHT_LOCATION].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 // go train
                 break;
             case 19:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.BLACKSMITH].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.BLACKSMITH].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.BLACKSMITH;
                 // go blacksmith
                 break;
             case 21:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.TAVERN].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.TAVERN].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 //go tabern
                 break;
             case 23:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.GUILD_HALL].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.GUILD_HALL].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.ENTER_GUILD_HALL;
                 //go sleep

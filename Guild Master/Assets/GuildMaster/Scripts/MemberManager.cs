@@ -10,10 +10,6 @@ public class MemberManager : MonoBehaviour
     uint member_cap;
     uint members_amount;
 
-    public enum LOCATION_TYPE { TAVERN, GUILD_HALL, BLACKSMITH, MAGE_LOCATION, KNIGHT_LOCATION, HUNTER_LOCATION };
-    public Transform[] locations;
-    public Building[] buildings;
-    public AudioSource[] audios;
     public GameObject[] member_prefabs;
 
     public delegate void MemberAdded(Member new_member);
@@ -50,7 +46,7 @@ public class MemberManager : MonoBehaviour
                 break;
         }
 
-        new_member_go.transform.position = locations[(int)LOCATION_TYPE.GUILD_HALL].transform.position;
+        new_member_go.transform.position = GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.GUILD_HALL].transform.position;
         new_member = new_member_go.GetComponent<Member>();
         new_member.GenerateInfo();
 

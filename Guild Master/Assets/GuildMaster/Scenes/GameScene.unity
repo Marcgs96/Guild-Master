@@ -470,7 +470,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 35600145}
+  - component: {fileID: 35600147}
   - component: {fileID: 35600144}
+  - component: {fileID: 35600146}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -524,6 +526,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &35600146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35600143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c762208dde443d9459113112a65799a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  crowns: 0
+  shields: 0
+  potions: 0
+  meat: 0
+  gold_txt: {fileID: 2106256697}
+  crowns_txt: {fileID: 1682218147}
+  shields_txt: {fileID: 1756308194}
+  potions_txt: {fileID: 2046900120}
+  meat_txt: {fileID: 1824362374}
+--- !u!114 &35600147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35600143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478113e139fb06f439b8ce66b3c97d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &37385593 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5640555847964067499, guid: bca78522a066fde4492845d3d0d40d54,
@@ -1000,59 +1036,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.516754, y: 3.1861143, z: 1.4425272}
   m_Center: {x: -0.0000033378597, y: 1.5930572, z: 0.021850584}
---- !u!1 &135759127
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 135759129}
-  - component: {fileID: 135759128}
-  m_Layer: 0
-  m_Name: ResourceManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &135759128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135759127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c762208dde443d9459113112a65799a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gold: 0
-  crowns: 0
-  shields: 0
-  potions: 0
-  meat: 0
-  gold_txt: {fileID: 2106256697}
-  crowns_txt: {fileID: 1682218147}
-  shields_txt: {fileID: 1756308194}
-  potions_txt: {fileID: 2046900120}
-  meat_txt: {fileID: 1824362374}
---- !u!4 &135759129
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135759127}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1127.4012, y: 575.8846, z: -211.10892}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &140619427 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5640555848974439772, guid: bca78522a066fde4492845d3d0d40d54,

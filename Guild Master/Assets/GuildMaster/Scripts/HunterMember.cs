@@ -16,44 +16,44 @@ public class HunterMember : Member
         switch (hour)
         {
             case 6:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.TAVERN].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.TAVERN].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tabern
                 break;
             case 8:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.BLACKSMITH].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.BLACKSMITH].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.BLACKSMITH;
                 // go blacksmith
                 break;
             case 10:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.HUNTER_LOCATION].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.HUNTER_LOCATION].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 //go train
                 break;
             case 13:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.TAVERN].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.TAVERN].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 // go tabern
                 break;
             case 17:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.HUNTER_LOCATION].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.HUNTER_LOCATION].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.TYPE_ACTION;
                 Disappear(false);
                 // go train
                 break;
             case 20:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.TAVERN].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.TAVERN].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.ENTER_TAVERN;
                 //go tabern
                 break;
             case 23:
-                steer.CreatePath(manager.locations[(int)MemberManager.LOCATION_TYPE.GUILD_HALL].transform.position);
+                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.GUILD_HALL].transform.position);
                 StopAction();
                 current_action = CHARACTER_ACTION.ENTER_GUILD_HALL;
                 //go sleep

@@ -82,4 +82,23 @@ public class ResourceManager : MonoBehaviour
                 break;
         }
     }
+
+    uint GetResource(ResourceType type)
+    {
+        switch (type)
+        {
+            case ResourceType.Gold:
+                return gold;
+            case ResourceType.Crown:
+                return crowns;
+            case ResourceType.Shield:
+                return shields;
+            case ResourceType.Potion:
+                return potions;
+            case ResourceType.Meat:
+                return meat;
+        }
+
+        return 0;
+    }
 }
