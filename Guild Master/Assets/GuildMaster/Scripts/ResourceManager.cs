@@ -11,7 +11,7 @@ public class ResourceManager : MonoBehaviour
         Crown,
         Shield,
         Potion,
-        Meat
+        Meat,
     }
     [SerializeField]
     uint gold, crowns, shields, potions, meat;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManagement : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public GameObject quests_panel;
     public GameObject guild_panel;

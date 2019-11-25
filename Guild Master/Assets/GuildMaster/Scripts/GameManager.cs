@@ -6,8 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager manager;
 
+    [SerializeField]
     MemberManager members;
+    [SerializeField]
     ResourceManager resources;
+    [SerializeField]
+    QuestManager quests;
+    [SerializeField]
+    UIManager ui;
 
     //make locations/buildings manager ?
     public enum LOCATION_TYPE { TAVERN, GUILD_HALL, BLACKSMITH, MAGE_LOCATION, KNIGHT_LOCATION, HUNTER_LOCATION };
