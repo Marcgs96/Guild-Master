@@ -15,7 +15,7 @@ public class DayNightCicle : MonoBehaviour
     float hour_count = 0.0f;
     public Material[] skybox_materials;
     Skybox skybox;
-    public delegate void HourAction();
+    public delegate void HourAction(uint hour);
     public static event HourAction OnHourChange;
 
     // Start is called before the first frame update
@@ -47,7 +47,7 @@ public class DayNightCicle : MonoBehaviour
             hour++;
             if (hour == 24)
                 hour = 0;
-            OnHourChange?.Invoke();
+            OnHourChange?.Invoke((uint)hour);
             hour_count = 0;
             minute = -1;
         }
@@ -92,9 +92,9 @@ public class DayNightCicle : MonoBehaviour
         light_intensity -= 0.010f;
     }
 
-    public int GetHour()
+    public uint GetHour()
     {
-        return hour;
+        return (uint)hour;
     }
 
     void Minutes()

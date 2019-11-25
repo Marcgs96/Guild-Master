@@ -1,15 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManagement : MonoBehaviour
 {
     public GameObject quests_panel;
-    public GameObject quests_list;
-    public GameObject quest_preparation;
     public GameObject guild_panel;
     public GameObject blacksmith_panel;
+    public GameObject members_list_panel;
 
+    //quests panel stuff
+    public GameObject quests_list;
+    public GameObject quest_preparation;
+
+    //members list stuff
+    public GameObject member_listing;
+    List<GameObject> listings;
+
+    private void Awake()
+    {
+        MemberManager.OnMemberAdd += CreateListing;
+    }
+
+    void CreateListing(Member new_member)
+    {
+        GameObject new_listing = Instantiate(member_listing);
+        Member.MemberInfo info = new_member.GetInfo();
+        new_listing.transform.GetChild(1).GetComponent<Text>().text = info.name;
+        new_listing.transform.SetParent(members_list_panel.transform);
+    }
 
     public void ActivateQuestsPanel()
     {

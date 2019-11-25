@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    Queue<CharacterManager> release_queue;
+    Queue<Member> release_queue;
 
-    List<CharacterManager> agents;
+    List<Member> agents;
 
     public GameObject bubble;
     public AudioSource sound;
@@ -16,8 +16,8 @@ public class Building : MonoBehaviour
 
     void Awake()
     {
-        agents = new List<CharacterManager>();
-        release_queue = new Queue<CharacterManager>();
+        agents = new List<Member>();
+        release_queue = new Queue<Member>();
     }
 
 
@@ -29,7 +29,7 @@ public class Building : MonoBehaviour
             exit_timer += Time.deltaTime;
             if (exit_timer >= exit_time)
             {
-                CharacterManager temp_agent = release_queue.Dequeue();
+                Member temp_agent = release_queue.Dequeue();
                 ReleaseAgent(temp_agent);
 
                 exit_timer = 0.0f;
@@ -37,15 +37,15 @@ public class Building : MonoBehaviour
         }
     }
 
-    public void EnterBuilding(CharacterManager agent)
+    public void EnterBuilding(Member agent)
     {
         agents.Add(agent);
         BubbleCheck();
     }
 
-    public void RequestExit(CharacterManager agent)
+    public void RequestExit(Member agent)
     {
-        foreach (CharacterManager a in agents)
+        foreach (Member a in agents)
         {
             if(a == agent)
             {
@@ -54,7 +54,7 @@ public class Building : MonoBehaviour
         }
     }
 
-    void ReleaseAgent(CharacterManager agent)
+    void ReleaseAgent(Member agent)
     {
         agents.Remove(agent);
         agent.OnBuildingExit();
