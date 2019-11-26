@@ -107,26 +107,23 @@ public class Member : MonoBehaviour
     public string GetStateString()
     {
         string ret = "Unknown";
-        switch (current_action)
+        switch (state)
         {
-            case CHARACTER_ACTION.ENTER_TAVERN:
-                ret = "Tavern";
+            case MEMBER_STATE.WORK:
+                ret = GetMemberWorkString();
                 break;
-            case CHARACTER_ACTION.ENTER_GUILD_HALL:
-                ret = "Guild Hall";
+            case MEMBER_STATE.SLEEP:
+                ret = "Sleeping";
                 break;
-            case CHARACTER_ACTION.BLACKSMITH:
-                ret = "Blacksmith";
-                break;
-            case CHARACTER_ACTION.TYPE_ACTION:
-                ret = GetTypeActionString();
+            case MEMBER_STATE.QUEST:
+                ret = "On Quest";
                 break;
         }
 
         return ret;
     }
 
-    virtual protected string GetTypeActionString() { return "Unknown"; }
+    virtual protected string GetMemberWorkString() { return "Unknown"; }
     public MemberInfo GetInfo()
     {
         return info;

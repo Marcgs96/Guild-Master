@@ -42,7 +42,7 @@ public class MageMember : Member
         } 
     }
 
-    override protected string GetTypeActionString()
+    override protected string GetMemberWorkString()
     {
         return "Making Potions";
     }

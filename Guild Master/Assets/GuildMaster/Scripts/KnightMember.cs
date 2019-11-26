@@ -42,7 +42,7 @@ public class KnightMember : Member
         }
     }
 
-    override protected string GetTypeActionString()
+    override protected string GetMemberWorkString()
     {
         return "Training";
     }

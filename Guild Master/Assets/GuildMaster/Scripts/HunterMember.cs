@@ -42,7 +42,7 @@ public class HunterMember : Member
         }
     }
 
-    override protected string GetTypeActionString()
+    override protected string GetMemberWorkString()
     {
         return "Hunting";
     }

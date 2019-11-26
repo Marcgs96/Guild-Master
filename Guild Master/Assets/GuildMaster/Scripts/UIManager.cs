@@ -249,11 +249,11 @@ public class UIManager : MonoBehaviour
 
         //Info
         Transform info_panel = member_info_panel.transform.GetChild(1);
-        info_panel.GetChild(0).GetComponentInChildren<Text>().text = info.lvl.ToString();
-        info_panel.GetChild(1).GetComponentInChildren<Text>().text = info.equipment_lvl.ToString();
-        info_panel.GetChild(2).GetComponentInChildren<Text>().text = info.GetTypeString();
-        info_panel.GetChild(3).GetComponentInChildren<Text>().text = info.xp.ToString();
-        info_panel.GetChild(4).GetComponentInChildren<Text>().text = member.GetStateString();
+        info_panel.GetChild(0).GetChild(0).GetComponent<Text>().text = info.lvl.ToString();
+        info_panel.GetChild(1).GetChild(0).GetComponent<Text>().text = info.equipment_lvl.ToString();
+        info_panel.GetChild(2).GetChild(0).GetComponent<Text>().text = info.GetTypeString();
+        info_panel.GetChild(3).GetChild(0).GetComponent<Text>().text = info.xp.ToString();
+        info_panel.GetChild(4).GetChild(0).GetComponent<Text>().text = member.GetStateString();
 
         //Buttons
     }
