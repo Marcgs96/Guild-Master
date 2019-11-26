@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Member : MonoBehaviour
 {
-    protected enum CHARACTER_ACTION { NONE, ENTER_TAVERN, ENTER_GUILD_HALL, TYPE_ACTION, BLACKSMITH };
-    protected CHARACTER_ACTION current_action;
+    public enum MEMBER_STATE { QUEST, SLEEP, WORK, REST, NONE};
 
     public enum MEMBER_TYPE { KNIGHT, HUNTER, MAGE, NONE };
+
     public struct MemberInfo
     {
         public string name;
@@ -17,6 +17,7 @@ public class Member : MonoBehaviour
     }
 
     protected MemberInfo info;
+    public MEMBER_STATE state = MEMBER_STATE.SLEEP;
 
     protected Move move;
     protected Animator anim;
@@ -37,18 +38,15 @@ public class Member : MonoBehaviour
         move = this.GetComponent<Move>();
         anim = this.GetComponent<Animator>();
 
-        DayNightCicle.OnHourChange += ChangeAction;
+        DayNightCicle.OnHourChange += ChangeState;
 
         steer = GetComponent<SteeringFollowNavMeshPath>();
-        steer.OnReachEnd += DoAction;
 
         action_bubble = transform.Find("ActionBubble").gameObject;
         blacksmith_bubble = transform.Find("BlacksmithBubble").gameObject;
 
         //Setup state
         anim.SetInteger("char_type", (int)info.type);
-        current_action = CHARACTER_ACTION.ENTER_GUILD_HALL;
-        DoAction();
     }
 
     // Update is called once per frame
@@ -57,58 +55,8 @@ public class Member : MonoBehaviour
         anim.SetFloat("speed", move.current_velocity.magnitude);
     }
 
-    virtual protected void ChangeAction(uint hour) { }
+    virtual protected void ChangeState(uint hour) { }
     virtual public void GenerateInfo() { }
-
-    virtual public void DoAction()
-    {
-        switch (current_action)
-        {
-            case CHARACTER_ACTION.ENTER_TAVERN:
-                GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.TAVERN].EnterBuilding(this);
-                OnBuildingEnter();
-                break;
-            case CHARACTER_ACTION.ENTER_GUILD_HALL:
-                GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL].EnterBuilding(this);
-                OnBuildingEnter();
-                break;
-            case CHARACTER_ACTION.BLACKSMITH:
-                blacksmith_bubble.SetActive(true);
-                break;
-            case CHARACTER_ACTION.TYPE_ACTION:
-                GameManager.manager.audios[(int)info.type].enabled = true;
-                anim.SetBool("type_action", true);
-                action_bubble.SetActive(true);
-                weapon.SetActive(true);
-                break;
-            default:
-                break;
-        }
-    }
-
-    virtual public void StopAction()
-    {
-        switch (current_action)
-        {
-            case CHARACTER_ACTION.ENTER_TAVERN:
-                GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.TAVERN].RequestExit(this);
-                break;
-            case CHARACTER_ACTION.ENTER_GUILD_HALL:
-                GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL].RequestExit(this);
-                break;
-            case CHARACTER_ACTION.BLACKSMITH:
-                blacksmith_bubble.SetActive(false);
-                break;
-            case CHARACTER_ACTION.TYPE_ACTION:
-                GameManager.manager.audios[(int)info.type].enabled = false;
-                anim.SetBool("type_action", false);
-                action_bubble.SetActive(false);
-                weapon.SetActive(false);
-                break;
-            default:
-                break;
-        }
-    }
 
     public void OnBuildingExit()
     {

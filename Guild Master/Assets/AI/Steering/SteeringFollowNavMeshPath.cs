@@ -16,7 +16,7 @@ public class SteeringFollowNavMeshPath : Steering
 
     public float min_distance;
     int current_point = 1;
-    bool once = false;
+    bool reached = false;
 
     public delegate void ReachAction();
     public event ReachAction OnReachEnd;
@@ -49,21 +49,26 @@ public class SteeringFollowNavMeshPath : Steering
             {
                 if (arrive.Steer(path.corners[current_point]))
                 {
-                    if (!once)
-                    {
-                        OnReachEnd();
-                        once = true;
-                    }
+                    reached = true;
                 }
             }
         }
     }
 
-    public void CreatePath(Vector3 pos)
+    public bool CreatePath(Vector3 pos)
     {
+        Vector3 distance = pos - transform.position;
+
+        if (distance.magnitude < min_distance)
+        {
+            return false;
+        }
+
         current_point = 1;
-        once = false;
+        reached = false;
         NavMesh.CalculatePath(transform.position, pos, (1 << NavMesh.GetAreaFromName("Walkable")) | (1 << NavMesh.GetAreaFromName("OffRoad")), path);
+
+        return true;
     }
 
     public Vector3 GetPathPosition()
@@ -74,5 +79,17 @@ public class SteeringFollowNavMeshPath : Steering
         }
 
         return Vector3.zero;
+    }
+
+    public bool ReachedDestination()
+    {
+        return reached;
+    }
+
+    public void ClearPath()
+    {
+        path.ClearCorners();
+        reached = false;
+        current_point = 1;
     }
 }
