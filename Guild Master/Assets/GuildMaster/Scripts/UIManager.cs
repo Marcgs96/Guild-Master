@@ -55,6 +55,7 @@ public class UIManager : MonoBehaviour
         quest_preparation.SetActive(true);
 
         SetupQuestPreparation(new_quest);
+        GameManager.manager.quests.SelectQuest(new_quest);
 
         quests_list.SetActive(false);
     }
