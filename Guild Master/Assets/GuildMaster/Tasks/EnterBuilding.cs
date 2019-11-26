@@ -10,11 +10,6 @@ namespace GuildMaster{
     {
         public Building building;
 
-        protected override string info
-        {
-            get { return "Enters " + building.name; }
-        }
-
         protected override string OnInit(){
 			return null;
 		}
@@ -22,6 +17,7 @@ namespace GuildMaster{
 		protected override void OnExecute(){
             building.EnterBuilding(agent);
             agent.OnBuildingEnter();
+            agent.OnNewTask();
 		}
 
 		protected override void OnUpdate(){

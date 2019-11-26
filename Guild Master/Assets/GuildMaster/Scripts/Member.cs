@@ -73,6 +73,13 @@ public class Member : MonoBehaviour
     }
 
     virtual protected void ChangeState(uint hour) { }
+    public void ChangeState(MEMBER_STATE state)
+    {
+        if (this.state == MEMBER_STATE.QUEST || (this.state == MEMBER_STATE.SLEEP && state != MEMBER_STATE.QUEST))
+            return;
+
+        this.state = state;
+    }
     virtual public void GenerateInfo() { }
 
     public void OnBuildingExit()
@@ -111,14 +118,19 @@ public class Member : MonoBehaviour
                 ret = GetMemberWorkString();
                 break;
             case MEMBER_STATE.SLEEP:
-                ret = "Sleeping";
+                ret = steer.ReachedDestination() ? "Sleeping": "Going to Sleep";
                 break;
             case MEMBER_STATE.QUEST:
-                ret = "On Quest";
+                ret = steer.ReachedDestination() ? "On Quest" : "Going to the Dungeon";
                 break;
         }
 
         return ret;
+    }
+
+    public void OnNewTask()
+    {
+        GameManager.manager.ui.MemberActionChange(this);
     }
 
     virtual protected string GetMemberWorkString() { return "Unknown"; }

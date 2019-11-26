@@ -17,6 +17,7 @@ namespace GuildMaster{
 
 		protected override void OnExecute(){
             if(!agent.CreatePath(target.transform.position)) EndAction(true);
+            agent.gameObject.GetComponent<Member>().OnNewTask();
         }
 
 		protected override void OnUpdate(){
@@ -25,6 +26,7 @@ namespace GuildMaster{
 
 		protected override void OnStop(){
             agent.ClearPath();
+            agent.gameObject.GetComponent<Member>().OnNewTask();
         }
 
         protected override void OnPause(){

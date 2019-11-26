@@ -109,6 +109,16 @@ public class UIManager : MonoBehaviour
         send_button.GetComponent<Button>().interactable = false;
     }
 
+    public void RestButton()
+    {
+        selected_member.ChangeState(Member.MEMBER_STATE.REST);
+    }
+
+    public void WorkButton()
+    {
+        selected_member.ChangeState(Member.MEMBER_STATE.WORK);
+    }
+
     public void SendParty()
     {
         GameManager.manager.quests.StartQuest();
@@ -256,5 +266,14 @@ public class UIManager : MonoBehaviour
         info_panel.GetChild(4).GetChild(0).GetComponent<Text>().text = member.GetStateString();
 
         //Buttons
+    }
+
+    public void MemberActionChange(Member member)
+    {
+        if(member == selected_member)
+        {
+            Transform info_panel = member_info_panel.transform.GetChild(1);
+            info_panel.GetChild(4).GetChild(0).GetComponent<Text>().text = member.GetStateString();
+        }
     }
 }

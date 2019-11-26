@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.036716342, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.9056604, g: 0.77881724, b: 0.12388753, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 2045466834628358288}
   - component: {fileID: 2045466834628358295}
   m_Layer: 5
-  m_Name: HealthSlider
+  m_Name: StaminaSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

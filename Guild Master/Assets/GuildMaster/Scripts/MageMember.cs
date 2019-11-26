@@ -13,6 +13,9 @@ public class MageMember : Member
     }
     protected override void ChangeState(uint hour)
     {
+        if (state == MEMBER_STATE.QUEST)
+            return;
+
         switch (hour)
         {
             case 6:

@@ -13,6 +13,9 @@ public class KnightMember : Member
     }
     protected override void ChangeState(uint hour)
     {
+        if (state == MEMBER_STATE.QUEST)
+            return;
+
         switch (hour)
         {
             case 6:
@@ -44,6 +47,6 @@ public class KnightMember : Member
 
     override protected string GetMemberWorkString()
     {
-        return "Training";
+        return steer.ReachedDestination() ? "Training" : "Going to Train";
     }
 }

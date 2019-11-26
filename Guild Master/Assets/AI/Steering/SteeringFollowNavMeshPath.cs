@@ -61,6 +61,7 @@ public class SteeringFollowNavMeshPath : Steering
 
         if (distance.magnitude < min_distance)
         {
+            reached = true;
             return false;
         }
 
@@ -89,7 +90,5 @@ public class SteeringFollowNavMeshPath : Steering
     public void ClearPath()
     {
         path.ClearCorners();
-        reached = false;
-        current_point = 1;
     }
 }

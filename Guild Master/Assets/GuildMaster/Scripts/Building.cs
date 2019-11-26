@@ -63,7 +63,7 @@ public class Building : MonoBehaviour
 
     void BubbleCheck()
     {
-        bubble.SetActive(agents.Count > 0 ? true : false);
-        sound.enabled = agents.Count > 0 ? true : false;
+        if(bubble) bubble.SetActive(agents.Count > 0 ? true : false);
+        if(sound) sound.enabled = agents.Count > 0 ? true : false;
     }
 }

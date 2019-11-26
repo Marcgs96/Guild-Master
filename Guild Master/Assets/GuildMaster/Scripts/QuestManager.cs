@@ -149,5 +149,15 @@ public class QuestManager : MonoBehaviour
     public void StartQuest()
     {
         Debug.Log("Starting Quest: " + selected_quest.name);
+
+        foreach (Member member in quest_party)
+        {
+            member.ChangeState(Member.MEMBER_STATE.QUEST);
+        }
+    }
+
+    void FinishQuest()
+    {
+
     }
 }
