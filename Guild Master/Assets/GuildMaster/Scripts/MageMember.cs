@@ -11,53 +11,35 @@ public class MageMember : Member
         info.xp = 0;
         info.type = MEMBER_TYPE.MAGE;
     }
-    protected override void ChangeAction(uint hour)
+    protected override void ChangeState(uint hour)
     {
         switch (hour)
         {
             case 6:
-                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.TAVERN].transform.position);
-                StopAction();
-                current_action = CHARACTER_ACTION.ENTER_TAVERN;
-                // go tabern
+                state = MEMBER_STATE.WORK;
+                // go tavern
                 break;
-            case 8:
-                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.MAGE_LOCATION].transform.position);
-                StopAction();
-                current_action = CHARACTER_ACTION.TYPE_ACTION;
+            case 9:
                 // go blacksmith
                 break;
-            case 11:
-                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.BLACKSMITH].transform.position);
-                StopAction();
-                current_action = CHARACTER_ACTION.BLACKSMITH;
-                //go train
-                break;
-            case 14:
-                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.TAVERN].transform.position);
-                StopAction();
-                current_action = CHARACTER_ACTION.ENTER_TAVERN;
+            case 13:
+                state = MEMBER_STATE.REST;
                 // go tabern
                 break;
-            case 16:
-                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.MAGE_LOCATION].transform.position);
-                StopAction();
-                current_action = CHARACTER_ACTION.TYPE_ACTION;
+            case 15:
                 // go train
                 break;
             case 19:
-                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.TAVERN].transform.position);
-                StopAction();
-                current_action = CHARACTER_ACTION.ENTER_TAVERN;
+                state = MEMBER_STATE.WORK;
+                // go blacksmith
+                break;
+            case 21:
                 //go tabern
                 break;
-            case 22:
-                steer.CreatePath(GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.GUILD_HALL].transform.position);
-                StopAction();
-                current_action = CHARACTER_ACTION.ENTER_GUILD_HALL;
+            case 23:
                 //go sleep
                 break;
-        }
+        } 
     }
 
     override protected string GetTypeActionString()
