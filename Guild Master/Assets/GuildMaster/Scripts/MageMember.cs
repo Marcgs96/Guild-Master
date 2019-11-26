@@ -59,4 +59,9 @@ public class MageMember : Member
                 break;
         }
     }
+
+    override protected string GetTypeActionString()
+    {
+        return "Making Potions";
+    }
 }

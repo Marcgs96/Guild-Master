@@ -5,22 +5,25 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject quests_panel;
     public GameObject guild_panel;
     public GameObject blacksmith_panel;
-    public GameObject members_list_panel;
+
 
     //quests panel stuff
+    public GameObject quests_panel;
     public GameObject quests_list;
     public GameObject quest_preparation;
     public GameObject quest_listing;
     List<GameObject> quest_listings;
 
     //members list stuff
+    public GameObject member_info_panel;
+    public GameObject members_list_panel;
     public GameObject member_listing;
     List<GameObject> member_listings;
+    Member selected_member;
 
-    //prefabs
+    //other prefabs
     public GameObject resource_prefab;
     public GameObject slot_prefab;
 
@@ -81,10 +84,19 @@ public class UIManager : MonoBehaviour
         quests_list.SetActive(true);
     }
 
+    public void CloseMemberInfoPanel()
+    {
+        member_info_panel.SetActive(false);
+    }
+
     public void OnMemberClick(Member member)
     {
-        if (quest_preparation.activeSelf)
+        if (quest_preparation.activeSelf && !GameManager.manager.quests.IsInParty(member))
             AddMemberToQuest(member);
+        else
+        {
+            ShowMemberInfo(member);
+        }
     }
 
     public void OnSlotClick(GameObject slot, Member member)
@@ -221,5 +233,28 @@ public class UIManager : MonoBehaviour
                 return;
             }
         }
+    }
+
+    void ShowMemberInfo(Member member)
+    {
+        member_info_panel.SetActive(true);
+
+        selected_member = member;
+        Member.MemberInfo info = member.GetInfo();
+        //Header
+        Transform header = member_info_panel.transform.GetChild(0);
+        header.GetComponentInChildren<Text>().text = info.name;
+        //setup image
+        //setup slider
+
+        //Info
+        Transform info_panel = member_info_panel.transform.GetChild(1);
+        info_panel.GetChild(0).GetComponentInChildren<Text>().text = info.lvl.ToString();
+        info_panel.GetChild(1).GetComponentInChildren<Text>().text = info.equipment_lvl.ToString();
+        info_panel.GetChild(2).GetComponentInChildren<Text>().text = info.GetTypeString();
+        info_panel.GetChild(3).GetComponentInChildren<Text>().text = info.xp.ToString();
+        info_panel.GetChild(4).GetComponentInChildren<Text>().text = member.GetStateString();
+
+        //Buttons
     }
 }

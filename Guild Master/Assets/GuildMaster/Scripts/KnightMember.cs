@@ -59,4 +59,9 @@ public class KnightMember : Member
                 break;
         }
     }
+
+    override protected string GetTypeActionString()
+    {
+        return "Training";
+    }
 }

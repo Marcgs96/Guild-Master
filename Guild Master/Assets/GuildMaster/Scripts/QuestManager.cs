@@ -42,49 +42,6 @@ public class QuestManager : MonoBehaviour
         GenerateQuests();
     }
 
-    void CreateQuest(QuestType type)
-    {
-        Quest quest = new Quest();
-        quest.type = type;
-        quest.name = "";
-        quest.lvl = 0;
-        quest.xp = 0;
-
-        quest.enemies = new List<QuestEnemy>();
-        quest.rewards = new Dictionary<ResourceManager.ResourceType, uint>();
-
-        switch (type)
-        {
-            case QuestType.BOUNTY:
-                quest.name = "Bounty";
-                quest.lvl = 1;
-                quest.xp = 200;
-
-                //Todo: Create function for enemy creation.
-                quest.enemies = new List<QuestEnemy>();
-                QuestEnemy enemy;
-                enemy.name = "Bobo";
-                enemy.lvl = 1;
-                enemy.type = (EnemyType) Random.Range((int)EnemyType.SKELETON, (int)EnemyType.TOTAL);
-                quest.enemies.Add(enemy);
-
-                //Todo: Create function for reward setup
-                quest.rewards = new Dictionary<ResourceManager.ResourceType, uint>();
-                quest.rewards.Add(ResourceManager.ResourceType.Gold, 250);
-                quest.rewards.Add(ResourceManager.ResourceType.Crown, 5);
-
-                break;
-            case QuestType.DUNGEON:
-                //Todo
-                break;
-            case QuestType.RAID:
-                //todo
-                break;
-        }
-
-        OnQuestAdd?.Invoke(quest);
-    }
-
     public uint GetMemberSizeFromType(QuestType type)
     {
         switch (type)
@@ -108,8 +65,64 @@ public class QuestManager : MonoBehaviour
     void GenerateQuests()
     {
         //Todo: Create random quests depending of set parameteres like highest lvl member, amount of members, etc.
-        CreateQuest(QuestType.BOUNTY);
-        CreateQuest(QuestType.BOUNTY);
+        CreateQuest(QuestType.BOUNTY, 1);
+        CreateQuest(QuestType.DUNGEON, 2);
+    }
+
+    void CreateQuest(QuestType type, uint lvl)
+    {
+        Quest quest = new Quest();
+        quest.type = type;
+        quest.lvl = lvl;
+
+        quest.enemies = new List<QuestEnemy>();
+        quest.rewards = new Dictionary<ResourceManager.ResourceType, uint>();
+
+        switch (type)
+        {
+            case QuestType.BOUNTY:
+                quest.name = "Bounty";
+                quest.xp = 200;
+
+                quest.enemies.Add(CreateEnemy(lvl));
+
+                //Todo: Create function for reward setup
+                quest.rewards.Add(ResourceManager.ResourceType.Gold, 250);
+                quest.rewards.Add(ResourceManager.ResourceType.Crown, 5);
+
+                break;
+            case QuestType.DUNGEON:
+                quest.name = "Dungeon";
+                quest.xp = 500;
+
+                for(int i = 0; i < GetMemberSizeFromType(type); i++)
+                {
+                    quest.enemies.Add(CreateEnemy(lvl));
+                }
+
+                //Todo: Create function for reward setup
+                quest.rewards.Add(ResourceManager.ResourceType.Gold, 250);
+                quest.rewards.Add(ResourceManager.ResourceType.Crown, 5);
+                quest.rewards.Add(ResourceManager.ResourceType.Shield, 5);
+
+                break;
+            case QuestType.RAID:
+                //todo
+                break;
+        }
+
+        OnQuestAdd?.Invoke(quest);
+    }
+
+    QuestEnemy CreateEnemy(uint lvl)
+    {
+        //Todo: improve enemy creation related with quest type and difficulty.
+        QuestEnemy enemy;
+        enemy.name = "Bobo";
+        enemy.lvl = lvl;
+        enemy.type = (EnemyType)Random.Range((int)EnemyType.SKELETON, (int)EnemyType.TOTAL);
+
+        return enemy;
     }
 
     public void SelectQuest(Quest new_quest)
@@ -126,6 +139,11 @@ public class QuestManager : MonoBehaviour
     public void RemoveMemberFromQuest(Member old_member)
     {
         quest_party.Remove(old_member);
+    }
+
+    public bool IsInParty(Member member)
+    {
+        return quest_party.Contains(member);
     }
 
     public void StartQuest()

@@ -60,4 +60,9 @@ public class HunterMember : Member
                 break;
         }
     }
+
+    override protected string GetTypeActionString()
+    {
+        return "Hunting";
+    }
 }
