@@ -20,8 +20,8 @@ public class MemberManager : MonoBehaviour
     {
         members = new List<Member>();
         AddMember(Member.MEMBER_TYPE.KNIGHT);
-        AddMember(Member.MEMBER_TYPE.HUNTER);
-        AddMember(Member.MEMBER_TYPE.MAGE);
+        //AddMember(Member.MEMBER_TYPE.HUNTER);
+        //AddMember(Member.MEMBER_TYPE.MAGE);
     }
 
     public void AddMember(Member.MEMBER_TYPE type)

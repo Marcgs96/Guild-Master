@@ -6,9 +6,8 @@ namespace GuildMaster{
 
 	[Category("Custom")]
 	[Description("Enters building ")]
-	public class EnterBuilding : ActionTask{
-
-        Member member;
+	public class EnterBuilding : ActionTask<Member>
+    {
         public Building building;
 
         protected override string info
@@ -21,8 +20,8 @@ namespace GuildMaster{
 		}
 
 		protected override void OnExecute(){
-            building.EnterBuilding(member);
-            member.OnBuildingEnter();
+            building.EnterBuilding(agent);
+            agent.OnBuildingEnter();
 		}
 
 		protected override void OnUpdate(){
@@ -30,7 +29,7 @@ namespace GuildMaster{
 		}
 
 		protected override void OnStop(){
-            building.RequestExit(member);
+            building.RequestExit(agent);
         }
 
         protected override void OnPause(){

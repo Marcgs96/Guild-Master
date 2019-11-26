@@ -1145,7 +1145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3920339cbf46604681d4d2b9d34953c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 4
+  state: 1
+  steer: {fileID: 0}
   weapon: {fileID: 22293785240634596}
   model: {fileID: 22293783864276682}
 --- !u!114 &-1894449602377568474

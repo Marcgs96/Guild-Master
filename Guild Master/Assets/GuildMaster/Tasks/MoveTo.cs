@@ -7,33 +7,27 @@ namespace GuildMaster{
 
 	[Category("Custom")]
 	[Description("Moves the agent to the specified position.")]
-	public class MoveTo : ActionTask{
-
+	public class MoveTo : ActionTask<SteeringFollowNavMeshPath>
+    {
         public GameObject target;
-        SteeringFollowNavMeshPath path;
-
-        protected override string info
-        {
-            get { return "MoveTo " + target.name; }
-        }
 
         protected override string OnInit(){
 			return null;
-		}
+        }
 
 		protected override void OnExecute(){
-            if(!path.CreatePath(target.transform.position)) EndAction(true);
+            if(!agent.CreatePath(target.transform.position)) EndAction(true);
         }
 
 		protected override void OnUpdate(){
-            if (path.ReachedDestination()) EndAction(true);
+            if (agent.ReachedDestination()) EndAction(true);
         }
 
 		protected override void OnStop(){
-            path.ClearPath();
-		}
+            agent.ClearPath();
+        }
 
-		protected override void OnPause(){
+        protected override void OnPause(){
             OnStop();
         }
 	}

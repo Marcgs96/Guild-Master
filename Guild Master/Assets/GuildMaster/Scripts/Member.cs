@@ -5,9 +5,7 @@ using UnityEngine;
 public class Member : MonoBehaviour
 {
     public enum MEMBER_STATE { QUEST, SLEEP, WORK, REST, NONE};
-
     public enum MEMBER_TYPE { KNIGHT, HUNTER, MAGE, NONE };
-
     public struct MemberInfo
     {
         public string name;
@@ -40,7 +38,7 @@ public class Member : MonoBehaviour
 
     protected Move move;
     protected Animator anim;
-    protected SteeringFollowNavMeshPath steer;
+    public SteeringFollowNavMeshPath steer;
     protected Collider coll;
 
     public GameObject weapon;

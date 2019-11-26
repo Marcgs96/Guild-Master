@@ -23,7 +23,7 @@ public class HunterMember : Member
                 // go blacksmith
                 break;
             case 13:
-                state = MEMBER_STATE.REST;
+                state = MEMBER_STATE.SLEEP;
                 // go tabern
                 break;
             case 15:
