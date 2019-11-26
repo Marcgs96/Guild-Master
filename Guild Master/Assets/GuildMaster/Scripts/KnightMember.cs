@@ -41,4 +41,9 @@ public class KnightMember : Member
                 break;
         }
     }
+
+    override protected string GetMemberWorkString()
+    {
+        return "Training";
+    }
 }

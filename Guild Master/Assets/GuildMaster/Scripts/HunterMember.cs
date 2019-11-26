@@ -41,4 +41,9 @@ public class HunterMember : Member
                 break;
         }
     }
+
+    override protected string GetMemberWorkString()
+    {
+        return "Hunting";
+    }
 }

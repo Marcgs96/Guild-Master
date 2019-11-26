@@ -13,7 +13,26 @@ public class Member : MonoBehaviour
         public string name;
         public uint lvl;
         public uint xp;
+        public uint equipment_lvl;
         public MEMBER_TYPE type;
+
+        public string GetTypeString()
+        {
+            string ret = "Unknown";
+            switch (type)
+            {
+                case MEMBER_TYPE.KNIGHT:
+                    ret = "Knight";
+                    break;
+                case MEMBER_TYPE.HUNTER:
+                    ret = "Hunter";
+                    break;
+                case MEMBER_TYPE.MAGE:
+                    ret = "Mage";
+                    break;
+            }
+            return ret;
+        }
     }
 
     protected MemberInfo info;
@@ -84,6 +103,27 @@ public class Member : MonoBehaviour
             coll.enabled = true;
         }
     }
+
+    public string GetStateString()
+    {
+        string ret = "Unknown";
+        switch (state)
+        {
+            case MEMBER_STATE.WORK:
+                ret = GetMemberWorkString();
+                break;
+            case MEMBER_STATE.SLEEP:
+                ret = "Sleeping";
+                break;
+            case MEMBER_STATE.QUEST:
+                ret = "On Quest";
+                break;
+        }
+
+        return ret;
+    }
+
+    virtual protected string GetMemberWorkString() { return "Unknown"; }
     public MemberInfo GetInfo()
     {
         return info;
