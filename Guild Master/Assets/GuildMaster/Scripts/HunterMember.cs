@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class HunterMember : Member
 {
+    public GameObject target_animal;
+    public AnimalSpawner spawner;
+
     override public void GenerateInfo()
     {
         info.name = "Huntard";
@@ -48,5 +51,10 @@ public class HunterMember : Member
     override protected string GetMemberWorkString()
     {
         return "Hunting";
+    }
+
+    public void RequestAnimal()
+    {
+        target_animal = spawner.SpawnAnimal(this);
     }
 }

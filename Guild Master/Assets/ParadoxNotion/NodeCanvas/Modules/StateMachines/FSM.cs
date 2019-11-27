@@ -4,257 +4,241 @@ using NodeCanvas.Framework;
 using ParadoxNotion;
 using ParadoxNotion.Design;
 using UnityEngine;
+using Logger = ParadoxNotion.Services.Logger;
+
+namespace NodeCanvas.StateMachines
+{
+
+    /// Use FSMs to create state like behaviours
+    [GraphInfo(
+        packageName = "NodeCanvas",
+        docsURL = "http://nodecanvas.paradoxnotion.com/documentation/",
+        resourcesURL = "http://nodecanvas.paradoxnotion.com/downloads/",
+        forumsURL = "http://nodecanvas.paradoxnotion.com/forums-page/"
+        )]
+    [CreateAssetMenu(menuName = "ParadoxNotion/NodeCanvas/FSM Asset")]
+    public class FSM : Graph
+    {
+
+        private bool hasInitialized;
+
+        private List<IUpdatable> updatableNodes;
+        private List<AnyState> anyStates;
+        private List<ConcurrentState> concurentStates;
+        private IStateCallbackReceiver[] callbackReceivers;
+
+        public event System.Action<IState> onStateEnter;
+        public event System.Action<IState> onStateUpdate;
+        public event System.Action<IState> onStateExit;
+        public event System.Action<IState> onStateTransition;
+
+        public FSMState currentState { get; private set; }
+        public FSMState previousState { get; private set; }
+
+        ///The current state name. Null if none
+        public string currentStateName {
+            get { return currentState != null ? currentState.name : null; }
+        }
+
+        ///The previous state name. Null if none
+        public string previousStateName {
+            get { return previousState != null ? previousState.name : null; }
+        }
 
 
-namespace NodeCanvas.StateMachines{
-
-	/// <summary>
-	/// Use FSMs to create state like behaviours
-	/// </summary>
-	[GraphInfo(
-		packageName = "NodeCanvas",
-		docsURL = "http://nodecanvas.paradoxnotion.com/documentation/",
-		resourcesURL = "http://nodecanvas.paradoxnotion.com/downloads/",
-		forumsURL = "http://nodecanvas.paradoxnotion.com/forums-page/"
-		)]
-	public class FSM : Graph{
-
-		private bool hasInitialized;
-
-		private List<IUpdatable> updatableNodes;
-		private List<AnyState> anyStates;
-		private List<ConcurrentState> concurentStates;
-
-		private event System.Action<IState> CallbackEnter;
-		private event System.Action<IState> CallbackStay;
-		private event System.Action<IState> CallbackExit;
-
-		public FSMState currentState{get; private set;}
-		public FSMState previousState{get; private set;}
-
-		///The current state name. Null if none
-		public string currentStateName{
-			get {return currentState != null? currentState.name : null; }
-		}
-
-		///The previous state name. Null if none
-		public string previousStateName{
-			get	{return previousState != null? previousState.name : null; }
-		}
-
-		public override System.Type baseNodeType{ get {return typeof(FSMState);} }
-		public override bool requiresAgent{	get {return true;} }
-		public override bool requiresPrimeNode { get {return true;} }
-		public override bool autoSort{ get {return false;} }
-		public override bool useLocalBlackboard{get {return false;}}
+        public override System.Type baseNodeType { get { return typeof(FSMState); } }
+        public override bool requiresAgent { get { return true; } }
+        public override bool requiresPrimeNode { get { return true; } }
+        public override bool isTree { get { return false; } }
+        public override bool useLocalBlackboard { get { return false; } }
+        sealed public override bool canAcceptVariableDrops { get { return false; } }
 
 
-		protected override void OnGraphStarted(){
+        protected override void OnGraphStarted() {
 
-			if (!hasInitialized){
-				
-				hasInitialized = true;
+            if ( !hasInitialized ) {
 
-				GatherDelegates();
-				
-				updatableNodes  = new List<IUpdatable>();
-				anyStates       = new List<AnyState>();
-				concurentStates = new List<ConcurrentState>();
+                hasInitialized = true;
 
-				for (var i = 0; i < allNodes.Count; i++){
-					var node = allNodes[i];
-					if (node is IUpdatable){
-						updatableNodes.Add((IUpdatable)node);
-					}
-					if (node is AnyState){
-						anyStates.Add((AnyState)node);
-						(node as AnyState).Execute(agent, blackboard);
-					}
-					if (node is ConcurrentState){
-						concurentStates.Add((ConcurrentState)node);
-						(node as ConcurrentState).Execute(agent, blackboard);
-					}
-				}
-			
-			} else {
+                GatherCallbackReceivers();
 
-				//Trigger AnyStates
-				for (var i = 0; i < anyStates.Count; i++){
-					anyStates[i].Execute(agent, blackboard);
-				}
+                updatableNodes = new List<IUpdatable>();
+                anyStates = new List<AnyState>();
+                concurentStates = new List<ConcurrentState>();
 
-				//Trigger ConcurrentStates
-				for (var i = 0; i < concurentStates.Count; i++){
-					concurentStates[i].Execute(agent, blackboard);
-				}
+                for ( var i = 0; i < allNodes.Count; i++ ) {
+                    var node = allNodes[i] as FSMState;
+                    if ( node == null ) {
+                        continue;
+                    }
+                    if ( node is IUpdatable ) {
+                        updatableNodes.Add((IUpdatable)node);
+                    }
+                    if ( node is AnyState ) {
+                        anyStates.Add((AnyState)node);
+                    }
+                    if ( node is ConcurrentState ) {
+                        concurentStates.Add((ConcurrentState)node);
+                    }
+                }
+            }
 
-			}
+            //Trigger AnyStates
+            for ( var i = 0; i < anyStates.Count; i++ ) {
+                anyStates[i].Execute(agent, blackboard);
+            }
 
-			//enter the last or "start" state
-			EnterState(previousState == null? (FSMState)primeNode : previousState);
-		}
+            //Trigger ConcurrentStates
+            for ( var i = 0; i < concurentStates.Count; i++ ) {
+                concurentStates[i].Execute(agent, blackboard);
+            }
 
-		protected override void OnGraphUnpaused(){
-			//enter the last or "start" state
-			EnterState(previousState == null? (FSMState)primeNode : previousState);			
-		}
+            //Enter the last or "start" state
+            EnterState(previousState == null ? (FSMState)primeNode : previousState);
+        }
 
-		protected override void OnGraphUpdate(){
+        protected override void OnGraphUnpaused() {
+            //Enter the last or "start" state
+            EnterState(previousState == null ? (FSMState)primeNode : previousState);
+        }
 
-			if (currentState == null){
-				//Debug.LogError("Current FSM State is or became null. Stopping FSM...");
-				Stop(false);
-				return;
-			}
+        protected override void OnGraphUpdate() {
 
-			//do this first. This automaticaly stops the graph if the current state is finished and has no transitions
-			if (currentState.status != Status.Running && currentState.outConnections.Count == 0){
-				if ( updatableNodes == null || updatableNodes.Count == 0 || !updatableNodes.Any(n => n is AnyState) ){
-					Stop(true);
-					return;
-				}
-			}
+            //if null state, stop.
+            if ( currentState == null ) {
+                Stop(false);
+                return;
+            }
 
-			//Update AnyStates and ConcurentStates
-			for (var i = 0; i < updatableNodes.Count; i++){
-				updatableNodes[i].Update();
-			}
+            //if nowhere else to go, stop.
+            if ( currentState.status != Status.Running && currentState.outConnections.Count == 0 ) {
+                if ( anyStates.Count == 0 ) {
+                    Stop(true);
+                    return;
+                }
+            }
 
-			//Update current state
-			currentState.Update();
-			
-			if (CallbackStay != null && currentState != null && currentState.status == Status.Running){
-				CallbackStay(currentState);
-			}
-		}
+            //Update AnyStates and ConcurentStates
+            for ( var i = 0; i < updatableNodes.Count; i++ ) {
+                updatableNodes[i].Update();
+            }
 
-		protected override void OnGraphStoped(){
-			if (currentState != null){
-				if (CallbackExit != null){
-					CallbackExit(currentState);
-				}
-				currentState.Finish();
-				currentState.Reset();
-			}
+            if ( currentState != null ) {
+                //Update current state
+                currentState.Update();
+                if ( onStateUpdate != null && currentState.status == Status.Running ) {
+                    onStateUpdate(currentState);
+                }
+            }
+        }
 
-			previousState = null;
-			currentState = null;
-		}
+        protected override void OnGraphStoped() {
+            if ( currentState != null ) {
+                if ( onStateExit != null ) {
+                    onStateExit(currentState);
+                }
+            }
 
-		protected override void OnGraphPaused(){
-			previousState = currentState;
-			currentState = null;
-		}
+            previousState = null;
+            currentState = null;
+        }
 
-		///Enter a state providing the state itself
-		public bool EnterState(FSMState newState){
+        protected override void OnGraphPaused() {
+            previousState = currentState;
+            currentState = null;
+        }
 
-			if (!isRunning){
-				Debug.LogWarning("Tried to EnterState on an FSM that was not running", this);
-				return false;
-			}
+        ///Enter a state providing the state itself
+        public bool EnterState(FSMState newState) {
 
-			if (newState == null){
-				Debug.LogWarning("Tried to Enter Null State");
-				return false;
-			}
+            if ( !isRunning ) {
+                Logger.LogWarning("Tried to EnterState on an FSM that was not running", "Execution", this);
+                return false;
+            }
 
-			if (currentState != null){	
+            if ( newState == null ) {
+                Logger.LogWarning("Tried to Enter Null State", "Execution", this);
+                return false;
+            }
 
-				if (CallbackExit != null){
-					CallbackExit(currentState);
-				}
+            if ( currentState != null ) {
 
-				currentState.Finish();
-				currentState.Reset();
+                if ( onStateExit != null ) {
+                    onStateExit(currentState);
+                }
 
-				#if UNITY_EDITOR //Done for visualizing in editor
-				for (var i = 0; i < currentState.inConnections.Count; i++){
-					currentState.inConnections[i].status = Status.Resting;
-				}
-				#endif
-			}
+                currentState.Reset(false);
 
-			previousState = currentState;
-			currentState = newState;
+#if UNITY_EDITOR
+                //Done for visualizing in editor
+                for ( var i = 0; i < currentState.inConnections.Count; i++ ) {
+                    currentState.inConnections[i].status = Status.Resting;
+                }
+#endif
+            }
 
-			if (CallbackEnter != null){
-				CallbackEnter(currentState);
-			}
+            previousState = currentState;
+            currentState = newState;
 
-			currentState.Execute(agent, blackboard);
-			return true;
-		}
+            if ( onStateTransition != null ) {
+                onStateTransition(currentState);
+            }
 
-		///Trigger a state to enter by it's name. Returns the state found and entered if any
-		public FSMState TriggerState(string stateName){
+            if ( onStateEnter != null ) {
+                onStateEnter(currentState);
+            }
 
-			var state = GetStateWithName(stateName);
-			if (state != null){
-				EnterState(state);
-				return state;
-			}
+            currentState.Execute(agent, blackboard);
+            return true;
+        }
 
-			Debug.LogWarning("No State with name '" + stateName + "' found on FSM '" + name + "'");
-			return null;
-		}
+        ///Trigger a state to enter by it's name. Returns the state found and entered if any
+        public FSMState TriggerState(string stateName) {
 
-		///Get all State Names
-		public string[] GetStateNames(){
-			return allNodes.Where(n => n.allowAsPrime).Select(n => n.name).ToArray();
-		}
+            var state = GetStateWithName(stateName);
+            if ( state != null ) {
+                EnterState(state);
+                return state;
+            }
 
-		///Get a state by it's name
-		public FSMState GetStateWithName(string name){
-			return (FSMState)allNodes.Find(n => n.allowAsPrime && n.name == name);
-		}
+            Logger.LogWarning("No State with name '" + stateName + "' found on FSM '" + name + "'", "Execution", this);
+            return null;
+        }
 
-		//Gather and creates delegates from MonoBehaviours on agents that implement required methods
-		void GatherDelegates(){
+        ///Get all State Names
+        public string[] GetStateNames() {
+            return allNodes.Where(n => n.allowAsPrime).Select(n => n.name).ToArray();
+        }
 
-			var monos = agent.gameObject.GetComponents<MonoBehaviour>();
-			for (var i = 0; i < monos.Length; i++){
-				var mono = monos[i];
-				var args = new System.Type[]{typeof(IState)};
-				var enterMethod = mono.GetType().RTGetMethod("OnStateEnter", args);
-				var stayMethod = mono.GetType().RTGetMethod("OnStateUpdate", args);
-				var exitMethod = mono.GetType().RTGetMethod("OnStateExit", args);
+        ///Get a state by it's name
+        public FSMState GetStateWithName(string name) {
+            return (FSMState)allNodes.Find(n => n.allowAsPrime && n.name == name);
+        }
 
-				if (enterMethod != null){
-					try { CallbackEnter += enterMethod.RTCreateDelegate<System.Action<IState>>(mono); } //JIT
-					catch { CallbackEnter += (m)=>{ enterMethod.Invoke(mono, new object[]{m}); }; } //AOT
-				}
+        //Gather IStateCallbackReceivers and subscribe them to state events
+        void GatherCallbackReceivers() {
 
-				if (stayMethod != null){
-					try { CallbackStay += stayMethod.RTCreateDelegate<System.Action<IState>>(mono); } //JIT
-					catch { CallbackStay += (m)=>{ stayMethod.Invoke(mono, new object[]{m}); }; } //AOT
-				}
+            if ( agent == null ) { return; }
 
-				if (exitMethod != null){
-					try { CallbackExit += exitMethod.RTCreateDelegate<System.Action<IState>>(mono); } //JIT
-					catch { CallbackExit += (m)=>{ exitMethod.Invoke(mono, new object[]{m}); }; } //AOT
-				}
-			}
-		}
+            callbackReceivers = agent.gameObject.GetComponents<IStateCallbackReceiver>();
+            if ( callbackReceivers.Length > 0 ) {
+                onStateEnter += (x) => { foreach ( var m in callbackReceivers ) m.OnStateEnter(x); };
+                onStateUpdate += (x) => { foreach ( var m in callbackReceivers ) m.OnStateUpdate(x); };
+                onStateExit += (x) => { foreach ( var m in callbackReceivers ) m.OnStateExit(x); };
+            }
+        }
 
-		////////////////////////////////////////
-		///////////GUI AND EDITOR STUFF/////////
-		////////////////////////////////////////
-		#if UNITY_EDITOR
-		
-		[UnityEditor.MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/State Machine Asset", false, 0)]
-		public static void Editor_CreateGraph(){
-			var newGraph = EditorUtils.CreateAsset<FSM>(true);
-			UnityEditor.Selection.activeObject = newGraph;
-		}
 
-		[UnityEditor.MenuItem("Assets/Create/ParadoxNotion/NodeCanvas/State Machine Asset")]
-		public static void Editor_CreateGraphFix(){
-			var path = EditorUtils.GetAssetUniquePath("FSM.asset");
-			var newGraph = EditorUtils.CreateAsset<FSM>(path);
-			UnityEditor.Selection.activeObject = newGraph;
-		}
-		
-		#endif
-	}
+        ///----------------------------------------------------------------------------------------------
+        ///---------------------------------------UNITY EDITOR-------------------------------------------
+#if UNITY_EDITOR
+
+        [UnityEditor.MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/State Machine Asset", false, 0)]
+        static void Editor_CreateGraph() {
+            var newGraph = EditorUtils.CreateAsset<FSM>();
+            UnityEditor.Selection.activeObject = newGraph;
+        }
+
+#endif
+    }
 }

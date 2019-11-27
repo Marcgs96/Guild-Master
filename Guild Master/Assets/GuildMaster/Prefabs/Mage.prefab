@@ -593,6 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundGraphSerialization: 
+  boundGraphObjectReferences: []
+  firstActivation: 0
   enableAction: 0
   disableAction: 0
   _graph: {fileID: 11400000, guid: 149d095838d0f144fbc7cf377fc3ffaa, type: 2}

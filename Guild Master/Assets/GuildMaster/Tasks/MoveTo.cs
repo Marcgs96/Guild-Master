@@ -9,14 +9,14 @@ namespace GuildMaster{
 	[Description("Moves the agent to the specified position.")]
 	public class MoveTo : ActionTask<SteeringFollowNavMeshPath>
     {
-        public GameObject target;
+        public BBParameter<GameObject> target;
 
         protected override string OnInit(){
 			return null;
         }
 
 		protected override void OnExecute(){
-            if(!agent.CreatePath(target.transform.position)) EndAction(true);
+            if(!agent.CreatePath(target.value.transform.position)) EndAction(true);
             agent.gameObject.GetComponent<Member>().OnNewTask();
         }
 

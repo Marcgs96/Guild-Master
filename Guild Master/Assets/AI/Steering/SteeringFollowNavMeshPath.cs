@@ -34,8 +34,8 @@ public class SteeringFollowNavMeshPath : Steering
 
     // Update is called once per frame
     void Update()
-    {    
-        if (path.status == NavMeshPathStatus.PathComplete)
+    {
+        if (path.corners.Length > 0 && !reached)
         {
             align.Steer(path.corners[current_point]);
 
@@ -89,6 +89,7 @@ public class SteeringFollowNavMeshPath : Steering
 
     public void ClearPath()
     {
+        move.SetMovementVelocity(new Vector3(0, 0, 0));
         path.ClearCorners();
     }
 }

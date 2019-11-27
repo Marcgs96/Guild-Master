@@ -3,51 +3,54 @@ using ParadoxNotion.Design;
 using UnityEngine;
 
 
-namespace NodeCanvas.StateMachines{
+namespace NodeCanvas.StateMachines
+{
 
-	///The connection object for FSM nodes. AKA Transitions
-	public class FSMConnection : Connection, ITaskAssignable<ConditionTask> {
+    ///The connection object for FSM nodes. AKA Transitions
+    public class FSMConnection : Connection, ITaskAssignable<ConditionTask>
+    {
 
-		[SerializeField]
-		private ConditionTask _condition;
+        [SerializeField]
+        private ConditionTask _condition;
 
-		public ConditionTask condition{
-			get {return _condition;}
-			set {_condition = value;}
-		}
+        public ConditionTask condition {
+            get { return _condition; }
+            set { _condition = value; }
+        }
 
-		public Task task{
-			get {return condition;}
-			set {condition = (ConditionTask)value;}
-		}
+        public Task task {
+            get { return condition; }
+            set { condition = (ConditionTask)value; }
+        }
 
 
-		///Perform the transition disregarding whether or not the condition (if any) is valid
-		public void PerformTransition(){
-			(graph as FSM).EnterState( (FSMState)targetNode );
-		}
+        ///Perform the transition disregarding whether or not the condition (if any) is valid
+        public void PerformTransition() {
+            ( graph as FSM ).EnterState((FSMState)targetNode);
+        }
 
-		////////////////////////////////////////
-		///////////GUI AND EDITOR STUFF/////////
-		////////////////////////////////////////
-		#if UNITY_EDITOR
 
-		protected override TipConnectionStyle tipConnectionStyle{
-			get {return TipConnectionStyle.Arrow;}
-		}
+        ///----------------------------------------------------------------------------------------------
+        ///---------------------------------------UNITY EDITOR-------------------------------------------
+#if UNITY_EDITOR
 
-		protected override string GetConnectionInfo(bool isExpanded){
-			if (isExpanded){
-				return condition != null? condition.summaryInfo : "OnFinish";
-			} else {
-				return condition != null? "-||-" : "---";
-			}
-		}
+        public override ParadoxNotion.PlanarDirection direction {
+            get { return ParadoxNotion.PlanarDirection.Auto; }
+        }
 
-		protected override void OnConnectionInspectorGUI(){
-			EditorUtils.TaskField<ConditionTask>(condition, graph, (c)=> { condition = c; });
-		}
-		
-		#endif
-	}
+        public override TipConnectionStyle tipConnectionStyle {
+            get { return TipConnectionStyle.Arrow; }
+        }
+
+        protected override string GetConnectionInfo() {
+            if ( condition == null ) { return "OnFinish"; }
+            return condition.summaryInfo;
+        }
+
+        protected override void OnConnectionInspectorGUI() {
+            NodeCanvas.Editor.TaskEditor.TaskFieldMulti<ConditionTask>(condition, graph, (c) => { condition = c; });
+        }
+
+#endif
+    }
 }

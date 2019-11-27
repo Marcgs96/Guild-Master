@@ -20,8 +20,8 @@ public class MemberManager : MonoBehaviour
     {
         members = new List<Member>();
         //AddMember(Member.MEMBER_TYPE.KNIGHT);
-        //AddMember(Member.MEMBER_TYPE.HUNTER);
-        AddMember(Member.MEMBER_TYPE.MAGE);
+       // AddMember(Member.MEMBER_TYPE.HUNTER);
+       // AddMember(Member.MEMBER_TYPE.MAGE);
     }
 
     public void AddMember(Member.MEMBER_TYPE type)
@@ -48,6 +48,7 @@ public class MemberManager : MonoBehaviour
 
         new_member_go.transform.position = GameManager.manager.locations[(int)GameManager.LOCATION_TYPE.GUILD_HALL].transform.position;
         new_member = new_member_go.GetComponent<Member>();
+        new_member_go.SetActive(true);
         new_member.GenerateInfo();
 
 

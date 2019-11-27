@@ -3,47 +3,51 @@ using ParadoxNotion.Design;
 using UnityEngine;
 
 
-namespace NodeCanvas.DialogueTrees{
+namespace NodeCanvas.DialogueTrees
+{
 
-	[Name("✫ Say")]
-	[Description("Make the selected Dialogue Actor talk. You can make the text more dynamic by using variable names in square brackets\ne.g. [myVarName] or [Global/myVarName]")]
-	public class StatementNode : DTNode{
+    [Name("Say")]
+    [Description("Make the selected Dialogue Actor talk. You can make the text more dynamic by using variable names in square brackets\ne.g. [myVarName] or [Global/myVarName]")]
+    public class StatementNode : DTNode
+    {
 
-		public Statement statement = new Statement("This is a dialogue text");
+        [SerializeField]
+        private Statement statement = new Statement("This is a dialogue text");
 
-		protected override Status OnExecute(Component agent, IBlackboard bb){
-			var tempStatement = statement.BlackboardReplace(bb);
-			DialogueTree.RequestSubtitles( new SubtitlesRequestInfo(finalActor, tempStatement, OnStatementFinish) );
-			return Status.Running;
-		}
+        public override bool requireActorSelection { get { return true; } }
 
-		void OnStatementFinish(){
-			status = Status.Success;
-			DLGTree.Continue();
-		}
+        protected override Status OnExecute(Component agent, IBlackboard bb) {
+            var tempStatement = statement.BlackboardReplace(bb);
+            DialogueTree.RequestSubtitles(new SubtitlesRequestInfo(finalActor, tempStatement, OnStatementFinish));
+            return Status.Running;
+        }
 
-		////////////////////////////////////////
-		///////////GUI AND EDITOR STUFF/////////
-		////////////////////////////////////////
-		#if UNITY_EDITOR
-		
-		protected override void OnNodeGUI(){
-			var displayText = statement.text.Length > 60? statement.text.Substring(0, 60) + "..." : statement.text;
-			GUILayout.Label("\"<i> " + displayText + "</i> \"");
-		}
+        void OnStatementFinish() {
+            status = Status.Success;
+            DLGTree.Continue();
+        }
 
-		protected override void OnNodeInspectorGUI(){
+        ////////////////////////////////////////
+        ///////////GUI AND EDITOR STUFF/////////
+        ////////////////////////////////////////
+#if UNITY_EDITOR
 
-			base.OnNodeInspectorGUI();
-			var areaStyle = new GUIStyle(GUI.skin.GetStyle("TextArea"));
-			areaStyle.wordWrap = true;
-			
-			GUILayout.Label("Dialogue Text");
-			statement.text = UnityEditor.EditorGUILayout.TextArea(statement.text, areaStyle, GUILayout.Height(100));
-			statement.audio = UnityEditor.EditorGUILayout.ObjectField("Audio File", statement.audio, typeof(AudioClip), false)  as AudioClip;
-			statement.meta = UnityEditor.EditorGUILayout.TextField("Metadata", statement.meta);
-		}
+        protected override void OnNodeGUI() {
+            var displayText = statement.text.Length > 30 ? statement.text.Substring(0, 30) + "..." : statement.text;
+            GUILayout.Label("\"<i> " + displayText + "</i> \"");
+        }
 
-		#endif
-	}
+        protected override void OnNodeInspectorGUI() {
+
+            base.OnNodeInspectorGUI();
+            var areaStyle = new GUIStyle(GUI.skin.GetStyle("TextArea"));
+            areaStyle.wordWrap = true;
+
+            statement.text = UnityEditor.EditorGUILayout.TextArea(statement.text, areaStyle, GUILayout.Height(100));
+            statement.audio = UnityEditor.EditorGUILayout.ObjectField("Audio File", statement.audio, typeof(AudioClip), false) as AudioClip;
+            statement.meta = UnityEditor.EditorGUILayout.TextField("Metadata", statement.meta);
+        }
+
+#endif
+    }
 }

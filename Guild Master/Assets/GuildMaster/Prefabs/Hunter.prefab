@@ -650,6 +650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe828481eaa2af418447b2a6d20d5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 1
+  steer: {fileID: 0}
   weapon: {fileID: 2497343186906324776}
   model: {fileID: 2497343187157324995}
 --- !u!114 &9141441269803450274
@@ -664,9 +666,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundGraphSerialization: 
+  boundGraphObjectReferences: []
+  firstActivation: 0
   enableAction: 0
   disableAction: 0
-  _graph: {fileID: 0}
+  _graph: {fileID: 11400000, guid: e4488790083f6d14896a648d4e734536, type: 2}
   _blackboard: {fileID: -4736523880351700497}
 --- !u!114 &-4736523880351700497
 MonoBehaviour:
@@ -680,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serializedBlackboard: '{"_variables":{"target":{"_propertyPath":"Move.target","_name":"target","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+  _serializedBlackboard: '{"_variables":{"target":{"_propertyPath":"Move.target","_name":"target","_id":"57974f14-2bf0-4ebe-8171-e0e902762668","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences: []
 --- !u!1 &2497343187157337693

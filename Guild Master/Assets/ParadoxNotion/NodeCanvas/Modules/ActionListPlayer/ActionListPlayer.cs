@@ -3,107 +3,146 @@ using System.Collections.Generic;
 using NodeCanvas.Framework;
 using ParadoxNotion.Serialization;
 
-namespace NodeCanvas{
+namespace NodeCanvas
+{
 
-	[AddComponentMenu("NodeCanvas/Action List")]
-	public class ActionListPlayer : MonoBehaviour, ITaskSystem, ISerializationCallbackReceiver {
+    [AddComponentMenu("NodeCanvas/Standalone Action List (Bonus)")]
+    public class ActionListPlayer : MonoBehaviour, ITaskSystem, ISerializationCallbackReceiver
+    {
 
-		[System.NonSerialized]
-		private ActionList _actionList;
+        public bool playOnAwake;
 
-		[SerializeField]
-		private Blackboard _blackboard;
-		[SerializeField]
-		private List<Object> _objectReferences;
-		[SerializeField]
-		private string _serializedList;
+        [SerializeField]
+        private string _serializedList;
+        [SerializeField]
+        private List<UnityEngine.Object> _objectReferences;
 
+        [SerializeField]
+        private Blackboard _blackboard;
 
-		public void OnBeforeSerialize(){
-			_objectReferences = new List<Object>();
-			_serializedList = JSONSerializer.Serialize(typeof(ActionList), actionList, false, _objectReferences);
-		}
+        [System.NonSerialized]
+        private ActionList _actionList;
 
-		public void OnAfterDeserialize(){
-			actionList = JSONSerializer.Deserialize<ActionList>(_serializedList, _objectReferences);
-			if (actionList == null) actionList = (ActionList)Task.Create(typeof(ActionList), this);
-		}
+        void ISerializationCallbackReceiver.OnBeforeSerialize() {
+#if UNITY_EDITOR
+            if ( JSONSerializer.applicationPlaying ) {
+                return;
+            }
+            _objectReferences = new List<UnityEngine.Object>();
+            _serializedList = JSONSerializer.Serialize(typeof(ActionList), _actionList, false, _objectReferences);
+#endif
+        }
 
-
-		////////
-		////////
-
-		public ActionList actionList{
-			get {return _actionList;}
-			set {_actionList = value; SendTaskOwnerDefaults();}
-		}
-
-		public Component agent{
-			get {return this;}
-		}
-
-		public IBlackboard blackboard{
-			get {return _blackboard;}
-			set
-			{
-				if (_blackboard != (object)value){
-					_blackboard = (Blackboard)(object)value;
-					SendTaskOwnerDefaults();
-				}
-			}
-		}
-
-		public float elapsedTime{
-			get {return actionList.elapsedTime;}
-		}
-
-		public Object contextObject{
-			get {return this;}
-		}
-
-		public static ActionListPlayer Create(){
-			return new GameObject("ActionList").AddComponent<ActionListPlayer>();
-		}
-
-		public void SendTaskOwnerDefaults(){
-			actionList.SetOwnerSystem(this);
-			foreach(var a in actionList.actions){
-				a.SetOwnerSystem(this);
-			}
-		}
-
-		void ITaskSystem.SendEvent(ParadoxNotion.EventData eventData){
-			Debug.LogWarning("Sending events to action lists has no effect");
-		}
+        void ISerializationCallbackReceiver.OnAfterDeserialize() {
+            _actionList = JSONSerializer.Deserialize<ActionList>(_serializedList, _objectReferences);
+            if ( _actionList == null ) _actionList = (ActionList)Task.Create(typeof(ActionList), this);
+        }
 
 
-		[ContextMenu("Play")]
-		public void Play(){
-			if (!Application.isPlaying) return;
-			Play(this, this.blackboard, null);
-		}
+        ///----------------------------------------------------------------------------------------------
 
-		public void Play(System.Action<bool> OnFinish){
-			Play(this, this.blackboard, OnFinish);
-		}
+        public ActionList actionList {
+            get { return _actionList; }
+        }
 
-		public void Play(Component agent, IBlackboard blackboard, System.Action<bool> OnFinish){
-			actionList.ExecuteAction(agent, blackboard, OnFinish);
-		}
+        Component ITaskSystem.agent {
+            get { return this; }
+        }
+
+        public IBlackboard blackboard {
+            get { return _blackboard; }
+            set
+            {
+                if ( !ReferenceEquals(_blackboard, value) ) {
+                    _blackboard = (Blackboard)(object)value;
+                    SendTaskOwnerDefaults();
+                }
+            }
+        }
+
+        public float elapsedTime {
+            get { return actionList.elapsedTime; }
+        }
+
+        Object ITaskSystem.contextObject {
+            get { return this; }
+        }
+
+        public static ActionListPlayer Create() {
+            return new GameObject("ActionList").AddComponent<ActionListPlayer>();
+        }
+
+        public void SendTaskOwnerDefaults() {
+            actionList.SetOwnerSystem(this);
+            foreach ( var a in actionList.actions ) {
+                a.SetOwnerSystem(this);
+            }
+        }
+
+        void ITaskSystem.SendEvent(ParadoxNotion.EventData eventData, object sender) {
+            Debug.LogWarning("Sending events to action lists has no effect");
+        }
+
+        void ITaskSystem.RecordUndo(string name) {
+#if UNITY_EDITOR
+            if ( !Application.isPlaying ) {
+                UnityEditor.Undo.RecordObject(this, name);
+            }
+#endif
+        }
+
+        void Awake() {
+            SendTaskOwnerDefaults();
+            if ( playOnAwake ) {
+                Play();
+            }
+        }
+
+        [ContextMenu("Play")]
+        public void Play() {
+            Play(this, this.blackboard, null);
+        }
+
+        public void Play(System.Action<bool> OnFinish) {
+            Play(this, this.blackboard, OnFinish);
+        }
+
+        public void Play(Component agent, IBlackboard blackboard, System.Action<bool> OnFinish) {
+            if ( Application.isPlaying ) {
+                actionList.ExecuteAction(agent, blackboard, OnFinish);
+            }
+        }
+
+        public Status ExecuteAction() {
+            return actionList.ExecuteAction(this, blackboard);
+        }
+
+        public Status ExecuteAction(Component agent) {
+            return actionList.ExecuteAction(agent, blackboard);
+        }
 
 
+        ///----------------------------------------------------------------------------------------------
+        ///---------------------------------------UNITY EDITOR-------------------------------------------
+#if UNITY_EDITOR
 
-		////////////////////////////////////////
-		///////////GUI AND EDITOR STUFF/////////
-		////////////////////////////////////////
-		#if UNITY_EDITOR
+        [UnityEditor.MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/Standalone Action List")]
+        static void CreateActionListPlayer() {
+            UnityEditor.Selection.activeObject = Create();
+        }
 
-		void Reset(){
-			var bb = GetComponent<Blackboard>();
-			_blackboard = bb != null? bb : gameObject.AddComponent<Blackboard>();
-			_actionList = (ActionList)Task.Create(typeof(ActionList), this);
-		}
+        void Reset() {
+            var bb = GetComponent<Blackboard>();
+            _blackboard = bb != null ? bb : gameObject.AddComponent<Blackboard>();
+            _actionList = (ActionList)Task.Create(typeof(ActionList), this);
+        }
 
-		#endif
-	}
+        void OnValidate() {
+            if ( !Application.isPlaying && !UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode ) {
+                SendTaskOwnerDefaults();
+            }
+        }
+
+#endif
+    }
 }

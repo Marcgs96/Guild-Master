@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MageMember : Member
 {
-    public float task_time = 3.0f;
-
     override public void GenerateInfo()
     {
         info.name = "Magox";

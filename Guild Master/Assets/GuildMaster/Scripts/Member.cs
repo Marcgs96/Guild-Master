@@ -39,7 +39,9 @@ public class Member : MonoBehaviour
     protected Move move;
     protected Animator anim;
     public SteeringFollowNavMeshPath steer;
+    public SteeringWander wander;
     protected Collider coll;
+    public float task_time = 3.0f;
 
     public GameObject weapon;
     public GameObject model;
@@ -58,6 +60,7 @@ public class Member : MonoBehaviour
         DayNightCicle.OnHourChange += ChangeState;
 
         steer = GetComponent<SteeringFollowNavMeshPath>();
+        wander = GetComponent<SteeringWander>();
 
         action_bubble = transform.Find("ActionBubble").gameObject;
         blacksmith_bubble = transform.Find("BlacksmithBubble").gameObject;
@@ -130,7 +133,7 @@ public class Member : MonoBehaviour
 
     public void OnNewTask()
     {
-        GameManager.manager.ui.MemberActionChange(this);
+       // GameManager.manager.ui.MemberActionChange(this);
     }
 
     virtual protected string GetMemberWorkString() { return "Unknown"; }

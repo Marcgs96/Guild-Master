@@ -1,38 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.AI;
 
 public class SteeringWander : Steering
 {
 
 	public Vector3 offset = Vector3.zero;
 	public float radius = 1.0f;
-	public float min_update = 0.5f;
-	public float max_update = 3.0f;
 
-	SteeringSeek seek;
+    SteeringFollowNavMeshPath steer;
 	Vector3 random_point;
 
 	// Use this for initialization
 	void Start () {
-		seek = GetComponent<SteeringSeek>();
-		ChangeTarget();
+        steer = GetComponent<SteeringFollowNavMeshPath>();
 	}
-
-    private void Update()
-    {
-        seek.Steer(random_point);
-    }
 
     // Update is called once per frame
-    void ChangeTarget () 
+    public void GeneratePoint() 
 	{
-		random_point = Random.insideUnitSphere;
-		random_point *= radius;
-		random_point += transform.position + offset;
-		random_point.y = transform.position.y;
+        while (true)
+        {
+            random_point = Random.insideUnitSphere;
+            random_point *= radius;
+            random_point += transform.position + offset;
+            random_point.y = transform.position.y;
 
-		Invoke("ChangeTarget", Random.Range(min_update, max_update));
-	}
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(random_point, out hit, float.PositiveInfinity, (1 << NavMesh.GetAreaFromName("OffRoad"))))
+            {
+                if(steer.CreatePath(hit.position))
+                    return;
+            }
+        }
+    }
 
 	void OnDrawGizmosSelected() 
 	{
