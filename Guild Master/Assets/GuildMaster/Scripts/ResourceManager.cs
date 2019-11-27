@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,77 +14,111 @@ public class ResourceManager : MonoBehaviour
         Potion,
         Meat,
     }
+
+    [System.Serializable]
+    public struct Resource
+    {
+        public ResourceType type;
+        public uint amount;
+
+        public Resource(ResourceType type, uint amount)
+        {
+            this.type = type;
+            this.amount = amount;
+        }
+    }
+
     [SerializeField]
-    uint gold, crowns, shields, potions, meat;
+    Resource gold, crowns, shields, potions, meat;
     public Text gold_txt, crowns_txt, shields_txt, potions_txt, meat_txt;
 
     void Start()
     {
-        gold_txt.text = gold.ToString();
-        crowns_txt.text = crowns.ToString();
-        shields_txt.text = shields.ToString();
-        potions_txt.text = potions.ToString();
-        meat_txt.text = meat.ToString();
+        gold_txt.text = gold.amount.ToString();
+        crowns_txt.text = crowns.amount.ToString();
+        shields_txt.text = shields.amount.ToString();
+        potions_txt.text = potions.amount.ToString();
+        meat_txt.text = meat.amount.ToString();
     }
-    void AddResource(ResourceType type, uint amount)
+
+    public void IncreaseResource(ResourceType type, uint amount)
     {
         switch (type)
         {
             case ResourceType.Gold:
-                gold += amount;
-                gold_txt.text = gold.ToString();
+                gold.amount += amount;
+                gold_txt.text = gold.amount.ToString();
                 break;
             case ResourceType.Crown:
-                crowns += amount;
-                crowns_txt.text = crowns.ToString();
+                crowns.amount += amount;
+                crowns_txt.text = crowns.amount.ToString();
                 break;
             case ResourceType.Shield:
-                shields += amount;
-                shields_txt.text = shields.ToString();
+                shields.amount += amount;
+                shields_txt.text = shields.amount.ToString();
                 break;
             case ResourceType.Potion:
-                potions += amount;
-                potions_txt.text = potions.ToString();
+                potions.amount += amount;
+                potions_txt.text = potions.amount.ToString();
                 break;
             case ResourceType.Meat:
-                meat += amount;
-                meat_txt.text = meat.ToString();
+                meat.amount += amount;
+                meat_txt.text = meat.amount.ToString();
                 break;
             default:
                 break;
         }
     }
 
-    void RemoveResource(ResourceType type, uint amount)
+    public void DecreaseResource(ResourceType type, uint amount)
     {
         switch (type)
         {
             case ResourceType.Gold:
-                gold -= amount;
-                gold_txt.text = gold.ToString();
+                gold.amount -= amount;
+                gold_txt.text = gold.amount.ToString();
                 break;
             case ResourceType.Crown:
-                crowns -= amount;
-                crowns_txt.text = crowns.ToString();
+                crowns.amount -= amount;
+                crowns_txt.text = crowns.amount.ToString();
                 break;
             case ResourceType.Shield:
-                shields -= amount;
-                shields_txt.text = shields.ToString();
+                shields.amount -= amount;
+                shields_txt.text = shields.amount.ToString();
                 break;
             case ResourceType.Potion:
-                potions -= amount;
-                potions_txt.text = potions.ToString();
+                potions.amount -= amount;
+                potions_txt.text = potions.amount.ToString();
                 break;
             case ResourceType.Meat:
-                meat -= amount;
-                meat_txt.text = meat.ToString();
+                meat.amount -= amount;
+                meat_txt.text = meat.amount.ToString();
                 break;
             default:
                 break;
         }
     }
 
-    uint GetResource(ResourceType type)
+    internal bool HaveAmount(ResourceType type, uint amount)
+    {
+        switch (type)
+        {
+            case ResourceType.Gold:
+                return gold.amount >= amount;
+            case ResourceType.Crown:
+                return crowns.amount >= amount;
+            case ResourceType.Shield:
+                return shields.amount >= amount;
+            case ResourceType.Potion:
+                return potions.amount >= amount;
+            case ResourceType.Meat:
+                return meat.amount >= amount;
+        }
+
+        return false;
+    }
+
+    Resource GetResource(ResourceType type)
     {
         switch (type)
         {
@@ -99,6 +134,6 @@ public class ResourceManager : MonoBehaviour
                 return meat;
         }
 
-        return 0;
+        return gold;
     }
 }

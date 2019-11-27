@@ -31,7 +31,7 @@ public class QuestManager : MonoBehaviour
         public uint xp;
         public QuestType type;
         public List<QuestEnemy> enemies;
-        public Dictionary<ResourceManager.ResourceType, uint> rewards;
+        public List<ResourceManager.Resource> rewards;
     }
 
 
@@ -76,7 +76,7 @@ public class QuestManager : MonoBehaviour
         quest.lvl = lvl;
 
         quest.enemies = new List<QuestEnemy>();
-        quest.rewards = new Dictionary<ResourceManager.ResourceType, uint>();
+        quest.rewards = new List<ResourceManager.Resource>();
 
         switch (type)
         {
@@ -87,8 +87,8 @@ public class QuestManager : MonoBehaviour
                 quest.enemies.Add(CreateEnemy(lvl));
 
                 //Todo: Create function for reward setup
-                quest.rewards.Add(ResourceManager.ResourceType.Gold, 250);
-                quest.rewards.Add(ResourceManager.ResourceType.Crown, 5);
+                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Gold, 250));
+                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Shield, 5));
 
                 break;
             case QuestType.DUNGEON:
@@ -101,9 +101,9 @@ public class QuestManager : MonoBehaviour
                 }
 
                 //Todo: Create function for reward setup
-                quest.rewards.Add(ResourceManager.ResourceType.Gold, 250);
-                quest.rewards.Add(ResourceManager.ResourceType.Crown, 5);
-                quest.rewards.Add(ResourceManager.ResourceType.Shield, 5);
+                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Gold, 500));
+                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Shield, 10));
+                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Crown, 10));
 
                 break;
             case QuestType.RAID:

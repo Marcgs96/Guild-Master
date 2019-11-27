@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// TODO: Split UI Manager into smaller UI sections for each panel. This is getting too big.
 public class UIManager : MonoBehaviour
 {
+    //Guild panel stuff
     public GameObject guild_panel;
-    public GameObject blacksmith_panel;
+    public GameObject guild_upgrade_costs;
 
+    //Blacksmith panel stuff
+    public GameObject blacksmith_panel;
+    public GameObject blacksmith_upgrade_costs;
 
     //quests panel stuff
     public GameObject quests_panel;
@@ -26,11 +31,17 @@ public class UIManager : MonoBehaviour
     //other prefabs
     public GameObject resource_prefab;
     public GameObject slot_prefab;
+    public GameObject resource_cost_prefab;
 
     void Awake()
     {
         MemberManager.OnMemberAdd += CreateMemberListing;
         QuestManager.OnQuestAdd += CreateQuestListing;
+        GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL].OnLevelUp += UpdateGuildHallUpgrade;
+        GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.BLACKSMITH].OnLevelUp += UpdateBlacksmithUpgrade;
+
+        UpdateBlacksmithUpgrade();
+        UpdateGuildHallUpgrade();
     }
 
     #region ButtonFuctions
@@ -89,6 +100,11 @@ public class UIManager : MonoBehaviour
         member_info_panel.SetActive(false);
     }
 
+    public void UpgradeBuildingButton(Building building)
+    {
+        building.LevelUp();
+    }
+
     public void OnMemberClick(Member member)
     {
         if (quest_preparation.activeSelf && !GameManager.manager.quests.IsInParty(member))
@@ -132,12 +148,12 @@ public class UIManager : MonoBehaviour
         new_listing.transform.GetChild(1).GetComponent<Text>().text = new_quest.name;
 
         Transform rewards = new_listing.transform.GetChild(2);
-        foreach (KeyValuePair<ResourceManager.ResourceType, uint> entry in new_quest.rewards)
+        foreach (ResourceManager.Resource resource in new_quest.rewards)
         {
             GameObject new_resource = Instantiate(resource_prefab);
             //Todo: select image depending on resource type
             //new_resource.GetComponent<Image>().image = IMAGE;
-            new_resource.transform.GetChild(0).GetComponent<Text>().text = entry.Value.ToString();
+            new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.amount.ToString();
             new_resource.transform.SetParent(rewards);
         }
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnQuestSelection(new_quest); });
@@ -203,12 +219,12 @@ public class UIManager : MonoBehaviour
         {
             Destroy(rewards.GetChild(i).gameObject);
         }
-        foreach (KeyValuePair<ResourceManager.ResourceType, uint> entry in new_quest.rewards)
+        foreach (ResourceManager.Resource resource in new_quest.rewards)
         {
             GameObject new_resource = Instantiate(resource_prefab);
             //Todo: select image depending on resource type
             //new_resource.GetComponent<Image>().image = IMAGE;
-            new_resource.transform.GetChild(0).GetComponent<Text>().text = entry.Value.ToString();
+            new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.amount.ToString();
             new_resource.transform.SetParent(rewards);
         }
     }
@@ -274,6 +290,41 @@ public class UIManager : MonoBehaviour
         {
             Transform info_panel = member_info_panel.transform.GetChild(1);
             info_panel.GetChild(4).GetChild(0).GetComponent<Text>().text = member.GetStateString();
+        }
+    }
+
+    public void UpdateGuildHallUpgrade()
+    {
+        for (int i = 0; i < guild_upgrade_costs.transform.childCount; i++)
+        {
+            Destroy(guild_upgrade_costs.transform.GetChild(i).gameObject);
+        }
+        List<ResourceManager.Resource> resources = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL].GetResourcesCost();
+        foreach(ResourceManager.Resource resource in resources)
+        {
+            GameObject resource_go = Instantiate(resource_cost_prefab);
+            //SET IMAGE AS RESOURCE IMAGE
+            resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.amount.ToString();
+
+            resource_go.transform.SetParent(guild_upgrade_costs.transform);
+        }
+    }
+
+    public void UpdateBlacksmithUpgrade()
+    {
+        for (int i = 0; i < blacksmith_upgrade_costs.transform.childCount; i++)
+        {
+            Destroy(blacksmith_upgrade_costs.transform.GetChild(i).gameObject);
+        }
+
+        List<ResourceManager.Resource> resources = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.BLACKSMITH].GetResourcesCost();
+        foreach (ResourceManager.Resource resource in resources)
+        {
+            GameObject resource_go = Instantiate(resource_cost_prefab);
+            //SET IMAGE AS RESOURCE IMAGE
+            resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.amount.ToString();
+
+            resource_go.transform.SetParent(guild_upgrade_costs.transform);
         }
     }
 }

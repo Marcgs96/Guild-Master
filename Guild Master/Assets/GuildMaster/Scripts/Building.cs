@@ -1,22 +1,37 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    static uint MAX_LVL = 6;
+    static uint START_LVL = 1;
+
     Queue<Member> release_queue;
+    List<Member> members_inside;
 
-    List<Member> agents;
+    uint level = START_LVL;
 
-    public GameObject bubble;
-    public AudioSource sound;
+    [System.Serializable]
+    public struct LevelCost //Wrapper for serialization of array of lists. This should be read from JSON but no time for it yet.
+    {
+        public List<ResourceManager.Resource> resources;
+    }
+    [SerializeField]
+    LevelCost[] level_costs;
+
+    public delegate void BuildingLevel();
+    public event BuildingLevel OnLevelUp;
 
     public float exit_time = 0.5f;
     float exit_timer = 0.0f;
+    public GameObject bubble;
+    public AudioSource sound;
 
     void Awake()
     {
-        agents = new List<Member>();
+        members_inside = new List<Member>();
         release_queue = new Queue<Member>();
     }
 
@@ -39,13 +54,13 @@ public class Building : MonoBehaviour
 
     public void EnterBuilding(Member agent)
     {
-        agents.Add(agent);
-        BubbleCheck();
+        members_inside.Add(agent);
+        OnMemberInteraction();
     }
 
     public void RequestExit(Member agent)
     {
-        foreach (Member a in agents)
+        foreach (Member a in members_inside)
         {
             if(a == agent)
             {
@@ -56,14 +71,54 @@ public class Building : MonoBehaviour
 
     void ReleaseAgent(Member agent)
     {
-        agents.Remove(agent);
+        members_inside.Remove(agent);
         agent.OnBuildingExit();
-        BubbleCheck();
+        OnMemberInteraction();
     }
 
-    void BubbleCheck()
+    void OnMemberInteraction()
     {
-        if(bubble) bubble.SetActive(agents.Count > 0 ? true : false);
-        if(sound) sound.enabled = agents.Count > 0 ? true : false;
+        if(bubble) bubble.SetActive(members_inside.Count > 0 ? true : false);
+        if(sound) sound.enabled = members_inside.Count > 0 ? true : false;
+    }
+
+    virtual public void LevelUp()
+    {
+        if (level < MAX_LVL && HaveResources())
+        {
+            DecreaseResources();
+            level++;
+            OnLevelUp?.Invoke();
+        }
+    }
+
+    bool HaveResources()
+    {
+        foreach (ResourceManager.Resource resource in level_costs[level-1].resources)
+        {
+            if (!GameManager.manager.resources.HaveAmount(resource.type, resource.amount))
+                return false;
+        }
+
+        return true;
+    }
+
+    void DecreaseResources()
+    {
+        foreach (ResourceManager.Resource resource in level_costs[level-1].resources)
+        {
+            GameManager.manager.resources.DecreaseResource(resource.type, resource.amount);
+        }
+    }
+
+    public List<ResourceManager.Resource> GetResourcesCost()
+    {
+        List<ResourceManager.Resource> total_resources = new List<ResourceManager.Resource>();
+        foreach (ResourceManager.Resource resource in level_costs[level-1].resources)
+        {
+            total_resources.Add(resource);
+        }
+                
+        return total_resources;
     }
 }
