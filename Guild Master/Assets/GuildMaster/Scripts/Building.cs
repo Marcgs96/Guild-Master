@@ -121,4 +121,14 @@ public class Building : MonoBehaviour
                 
         return total_resources;
     }
+
+    internal bool IsMaxLevel()
+    {
+        return level == MAX_LVL;
+    }
+
+    internal object GetLevel()
+    {
+        return level;
+    }
 }

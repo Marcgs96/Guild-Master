@@ -13,8 +13,9 @@ public class Resource
         Potion,
         Meat,
     }
-
+    [SerializeField]
     private ResourceType type;
+    [SerializeField]
     private uint amount;
 
     public uint GetAmount()

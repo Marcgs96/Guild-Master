@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     public GameObject quests_list;
     public GameObject quest_preparation;
     public GameObject quest_listing;
-    List<GameObject> quest_listings;
+    Dictionary<Quest, GameObject> quest_listings;
 
     //members list stuff
     public GameObject member_info_panel;
@@ -37,6 +37,7 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         member_listings = new Dictionary<Member, GameObject>();
+        quest_listings = new Dictionary<Quest, GameObject>();
 
         MemberManager.OnMemberAdd += CreateMemberListing;
         QuestManager.OnQuestAdd += CreateQuestListing;
@@ -157,6 +158,7 @@ public class UIManager : MonoBehaviour
     public void SendParty()
     {
         GameManager.manager.quests.StartQuest();
+        RemoveQuestListing(GameManager.manager.quests.GetSelectedQuest());
         CloseQuestPreparation();
     }
     #endregion
@@ -178,6 +180,17 @@ public class UIManager : MonoBehaviour
         }
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnQuestSelection(new_quest); });
         new_listing.transform.SetParent(quests_list.transform);
+
+        quest_listings.Add(new_quest, new_listing);
+    }
+
+    void RemoveQuestListing(Quest old_quest)
+    {
+        GameObject listing;
+        quest_listings.TryGetValue(old_quest, out listing);
+        quest_listings.Remove(old_quest);
+
+        Destroy(listing);
     }
 
     void CreateMemberListing(Member new_member)
@@ -318,36 +331,57 @@ public class UIManager : MonoBehaviour
 
     public void UpdateGuildHallUpgrade()
     {
+        Building guild_hall = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL];
+        guild_panel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = guild_hall.GetLevel().ToString();
+
         for (int i = 0; i < guild_upgrade_costs.transform.childCount; i++)
         {
             Destroy(guild_upgrade_costs.transform.GetChild(i).gameObject);
         }
-        List<Resource> resources = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL].GetResourcesCost();
-        foreach(Resource resource in resources)
-        {
-            GameObject resource_go = Instantiate(resource_cost_prefab);
-            //SET IMAGE AS RESOURCE IMAGE
-            resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
 
-            resource_go.transform.SetParent(guild_upgrade_costs.transform);
+        if(!guild_hall.IsMaxLevel())
+        {
+            List<Resource> resources = guild_hall.GetResourcesCost();
+            foreach (Resource resource in resources)
+            {
+                GameObject resource_go = Instantiate(resource_cost_prefab);
+                //SET IMAGE AS RESOURCE IMAGE
+                resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
+
+                resource_go.transform.SetParent(guild_upgrade_costs.transform);
+            }
+        }
+        else
+        {
+            guild_upgrade_costs.transform.parent.GetComponent<Button>().enabled = false;
         }
     }
 
     public void UpdateBlacksmithUpgrade()
     {
+        Building blacksmith = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.BLACKSMITH];
+        blacksmith_panel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = blacksmith.GetLevel().ToString();
+
         for (int i = 0; i < blacksmith_upgrade_costs.transform.childCount; i++)
         {
             Destroy(blacksmith_upgrade_costs.transform.GetChild(i).gameObject);
-        }
+        }  
 
-        List<Resource> resources = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.BLACKSMITH].GetResourcesCost();
-        foreach (Resource resource in resources)
+        if(!blacksmith.IsMaxLevel())
         {
-            GameObject resource_go = Instantiate(resource_cost_prefab);
-            //SET IMAGE AS RESOURCE IMAGE
-            resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
+            List<Resource> resources = blacksmith.GetResourcesCost();
+            foreach (Resource resource in resources)
+            {
+                GameObject resource_go = Instantiate(resource_cost_prefab);
+                //SET IMAGE AS RESOURCE IMAGE
+                resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
 
-            resource_go.transform.SetParent(guild_upgrade_costs.transform);
+                resource_go.transform.SetParent(blacksmith_upgrade_costs.transform);
+            }
+        }
+        else
+        {
+            blacksmith_upgrade_costs.transform.parent.GetComponent<Button>().enabled = false;
         }
     }
 }

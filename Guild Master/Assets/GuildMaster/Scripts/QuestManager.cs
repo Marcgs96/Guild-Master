@@ -30,7 +30,7 @@ public class QuestManager : MonoBehaviour
     {
         //Todo: Create random quests depending of set parameteres like highest lvl member, amount of members, etc.
         CreateQuest(Quest.QuestType.BOUNTY, 1);
-        CreateQuest(Quest.QuestType.DUNGEON, 2);
+        CreateQuest(Quest.QuestType.ADVENTURE, 2);
     }
 
     void CreateQuest(Quest.QuestType type, uint lvl)
@@ -66,12 +66,8 @@ public class QuestManager : MonoBehaviour
     {
         Debug.Log("Starting Quest: " + selected_quest.quest_name);
         active_quests.Add(selected_quest);
+        quests.Remove(selected_quest);
         selected_quest.SendParty();
-    }
-
-    void FinishQuest()
-    {
-
     }
 
     internal void OnDungeonEnter(Member member)
@@ -80,5 +76,15 @@ public class QuestManager : MonoBehaviour
         {
             quest.OnDungeonEnter(member);
         }
+    }
+
+    internal void RemoveQuest(Quest quest)
+    {
+        active_quests.Remove(quest);
+    }
+
+    internal Quest GetSelectedQuest()
+    {
+        return selected_quest;
     }
 }

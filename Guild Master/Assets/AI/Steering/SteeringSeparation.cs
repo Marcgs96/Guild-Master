@@ -19,8 +19,7 @@ public class SteeringSeparation : Steering {
 	// Update is called once per frame
     void Update () 
     {
-        //PROFE
-        /*Collider[] colliders = Physics.OverlapSphere(transform.position, search_radius, mask);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, search_radius, mask);
         Vector3 final = Vector3.zero;
 
         foreach(Collider col in colliders)
@@ -32,7 +31,7 @@ public class SteeringSeparation : Steering {
 
             Vector3 diff = transform.position - go.transform.position;
             float distance = diff.magnitude;
-            float acceleration = (1.0f - falloff.Evaluate(distance / search_radius)) * move.max_mov_acceleration;
+            float acceleration = (1.0f - strength.Evaluate(distance / search_radius)) * move.max_mov_acceleration;
 
             final += diff.normalized * acceleration;
         }
@@ -43,9 +42,9 @@ public class SteeringSeparation : Steering {
             if(final_strength > move.max_mov_acceleration)
                 final = final.normalized * move.max_mov_acceleration;
             move.AccelerateMovement(final, priority);
-        }*/
+        }
 
-        if(coll.enabled)
+        /*if(coll.enabled)
         {
             Collider[] hit_agents = Physics.OverlapSphere(transform.position, search_radius, mask.value);
             Vector3 sum_vector = Vector3.zero;
@@ -60,7 +59,7 @@ public class SteeringSeparation : Steering {
             }
             Vector3 result = Vector3.Normalize(sum_vector) * (Mathf.Clamp(sum_vector.magnitude, 0, move.max_mov_acceleration));
             move.AccelerateMovement(result, priority);
-        }
+        }*/
 
     }
 
