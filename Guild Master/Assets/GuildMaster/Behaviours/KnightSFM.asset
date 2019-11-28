@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: KnightSFM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-4119.0,"y":-3794.0},"zoomFactor":0.7500002,"nodes":[{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"functionWrapper":{"p1":{"_value":"Picking
+  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-5310.0,"y":-5053.0},"nodes":[{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"functionWrapper":{"p1":{"_value":"Picking
     a Weapon"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":1},"$type":"GuildMaster.MoveTo"}]},"_position":{"x":5701.0,"y":5208.0},"_name":"TakeWeapon","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"actions":[{"target":{"_value":2},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Beating
     the Dummy"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
