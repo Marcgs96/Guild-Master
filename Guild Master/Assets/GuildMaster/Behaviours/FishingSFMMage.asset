@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: FishingSFMMage
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-5178.753,"y":-5108.752},"nodes":[{"_actionList":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
+  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-3769.0,"y":-3729.0},"zoomFactor":0.7500098,"nodes":[{"_actionList":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
     Fishing"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}]},"_position":{"x":5204.0,"y":5237.0},"_name":"MoveToPort","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"actions":[{"functionWrapper":{"p1":{"_value":"Looking
     for a Fishing Rod"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,

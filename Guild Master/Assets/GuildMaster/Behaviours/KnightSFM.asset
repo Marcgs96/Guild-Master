@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: KnightSFM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-5310.0,"y":-5053.0},"nodes":[{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"functionWrapper":{"p1":{"_value":"Picking
+  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-5490.0,"y":-5073.0},"nodes":[{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"functionWrapper":{"p1":{"_value":"Picking
     a Weapon"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":1},"$type":"GuildMaster.MoveTo"}]},"_position":{"x":5560.0,"y":5225.0},"_name":"TakeWeapon","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"actions":[{"target":{"_value":2},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Beating
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}]},"_position":{"x":5560.0,"y":5225.0},"_name":"TakeWeapon","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"actions":[{"target":{},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Beating
     the Dummy"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"parameter":{"_value":"type_action"},"parameterHashID":{},"setTo":{"_value":true},"$type":"NodeCanvas.Tasks.Actions.MecanimSetBool"}]},"_position":{"x":5780.0,"y":5490.0},"_name":"FightSolo","$type":"NodeCanvas.StateMachines.ActionState","$id":"11"},{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[]},"_position":{"x":6239.0,"y":5442.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"24"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"valueB":{"_type":"Member+MEMBER_STATE","_value":{"$content":"WORK","$type":"Member+MEMBER_STATE"}},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"localBlackboard":{"_name":"Local
     Blackboard","_variables":{}}}'
-  _objectReferences:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _objectReferences: []
   _deserializationFailed: 0
