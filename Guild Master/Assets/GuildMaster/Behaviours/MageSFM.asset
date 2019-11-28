@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: MageSFM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-3844.0,"y":-4058.0},"zoomFactor":0.824261,"nodes":[{"_actionList":{"actions":[{"functionWrapper":{"p1":{"_value":"Moving
+  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-4768.0,"y":-4865.0},"zoomFactor":0.9799557,"nodes":[{"_actionList":{"actions":[{"functionWrapper":{"p1":{"_value":"Moving
     to the Shelf"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":1},"$type":"GuildMaster.MoveTo"}]},"_position":{"x":5057.0,"y":5339.0},"_name":"GoShelf","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"functionWrapper":{"p1":{"_value":"Looking
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":1},"$type":"GuildMaster.MoveTo"}]},"_position":{"x":5057.0,"y":5337.0},"_name":"GoShelf","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"functionWrapper":{"p1":{"_value":"Looking
     for a recipe"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}]},"_position":{"x":5274.0,"y":5429.0},"_name":"FindRecipe","$type":"NodeCanvas.StateMachines.ActionState","$id":"11"},{"_actionList":{"actions":[{"functionWrapper":{"p1":{"_value":"Moving
     to Material Shelf"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
