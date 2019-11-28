@@ -6,9 +6,8 @@ public class MageMember : Member
 {
     override public void GenerateInfo()
     {
+        base.GenerateInfo();
         info.name = "Magox";
-        info.lvl = 1;
-        info.xp = 0;
         info.type = MEMBER_TYPE.MAGE;
     }
     protected override void ChangeState(uint hour)
@@ -18,35 +17,9 @@ public class MageMember : Member
 
         switch (hour)
         {
-            case 6:
-                state = MEMBER_STATE.WORK;
-                // go tavern
-                break;
-            case 9:
-                // go blacksmith
-                break;
-            case 13:
-                state = MEMBER_STATE.SLEEP;
-                // go tabern
-                break;
-            case 15:
-                // go train
-                break;
-            case 19:
-                state = MEMBER_STATE.WORK;
-                // go blacksmith
-                break;
             case 21:
-                //go tabern
-                break;
-            case 23:
-                //go sleep
+                state = MEMBER_STATE.SLEEP;
                 break;
         } 
-    }
-
-    override protected string GetMemberWorkString()
-    {
-        return "Making Potions";
     }
 }

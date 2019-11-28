@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +26,7 @@ public class UIManager : MonoBehaviour
     public GameObject member_info_panel;
     public GameObject members_list_panel;
     public GameObject member_listing;
-    List<GameObject> member_listings;
+    Dictionary<Member, GameObject> member_listings;
     Member selected_member;
 
     //other prefabs
@@ -35,6 +36,8 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
+        member_listings = new Dictionary<Member, GameObject>();
+
         MemberManager.OnMemberAdd += CreateMemberListing;
         QuestManager.OnQuestAdd += CreateQuestListing;
         GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL].OnLevelUp += UpdateGuildHallUpgrade;
@@ -64,7 +67,7 @@ public class UIManager : MonoBehaviour
         quests_panel.SetActive(false);
     }
 
-    public void OnQuestSelection(QuestManager.Quest new_quest)
+    public void OnQuestSelection(Quest new_quest)
     {
         quest_preparation.SetActive(true);
 
@@ -105,6 +108,22 @@ public class UIManager : MonoBehaviour
         building.LevelUp();
     }
 
+    internal void OnMemberStaminaChange(Member member)
+    {
+        GameObject listing;
+        member_listings.TryGetValue(member, out listing);
+
+        if(listing)
+        {
+            listing.transform.GetChild(2).GetComponent<Slider>().value = member.GetInfo().stamina;
+            if(selected_member == member)
+            {
+                Transform header = member_info_panel.transform.GetChild(0);
+                header.GetChild(2).GetComponent<Slider>().value = member.GetInfo().stamina;
+            }
+        }
+    }
+
     public void OnMemberClick(Member member)
     {
         if (quest_preparation.activeSelf && !GameManager.manager.quests.IsInParty(member))
@@ -138,22 +157,23 @@ public class UIManager : MonoBehaviour
     public void SendParty()
     {
         GameManager.manager.quests.StartQuest();
+        CloseQuestPreparation();
     }
     #endregion
 
-    void CreateQuestListing(QuestManager.Quest new_quest)
+    void CreateQuestListing(Quest new_quest)
     {
         GameObject new_listing = Instantiate(quest_listing);
         new_listing.transform.GetChild(0).GetComponent<Text>().text = new_quest.lvl.ToString();
-        new_listing.transform.GetChild(1).GetComponent<Text>().text = new_quest.name;
+        new_listing.transform.GetChild(1).GetComponent<Text>().text = new_quest.quest_name;
 
         Transform rewards = new_listing.transform.GetChild(2);
-        foreach (ResourceManager.Resource resource in new_quest.rewards)
+        foreach (Resource resource in new_quest.rewards)
         {
             GameObject new_resource = Instantiate(resource_prefab);
             //Todo: select image depending on resource type
             //new_resource.GetComponent<Image>().image = IMAGE;
-            new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.amount.ToString();
+            new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
             new_resource.transform.SetParent(rewards);
         }
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnQuestSelection(new_quest); });
@@ -168,14 +188,16 @@ public class UIManager : MonoBehaviour
 
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnMemberClick(new_member); });
         new_listing.transform.SetParent(members_list_panel.transform);
+
+        member_listings.Add(new_member, new_listing);
     }
 
-    void SetupQuestPreparation(QuestManager.Quest new_quest)
+    void SetupQuestPreparation(Quest new_quest)
     {
         //Info
         Transform info = quest_preparation.transform.GetChild(0);
         info.GetChild(0).GetComponent<Text>().text = new_quest.lvl.ToString();
-        info.GetChild(1).GetComponent<Text>().text = new_quest.name;
+        info.GetChild(1).GetComponent<Text>().text = new_quest.quest_name;
 
         //Enemies
         Transform enemies = quest_preparation.transform.GetChild(2).GetChild(0);
@@ -183,7 +205,7 @@ public class UIManager : MonoBehaviour
         {
             Destroy(enemies.GetChild(i).gameObject);
         }
-        foreach (QuestManager.QuestEnemy enemy in new_quest.enemies)
+        foreach (Quest.QuestEnemy enemy in new_quest.enemies)
         {
             GameObject new_enemy = Instantiate(slot_prefab);
 
@@ -203,7 +225,8 @@ public class UIManager : MonoBehaviour
         {
             Destroy(members.GetChild(i).gameObject);
         }
-        uint size = GameManager.manager.quests.GetMemberSizeFromType(new_quest.type);
+
+        uint size = new_quest.GetMemberSizeFromType(new_quest.type);
         for(int i = 0; i < size; i++)
         {
             GameObject new_member_slot = Instantiate(slot_prefab);
@@ -219,12 +242,12 @@ public class UIManager : MonoBehaviour
         {
             Destroy(rewards.GetChild(i).gameObject);
         }
-        foreach (ResourceManager.Resource resource in new_quest.rewards)
+        foreach (Resource resource in new_quest.rewards)
         {
             GameObject new_resource = Instantiate(resource_prefab);
             //Todo: select image depending on resource type
             //new_resource.GetComponent<Image>().image = IMAGE;
-            new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.amount.ToString();
+            new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
             new_resource.transform.SetParent(rewards);
         }
     }
@@ -279,7 +302,7 @@ public class UIManager : MonoBehaviour
         info_panel.GetChild(1).GetChild(0).GetComponent<Text>().text = info.equipment_lvl.ToString();
         info_panel.GetChild(2).GetChild(0).GetComponent<Text>().text = info.GetTypeString();
         info_panel.GetChild(3).GetChild(0).GetComponent<Text>().text = info.xp.ToString();
-        info_panel.GetChild(4).GetChild(0).GetComponent<Text>().text = member.GetStateString();
+        info_panel.GetChild(4).GetComponent<Text>().text = member.action_string;
 
         //Buttons
     }
@@ -289,7 +312,7 @@ public class UIManager : MonoBehaviour
         if(member == selected_member)
         {
             Transform info_panel = member_info_panel.transform.GetChild(1);
-            info_panel.GetChild(4).GetChild(0).GetComponent<Text>().text = member.GetStateString();
+            info_panel.GetChild(4).GetComponent<Text>().text = member.action_string;
         }
     }
 
@@ -299,12 +322,12 @@ public class UIManager : MonoBehaviour
         {
             Destroy(guild_upgrade_costs.transform.GetChild(i).gameObject);
         }
-        List<ResourceManager.Resource> resources = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL].GetResourcesCost();
-        foreach(ResourceManager.Resource resource in resources)
+        List<Resource> resources = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL].GetResourcesCost();
+        foreach(Resource resource in resources)
         {
             GameObject resource_go = Instantiate(resource_cost_prefab);
             //SET IMAGE AS RESOURCE IMAGE
-            resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.amount.ToString();
+            resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
 
             resource_go.transform.SetParent(guild_upgrade_costs.transform);
         }
@@ -317,12 +340,12 @@ public class UIManager : MonoBehaviour
             Destroy(blacksmith_upgrade_costs.transform.GetChild(i).gameObject);
         }
 
-        List<ResourceManager.Resource> resources = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.BLACKSMITH].GetResourcesCost();
-        foreach (ResourceManager.Resource resource in resources)
+        List<Resource> resources = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.BLACKSMITH].GetResourcesCost();
+        foreach (Resource resource in resources)
         {
             GameObject resource_go = Instantiate(resource_cost_prefab);
             //SET IMAGE AS RESOURCE IMAGE
-            resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.amount.ToString();
+            resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
 
             resource_go.transform.SetParent(guild_upgrade_costs.transform);
         }

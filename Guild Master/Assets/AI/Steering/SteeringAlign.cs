@@ -3,7 +3,6 @@ using System.Collections;
 
 public class SteeringAlign : Steering
 {
-
 	public float min_angle = 0.01f;
 	public float slow_angle = 0.1f;
 	public float time_to_accel = 0.1f;

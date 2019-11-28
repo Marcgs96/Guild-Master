@@ -17,7 +17,6 @@ namespace GuildMaster{
 		protected override void OnExecute(){
             building.EnterBuilding(agent);
             agent.OnBuildingEnter();
-            agent.OnNewTask();
 		}
 
 		protected override void OnUpdate(){

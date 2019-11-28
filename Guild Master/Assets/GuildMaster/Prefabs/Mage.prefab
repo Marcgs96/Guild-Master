@@ -578,9 +578,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 1
   steer: {fileID: 0}
+  wander: {fileID: 0}
+  task_time: 3
   weapon: {fileID: 5803403313378560017}
   model: {fileID: 6084457698102769950}
-  task_time: 3
 --- !u!114 &2246033019795271706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,12 +594,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundGraphSerialization: 
-  boundGraphObjectReferences: []
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-3683.0,"y":-3955.0},"zoomFactor":0.7500002,"nodes":[{"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"5f33928d-752c-4576-ba80-b0dfc3420c48"},"_position":{"x":5409.0,"y":5441.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":4912.0,"y":5745.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"target":{},"$type":"GuildMaster.MoveTo"},"_position":{"x":4813.0,"y":5868.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"$type":"GuildMaster.EnterBuilding"},"_position":{"x":4997.0,"y":5869.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"9"},{"_position":{"x":5277.0,"y":5684.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"11"},{"_action":{"target":{},"$type":"GuildMaster.MoveTo"},"_position":{"x":5133.0,"y":5762.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"12"},{"_action":{"$type":"GuildMaster.EnterBuilding"},"_position":{"x":5306.0,"y":5774.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"15"},{"_position":{"x":5644.0,"y":5689.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"17"},{"_action":{"target":{},"$type":"GuildMaster.MoveTo"},"_position":{"x":5540.0,"y":5785.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"18"},{"_nestedFSM":{"_value":1},"_position":{"x":5749.0,"y":5775.0},"$type":"NodeCanvas.BehaviourTrees.NestedFSM","$id":"21"},{"childWeights":[{"_value":1.0},{"_value":1.0},{},{}],"failChance":{},"_position":{"x":6135.0,"y":5675.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"23"},{"_position":{"x":5920.0,"y":5776.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"30"},{"_position":{"x":5847.0,"y":5878.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":5991.0,"y":5878.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"32"},{"_nestedFSM":{"_value":2},"successState":"","failureState":"","_position":{"x":6069.0,"y":5782.0},"$type":"NodeCanvas.BehaviourTrees.NestedFSM","$id":"33"},{"_nestedFSM":{"_value":3},"successState":"","failureState":"","_position":{"x":6200.0,"y":5781.0},"$type":"NodeCanvas.BehaviourTrees.NestedFSM","$id":"35"},{"_nestedFSM":{"_value":4},"successState":"","failureState":"","_position":{"x":6342.0,"y":5783.0},"$type":"NodeCanvas.BehaviourTrees.NestedFSM","$id":"37"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"37"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: d447283eb706a0b47a3d30a29553355f, type: 2}
+  - {fileID: 11400000, guid: 5fcd4a0589881c540bba9126cf63eaf8, type: 2}
+  - {fileID: 11400000, guid: 2b8ecd819d1728d4d850863581ff67da, type: 2}
+  - {fileID: 11400000, guid: a80620c0217e0e4468b323ce0d503111, type: 2}
   firstActivation: 0
   enableAction: 0
   disableAction: 0
-  _graph: {fileID: 11400000, guid: 149d095838d0f144fbc7cf377fc3ffaa, type: 2}
+  _graph: {fileID: 0}
   _blackboard: {fileID: -1784941013477514498}
 --- !u!114 &-1784941013477514498
 MonoBehaviour:

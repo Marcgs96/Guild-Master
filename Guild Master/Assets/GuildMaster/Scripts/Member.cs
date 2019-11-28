@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class Member : MonoBehaviour
         public uint lvl;
         public uint xp;
         public uint equipment_lvl;
+        public uint stamina;
         public MEMBER_TYPE type;
 
         public string GetTypeString()
@@ -34,7 +36,8 @@ public class Member : MonoBehaviour
     }
 
     protected MemberInfo info;
-    public MEMBER_STATE state = MEMBER_STATE.SLEEP;
+    public MEMBER_STATE state = MEMBER_STATE.REST;
+    public string action_string;
 
     protected Move move;
     protected Animator anim;
@@ -83,7 +86,12 @@ public class Member : MonoBehaviour
 
         this.state = state;
     }
-    virtual public void GenerateInfo() { }
+    virtual public void GenerateInfo()
+    {
+        info.lvl = 1;
+        info.xp = 0;
+        info.stamina = 100;
+    }
 
     public void OnBuildingExit()
     {
@@ -92,10 +100,37 @@ public class Member : MonoBehaviour
         steer.enabled = true;
     }
 
+    internal void IncreaseStamina(uint v)
+    {
+        if (info.stamina == 100)
+            return;
+
+        info.stamina += v;
+        if (info.stamina > 100)
+            info.stamina = 100;
+
+        GameManager.manager.ui.OnMemberStaminaChange(this);
+    }
+
+    internal void DecreaseStamina(uint value)
+    {
+        if (info.stamina == 0)
+            return;
+
+        info.stamina -= value;
+        if (info.stamina < 0)
+            info.stamina = 0;
+
+        GameManager.manager.ui.OnMemberStaminaChange(this);
+    }
+
     public void OnBuildingEnter()
     {
         Disappear(true);
         steer.enabled = false;
+
+        if (state == MEMBER_STATE.QUEST)
+            GameManager.manager.quests.OnDungeonEnter(this);
     }
 
     public void Disappear(bool mode)
@@ -112,33 +147,15 @@ public class Member : MonoBehaviour
         }
     }
 
-    public string GetStateString()
-    {
-        string ret = "Unknown";
-        switch (state)
-        {
-            case MEMBER_STATE.WORK:
-                ret = GetMemberWorkString();
-                break;
-            case MEMBER_STATE.SLEEP:
-                ret = steer.ReachedDestination() ? "Sleeping": "Going to Sleep";
-                break;
-            case MEMBER_STATE.QUEST:
-                ret = steer.ReachedDestination() ? "On Quest" : "Going to the Dungeon";
-                break;
-        }
-
-        return ret;
-    }
-
-    public void OnNewTask()
-    {
-       // GameManager.manager.ui.MemberActionChange(this);
-    }
-
     virtual protected string GetMemberWorkString() { return "Unknown"; }
     public MemberInfo GetInfo()
     {
         return info;
+    }
+
+    public void ChangeActionString(string new_string)
+    {
+        action_string = new_string;
+        GameManager.manager.ui.MemberActionChange(this);
     }
 }

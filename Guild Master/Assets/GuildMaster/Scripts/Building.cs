@@ -16,7 +16,7 @@ public class Building : MonoBehaviour
     [System.Serializable]
     public struct LevelCost //Wrapper for serialization of array of lists. This should be read from JSON but no time for it yet.
     {
-        public List<ResourceManager.Resource> resources;
+        public List<Resource> resources;
     }
     [SerializeField]
     LevelCost[] level_costs;
@@ -94,9 +94,9 @@ public class Building : MonoBehaviour
 
     bool HaveResources()
     {
-        foreach (ResourceManager.Resource resource in level_costs[level-1].resources)
+        foreach (Resource resource in level_costs[level-1].resources)
         {
-            if (!GameManager.manager.resources.HaveAmount(resource.type, resource.amount))
+            if (!GameManager.manager.resources.HaveAmount(resource.GetResourceType(), resource.GetAmount()))
                 return false;
         }
 
@@ -105,16 +105,16 @@ public class Building : MonoBehaviour
 
     void DecreaseResources()
     {
-        foreach (ResourceManager.Resource resource in level_costs[level-1].resources)
+        foreach (Resource resource in level_costs[level-1].resources)
         {
-            GameManager.manager.resources.DecreaseResource(resource.type, resource.amount);
+            GameManager.manager.resources.DecreaseResource(resource.GetResourceType(), resource.GetAmount());
         }
     }
 
-    public List<ResourceManager.Resource> GetResourcesCost()
+    public List<Resource> GetResourcesCost()
     {
-        List<ResourceManager.Resource> total_resources = new List<ResourceManager.Resource>();
-        foreach (ResourceManager.Resource resource in level_costs[level-1].resources)
+        List<Resource> total_resources = new List<Resource>();
+        foreach (Resource resource in level_costs[level-1].resources)
         {
             total_resources.Add(resource);
         }

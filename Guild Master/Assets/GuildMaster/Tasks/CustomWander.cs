@@ -35,7 +35,6 @@ namespace GuildMaster{
         protected override void OnStop()
         {
            agent.steer.ClearPath();
-           agent.OnNewTask();
         }
 
         protected override void OnPause()

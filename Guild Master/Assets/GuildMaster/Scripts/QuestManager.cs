@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,55 +7,18 @@ public class QuestManager : MonoBehaviour
 {
     [SerializeField]
     List<Quest> quests;
+    List<Quest> active_quests;
     [SerializeField]
-    List<Member> quest_party;
     Quest selected_quest;
-
-
-    public enum EnemyType { SKELETON, BANDIT, ORC, TOTAL };
-    public enum QuestType { BOUNTY, DUNGEON, RAID };
 
     public delegate void QuestAdded(Quest new_quest);
     public static event QuestAdded OnQuestAdd;
 
-    public struct QuestEnemy
-    {
-        public string name;
-        public uint lvl;
-        public EnemyType type;
-    }
-
-    public class Quest
-    {
-        public string name;
-        public uint lvl;
-        public uint xp;
-        public QuestType type;
-        public List<QuestEnemy> enemies;
-        public List<ResourceManager.Resource> rewards;
-    }
-
-
     void Start()
     {
+        active_quests = new List<Quest>();
         quests = new List<Quest>();
-        quest_party = new List<Member>();
         GenerateQuests();
-    }
-
-    public uint GetMemberSizeFromType(QuestType type)
-    {
-        switch (type)
-        {
-            case QuestType.BOUNTY:
-                return 1;
-            case QuestType.DUNGEON:
-                return 5;
-            case QuestType.RAID:
-                return 10;
-        }
-
-        return 1;
     }
 
     void CleanQuests()
@@ -65,99 +29,56 @@ public class QuestManager : MonoBehaviour
     void GenerateQuests()
     {
         //Todo: Create random quests depending of set parameteres like highest lvl member, amount of members, etc.
-        CreateQuest(QuestType.BOUNTY, 1);
-        CreateQuest(QuestType.DUNGEON, 2);
+        CreateQuest(Quest.QuestType.BOUNTY, 1);
+        CreateQuest(Quest.QuestType.DUNGEON, 2);
     }
 
-    void CreateQuest(QuestType type, uint lvl)
+    void CreateQuest(Quest.QuestType type, uint lvl)
     {
-        Quest quest = new Quest();
-        quest.type = type;
-        quest.lvl = lvl;
-
-        quest.enemies = new List<QuestEnemy>();
-        quest.rewards = new List<ResourceManager.Resource>();
-
-        switch (type)
-        {
-            case QuestType.BOUNTY:
-                quest.name = "Bounty";
-                quest.xp = 200;
-
-                quest.enemies.Add(CreateEnemy(lvl));
-
-                //Todo: Create function for reward setup
-                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Gold, 250));
-                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Shield, 5));
-
-                break;
-            case QuestType.DUNGEON:
-                quest.name = "Dungeon";
-                quest.xp = 500;
-
-                for(int i = 0; i < GetMemberSizeFromType(type); i++)
-                {
-                    quest.enemies.Add(CreateEnemy(lvl));
-                }
-
-                //Todo: Create function for reward setup
-                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Gold, 500));
-                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Shield, 10));
-                quest.rewards.Add(new ResourceManager.Resource(ResourceManager.ResourceType.Crown, 10));
-
-                break;
-            case QuestType.RAID:
-                //todo
-                break;
-        }
-
+        Quest quest = new Quest(type,lvl);
+        quests.Add(quest);
         OnQuestAdd?.Invoke(quest);
-    }
-
-    QuestEnemy CreateEnemy(uint lvl)
-    {
-        //Todo: improve enemy creation related with quest type and difficulty.
-        QuestEnemy enemy;
-        enemy.name = "Bobo";
-        enemy.lvl = lvl;
-        enemy.type = (EnemyType)Random.Range((int)EnemyType.SKELETON, (int)EnemyType.TOTAL);
-
-        return enemy;
     }
 
     public void SelectQuest(Quest new_quest)
     {
+        if(selected_quest != null)
+            selected_quest.party.Clear();
         selected_quest = new_quest;
-        quest_party.Clear();
     }
 
     public void AddMemberToQuest(Member new_member)
     {
-        quest_party.Add(new_member);
+        selected_quest.party.Add(new_member);
     }
 
     public void RemoveMemberFromQuest(Member old_member)
     {
-        quest_party.Remove(old_member);
+        selected_quest.party.Remove(old_member);
     }
 
     public bool IsInParty(Member member)
     {
-        return quest_party.Contains(member);
+        return selected_quest.party.Contains(member);
     }
 
     public void StartQuest()
     {
-        Debug.Log("Starting Quest: " + selected_quest.name);
-
-        foreach (Member member in quest_party)
-        {
-            member.ChangeState(Member.MEMBER_STATE.QUEST);
-        }
+        Debug.Log("Starting Quest: " + selected_quest.quest_name);
+        active_quests.Add(selected_quest);
+        selected_quest.SendParty();
     }
 
     void FinishQuest()
     {
 
+    }
+
+    internal void OnDungeonEnter(Member member)
+    {
+        foreach (Quest quest in active_quests)
+        {
+            quest.OnDungeonEnter(member);
+        }
     }
 }
