@@ -38,14 +38,21 @@ public class Member : MonoBehaviour
     protected MemberInfo info;
     public MEMBER_STATE state = MEMBER_STATE.REST;
     public string action_string;
-    public float night_value;
+    public float night_value = 0;
+    public bool producing = false;
+
+    protected float production_stamina_cost;
+    [SerializeField]
+    protected uint production_hours_cycle;
+    [SerializeField]
+    protected float production_total_cycle_cost;
 
     protected Move move;
     protected Animator anim;
     public SteeringFollowNavMeshPath steer;
     public SteeringWander wander;
     protected Collider coll;
-    public float task_time = 3.0f;
+    public float task_time;
 
     public GameObject weapon;
     public GameObject model;
@@ -70,6 +77,7 @@ public class Member : MonoBehaviour
         blacksmith_bubble = transform.Find("BlacksmithBubble").gameObject;
 
         state = (MEMBER_STATE)UnityEngine.Random.Range((int)MEMBER_STATE.WORK, (int)MEMBER_STATE.NONE);
+        production_stamina_cost = production_total_cycle_cost / GameManager.manager.time.InGameHoursToSeconds(production_hours_cycle);
 
         //Setup state
         anim.SetInteger("char_type", (int)info.type);
@@ -79,6 +87,11 @@ public class Member : MonoBehaviour
     protected void Update()
     {
         anim.SetFloat("speed", move.current_velocity.magnitude);
+
+        if (producing)
+            DecreaseStamina(production_stamina_cost * Time.fixedDeltaTime);
+        else if(state == MEMBER_STATE.REST)
+            IncreaseStamina(production_stamina_cost * Time.fixedDeltaTime);
     }
 
     protected void ChangeNightValue(bool night)
@@ -94,6 +107,7 @@ public class Member : MonoBehaviour
             return;
 
         this.state = state;
+        producing = false;
     }
     virtual public void GenerateInfo()
     {
@@ -109,7 +123,7 @@ public class Member : MonoBehaviour
         steer.enabled = true;
     }
 
-    internal void IncreaseStamina(uint v)
+    internal void IncreaseStamina(float v)
     {
         if (info.stamina == 100)
             return;
