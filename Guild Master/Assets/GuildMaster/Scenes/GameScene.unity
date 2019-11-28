@@ -12359,16 +12359,6 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 644855860}
-    - target: {fileID: -4736523880351700497, guid: bdac0e0654792474e9b2a72cca6f01d2,
-        type: 3}
-      propertyPath: _serializedBlackboard
-      value: '{"_variables":{"task_time":{"_propertyPath":"HunterMember.task_time","_name":"task_time","_id":"a07c6b32-0e64-4fc2-9c14-8f6667e6f6c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"target_animal":{"_propertyPath":"HunterMember.target_animal","_name":"target_animal","_id":"36ad6eed-8af5-441a-9200-b43641fd7609","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"state":{"_propertyPath":"HunterMember.state","_name":"state","_id":"9c009fce-0ff9-49ef-adc4-f401443d0c25","$type":"NodeCanvas.Framework.Variable`1[[Member+MEMBER_STATE,
-        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"night_value":{"_propertyPath":"HunterMember.night_value","_name":"night_value","_id":"2dfe03eb-1962-4601-a650-3ea0c4caa36c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"producing":{"_propertyPath":"HunterMember.producing","_name":"producing","_id":"09e99ec5-65fb-488e-bc2d-e97fa89c4ccc","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdac0e0654792474e9b2a72cca6f01d2, type: 3}
 --- !u!1 &1167842065 stripped
@@ -18583,16 +18573,6 @@ PrefabInstance:
       propertyPath: boundGraphObjectReferences.Array.data[18]
       value: 
       objectReference: {fileID: 1836525768}
-    - target: {fileID: -1784941013477514498, guid: 917685ca3ed193549ac39a7adbac5950,
-        type: 3}
-      propertyPath: _serializedBlackboard
-      value: '{"_variables":{"task_time":{"_propertyPath":"MageMember.task_time","_name":"task_time","_id":"80e5cc1a-fb8a-4519-a8c4-95c6fe43bd6b","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"state":{"_propertyPath":"Member.state","_name":"state","_id":"5f33928d-752c-4576-ba80-b0dfc3420c48","$type":"NodeCanvas.Framework.Variable`1[[Member+MEMBER_STATE,
-        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"action_string":{"_propertyPath":"MageMember.action_string","_name":"action_string","_id":"4a50cc54-4165-423a-9e90-da9e360da252","$type":"NodeCanvas.Framework.Variable`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"night_value":{"_propertyPath":"MageMember.night_value","_name":"night_value","_id":"ba7fb04e-29b1-45cd-9bb5-b131c9adcf9c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"producing":{"_propertyPath":"MageMember.producing","_name":"producing","_id":"1d745a23-fdbc-4f6a-b2d1-83d15b977467","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 917685ca3ed193549ac39a7adbac5950, type: 3}
 --- !u!1 &1238513299 stripped
@@ -18873,7 +18853,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  resource_images: []
+  resource_images:
+  - {fileID: 2800000, guid: 319e52cf88c18ad47973d6674d1bc22a, type: 3}
+  - {fileID: 2800000, guid: 0545bcc805888f441ae207de331c868b, type: 3}
+  - {fileID: 2800000, guid: 6c86785dbd779db4490955468734e4e8, type: 3}
+  - {fileID: 2800000, guid: 36abe79fa637cf24dab00d6b65bcaa60, type: 3}
+  - {fileID: 2800000, guid: bcb262c135fc8b14cb9647fab9ac4dcd, type: 3}
+  - {fileID: 2800000, guid: 233487cbaf759e344b71ff5f1b64da5a, type: 3}
 --- !u!1 &1255282309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 150462, guid: 681372998f9890e49986679f715e6f5d,
@@ -18907,22 +18893,22 @@ MonoBehaviour:
   - resources:
     - type: 0
       amount: 200
-    - type: 2
+    - type: 4
       amount: 5
   - resources:
     - type: 0
       amount: 300
-    - type: 2
+    - type: 4
       amount: 10
   - resources:
     - type: 0
       amount: 400
-    - type: 2
+    - type: 4
       amount: 15
   - resources:
     - type: 0
       amount: 500
-    - type: 2
+    - type: 4
       amount: 20
   exit_time: 0.5
   bubble: {fileID: 0}
@@ -25147,22 +25133,22 @@ MonoBehaviour:
   - resources:
     - type: 0
       amount: 200
-    - type: 1
+    - type: 3
       amount: 5
   - resources:
     - type: 0
       amount: 300
-    - type: 1
+    - type: 3
       amount: 10
   - resources:
     - type: 0
       amount: 400
-    - type: 1
+    - type: 3
       amount: 15
   - resources:
     - type: 0
       amount: 500
-    - type: 1
+    - type: 3
       amount: 20
   exit_time: 0.5
   bubble: {fileID: 250543495}

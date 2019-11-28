@@ -8,10 +8,11 @@ public class Resource
     public enum ResourceType
     {
         Gold,
-        Crown,
-        Shield,
         Potion,
         Meat,
+        Crown,
+        Shield,
+        Flame
     }
     [SerializeField]
     private ResourceType type;

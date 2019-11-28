@@ -188,8 +188,7 @@ public class UIManager : MonoBehaviour
         foreach (Resource resource in new_quest.rewards)
         {
             GameObject new_resource = Instantiate(resource_prefab);
-            //Todo: select image depending on resource type
-            //new_resource.GetComponent<Image>().image = IMAGE;
+            new_resource.GetComponent<RawImage>().texture = resource_images[(int)resource.GetResourceType()];
             new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
             new_resource.transform.SetParent(rewards);
         }
@@ -276,8 +275,7 @@ public class UIManager : MonoBehaviour
         foreach (Resource resource in new_quest.rewards)
         {
             GameObject new_resource = Instantiate(resource_prefab);
-            //Todo: select image depending on resource type
-            //new_resource.GetComponent<Image>().image = IMAGE;
+            new_resource.GetComponent<RawImage>().texture = resource_images[(int)resource.GetResourceType()];
             new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
             new_resource.transform.SetParent(rewards);
         }
@@ -374,7 +372,7 @@ public class UIManager : MonoBehaviour
             foreach (Resource resource in resources)
             {
                 GameObject resource_go = Instantiate(resource_cost_prefab);
-                //SET IMAGE AS RESOURCE IMAGE
+                resource_go.GetComponent<RawImage>().texture = resource_images[(int)resource.GetResourceType()];
                 resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
                 resource_go.transform.SetParent(guild_upgrade_costs.transform);
             }
@@ -404,7 +402,7 @@ public class UIManager : MonoBehaviour
             foreach (Resource resource in resources)
             {
                 GameObject resource_go = Instantiate(resource_cost_prefab);
-                //SET IMAGE AS RESOURCE IMAGE
+                resource_go.GetComponent<RawImage>().texture = resource_images[(int)resource.GetResourceType()];
                 resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
                 resource_go.transform.SetParent(blacksmith_upgrade_costs.transform);
             }
