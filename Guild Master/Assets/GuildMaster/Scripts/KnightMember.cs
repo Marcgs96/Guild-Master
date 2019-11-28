@@ -10,16 +10,4 @@ public class KnightMember : Member
         info.name = "Marcos";
         info.type = MEMBER_TYPE.KNIGHT;
     }
-    protected override void ChangeState(uint hour)
-    {
-        if (state == MEMBER_STATE.QUEST)
-            return;
-
-        switch (hour)
-        {
-            case 21:
-                state = MEMBER_STATE.SLEEP;
-                break;
-        }
-    }
 }

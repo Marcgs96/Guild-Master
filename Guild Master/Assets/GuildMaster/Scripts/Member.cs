@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Member : MonoBehaviour
 {
-    public enum MEMBER_STATE { QUEST, SLEEP, WORK, REST, NONE};
+    public enum MEMBER_STATE { QUEST, WORK, REST, NONE};
     public enum MEMBER_TYPE { KNIGHT, HUNTER, MAGE, NONE };
     public struct MemberInfo
     {
@@ -38,6 +38,7 @@ public class Member : MonoBehaviour
     protected MemberInfo info;
     public MEMBER_STATE state = MEMBER_STATE.REST;
     public string action_string;
+    public float night_value;
 
     protected Move move;
     protected Animator anim;
@@ -60,7 +61,7 @@ public class Member : MonoBehaviour
         move = this.GetComponent<Move>();
         anim = this.GetComponent<Animator>();
 
-        DayNightCicle.OnHourChange += ChangeState;
+        DayNightCicle.OnDayCycleChange += ChangeNightValue;
 
         steer = GetComponent<SteeringFollowNavMeshPath>();
         wander = GetComponent<SteeringWander>();
@@ -80,10 +81,16 @@ public class Member : MonoBehaviour
         anim.SetFloat("speed", move.current_velocity.magnitude);
     }
 
-    virtual protected void ChangeState(uint hour) { }
+    protected void ChangeNightValue(bool night)
+    {
+        if (night)
+            night_value = 5; //weight value of night for random action selection. This makes sleep have 60% chance at night.
+        else
+            night_value = 0;
+    }
     public void ChangeState(MEMBER_STATE state, bool force = false)
     {
-        if (!force && (this.state == MEMBER_STATE.QUEST || (this.state == MEMBER_STATE.SLEEP && state != MEMBER_STATE.QUEST)))
+        if (!force && this.state == MEMBER_STATE.QUEST)
             return;
 
         this.state = state;

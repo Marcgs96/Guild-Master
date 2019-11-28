@@ -13,18 +13,6 @@ public class HunterMember : Member
         info.name = "Huntard";
         info.type = MEMBER_TYPE.HUNTER;
     }
-    protected override void ChangeState(uint hour)
-    {
-        if (state == MEMBER_STATE.QUEST)
-            return;
-
-        switch (hour)
-        {
-            case 21:
-                state = MEMBER_STATE.SLEEP;
-                break;
-        }
-    }
 
     public void RequestAnimal()
     {
