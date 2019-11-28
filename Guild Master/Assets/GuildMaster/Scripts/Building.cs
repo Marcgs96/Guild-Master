@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    public enum BUILDING_TYPE { GUILD_HOUSE, BLACKSMITH, DUNGEON, TAVERN }
+
     static uint MAX_LVL = 6;
-    static uint START_LVL = 1;
+    [SerializeField]
+    uint level;
 
     Queue<Member> release_queue;
     List<Member> members_inside;
 
-    uint level = START_LVL;
+    public BUILDING_TYPE type;
+
 
     [System.Serializable]
     public struct LevelCost //Wrapper for serialization of array of lists. This should be read from JSON but no time for it yet.
@@ -21,7 +25,7 @@ public class Building : MonoBehaviour
     [SerializeField]
     LevelCost[] level_costs;
 
-    public delegate void BuildingLevel();
+    public delegate void BuildingLevel(uint lvl);
     public event BuildingLevel OnLevelUp;
 
     public float exit_time = 0.5f;
@@ -88,7 +92,8 @@ public class Building : MonoBehaviour
         {
             DecreaseResources();
             level++;
-            OnLevelUp?.Invoke();
+
+            OnLevelUp?.Invoke(level);
         }
     }
 
@@ -127,7 +132,7 @@ public class Building : MonoBehaviour
         return level == MAX_LVL;
     }
 
-    internal object GetLevel()
+    internal uint GetLevel()
     {
         return level;
     }
