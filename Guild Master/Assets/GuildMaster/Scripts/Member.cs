@@ -68,6 +68,8 @@ public class Member : MonoBehaviour
         action_bubble = transform.Find("ActionBubble").gameObject;
         blacksmith_bubble = transform.Find("BlacksmithBubble").gameObject;
 
+        state = (MEMBER_STATE)UnityEngine.Random.Range((int)MEMBER_STATE.WORK, (int)MEMBER_STATE.NONE);
+
         //Setup state
         anim.SetInteger("char_type", (int)info.type);
     }

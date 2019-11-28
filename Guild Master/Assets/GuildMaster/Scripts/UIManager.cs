@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviour
     public GameObject resource_prefab;
     public GameObject slot_prefab;
     public GameObject resource_cost_prefab;
+    public List<Texture2D> portraits;
+    public List<Texture2D> resource_images;
 
     void Awake()
     {
@@ -41,11 +43,11 @@ public class UIManager : MonoBehaviour
 
         MemberManager.OnMemberAdd += CreateMemberListing;
         QuestManager.OnQuestAdd += CreateQuestListing;
-        GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL].OnLevelUp += UpdateGuildHallUpgrade;
-        GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.BLACKSMITH].OnLevelUp += UpdateBlacksmithUpgrade;
+        GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE].OnLevelUp += OnGuildHouseLevelUp;
+        GameManager.manager.buildings[(int)Building.BUILDING_TYPE.BLACKSMITH].OnLevelUp += OnBlacksmithLevelUp;
 
-        UpdateBlacksmithUpgrade();
-        UpdateGuildHallUpgrade();
+        UpdateBlacksmithPanel();
+        UpdateGuildHallPanel();
     }
 
     #region ButtonFuctions
@@ -161,6 +163,19 @@ public class UIManager : MonoBehaviour
         RemoveQuestListing(GameManager.manager.quests.GetSelectedQuest());
         CloseQuestPreparation();
     }
+
+    public void KnightRecruitButton()
+    {
+        GameManager.manager.members.AddMember(Member.MEMBER_TYPE.KNIGHT);
+    }
+    public void MageRecruitButton()
+    {
+        GameManager.manager.members.AddMember(Member.MEMBER_TYPE.MAGE);
+    }
+    public void HunterRecruitButton()
+    {
+        GameManager.manager.members.AddMember(Member.MEMBER_TYPE.HUNTER);
+    }
     #endregion
 
     void CreateQuestListing(Quest new_quest)
@@ -198,11 +213,14 @@ public class UIManager : MonoBehaviour
         GameObject new_listing = Instantiate(member_listing);
         Member.MemberInfo info = new_member.GetInfo();
         new_listing.transform.GetChild(1).GetComponent<Text>().text = info.name;
+        new_listing.transform.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)new_member.GetInfo().type];
 
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnMemberClick(new_member); });
-        new_listing.transform.SetParent(members_list_panel.transform);
+        new_listing.transform.SetParent(members_list_panel.transform.GetChild(1));
 
         member_listings.Add(new_member, new_listing);
+
+        UpdateMemberCountText();
     }
 
     void SetupQuestPreparation(Quest new_quest)
@@ -306,7 +324,7 @@ public class UIManager : MonoBehaviour
         //Header
         Transform header = member_info_panel.transform.GetChild(0);
         header.GetComponentInChildren<Text>().text = info.name;
-        //setup image
+        header.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)member.GetInfo().type];
         //setup slider
 
         //Info
@@ -329,9 +347,20 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void UpdateGuildHallUpgrade()
+    public void UpdateMemberCountText()
     {
-        Building guild_hall = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.GUILD_HALL];
+        string member_count = GameManager.manager.members.GetMemberCount().ToString() + "/" + GameManager.manager.members.GetMemberCap().ToString();
+        members_list_panel.transform.GetChild(0).GetComponent<Text>().text = member_count;
+    }
+
+    public void OnGuildHouseLevelUp(uint lvl)
+    {
+        UpdateGuildHallPanel();
+    }
+
+    public void UpdateGuildHallPanel()
+    {
+        Building guild_hall = GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE];
         guild_panel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = guild_hall.GetLevel().ToString();
 
         for (int i = 0; i < guild_upgrade_costs.transform.childCount; i++)
@@ -347,19 +376,21 @@ public class UIManager : MonoBehaviour
                 GameObject resource_go = Instantiate(resource_cost_prefab);
                 //SET IMAGE AS RESOURCE IMAGE
                 resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
-
                 resource_go.transform.SetParent(guild_upgrade_costs.transform);
             }
         }
         else
-        {
             guild_upgrade_costs.transform.parent.GetComponent<Button>().enabled = false;
-        }
     }
 
-    public void UpdateBlacksmithUpgrade()
+    public void OnBlacksmithLevelUp(uint level)
     {
-        Building blacksmith = GameManager.manager.buildings[(int)GameManager.LOCATION_TYPE.BLACKSMITH];
+        UpdateBlacksmithPanel();
+    }
+
+    public void UpdateBlacksmithPanel()
+    {
+        Building blacksmith = GameManager.manager.buildings[(int)Building.BUILDING_TYPE.BLACKSMITH];
         blacksmith_panel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = blacksmith.GetLevel().ToString();
 
         for (int i = 0; i < blacksmith_upgrade_costs.transform.childCount; i++)
@@ -375,13 +406,10 @@ public class UIManager : MonoBehaviour
                 GameObject resource_go = Instantiate(resource_cost_prefab);
                 //SET IMAGE AS RESOURCE IMAGE
                 resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
-
                 resource_go.transform.SetParent(blacksmith_upgrade_costs.transform);
             }
         }
         else
-        {
             blacksmith_upgrade_costs.transform.parent.GetComponent<Button>().enabled = false;
-        }
     }
 }
