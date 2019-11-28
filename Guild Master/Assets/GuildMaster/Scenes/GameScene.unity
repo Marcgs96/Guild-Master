@@ -18535,6 +18535,14 @@ MonoBehaviour:
     type: 3}
   resource_cost_prefab: {fileID: 3716793958201604859, guid: bc61239334f617148b2af0d2d8819c30,
     type: 3}
+  portraits:
+  - {fileID: 2800000, guid: e1bd67bcd6fa002478ba8f9e22aff8d9, type: 3}
+  - {fileID: 2800000, guid: e4884ba367317e2498de5f2acf83412f, type: 3}
+  - {fileID: 2800000, guid: ffa1112cc0262354684d2f62134cf66b, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  resource_images: []
 --- !u!1 &1255282309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 150462, guid: 681372998f9890e49986679f715e6f5d,

@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviour
     public GameObject resource_prefab;
     public GameObject slot_prefab;
     public GameObject resource_cost_prefab;
+    public List<Texture2D> portraits;
+    public List<Texture2D> resource_images;
 
     void Awake()
     {
@@ -211,6 +213,7 @@ public class UIManager : MonoBehaviour
         GameObject new_listing = Instantiate(member_listing);
         Member.MemberInfo info = new_member.GetInfo();
         new_listing.transform.GetChild(1).GetComponent<Text>().text = info.name;
+        new_listing.transform.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)new_member.GetInfo().type];
 
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnMemberClick(new_member); });
         new_listing.transform.SetParent(members_list_panel.transform.GetChild(1));
@@ -321,7 +324,7 @@ public class UIManager : MonoBehaviour
         //Header
         Transform header = member_info_panel.transform.GetChild(0);
         header.GetComponentInChildren<Text>().text = info.name;
-        //setup image
+        header.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)member.GetInfo().type];
         //setup slider
 
         //Info
