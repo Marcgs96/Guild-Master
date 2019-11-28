@@ -115,11 +115,11 @@ public class UIManager : MonoBehaviour
 
         if(listing)
         {
-            listing.transform.GetChild(2).GetComponent<Slider>().value = member.GetInfo().stamina;
+            listing.transform.GetChild(2).GetComponent<Slider>().value = (int)member.GetInfo().stamina;
             if(selected_member == member)
             {
                 Transform header = member_info_panel.transform.GetChild(0);
-                header.GetChild(2).GetComponent<Slider>().value = member.GetInfo().stamina;
+                header.GetChild(2).GetComponent<Slider>().value = (int)member.GetInfo().stamina;
             }
         }
     }

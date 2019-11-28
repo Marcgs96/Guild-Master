@@ -39,6 +39,11 @@ public class DayNightCicle : MonoBehaviour
         hours_text.text = "Current time: " + Mathf.FloorToInt(hour) + ":" + minute;
     }
 
+    public float InGameHoursToSeconds(uint hour)
+    {
+        return 15.0f * hour;
+    }
+
     void IncreaseTime()
     {
         hour_count += 0.1f;

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public ResourceManager resources;
     public QuestManager quests;
     public UIManager ui;
+    public DayNightCicle time;
 
     //make locations/buildings manager ?
     public enum LOCATION_TYPE { TAVERN, GUILD_HALL, BLACKSMITH, MAGE_LOCATION, KNIGHT_LOCATION, HUNTER_LOCATION };

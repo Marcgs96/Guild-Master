@@ -13,7 +13,7 @@ public class Member : MonoBehaviour
         public uint lvl;
         public uint xp;
         public uint equipment_lvl;
-        public uint stamina;
+        public float stamina;
         public MEMBER_TYPE type;
 
         public string GetTypeString()
@@ -79,9 +79,9 @@ public class Member : MonoBehaviour
     }
 
     virtual protected void ChangeState(uint hour) { }
-    public void ChangeState(MEMBER_STATE state)
+    public void ChangeState(MEMBER_STATE state, bool force = false)
     {
-        if (this.state == MEMBER_STATE.QUEST || (this.state == MEMBER_STATE.SLEEP && state != MEMBER_STATE.QUEST))
+        if (!force && (this.state == MEMBER_STATE.QUEST || (this.state == MEMBER_STATE.SLEEP && state != MEMBER_STATE.QUEST)))
             return;
 
         this.state = state;
@@ -112,7 +112,7 @@ public class Member : MonoBehaviour
         GameManager.manager.ui.OnMemberStaminaChange(this);
     }
 
-    internal void DecreaseStamina(uint value)
+    internal void DecreaseStamina(float value)
     {
         if (info.stamina == 0)
             return;

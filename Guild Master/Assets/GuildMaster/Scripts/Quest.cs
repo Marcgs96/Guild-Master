@@ -20,16 +20,22 @@ public class Quest
     public QuestType type;
     public List<QuestEnemy> enemies;
     public List<Resource> rewards;
-    public uint quest_duration;
     public List<Member> party;
     public List<Resource> provisions;
 
-    private List<uint> stamina_ratios;
+    /// <summary>
+    /// Quest duration in game hours
+    /// </summary>
+    public uint quest_duration;
+    private List<float> stamina_ratios;
     private uint total_food_checks = 1;
     private bool food_check = false;
     private float stamina_check_time = 5.0f;
     private IEnumerator coroutine;
     private uint members_inside_dungeon = 0;
+
+    private float real_time_seconds;
+    private float elapsed_time;
 
     public Quest(QuestType type, uint level)
     {
@@ -100,24 +106,27 @@ public class Quest
 
     public void SendParty()
     {
-        stamina_ratios = new List<uint>();
+        stamina_ratios = new List<float>();
+        real_time_seconds = GameManager.manager.time.InGameHoursToSeconds(quest_duration);
+
         foreach (Member member in party)
         {
             member.ChangeState(Member.MEMBER_STATE.QUEST);
-            stamina_ratios.Add(10);
+            stamina_ratios.Add(50.0f/real_time_seconds);
         }
     }
 
     private IEnumerator QuestActivity()
     {
-        int food_check_chance = 0;
-        yield return new WaitForSeconds(stamina_check_time);
+        float food_check_chance = 0;
 
-        while (true)
+        while (elapsed_time < real_time_seconds)
         {
+            elapsed_time += Time.fixedDeltaTime;
+
             if (total_food_checks > 0) //Roll for a food check if thers any left
             {
-                int roll = UnityEngine.Random.Range(food_check_chance, 100);
+                int roll = UnityEngine.Random.Range((int)food_check_chance, 100);
                 if (roll == 100)
                 {
                     food_check = true;
@@ -128,7 +137,7 @@ public class Quest
             for (int i = 0; i < party.Count; i++)
             {
                 //Decrease stamina basic
-                party[i].DecreaseStamina(stamina_ratios[i]);
+                party[i].DecreaseStamina(stamina_ratios[i] * Time.fixedDeltaTime);
 
                 if (food_check) //Eat food if there is any left otherwise lose stamina
                 {
@@ -161,7 +170,19 @@ public class Quest
                 food_check = false;
             }
 
-            yield return new WaitForSeconds(stamina_check_time);
+            food_check_chance += 0.5f * Time.fixedDeltaTime;
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        FinishQuest();
+    }
+
+    private void FinishQuest()
+    {
+        foreach (Member member in party)
+        {
+            member.ChangeState(Member.MEMBER_STATE.REST, true);
         }
     }
 
