@@ -44,15 +44,21 @@ public class LocationManager : MonoBehaviour
         {
             if (!position.Value)
             {
-                Debug.Log("TIME TO FIGHT");
+                duel_location.positions[position.Key] = true;
+
+                ReleasePosition(agent_1.assigned_position);
+                ReleasePosition(agent_2.assigned_position);
+
                 agent_1.assigned_position = position.Key.transform.GetChild(0).gameObject;
                 agent_2.assigned_position = position.Key.transform.GetChild(1).gameObject;
 
-                agent_1.go_duel = true;
-                agent_2.go_duel = true;
+                agent_1.dueling = true;
+                agent_2.dueling = true;
 
                 agent_1.opponent = agent_2;
                 agent_2.opponent = agent_1;
+
+                return;
             }
         }
     }

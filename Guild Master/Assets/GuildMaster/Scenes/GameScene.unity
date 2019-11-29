@@ -9652,7 +9652,7 @@ PrefabInstance:
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"night_value":{"_propertyPath":"KnightMember.night_value","_name":"night_value","_id":"ce28a0b5-902c-4f42-b80a-d846f1e4cee4","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"producing":{"_propertyPath":"KnightMember.producing","_name":"producing","_id":"bd38b68c-153f-4871-9d33-3bfa0ba02290","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"assigned_position":{"_propertyPath":"KnightMember.assigned_position","_name":"assigned_position","_id":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"go_duel":{"_propertyPath":"KnightMember.go_duel","_name":"go_duel","_id":"1f82d6de-e992-498f-9658-e2c8cd2b16b3","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"dueling":{"_propertyPath":"KnightMember.dueling","_name":"dueling","_id":"1f82d6de-e992-498f-9658-e2c8cd2b16b3","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
       objectReference: {fileID: 0}
     m_RemovedComponents: []

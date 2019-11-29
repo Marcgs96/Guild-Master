@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KnightMember : Member
 {
-    public bool go_duel = false;
+    public bool dueling = false;
     public KnightMember opponent;
 
     override public void GenerateInfo()
@@ -12,5 +12,19 @@ public class KnightMember : Member
         base.GenerateInfo();
         info.name = "Marcos";
         info.type = MEMBER_TYPE.KNIGHT;
+    }
+
+    override public void ChangeState(MEMBER_STATE state, bool force = false)
+    {
+        base.ChangeState(state, force);
+
+        if(dueling && opponent)
+        {
+            dueling = false;
+            opponent.dueling = false;
+
+            opponent.opponent = null;
+            opponent = null;
+        }
     }
 }

@@ -32,7 +32,6 @@ namespace GuildMaster{
                     return;
                 }
             }
-            Debug.Log("No agent found. adding " + agent.name);
             free_members.value.Add(agent);
             EndAction(true);
         }

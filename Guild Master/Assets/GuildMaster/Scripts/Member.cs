@@ -102,7 +102,7 @@ public class Member : MonoBehaviour
         else
             night_value = 0;
     }
-    public void ChangeState(MEMBER_STATE state, bool force = false)
+    virtual public void ChangeState(MEMBER_STATE state, bool force = false)
     {
         if (!force && this.state == MEMBER_STATE.QUEST)
             return;
@@ -185,6 +185,7 @@ public class Member : MonoBehaviour
 
     public GameObject RequestPosition(GameObject location)
     {
+        Debug.Log("pepega?");
         GameManager.manager.locations.ReleasePosition(assigned_position);
         assigned_position = GameManager.manager.locations.GetAvailablePosition(location);
 
