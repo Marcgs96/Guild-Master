@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public QuestManager quests;
     public UIManager ui;
     public DayNightCicle time;
+    public LocationManager locations;
 
     //make locations/buildings manager ?
     public Building[] buildings;

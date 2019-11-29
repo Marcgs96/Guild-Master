@@ -12,6 +12,7 @@ public class SteeringFollowNavMeshPath : Steering
     SteeringArrive arrive;
     SteeringSeek seek;
     SteeringAlign align;
+    SteeringSeparation separation;
     NavMeshPath path;
 
     public float min_distance;
@@ -28,6 +29,7 @@ public class SteeringFollowNavMeshPath : Steering
         arrive = GetComponent<SteeringArrive>();
         seek = GetComponent<SteeringSeek>();
         align = GetComponent<SteeringAlign>();
+        separation = GetComponent<SteeringSeparation>();
 
         path = new NavMeshPath();
     }
@@ -38,6 +40,7 @@ public class SteeringFollowNavMeshPath : Steering
         if (path.corners.Length > 0 && !reached)
         {
             align.Steer(path.corners[current_point]);
+            separation.Steer();
 
             if (current_point != path.corners.Length - 1)
             {

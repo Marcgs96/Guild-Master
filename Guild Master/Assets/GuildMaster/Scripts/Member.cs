@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Member : MonoBehaviour
 {
-    public enum MEMBER_STATE { QUEST, WORK, REST, NONE};
+    public enum MEMBER_STATE { QUEST, WORK, REST, NONE };
     public enum MEMBER_TYPE { KNIGHT, HUNTER, MAGE, NONE };
     public struct MemberInfo
     {
@@ -53,6 +53,7 @@ public class Member : MonoBehaviour
     public SteeringWander wander;
     protected Collider coll;
     public float task_time;
+    GameObject assigned_position;
 
     public GameObject weapon;
     public GameObject model;
@@ -90,7 +91,7 @@ public class Member : MonoBehaviour
 
         if (producing)
             DecreaseStamina(production_stamina_cost * Time.fixedDeltaTime);
-        else if(state == MEMBER_STATE.REST)
+        else if (state == MEMBER_STATE.REST)
             IncreaseStamina(production_stamina_cost * Time.fixedDeltaTime);
     }
 
@@ -180,5 +181,13 @@ public class Member : MonoBehaviour
     {
         action_string = new_string;
         GameManager.manager.ui.MemberActionChange(this);
+    }
+
+    public GameObject RequestPosition(GameObject location)
+    {
+        GameManager.manager.locations.ReleasePosition(assigned_position);
+        assigned_position = GameManager.manager.locations.GetAvailablePosition(location);
+
+        return assigned_position;
     }
 }

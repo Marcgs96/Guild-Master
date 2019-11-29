@@ -11,7 +11,7 @@ public class SteeringSeparation : Steering {
     Collider coll;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		move = GetComponent<Move>();
         coll = GetComponent<Collider>();
 	}
@@ -44,7 +44,13 @@ public class SteeringSeparation : Steering {
             move.AccelerateMovement(final, priority);
         }*/
 
-        if(coll.enabled)
+
+        //Steer();
+    }
+
+    public void Steer()
+    {
+        if (coll.enabled)
         {
             Collider[] hit_agents = Physics.OverlapSphere(transform.position, search_radius, mask.value);
             Vector3 sum_vector = Vector3.zero;
@@ -60,7 +66,6 @@ public class SteeringSeparation : Steering {
             Vector3 result = Vector3.Normalize(sum_vector) * (Mathf.Clamp(sum_vector.magnitude, 0, move.max_mov_acceleration));
             move.AccelerateMovement(result, priority);
         }
-
     }
 
 	void OnDrawGizmosSelected() 
