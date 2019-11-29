@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class KnightMember : Member
 {
+    public bool go_duel = false;
+    public KnightMember opponent;
+
     override public void GenerateInfo()
     {
         base.GenerateInfo();

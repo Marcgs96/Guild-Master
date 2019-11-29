@@ -2,6 +2,7 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 
 
+
 namespace GuildMaster{
 
 	[Category("Custom")]

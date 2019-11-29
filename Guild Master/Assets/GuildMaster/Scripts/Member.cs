@@ -53,7 +53,7 @@ public class Member : MonoBehaviour
     public SteeringWander wander;
     protected Collider coll;
     public float task_time;
-    GameObject assigned_position;
+    public GameObject assigned_position;
 
     public GameObject weapon;
     public GameObject model;
