@@ -1,0 +1,2882 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StagDespawn
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: -0.0031241346, z: 0, w: 0.9999951}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.03716397, y: -0.21094404, z: -0.019275438, w: 0.9766012}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.5983489, y: 0.5983489, z: 0.37680036, w: 0.37680036}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.0022987002, y: 0.021272268, z: 0.10741085, w: 0.99398446}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: -0.13172874, z: 0, w: 0.9912858}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: -0.16404054, z: 0, w: 0.9864536}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.20114443, y: 0.19506112, z: 0.71911484, w: 0.6358977}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.017396014, y: -0.3326735, z: 0.18508649, w: 0.924537}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.10804584, y: -0.23113985, z: -0.009572264, w: 0.96685517}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: -0.45266044, z: 0, w: 0.891683}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: -0.05638785, z: 0, w: 0.9984089}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: -90}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 4.1, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.5
+        value: {x: 0, y: -25.1, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -3.605729, y: -0.00009972612, z: 0.9764112}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -5.680338, y: -0.000057048506, z: -0.3813125}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -2.4621453, y: 0.00001168251, z: -0.112157196}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -5.5628023, y: -0.00000023841858, z: 0.00007724762}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -4.4812593, y: 0.0000016316772, z: -0.000028926806}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -5.562776, y: -0.000003606081, z: -0.0000743866}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -3.4229076, y: -0.99998856, z: -0.09798765}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -4.4487824, y: -0.000016212463, z: 0.000004529953}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -5.0230994, y: 0.0000052452087, z: -0.000038310885}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -4.44875, y: 0.00001335144, z: -0.000086694956}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -5.018189, y: 0, z: -0.000014305115}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 2344764430
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3616122980
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1409110004
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 981739698
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3978595092
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3342091230
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 397354707
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3920290154
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2530730849
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1341498644
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3280166056
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2482536811
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3616122980
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1409110004
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 981739698
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3978595092
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3342091230
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 397354707
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3920290154
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2530730849
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1341498644
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3280166056
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2482536811
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2344764430
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 1.5
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 4.1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: -25.1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Horse_Rig_SHJntGrp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Horse_Rig_SHJntGrp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -90
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Horse_Rig_SHJntGrp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -3.605729
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00009972612
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9764112
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0031241346
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9999951
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -5.680338
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000057048506
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.3813125
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.03716397
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.21094404
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.019275438
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9766012
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.4621453
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00001168251
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.112157196
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.5983489
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.5983489
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.37680036
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.37680036
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -5.5628023
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00000023841858
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00007724762
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0022987002
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.021272268
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.10741085
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.99398446
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -4.4812593
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0000016316772
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000028926806
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.13172874
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9912858
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -5.562776
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000003606081
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0000743866
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.16404054
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9864536
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -3.4229076
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.99998856
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.09798765
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.20114443
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.19506112
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.71911484
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.6358977
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -4.4487824
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000016212463
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000004529953
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.017396014
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.3326735
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.18508649
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.924537
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -5.0230994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0000052452087
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000038310885
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.10804584
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.23113985
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.009572264
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.96685517
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -4.44875
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00001335144
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000086694956
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.45266044
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.891683
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -5.018189
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000014305115
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.05638785
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9984089
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Horse_Rig_SHJntGrp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Horse_Rig_SHJntGrp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Horse_Rig_SHJntGrp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.358
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -4.63
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -24.326
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.263
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_Neck_01SHJnt/Horse_Rig_Neck_02SHJnt/Horse_Rig_Neck_03SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -115.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 89.99999
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.4520001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 12.335001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -15.139001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_l_Clavicle_01_01SHJnt/Horse_Rig_l_FrontLeg_HipSHJnt/Horse_Rig_l_FrontLeg_Knee1SHJnt/Horse_Rig_l_FrontLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -18.883001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_Spine_01SHJnt/Horse_Rig_Spine_02SHJnt/Horse_Rig_Spine_TopSHJnt/Horse_Rig_r_Clavicle_01_01SHJnt/Horse_Rig_r_FrontLeg_HipSHJnt/Horse_Rig_r_FrontLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -32.436
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.799
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 97.843
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5.2200003
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -38.621002
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 20.811
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -12.319
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -27.089
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.8440001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_l_HindLeg_HipSHJnt/Horse_Rig_l_HindLeg_Knee1SHJnt/Horse_Rig_l_HindLeg_Knee2SHJnt/Horse_Rig_l_HindLeg_AnkleSHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -53.829002
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -6.465
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Horse_Rig_SHJntGrp/Horse_Rig_ROOTSHJnt/Horse_Rig_r_HindLeg_HipSHJnt/Horse_Rig_r_HindLeg_Knee1SHJnt/Horse_Rig_r_HindLeg_Knee2SHJnt
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events:
+  - time: 1.5
+    functionName: DestroySelf
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

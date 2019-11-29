@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ public class LocationManager : MonoBehaviour
     List<Location> locations;
 
     public GameObject locations_parent;
+    public GameObject knight_fight_location;
+    private Location duel_location;
 
     private void Awake()
     {
@@ -30,6 +33,27 @@ public class LocationManager : MonoBehaviour
             }
 
             locations.Add(new_location);
+            if (new_location.location == knight_fight_location)
+                duel_location = new_location;
+        }
+    }
+
+    internal void AssignDuelLocations(KnightMember agent_1, KnightMember agent_2)
+    {
+        foreach (KeyValuePair<GameObject, bool> position in duel_location.positions)
+        {
+            if (!position.Value)
+            {
+                Debug.Log("TIME TO FIGHT");
+                agent_1.assigned_position = position.Key.transform.GetChild(0).gameObject;
+                agent_2.assigned_position = position.Key.transform.GetChild(1).gameObject;
+
+                agent_1.go_duel = true;
+                agent_2.go_duel = true;
+
+                agent_1.opponent = agent_2;
+                agent_2.opponent = agent_1;
+            }
         }
     }
 
