@@ -139,7 +139,7 @@ public class UIManager : MonoBehaviour
 
     public void OnSlotClick(GameObject slot, Member member)
     {
-        slot.transform.GetChild(0).GetComponent<Image>().enabled = false;
+        slot.transform.GetChild(0).GetComponent<RawImage>().enabled = false;
         slot.GetComponentInChildren<Text>().text = "";
         GameManager.manager.quests.RemoveMemberFromQuest(member);
 
@@ -239,7 +239,7 @@ public class UIManager : MonoBehaviour
         {
             GameObject new_enemy = Instantiate(slot_prefab);
 
-            Image enemy_image = new_enemy.transform.GetChild(0).GetComponent<Image>();
+            RawImage enemy_image = new_enemy.transform.GetChild(0).GetComponent<RawImage>();
             enemy_image.enabled = true;
             //Todo: select image depending on enemy type
             //enemy_image.image = IMAGE;
@@ -286,7 +286,7 @@ public class UIManager : MonoBehaviour
         Transform members = quest_preparation.transform.GetChild(2).GetChild(1);
         for (int i = 0; i < members.childCount; i++)
         {
-            Image member_image = members.GetChild(i).GetChild(0).GetComponent<Image>();
+            RawImage member_image = members.GetChild(i).GetChild(0).GetComponent<RawImage>();
             if (member_image.enabled)
                 continue;
             else
@@ -294,6 +294,7 @@ public class UIManager : MonoBehaviour
                 member_image.enabled = true;
                 //Todo: set member image depending on member type
                 //member_image.image = IMAGE;
+                member_image.texture = portraits[(int)selected_member.GetInfo().type];
                 members.GetChild(i).GetComponentInChildren<Text>().text = selected_member.GetInfo().name;
 
                 GameObject member_image_go = members.GetChild(i).transform.GetChild(0).gameObject;
