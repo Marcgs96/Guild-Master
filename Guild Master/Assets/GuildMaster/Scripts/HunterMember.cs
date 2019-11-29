@@ -18,4 +18,9 @@ public class HunterMember : Member
     {
         target_animal = spawner.SpawnAnimal(this);
     }
+
+    public void KillAnimal()
+    {
+        target_animal.GetComponent<Animator>().SetBool("dead", true);
+    }
 }
