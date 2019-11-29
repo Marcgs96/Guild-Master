@@ -242,7 +242,7 @@ public class UIManager : MonoBehaviour
             RawImage enemy_image = new_enemy.transform.GetChild(0).GetComponent<RawImage>();
             enemy_image.enabled = true;
             //Todo: select image depending on enemy type
-            //enemy_image.image = IMAGE;
+            enemy_image.texture = portraits[(int)(enemy.type + (int)Member.MEMBER_TYPE.TOTAL)];
 
             new_enemy.transform.GetComponentInChildren<Text>().text = enemy.name;
 

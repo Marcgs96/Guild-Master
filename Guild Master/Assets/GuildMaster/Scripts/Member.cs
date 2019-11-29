@@ -6,7 +6,7 @@ using UnityEngine;
 public class Member : MonoBehaviour
 {
     public enum MEMBER_STATE { QUEST, WORK, REST, NONE };
-    public enum MEMBER_TYPE { KNIGHT, HUNTER, MAGE, NONE };
+    public enum MEMBER_TYPE { KNIGHT, HUNTER, MAGE, TOTAL };
     public struct MemberInfo
     {
         public string name;
