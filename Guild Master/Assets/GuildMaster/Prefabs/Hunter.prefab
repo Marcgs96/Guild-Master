@@ -743,7 +743,7 @@ MonoBehaviour:
   steer: {fileID: 0}
   wander: {fileID: 0}
   production_slider: {fileID: 3743570150648365547}
-  bubble_icon: {fileID: 0}
+  bubble_icon: {fileID: 1877936690}
   target_animal: {fileID: 0}
   spawner: {fileID: 0}
 --- !u!114 &9141441269803450274
