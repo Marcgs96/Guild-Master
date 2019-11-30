@@ -10133,6 +10133,7 @@ PrefabInstance:
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"weaponlocation":{"_value":1,"_name":"weaponlocation","_id":"49d163d1-9c9e-431f-9629-dc4c001de953","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"dummylocation":{"_value":2,"_name":"dummylocation","_id":"c50f2b56-1185-4b26-9b91-77e5d7073c28","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"stamina":{"_propertyPath":"KnightMember.stamina","_name":"stamina","_id":"6713b94d-fd32-4f04-b2b9-bd68915f8554","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"production_progress":{"_propertyPath":"KnightMember.production_progress","_name":"production_progress","_id":"8185e08d-9bb4-4bc5-aeae-15a622112178","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
       objectReference: {fileID: 0}
     - target: {fileID: 5020096918008599635, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
@@ -18073,7 +18074,7 @@ PrefabInstance:
     - target: {fileID: -1784941013477514498, guid: 917685ca3ed193549ac39a7adbac5950,
         type: 3}
       propertyPath: _serializedBlackboard
-      value: '{"_variables":{"production_time":{"_propertyPath":"MageMember.production_time","_name":"production_time","_id":"80e5cc1a-fb8a-4519-a8c4-95c6fe43bd6b","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      value: '{"_variables":{"production_time":{"_propertyPath":"MageMember.production_step_time_rt","_name":"production_time","_id":"80e5cc1a-fb8a-4519-a8c4-95c6fe43bd6b","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"state":{"_propertyPath":"Member.state","_name":"state","_id":"5f33928d-752c-4576-ba80-b0dfc3420c48","$type":"NodeCanvas.Framework.Variable`1[[Member+MEMBER_STATE,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"night_value":{"_propertyPath":"MageMember.night_value","_name":"night_value","_id":"ba7fb04e-29b1-45cd-9bb5-b131c9adcf9c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"producing":{"_propertyPath":"MageMember.producing","_name":"producing","_id":"1d745a23-fdbc-4f6a-b2d1-83d15b977467","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
@@ -21778,6 +21779,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5640555847540152532}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1470236723 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 162312918928144793, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1524766856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1470610638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22956,6 +22963,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 162312918928144792, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: gadgets
+      value: 
+      objectReference: {fileID: 1927499406}
+    - target: {fileID: 162312918928144792, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: production_slider
+      value: 
+      objectReference: {fileID: 462296530706020350, guid: 9b06cb655ae18f74f956cbda83ff6675,
+        type: 3}
     - target: {fileID: 162312918928144797, guid: 57e5ce176bcc33e4e91493b576ddfbff,
         type: 3}
       propertyPath: m_Name
@@ -26506,6 +26524,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1927499406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927499407}
+  m_Layer: 5
+  m_Name: Gadgets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1927499407
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927499406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1470236723}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1931441424
 GameObject:
   m_ObjectHideFlags: 0

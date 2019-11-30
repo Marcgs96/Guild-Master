@@ -7,6 +7,8 @@ using UnityEngine.UI;
 // TODO: Split UI Manager into smaller UI sections for each panel. This is getting too big.
 public class UIManager : MonoBehaviour
 {
+    public GameObject gadgets;
+
     //Guild panel stuff
     public GameObject guild_panel;
     public GameObject guild_upgrade_costs;
@@ -33,6 +35,7 @@ public class UIManager : MonoBehaviour
     public GameObject resource_prefab;
     public GameObject slot_prefab;
     public GameObject resource_cost_prefab;
+    public GameObject production_slider;
     public List<Texture2D> portraits;
     public List<Texture2D> resource_images;
 
@@ -215,6 +218,8 @@ public class UIManager : MonoBehaviour
 
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnMemberClick(new_member); });
         new_listing.transform.SetParent(members_list_panel.transform.GetChild(1));
+
+        new_member.production_slider = Instantiate(production_slider, gadgets.transform).GetComponent<Slider>();
 
         member_listings.Add(new_member, new_listing);
 

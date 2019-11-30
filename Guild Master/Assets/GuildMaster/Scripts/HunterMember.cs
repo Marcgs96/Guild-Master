@@ -12,8 +12,6 @@ public class HunterMember : Member
         base.GenerateInfo();
         member_name = "Huntard";
         type = MEMBER_TYPE.HUNTER;
-
-        production_time = GameManager.manager.time.InGameHoursToSeconds(production_time) / 2; //2 is steps required for 1 meat (track beast, gather meat).
     }
 
     public void RequestAnimal()
