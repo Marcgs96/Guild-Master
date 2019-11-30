@@ -409,4 +409,19 @@ public class UIManager : MonoBehaviour
         else
             blacksmith_upgrade_costs.transform.parent.GetComponent<Button>().enabled = false;
     }
+
+    public void IncreaseResourceInInventory(int type)
+    {
+        Text resource_value;
+        Text inventory_value = quest_preparation.transform.GetChild(3).GetChild(1).GetChild(1).GetChild(type).GetComponentInChildren<Text>();
+
+        int increased_value = inventory_value.text += 1;
+        int decreased_value = resource_value.text -= 1;
+    }
+
+    public void IncreaseResourceInResources(int type)
+    {
+        Text resource_value = quest_preparation.transform.GetChild(3).GetChild(0).GetChild(1).GetChild(type).GetComponentInChildren<Text>();
+        Text inventory_value = quest_preparation.transform.GetChild(3).GetChild(1).GetChild(1).GetChild(type).GetComponentInChildren<Text>();
+    }
 }
