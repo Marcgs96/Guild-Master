@@ -25,7 +25,6 @@ public class UIManager : MonoBehaviour
     public GameObject quest_provisions_resources;
 
     //members list stuff
-    public GameObject member_info_panel;
     public GameObject members_list_panel;
     public GameObject member_listing;
     Dictionary<Member, GameObject> member_listings;
@@ -104,11 +103,6 @@ public class UIManager : MonoBehaviour
         quests_list.SetActive(true);
     }
 
-    public void CloseMemberInfoPanel()
-    {
-        member_info_panel.SetActive(false);
-    }
-
     public void UpgradeBuildingButton(Building building)
     {
         building.LevelUp();
@@ -122,11 +116,6 @@ public class UIManager : MonoBehaviour
         if(listing)
         {
             listing.transform.GetChild(2).GetComponent<Slider>().value = (int)member.stamina;
-            if(selected_member == member)
-            {
-                Transform header = member_info_panel.transform.GetChild(0);
-                header.GetChild(2).GetComponent<Slider>().value = (int)member.stamina;
-            }
         }
     }
 
@@ -134,10 +123,6 @@ public class UIManager : MonoBehaviour
     {
         if (quest_preparation.activeSelf && !GameManager.manager.quests.IsInParty(member))
             AddMemberToQuest(member);
-        else
-        {
-            ShowMemberInfo(member);
-        }
     }
 
     public void OnSlotClick(GameObject slot, Member member)
@@ -216,6 +201,8 @@ public class UIManager : MonoBehaviour
         GameObject new_listing = Instantiate(member_listing);
         new_listing.transform.GetChild(1).GetComponent<Text>().text = new_member.member_name;
         new_listing.transform.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)new_member.type];
+        new_listing.transform.GetChild(3).GetComponent<Text>().text = new_member.action_string;
+        new_listing.transform.GetChild(4).GetComponentInChildren<Text>().text = new_member.lvl.ToString();
 
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnMemberClick(new_member); });
         new_listing.transform.SetParent(members_list_panel.transform.GetChild(1));
@@ -325,41 +312,15 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void ShowMemberInfo(Member member)
-    {
-        member_info_panel.SetActive(true);
-
-        selected_member = member;
-        //Header
-        Transform header = member_info_panel.transform.GetChild(0);
-        header.GetComponentInChildren<Text>().text = selected_member.member_name;
-        header.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)selected_member.type];
-        //setup slider
-
-        //Info
-        Transform info_panel = member_info_panel.transform.GetChild(1);
-        info_panel.GetChild(0).GetChild(0).GetComponent<Text>().text = selected_member.lvl.ToString();
-        info_panel.GetChild(1).GetChild(0).GetComponent<Text>().text = selected_member.equipment_lvl.ToString();
-        info_panel.GetChild(2).GetChild(0).GetComponent<Text>().text = selected_member.GetTypeString();
-        info_panel.GetChild(3).GetChild(0).GetComponent<Text>().text = selected_member.xp.ToString();
-        info_panel.GetChild(4).GetComponent<Text>().text = selected_member.action_string;
-
-        //Buttons
-    }
-
     public void MemberActionChange(Member member)
     {
-        if(member == selected_member)
-        {
-            Transform info_panel = member_info_panel.transform.GetChild(1);
-            info_panel.GetChild(4).GetComponent<Text>().text = member.action_string;
-        }
+        member_listings[member].transform.GetChild(3).GetComponent<Text>().text = member.action_string;
     }
 
     public void UpdateMemberCountText()
     {
         string member_count = GameManager.manager.members.GetMemberCount().ToString() + "/" + GameManager.manager.members.GetMemberCap().ToString();
-        members_list_panel.transform.GetChild(0).GetComponent<Text>().text = member_count;
+        members_list_panel.transform.GetChild(0).GetComponentInChildren<Text>().text = member_count;
     }
 
     public void OnGuildHouseLevelUp(uint lvl)
