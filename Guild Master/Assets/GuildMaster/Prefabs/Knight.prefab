@@ -603,6 +603,9 @@ MonoBehaviour:
   state: 3
   action_string: 
   night_value: 0
+  assigned_position: {fileID: 0}
+  weapon: {fileID: 0}
+  model: {fileID: 7113461085127035929}
   product: 5
   product_amount: 1
   producing: 0
@@ -612,12 +615,10 @@ MonoBehaviour:
   production_progress: 0
   production_hours_cycle: 8
   production_total_cycle_cost: 80
-  production_slider: {fileID: 3743570151653699489}
   steer: {fileID: 0}
   wander: {fileID: 0}
-  assigned_position: {fileID: 0}
-  weapon: {fileID: 0}
-  model: {fileID: 7113461085127035929}
+  production_slider: {fileID: 3743570151653699489}
+  bubbles: {fileID: 0}
   dueling: 0
   opponent: {fileID: 0}
 --- !u!114 &661362119459741753

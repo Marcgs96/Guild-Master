@@ -210,7 +210,7 @@ public class Quest
 
         foreach (Resource resource in rewards)
         {
-          //  GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
+            GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
         }
 
         GameManager.manager.quests.RemoveQuest(this);
