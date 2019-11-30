@@ -218,6 +218,7 @@ public class Member : MonoBehaviour
     {
         bubble_icon.texture = GameManager.manager.ui.resource_images[icon_id];
         bubble_icon.gameObject.transform.parent.gameObject.SetActive(true);
+        GameManager.manager.ui.UpdateStateIcon(icon_id, this);
     }
     
     public void DisableBubble()

@@ -125,6 +125,23 @@ public class UIManager : MonoBehaviour
             AddMemberToQuest(member);
     }
 
+    public void OnStateClick(Member member)
+    {
+        if (member.state == Member.MEMBER_STATE.QUEST)
+            return;
+
+        if (member.state == Member.MEMBER_STATE.REST)
+        {
+            member.ChangeState(Member.MEMBER_STATE.WORK);
+            member_listings[member].transform.GetChild(5).GetComponentInChildren<Text>().text = "Work";
+        }
+        else if (member.state == Member.MEMBER_STATE.WORK)
+        {
+            member.ChangeState(Member.MEMBER_STATE.REST);
+            member_listings[member].transform.GetChild(5).GetComponentInChildren<Text>().text = "Rest";
+        }
+    }
+
     public void OnSlotClick(GameObject slot, Member member)
     {
         slot.transform.GetChild(0).GetComponent<RawImage>().enabled = false;
@@ -205,6 +222,7 @@ public class UIManager : MonoBehaviour
         new_listing.transform.GetChild(4).GetComponentInChildren<Text>().text = new_member.lvl.ToString();
 
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnMemberClick(new_member); });
+        new_listing.transform.GetChild(5).GetComponent<Button>().onClick.AddListener(delegate { OnStateClick(new_member); });
         new_listing.transform.SetParent(members_list_panel.transform.GetChild(1));
 
         member_listings.Add(new_member, new_listing);
@@ -321,6 +339,11 @@ public class UIManager : MonoBehaviour
     {
         string member_count = GameManager.manager.members.GetMemberCount().ToString() + "/" + GameManager.manager.members.GetMemberCap().ToString();
         members_list_panel.transform.GetChild(0).GetComponentInChildren<Text>().text = member_count;
+    }
+
+    public void UpdateStateIcon(int state, Member member)
+    {
+        member_listings[member].transform.GetChild(6).GetComponent<RawImage>().texture = resource_images[state];
     }
 
     public void OnGuildHouseLevelUp(uint lvl)
