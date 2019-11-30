@@ -10876,7 +10876,7 @@ PrefabInstance:
     - target: {fileID: 661362119459741753, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
         type: 3}
       propertyPath: boundGraphSerialization
-      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4952.164,"y":-4506.283},"zoomFactor":0.8915278,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4540.0,"y":-4273.0},"zoomFactor":0.8913298,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
         to the Dungeon"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":1},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4918.0,"y":5438.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"KnightMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Fighting
@@ -12092,10 +12092,6 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 644855860}
-    - target: {fileID: 600882461, guid: bdac0e0654792474e9b2a72cca6f01d2, type: 3}
-      propertyPath: bubble_icon
-      value: 
-      objectReference: {fileID: 1877936690}
     - target: {fileID: 2086428777, guid: bdac0e0654792474e9b2a72cca6f01d2, type: 3}
       propertyPath: m_Camera
       value: 
@@ -12182,18 +12178,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5549724267791466705}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1180324235 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1180324235, guid: 917685ca3ed193549ac39a7adbac5950,
-    type: 3}
-  m_PrefabInstance: {fileID: 1231736509}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1180928771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 438736, guid: f9ef6c35d9402854f851bf9e54de3ebc,
@@ -19127,10 +19111,6 @@ PrefabInstance:
       propertyPath: boundGraphObjectReferences.Array.data[16]
       value: 
       objectReference: {fileID: 1836525768}
-    - target: {fileID: 1275908031, guid: 917685ca3ed193549ac39a7adbac5950, type: 3}
-      propertyPath: bubble_icon
-      value: 
-      objectReference: {fileID: 1180324235}
     - target: {fileID: -1784941013477514498, guid: 917685ca3ed193549ac39a7adbac5950,
         type: 3}
       propertyPath: _objectReferences.Array.size
@@ -20152,8 +20132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8626b87630891dd41998f2ff3308bf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  type: 0
+  level: 1
+  type: 2
   level_costs: []
   exit_time: 0.5
   bubble: {fileID: 0}
@@ -28080,18 +28060,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1875086161}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1877936690 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1877936690, guid: bdac0e0654792474e9b2a72cca6f01d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1167808986}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1878249907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 491936, guid: e568ef9fe48547d43808062f0d744756,
