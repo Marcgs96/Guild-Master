@@ -526,6 +526,10 @@ MonoBehaviour:
     direction: {x: -0.5, y: 0, z: 1}
   - length: 2
     direction: {x: 0, y: 0, z: -1}
+  - length: 1
+    direction: {x: 0.5, y: 0, z: -1}
+  - length: 1
+    direction: {x: -0.5, y: 0, z: -1}
 --- !u!114 &358461246195747828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,7 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782558cc3a6d845a990f61f72475c82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 0
+  priority: 1
   mask:
     serializedVersion: 2
     m_Bits: 512
