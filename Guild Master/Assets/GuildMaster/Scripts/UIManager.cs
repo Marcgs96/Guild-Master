@@ -7,8 +7,6 @@ using UnityEngine.UI;
 // TODO: Split UI Manager into smaller UI sections for each panel. This is getting too big.
 public class UIManager : MonoBehaviour
 {
-    public GameObject gadgets;
-
     //Guild panel stuff
     public GameObject guild_panel;
     public GameObject guild_upgrade_costs;
@@ -35,7 +33,6 @@ public class UIManager : MonoBehaviour
     public GameObject resource_prefab;
     public GameObject slot_prefab;
     public GameObject resource_cost_prefab;
-    public GameObject production_slider;
     public List<Texture2D> portraits;
     public List<Texture2D> resource_images;
 
@@ -219,8 +216,6 @@ public class UIManager : MonoBehaviour
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnMemberClick(new_member); });
         new_listing.transform.SetParent(members_list_panel.transform.GetChild(1));
 
-        new_member.production_slider = Instantiate(production_slider, gadgets.transform).GetComponent<Slider>();
-
         member_listings.Add(new_member, new_listing);
 
         UpdateMemberCountText();
@@ -245,7 +240,6 @@ public class UIManager : MonoBehaviour
 
             RawImage enemy_image = new_enemy.transform.GetChild(0).GetComponent<RawImage>();
             enemy_image.enabled = true;
-            //Todo: select image depending on enemy type
             enemy_image.texture = portraits[(int)(enemy.type + (int)Member.MEMBER_TYPE.TOTAL)];
 
             new_enemy.transform.GetComponentInChildren<Text>().text = enemy.name;
@@ -296,10 +290,8 @@ public class UIManager : MonoBehaviour
             else
             {
                 member_image.enabled = true;
-                //Todo: set member image depending on member type
-                //member_image.image = IMAGE;
                 member_image.texture = portraits[(int)selected_member.type];
-                members.GetChild(i).GetComponentInChildren<Text>().text = selected_member.name;
+                members.GetChild(i).GetComponentInChildren<Text>().text = selected_member.member_name;
 
                 GameObject member_image_go = members.GetChild(i).transform.GetChild(0).gameObject;
                 Button member_slot_button = member_image_go.GetComponent<Button>();

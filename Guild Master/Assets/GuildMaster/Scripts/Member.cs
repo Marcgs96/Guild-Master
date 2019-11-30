@@ -19,6 +19,9 @@ public class Member : MonoBehaviour
     public MEMBER_STATE state = MEMBER_STATE.REST;
     public string action_string;
     public float night_value = 0;
+    public GameObject assigned_position;
+    public GameObject weapon;
+    public GameObject model;
 
     [Header("Production")]
     public Resource.ResourceType product;
@@ -35,23 +38,19 @@ public class Member : MonoBehaviour
     [SerializeField]
     protected float production_total_cycle_cost;
     protected float production_stamina_cost;
-    public Slider production_slider;
 
+    [Header("Components")]
     protected Move move;
     protected Animator anim;
     public SteeringFollowNavMeshPath steer;
     public SteeringWander wander;
     protected Collider coll;
-    public GameObject assigned_position;
 
-    public GameObject weapon;
-    public GameObject model;
-
-    //UI
-    protected GameObject action_bubble;
-    protected GameObject blacksmith_bubble;
+    [Header("UI")]
     [SerializeField]
-    protected Transform head;
+    protected Slider production_slider;
+    [SerializeField]
+    protected GameObject bubbles;
 
     // Start is called before the first frame update
     protected void Start()
@@ -64,9 +63,6 @@ public class Member : MonoBehaviour
 
         steer = GetComponent<SteeringFollowNavMeshPath>();
         wander = GetComponent<SteeringWander>();
-
-        action_bubble = transform.Find("ActionBubble").gameObject;
-        blacksmith_bubble = transform.Find("BlacksmithBubble").gameObject;
 
         state = (MEMBER_STATE)UnityEngine.Random.Range((int)MEMBER_STATE.WORK, (int)MEMBER_STATE.NONE);
 
@@ -102,12 +98,6 @@ public class Member : MonoBehaviour
         }         
         else if (state == MEMBER_STATE.REST)
             IncreaseStamina(production_stamina_cost * Time.deltaTime);
-    }
-
-    public void LateUpdate()
-    {
-        if(state == MEMBER_STATE.WORK)
-            production_slider.gameObject.transform.position = Camera.main.WorldToScreenPoint(head.position);
     }
 
     protected void ChangeNightValue(bool night)

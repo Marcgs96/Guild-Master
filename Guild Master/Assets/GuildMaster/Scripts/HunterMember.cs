@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HunterMember : Member
 {
+    [Header("Hunter")]
     public GameObject target_animal;
     public AnimalSpawner spawner;
 
