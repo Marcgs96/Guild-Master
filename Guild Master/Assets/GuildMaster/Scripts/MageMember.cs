@@ -7,7 +7,7 @@ public class MageMember : Member
     override public void GenerateInfo()
     {
         base.GenerateInfo();
-        info.name = "Magox";
-        info.type = MEMBER_TYPE.MAGE;
+        member_name = "Magox";
+        type = MEMBER_TYPE.MAGE;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Quest
 {
     public enum EnemyType { SKELETON, BANDIT, ORC, TOTAL };
@@ -63,9 +64,10 @@ public class Quest
 
     internal void OnDungeonEnter(Member member)
     {
-        if (party.Contains(member))
-            members_inside_dungeon++;
+        if (!party.Contains(member))
+            return;
 
+        members_inside_dungeon++;
         if (members_inside_dungeon == party.Count)
             GameManager.manager.quests.StartCoroutine(coroutine);
     }
@@ -116,6 +118,7 @@ public class Quest
 
     private IEnumerator QuestActivity()
     {
+        Debug.Log("Starting quest activity of" + quest_name);
         float food_check_chance = 0;
         bool food_check = false;
         float elapsed_time = 0.0f;
@@ -146,25 +149,25 @@ public class Quest
                     {
                         if (provision.GetResourceType() == Resource.ResourceType.Meat && provision.GetAmount() > 0)
                         {
-                            Debug.Log(party[i].GetInfo() + " ate a piece of meat.");
+                            Debug.Log(party[i].member_name + " ate a piece of meat.");
                             provision.Decrease(1);
                         }
                         else
                         {
-                            Debug.Log(party[i].GetInfo() + " couldn't eat, loses 25 stamina.");
+                            Debug.Log(party[i].member_name + " couldn't eat, loses 25 stamina.");
                             party[i].DecreaseStamina(25);
                         }
                     }
                 }
 
                 //If stamina too low, try to recover with a potion
-                if (party[i].GetInfo().stamina < 25)
+                if (party[i].stamina < 25)
                 {
                     foreach (Resource provision in provisions)
                     {
                         if (provision.GetResourceType() == Resource.ResourceType.Potion && provision.GetAmount() > 0)
                         {
-                            Debug.Log(party[i].GetInfo() + " used a potion.");
+                            Debug.Log(party[i].member_name + " used a potion.");
                             provision.Decrease(1);
                             party[i].IncreaseStamina(50);
                         }
@@ -190,16 +193,16 @@ public class Quest
     {
         foreach (Member member in party)
         {
-            if (member.GetInfo().stamina == 0)
+            if (member.stamina == 0)
             {
                 if (UnityEngine.Random.Range(1, 2) == 1)
                 {
                     //Todo: Kill member/Remove from game
-                    Debug.Log(member.GetInfo().name + " couldn't make it out alive.");
+                    Debug.Log(member.member_name + " couldn't make it out alive.");
                     continue;
                 }
                 else
-                    Debug.Log(member.GetInfo().name + " escaped death.");
+                    Debug.Log(member.member_name + " escaped death.");
             }
             //give xp to member
             member.ChangeState(Member.MEMBER_STATE.REST, true);

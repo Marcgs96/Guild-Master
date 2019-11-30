@@ -10,8 +10,8 @@ public class HunterMember : Member
     override public void GenerateInfo()
     {
         base.GenerateInfo();
-        info.name = "Huntard";
-        info.type = MEMBER_TYPE.HUNTER;
+        member_name = "Huntard";
+        type = MEMBER_TYPE.HUNTER;
     }
 
     public void RequestAnimal()

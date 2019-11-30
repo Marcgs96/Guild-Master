@@ -118,11 +118,11 @@ public class UIManager : MonoBehaviour
 
         if(listing)
         {
-            listing.transform.GetChild(2).GetComponent<Slider>().value = (int)member.GetInfo().stamina;
+            listing.transform.GetChild(2).GetComponent<Slider>().value = (int)member.stamina;
             if(selected_member == member)
             {
                 Transform header = member_info_panel.transform.GetChild(0);
-                header.GetChild(2).GetComponent<Slider>().value = (int)member.GetInfo().stamina;
+                header.GetChild(2).GetComponent<Slider>().value = (int)member.stamina;
             }
         }
     }
@@ -158,9 +158,9 @@ public class UIManager : MonoBehaviour
     }
 
     public void SendParty()
-    {
-        GameManager.manager.quests.StartQuest();
+    {      
         RemoveQuestListing(GameManager.manager.quests.GetSelectedQuest());
+        GameManager.manager.quests.StartQuest();
         CloseQuestPreparation();
     }
 
@@ -210,9 +210,8 @@ public class UIManager : MonoBehaviour
     void CreateMemberListing(Member new_member)
     {
         GameObject new_listing = Instantiate(member_listing);
-        Member.MemberInfo info = new_member.GetInfo();
-        new_listing.transform.GetChild(1).GetComponent<Text>().text = info.name;
-        new_listing.transform.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)new_member.GetInfo().type];
+        new_listing.transform.GetChild(1).GetComponent<Text>().text = new_member.member_name;
+        new_listing.transform.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)new_member.type];
 
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnMemberClick(new_member); });
         new_listing.transform.SetParent(members_list_panel.transform.GetChild(1));
@@ -294,8 +293,8 @@ public class UIManager : MonoBehaviour
                 member_image.enabled = true;
                 //Todo: set member image depending on member type
                 //member_image.image = IMAGE;
-                member_image.texture = portraits[(int)selected_member.GetInfo().type];
-                members.GetChild(i).GetComponentInChildren<Text>().text = selected_member.GetInfo().name;
+                member_image.texture = portraits[(int)selected_member.type];
+                members.GetChild(i).GetComponentInChildren<Text>().text = selected_member.name;
 
                 GameObject member_image_go = members.GetChild(i).transform.GetChild(0).gameObject;
                 Button member_slot_button = member_image_go.GetComponent<Button>();
@@ -319,20 +318,19 @@ public class UIManager : MonoBehaviour
         member_info_panel.SetActive(true);
 
         selected_member = member;
-        Member.MemberInfo info = member.GetInfo();
         //Header
         Transform header = member_info_panel.transform.GetChild(0);
-        header.GetComponentInChildren<Text>().text = info.name;
-        header.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)member.GetInfo().type];
+        header.GetComponentInChildren<Text>().text = selected_member.member_name;
+        header.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)selected_member.type];
         //setup slider
 
         //Info
         Transform info_panel = member_info_panel.transform.GetChild(1);
-        info_panel.GetChild(0).GetChild(0).GetComponent<Text>().text = info.lvl.ToString();
-        info_panel.GetChild(1).GetChild(0).GetComponent<Text>().text = info.equipment_lvl.ToString();
-        info_panel.GetChild(2).GetChild(0).GetComponent<Text>().text = info.GetTypeString();
-        info_panel.GetChild(3).GetChild(0).GetComponent<Text>().text = info.xp.ToString();
-        info_panel.GetChild(4).GetComponent<Text>().text = member.action_string;
+        info_panel.GetChild(0).GetChild(0).GetComponent<Text>().text = selected_member.lvl.ToString();
+        info_panel.GetChild(1).GetChild(0).GetComponent<Text>().text = selected_member.equipment_lvl.ToString();
+        info_panel.GetChild(2).GetChild(0).GetComponent<Text>().text = selected_member.GetTypeString();
+        info_panel.GetChild(3).GetChild(0).GetComponent<Text>().text = selected_member.xp.ToString();
+        info_panel.GetChild(4).GetComponent<Text>().text = selected_member.action_string;
 
         //Buttons
     }

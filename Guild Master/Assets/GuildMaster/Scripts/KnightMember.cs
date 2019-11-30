@@ -10,8 +10,8 @@ public class KnightMember : Member
     override public void GenerateInfo()
     {
         base.GenerateInfo();
-        info.name = "Marcos";
-        info.type = MEMBER_TYPE.KNIGHT;
+        member_name = "Marcos";
+        type = MEMBER_TYPE.KNIGHT;
     }
 
     override public void ChangeState(MEMBER_STATE state, bool force = false)

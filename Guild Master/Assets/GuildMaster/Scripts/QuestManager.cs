@@ -7,6 +7,7 @@ public class QuestManager : MonoBehaviour
 {
     [SerializeField]
     List<Quest> quests;
+    [SerializeField]
     List<Quest> active_quests;
     [SerializeField]
     Quest selected_quest;
@@ -68,6 +69,8 @@ public class QuestManager : MonoBehaviour
         active_quests.Add(selected_quest);
         quests.Remove(selected_quest);
         selected_quest.SendParty();
+
+        selected_quest = null;
     }
 
     internal void OnDungeonEnter(Member member)

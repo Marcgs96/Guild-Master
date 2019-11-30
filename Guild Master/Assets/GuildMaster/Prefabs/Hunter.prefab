@@ -654,11 +654,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe828481eaa2af418447b2a6d20d5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  member_name: 
+  lvl: 0
+  xp: 0
+  equipment_lvl: 0
+  stamina: 0
+  type: 0
   state: 3
   action_string: 
   night_value: 0
   producing: 0
-  production_hours_cycle: 18
+  production_hours_cycle: 8
   production_total_cycle_cost: 75
   steer: {fileID: 0}
   wander: {fileID: 0}
@@ -680,12 +686,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4907.0,"y":-4820.0},"zoomFactor":0.9042572,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"9c009fce-0ff9-49ef-adc4-f401443d0c25"},"_position":{"x":5681.0,"y":5369.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5005.0,"y":5516.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Moving
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-3229.0,"y":-3471.0},"zoomFactor":0.6500683,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"9c009fce-0ff9-49ef-adc4-f401443d0c25"},"_position":{"x":5681.0,"y":5369.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5005.0,"y":5516.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Moving
     to the Dungeon"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4733.0,"y":5588.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"method":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"parameters":[{"_type":"System.String","_value":{"$content":"Sniping
     fools","$type":"System.String"}}],"parameterIsByRef":[false],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},{"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5009.0,"y":5688.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"15"},{"_position":{"x":5595.0,"y":5532.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"25"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Getting
     to the Forest"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"},{"boolVariable":{"_name":"producing","_targetVariableID":"09e99ec5-65fb-488e-bc2d-e97fa89c4ccc"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5330.0,"y":5594.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"26"},{"_nestedFSM":{"_value":1},"_position":{"x":5610.0,"y":5698.0},"$type":"NodeCanvas.BehaviourTrees.NestedFSM","$id":"37"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0,"_name":"night_value","_targetVariableID":"2dfe03eb-1962-4601-a650-3ea0c4caa36c"}],"failChance":{},"_position":{"x":6233.0,"y":5511.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"39"},{"_position":{"x":5996.0,"y":5644.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"46"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Moving
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"},{"boolVariable":{"_name":"producing","_targetVariableID":"09e99ec5-65fb-488e-bc2d-e97fa89c4ccc"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5308.0,"y":5586.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"26"},{"_nestedFSM":{"_value":1},"_position":{"x":5610.0,"y":5698.0},"$type":"NodeCanvas.BehaviourTrees.NestedFSM","$id":"37"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0,"_name":"night_value","_targetVariableID":"2dfe03eb-1962-4601-a650-3ea0c4caa36c"}],"failChance":{},"_position":{"x":6233.0,"y":5511.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"39"},{"_position":{"x":5996.0,"y":5644.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"46"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Moving
     to the Tavern"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5739.0,"y":5703.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"47"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Eating"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5951.0,"y":5809.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"56"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
@@ -742,7 +748,8 @@ MonoBehaviour:
     Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"night_value":{"_propertyPath":"HunterMember.night_value","_name":"night_value","_id":"2dfe03eb-1962-4601-a650-3ea0c4caa36c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"producing":{"_propertyPath":"HunterMember.producing","_name":"producing","_id":"09e99ec5-65fb-488e-bc2d-e97fa89c4ccc","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"assigned_position":{"_name":"assigned_position","_id":"b7ba4ba3-8ff8-49de-9001-a804c691c143","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"stamina":{"_propertyPath":"HunterMember.stamina","_name":"stamina","_id":"ddf8771a-a4b0-4197-b1e4-d5ea8677508a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
 --- !u!114 &1043680895
 MonoBehaviour:

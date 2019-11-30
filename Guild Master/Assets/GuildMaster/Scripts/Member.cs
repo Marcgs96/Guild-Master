@@ -7,35 +7,14 @@ public class Member : MonoBehaviour
 {
     public enum MEMBER_STATE { QUEST, WORK, REST, NONE };
     public enum MEMBER_TYPE { KNIGHT, HUNTER, MAGE, TOTAL };
-    public struct MemberInfo
-    {
-        public string name;
-        public uint lvl;
-        public uint xp;
-        public uint equipment_lvl;
-        public float stamina;
-        public MEMBER_TYPE type;
 
-        public string GetTypeString()
-        {
-            string ret = "Unknown";
-            switch (type)
-            {
-                case MEMBER_TYPE.KNIGHT:
-                    ret = "Knight";
-                    break;
-                case MEMBER_TYPE.HUNTER:
-                    ret = "Hunter";
-                    break;
-                case MEMBER_TYPE.MAGE:
-                    ret = "Mage";
-                    break;
-            }
-            return ret;
-        }
-    }
-
-    protected MemberInfo info;
+    //Member info//
+    public string member_name;
+    public uint lvl;
+    public uint xp;
+    public uint equipment_lvl;
+    public float stamina;
+    public MEMBER_TYPE type;
     public MEMBER_STATE state = MEMBER_STATE.REST;
     public string action_string;
     public float night_value = 0;
@@ -81,7 +60,7 @@ public class Member : MonoBehaviour
         production_stamina_cost = production_total_cycle_cost / GameManager.manager.time.InGameHoursToSeconds(production_hours_cycle);
 
         //Setup state
-        anim.SetInteger("char_type", (int)info.type);
+        anim.SetInteger("char_type", (int)type);
     }
 
     // Update is called once per frame
@@ -112,9 +91,9 @@ public class Member : MonoBehaviour
     }
     virtual public void GenerateInfo()
     {
-        info.lvl = 1;
-        info.xp = 0;
-        info.stamina = 100;
+        lvl = 1;
+        xp = 0;
+        stamina = 100;
     }
 
     public void OnBuildingExit()
@@ -126,24 +105,24 @@ public class Member : MonoBehaviour
 
     internal void IncreaseStamina(float v)
     {
-        if (info.stamina == 100)
+        if (stamina == 100)
             return;
 
-        info.stamina += v;
-        if (info.stamina > 100)
-            info.stamina = 100;
+        stamina += v;
+        if (stamina > 100)
+            stamina = 100;
 
         GameManager.manager.ui.OnMemberStaminaChange(this);
     }
 
     internal void DecreaseStamina(float value)
     {
-        if (info.stamina == 0)
+        if (stamina == 0)
             return;
 
-        info.stamina -= value;
-        if (info.stamina < 0)
-            info.stamina = 0;
+        stamina -= value;
+        if (stamina < 0)
+            stamina = 0;
 
         GameManager.manager.ui.OnMemberStaminaChange(this);
     }
@@ -172,10 +151,6 @@ public class Member : MonoBehaviour
     }
 
     virtual protected string GetMemberWorkString() { return "Unknown"; }
-    public MemberInfo GetInfo()
-    {
-        return info;
-    }
 
     public void ChangeActionString(string new_string)
     {
@@ -189,5 +164,23 @@ public class Member : MonoBehaviour
         assigned_position = GameManager.manager.locations.GetAvailablePosition(location);
 
         return assigned_position;
+    }
+
+    public string GetTypeString()
+    {
+        string ret = "Unknown";
+        switch (type)
+        {
+            case MEMBER_TYPE.KNIGHT:
+                ret = "Knight";
+                break;
+            case MEMBER_TYPE.HUNTER:
+                ret = "Hunter";
+                break;
+            case MEMBER_TYPE.MAGE:
+                ret = "Mage";
+                break;
+        }
+        return ret;
     }
 }
