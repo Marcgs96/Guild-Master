@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KnightMember : Member
 {
+    [Header("Knight")]
     public bool dueling = false;
     public KnightMember opponent;
 
