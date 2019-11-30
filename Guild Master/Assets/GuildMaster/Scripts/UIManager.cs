@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour
     public GameObject quest_preparation;
     public GameObject quest_listing;
     Dictionary<Quest, GameObject> quest_listings;
+    public GameObject quest_inventory_resources;
+    public GameObject quest_provisions_resources;
 
     //members list stuff
     public GameObject member_info_panel;
@@ -100,6 +102,7 @@ public class UIManager : MonoBehaviour
 
     public void CloseQuestPreparation()
     {
+        if(GameManager.manager.quests.selected_quest != null)ResetInventory();
         quest_preparation.SetActive(false);
         quests_list.SetActive(true);
     }
@@ -161,7 +164,8 @@ public class UIManager : MonoBehaviour
     }
 
     public void SendParty()
-    {      
+    {
+        SendQuestResources();
         RemoveQuestListing(GameManager.manager.quests.GetSelectedQuest());
         GameManager.manager.quests.StartQuest();
         CloseQuestPreparation();
@@ -233,6 +237,14 @@ public class UIManager : MonoBehaviour
         info.GetChild(0).GetComponent<Text>().text = new_quest.lvl.ToString();
         info.GetChild(1).GetComponent<Text>().text = new_quest.quest_name;
 
+        //Resources Info
+        quest_provisions_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = GameManager.manager.resources.potions.GetAmount().ToString();
+        quest_inventory_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = new_quest.provisions[0].GetAmount().ToString();
+        quest_provisions_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = GameManager.manager.resources.meat.GetAmount().ToString();
+        quest_inventory_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = new_quest.provisions[1].GetAmount().ToString();
+        quest_provisions_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = GameManager.manager.resources.flames.GetAmount().ToString();
+        quest_inventory_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = new_quest.provisions[2].GetAmount().ToString();
+
         //Enemies
         Transform enemies = quest_preparation.transform.GetChild(2).GetChild(0);
         for (int i = 0; i < enemies.childCount; i++)
@@ -287,6 +299,9 @@ public class UIManager : MonoBehaviour
 
     void AddMemberToQuest(Member selected_member)
     {
+        if (GameManager.manager.quests.IsOnActiveQuest(selected_member))
+            return;
+
         Transform members = quest_preparation.transform.GetChild(2).GetChild(1);
         for (int i = 0; i < members.childCount; i++)
         {
@@ -417,16 +432,71 @@ public class UIManager : MonoBehaviour
 
     public void IncreaseResourceInInventory(int type)
     {
-        Text resource_value;
-        Text inventory_value = quest_preparation.transform.GetChild(3).GetChild(1).GetChild(1).GetChild(type).GetComponentInChildren<Text>();
+        int resource_value;
+        Resource.ResourceType enum_type = (Resource.ResourceType)type;
 
-        int increased_value = inventory_value.text += 1;
-        int decreased_value = resource_value.text -= 1;
+        switch (enum_type)
+        {
+            case Resource.ResourceType.Potion:
+                GameManager.manager.quests.selected_quest.provisions[0].Increase(1);
+                resource_value = GameManager.manager.resources.potions.GetAmount() - GameManager.manager.quests.selected_quest.provisions[0].GetAmount();
+                quest_provisions_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = resource_value.ToString();
+                quest_inventory_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[0].GetAmount().ToString();
+                break;
+            case Resource.ResourceType.Meat:
+                GameManager.manager.quests.selected_quest.provisions[1].Increase(1);
+                resource_value = GameManager.manager.resources.meat.GetAmount() - GameManager.manager.quests.selected_quest.provisions[1].GetAmount();
+                quest_provisions_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = resource_value.ToString();
+                quest_inventory_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[1].GetAmount().ToString();
+                break;
+            case Resource.ResourceType.Flame:
+                GameManager.manager.quests.selected_quest.provisions[2].Increase(1);
+                resource_value = GameManager.manager.resources.flames.GetAmount() - GameManager.manager.quests.selected_quest.provisions[2].GetAmount();
+                quest_provisions_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = resource_value.ToString();
+                quest_inventory_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[2].GetAmount().ToString();
+                break;
+        }
     }
 
     public void IncreaseResourceInResources(int type)
     {
-        Text resource_value = quest_preparation.transform.GetChild(3).GetChild(0).GetChild(1).GetChild(type).GetComponentInChildren<Text>();
-        Text inventory_value = quest_preparation.transform.GetChild(3).GetChild(1).GetChild(1).GetChild(type).GetComponentInChildren<Text>();
+        int resource_value;
+        Resource.ResourceType enum_type = (Resource.ResourceType)type;
+
+        switch (enum_type)
+        {
+            case Resource.ResourceType.Potion:
+                GameManager.manager.quests.selected_quest.provisions[0].Decrease(1);
+                resource_value = GameManager.manager.resources.potions.GetAmount() - GameManager.manager.quests.selected_quest.provisions[0].GetAmount();
+                quest_provisions_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = resource_value.ToString();
+                quest_inventory_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[0].GetAmount().ToString();
+                break;
+            case Resource.ResourceType.Meat:
+                GameManager.manager.quests.selected_quest.provisions[1].Decrease(1);
+                resource_value = GameManager.manager.resources.meat.GetAmount() - GameManager.manager.quests.selected_quest.provisions[1].GetAmount();
+                quest_provisions_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = resource_value.ToString();
+                quest_inventory_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[1].GetAmount().ToString();
+                break;
+            case Resource.ResourceType.Flame:
+                GameManager.manager.quests.selected_quest.provisions[2].Decrease(1);
+                resource_value = GameManager.manager.resources.flames.GetAmount() - GameManager.manager.quests.selected_quest.provisions[2].GetAmount();
+                quest_provisions_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = resource_value.ToString();
+                quest_inventory_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[2].GetAmount().ToString();
+                break;
+        }
+    }
+
+    public void SendQuestResources()
+    {
+        GameManager.manager.resources.DecreaseResource(Resource.ResourceType.Potion, GameManager.manager.quests.selected_quest.provisions[0].GetAmount());
+        GameManager.manager.resources.DecreaseResource(Resource.ResourceType.Meat, GameManager.manager.quests.selected_quest.provisions[1].GetAmount());
+        GameManager.manager.resources.DecreaseResource(Resource.ResourceType.Flame, GameManager.manager.quests.selected_quest.provisions[2].GetAmount());
+    }
+
+    public void ResetInventory()
+    {
+        GameManager.manager.quests.selected_quest.provisions[0].SetAmount(0);
+        GameManager.manager.quests.selected_quest.provisions[1].SetAmount(0);
+        GameManager.manager.quests.selected_quest.provisions[2].SetAmount(0);
     }
 }

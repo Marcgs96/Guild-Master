@@ -45,4 +45,10 @@ public class Resource
     {
         amount += v;
     }
+
+    internal void SetAmount(int v)
+    {
+        amount = v;
+    }
+        
 }
