@@ -24895,6 +24895,51 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1255282311}
+    - target: {fileID: 162312918609016543, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 96.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 162312918609016543, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 299
+      objectReference: {fileID: 0}
+    - target: {fileID: 162312918609016543, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 758.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 162312918609016543, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -149.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 162312918494746492, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162312918494746492, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162312918494746491, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162312918494746491, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: m_Spacing.y
+      value: -4.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 162312918494746491, guid: 57e5ce176bcc33e4e91493b576ddfbff,
+        type: 3}
+      propertyPath: m_ChildAlignment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1482049597, guid: 57e5ce176bcc33e4e91493b576ddfbff, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
