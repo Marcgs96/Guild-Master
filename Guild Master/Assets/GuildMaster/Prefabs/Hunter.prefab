@@ -119,8 +119,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972300473}
-  m_LocalRotation: {x: -0, y: 0.68773264, z: -0, w: 0.7259641}
-  m_LocalPosition: {x: 0, y: 3.023, z: 0}
+  m_LocalRotation: {x: 0.00742189, y: 0.69223857, z: -0.012130303, w: 0.72152865}
+  m_LocalPosition: {x: -0.12, y: 3.7571902, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2497343187157676881}
@@ -663,15 +663,22 @@ MonoBehaviour:
   state: 3
   action_string: 
   night_value: 0
+  product: 2
+  product_amount: 1
   producing: 0
-  production_time: 1
+  production_time_game_hours: 1
+  production_steps: 2
+  production_step_time_rt: 0
+  production_progress: 0
   production_hours_cycle: 8
-  production_total_cycle_cost: 75
+  production_total_cycle_cost: 80
+  production_slider: {fileID: 0}
   steer: {fileID: 0}
   wander: {fileID: 0}
   assigned_position: {fileID: 0}
   weapon: {fileID: 2497343186906324776}
   model: {fileID: 2497343187157324995}
+  head: {fileID: 1972300474}
   target_animal: {fileID: 0}
   spawner: {fileID: 0}
 --- !u!114 &9141441269803450274
@@ -742,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serializedBlackboard: '{"_variables":{"production_time":{"_propertyPath":"HunterMember.production_time","_name":"production_time","_id":"a07c6b32-0e64-4fc2-9c14-8f6667e6f6c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  _serializedBlackboard: '{"_variables":{"production_time":{"_propertyPath":"HunterMember.production_step_time_rt","_name":"production_time","_id":"a07c6b32-0e64-4fc2-9c14-8f6667e6f6c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"target_animal":{"_propertyPath":"HunterMember.target_animal","_name":"target_animal","_id":"36ad6eed-8af5-441a-9200-b43641fd7609","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"state":{"_propertyPath":"HunterMember.state","_name":"state","_id":"9c009fce-0ff9-49ef-adc4-f401443d0c25","$type":"NodeCanvas.Framework.Variable`1[[Member+MEMBER_STATE,
     Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"night_value":{"_propertyPath":"HunterMember.night_value","_name":"night_value","_id":"2dfe03eb-1962-4601-a650-3ea0c4caa36c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,

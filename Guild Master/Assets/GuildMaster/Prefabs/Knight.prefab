@@ -492,15 +492,22 @@ MonoBehaviour:
   state: 3
   action_string: 
   night_value: 0
+  product: 5
+  product_amount: 1
   producing: 0
-  production_time: 1
+  production_time_game_hours: 1
+  production_steps: 1
+  production_step_time_rt: 0
+  production_progress: 0
   production_hours_cycle: 8
-  production_total_cycle_cost: 75
+  production_total_cycle_cost: 80
+  production_slider: {fileID: 0}
   steer: {fileID: 0}
   wander: {fileID: 0}
   assigned_position: {fileID: 0}
   weapon: {fileID: 0}
   model: {fileID: 7113461085127035929}
+  head: {fileID: 4581258534404587697}
   dueling: 0
   opponent: {fileID: 0}
 --- !u!114 &661362119459741753
@@ -576,6 +583,7 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"weaponlocation":{"_name":"weaponlocation","_id":"49d163d1-9c9e-431f-9629-dc4c001de953","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"dummylocation":{"_name":"dummylocation","_id":"c50f2b56-1185-4b26-9b91-77e5d7073c28","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"stamina":{"_propertyPath":"KnightMember.stamina","_name":"stamina","_id":"6713b94d-fd32-4f04-b2b9-bd68915f8554","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"production_progress":{"_propertyPath":"KnightMember.production_progress","_name":"production_progress","_id":"8185e08d-9bb4-4bc5-aeae-15a622112178","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
 --- !u!1 &3708804778651799092
@@ -758,8 +766,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4862339649701454947}
-  m_LocalRotation: {x: -0, y: 0.68773264, z: -0, w: 0.7259641}
-  m_LocalPosition: {x: 0, y: 3.326, z: 0}
+  m_LocalRotation: {x: 0.00742189, y: 0.69223857, z: -0.012130303, w: 0.72152865}
+  m_LocalPosition: {x: -0.12, y: 3.7571902, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3653527565381585231}

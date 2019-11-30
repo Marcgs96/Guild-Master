@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Member : MonoBehaviour
 {
     public enum MEMBER_STATE { QUEST, WORK, REST, NONE };
     public enum MEMBER_TYPE { KNIGHT, HUNTER, MAGE, TOTAL };
 
-    //Member info//
+    [Header("Member Information")]
     public string member_name;
     public uint lvl;
     public uint xp;
@@ -18,17 +19,23 @@ public class Member : MonoBehaviour
     public MEMBER_STATE state = MEMBER_STATE.REST;
     public string action_string;
     public float night_value = 0;
-    public bool producing = false;
-    /// <summary>
-    /// In game hours it takes to produce one resource.
-    /// </summary>
-    public float production_time;
 
-    protected float production_stamina_cost;
+    [Header("Production")]
+    public Resource.ResourceType product;
+    [SerializeField]
+    private int product_amount;
+    public bool producing = false;
+    public float production_time_game_hours;
+    public int production_steps;
+    protected float production_time_rt;
+    public float production_step_time_rt;
+    public float production_progress = 0.0f;
     [SerializeField]
     protected uint production_hours_cycle;
     [SerializeField]
     protected float production_total_cycle_cost;
+    protected float production_stamina_cost;
+    public Slider production_slider;
 
     protected Move move;
     protected Animator anim;
@@ -43,6 +50,8 @@ public class Member : MonoBehaviour
     //UI
     protected GameObject action_bubble;
     protected GameObject blacksmith_bubble;
+    [SerializeField]
+    protected Transform head;
 
     // Start is called before the first frame update
     protected void Start()
@@ -60,8 +69,10 @@ public class Member : MonoBehaviour
         blacksmith_bubble = transform.Find("BlacksmithBubble").gameObject;
 
         state = (MEMBER_STATE)UnityEngine.Random.Range((int)MEMBER_STATE.WORK, (int)MEMBER_STATE.NONE);
-        production_stamina_cost = production_total_cycle_cost / GameManager.manager.time.InGameHoursToSeconds(production_hours_cycle);
 
+        production_time_rt = GameManager.manager.time.InGameHoursToSeconds(production_time_game_hours);
+        production_step_time_rt = production_time_rt / production_steps;
+        production_stamina_cost = production_total_cycle_cost / GameManager.manager.time.InGameHoursToSeconds(production_hours_cycle);
 
         //Setup state
         anim.SetInteger("char_type", (int)type);
@@ -77,11 +88,28 @@ public class Member : MonoBehaviour
     {
         anim.SetFloat("speed", move.movement.magnitude);
 
-        if (producing)
+        if (state == MEMBER_STATE.WORK && producing)
+        {
+            production_slider.gameObject.SetActive(true);
             DecreaseStamina(production_stamina_cost * Time.deltaTime);
+            production_progress += Time.deltaTime;
+            production_slider.value = production_progress / production_time_rt;
+            if (production_progress >= production_time_rt)
+            {
+                GameManager.manager.resources.IncreaseResource(product, product_amount);
+                production_progress = 0.0f;
+            }
+        }         
         else if (state == MEMBER_STATE.REST)
             IncreaseStamina(production_stamina_cost * Time.deltaTime);
     }
+
+    public void LateUpdate()
+    {
+        if(state == MEMBER_STATE.WORK)
+            production_slider.gameObject.transform.position = Camera.main.WorldToScreenPoint(head.position);
+    }
+
     protected void ChangeNightValue(bool night)
     {
         if (night)
@@ -95,7 +123,11 @@ public class Member : MonoBehaviour
             return;
 
         this.state = state;
+
+
         producing = false;
+        production_progress = 0.0f;
+        production_slider.gameObject.SetActive(false);
     }
     virtual public void GenerateInfo()
     {
