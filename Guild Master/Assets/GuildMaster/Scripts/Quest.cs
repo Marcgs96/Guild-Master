@@ -200,6 +200,9 @@ public class Quest
                 {
                     //Todo: Kill member/Remove from game
                     Debug.Log(member.member_name + " couldn't make it out alive.");
+                    GameManager.manager.buildings[(int)Building.BUILDING_TYPE.DUNGEON].RemoveMember(member);
+                    GameManager.manager.members.RemoveMember(member);
+
                     continue;
                 }
                 else
@@ -209,6 +212,7 @@ public class Quest
             member.ChangeState(Member.MEMBER_STATE.REST, true);
         }
 
+        //only do if someone survived
         foreach (Resource resource in rewards)
         {
             GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
