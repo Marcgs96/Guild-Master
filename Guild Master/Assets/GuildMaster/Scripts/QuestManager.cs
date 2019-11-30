@@ -10,7 +10,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField]
     List<Quest> active_quests;
     [SerializeField]
-    Quest selected_quest;
+    public Quest selected_quest;
 
     public delegate void QuestAdded(Quest new_quest);
     public static event QuestAdded OnQuestAdd;
@@ -89,5 +89,18 @@ public class QuestManager : MonoBehaviour
     internal Quest GetSelectedQuest()
     {
         return selected_quest;
+    }
+
+    public bool IsOnActiveQuest(Member member)
+    {
+        foreach(Quest q in active_quests)
+        {
+            foreach (Member m in q.party)
+            {
+                if (m == member) return true;
+            }
+        }
+
+        return false;
     }
 }

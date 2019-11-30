@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ResourceManager : MonoBehaviour
 {
     [SerializeField]
-    Resource gold, crowns, shields, potions, meat, flames;
+    public Resource gold, crowns, shields, potions, meat, flames;
     public Text gold_txt, crowns_txt, shields_txt, potions_txt, meat_txt, flames_txt;
 
     void Start()

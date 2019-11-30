@@ -45,6 +45,7 @@ public class Quest
         provisions = new List<Resource>();
         provisions.Add(new Resource(Resource.ResourceType.Potion, 0));
         provisions.Add(new Resource(Resource.ResourceType.Meat, 0));
+        provisions.Add(new Resource(Resource.ResourceType.Flame, 0));
 
         party = new List<Member>();
 
