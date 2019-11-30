@@ -64,8 +64,7 @@ public class Member : MonoBehaviour
         steer = GetComponent<SteeringFollowNavMeshPath>();
         wander = GetComponent<SteeringWander>();
 
-        state = (MEMBER_STATE)UnityEngine.Random.Range((int)MEMBER_STATE.WORK, (int)MEMBER_STATE.NONE);
-
+        ChangeState((MEMBER_STATE)UnityEngine.Random.Range((int)MEMBER_STATE.WORK, (int)MEMBER_STATE.NONE));
         production_time_rt = GameManager.manager.time.InGameHoursToSeconds(production_time_game_hours);
         production_step_time_rt = production_time_rt / production_steps;
         production_stamina_cost = production_total_cycle_cost / GameManager.manager.time.InGameHoursToSeconds(production_hours_cycle);
@@ -114,6 +113,7 @@ public class Member : MonoBehaviour
 
         this.state = state;
 
+        GameManager.manager.ui.UpdateStateButtonText(this);
 
         producing = false;
         production_progress = 0.0f;

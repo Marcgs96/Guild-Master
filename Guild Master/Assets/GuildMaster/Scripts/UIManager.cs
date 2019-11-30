@@ -131,15 +131,11 @@ public class UIManager : MonoBehaviour
             return;
 
         if (member.state == Member.MEMBER_STATE.REST)
-        {
             member.ChangeState(Member.MEMBER_STATE.WORK);
-            member_listings[member].transform.GetChild(5).GetComponentInChildren<Text>().text = "Work";
-        }
         else if (member.state == Member.MEMBER_STATE.WORK)
-        {
             member.ChangeState(Member.MEMBER_STATE.REST);
-            member_listings[member].transform.GetChild(5).GetComponentInChildren<Text>().text = "Rest";
-        }
+
+        UpdateStateButtonText(member);
     }
 
     public void OnSlotClick(GameObject slot, Member member)
@@ -228,6 +224,16 @@ public class UIManager : MonoBehaviour
         member_listings.Add(new_member, new_listing);
 
         UpdateMemberCountText();
+    }
+
+    public void UpdateStateButtonText(Member member)
+    {
+        if (member.state == Member.MEMBER_STATE.WORK)
+            member_listings[member].transform.GetChild(5).GetComponentInChildren<Text>().text = "Work";
+        else if (member.state == Member.MEMBER_STATE.REST)
+            member_listings[member].transform.GetChild(5).GetComponentInChildren<Text>().text = "Rest";
+        else if (member.state == Member.MEMBER_STATE.QUEST)
+            member_listings[member].transform.GetChild(5).GetComponentInChildren<Text>().text = "Quest";
     }
 
     void SetupQuestPreparation(Quest new_quest)
