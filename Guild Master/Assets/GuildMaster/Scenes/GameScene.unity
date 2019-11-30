@@ -10109,11 +10109,6 @@ PrefabInstance:
       propertyPath: boundGraphObjectReferences.Array.data[18]
       value: 
       objectReference: {fileID: 1698534986}
-    - target: {fileID: 2266518882676994104, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
-        type: 3}
-      propertyPath: priority
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5020096918008599635, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
         type: 3}
       propertyPath: _objectReferences.Array.size
@@ -11126,10 +11121,6 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 644855860}
-    - target: {fileID: 265613402, guid: bdac0e0654792474e9b2a72cca6f01d2, type: 3}
-      propertyPath: priority
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdac0e0654792474e9b2a72cca6f01d2, type: 3}
 --- !u!1 &1167842065 stripped
@@ -18087,11 +18078,6 @@ PrefabInstance:
       propertyPath: boundGraphObjectReferences.Array.data[18]
       value: 
       objectReference: {fileID: 1836525768}
-    - target: {fileID: 358461246195747828, guid: 917685ca3ed193549ac39a7adbac5950,
-        type: 3}
-      propertyPath: priority
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 917685ca3ed193549ac39a7adbac5950, type: 3}
 --- !u!1 &1238360360 stripped
