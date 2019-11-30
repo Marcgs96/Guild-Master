@@ -87,12 +87,12 @@ public class Member : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        anim.SetFloat("speed", move.current_velocity.magnitude);
+        anim.SetFloat("speed", move.movement.magnitude);
 
         if (producing)
-            DecreaseStamina(production_stamina_cost * Time.fixedDeltaTime);
+            DecreaseStamina(production_stamina_cost * Time.deltaTime);
         else if (state == MEMBER_STATE.REST)
-            IncreaseStamina(production_stamina_cost * Time.fixedDeltaTime);
+            IncreaseStamina(production_stamina_cost * Time.deltaTime);
     }
 
     protected void ChangeNightValue(bool night)
@@ -185,7 +185,6 @@ public class Member : MonoBehaviour
 
     public GameObject RequestPosition(GameObject location)
     {
-        Debug.Log("pepega?");
         GameManager.manager.locations.ReleasePosition(assigned_position);
         assigned_position = GameManager.manager.locations.GetAvailablePosition(location);
 

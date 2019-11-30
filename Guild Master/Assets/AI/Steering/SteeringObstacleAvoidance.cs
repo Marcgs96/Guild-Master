@@ -87,14 +87,73 @@ public class SteeringObstacleAvoidance : Steering
     // Update is called once per frame
     void Update()
     {
-        foreach (OAray r in rays)
-        {
-            RaycastHit hit;
+        /* foreach (OAray r in rays)
+         {
+             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.rotation * r.direction.normalized, out hit, r.length, obstacle_layer) == true)
-            {
-                seek.Steer(new Vector3(hit.point.x, transform.position.y, hit.point.z) + hit.normal * avoid_distance);
-            }
+             if (Physics.Raycast(transform.position, transform.rotation * r.direction.normalized, out hit, r.length, obstacle_layer) == true)
+             {
+                 seek.Steer(new Vector3(hit.point.x, transform.position.y, hit.point.z) + hit.normal * avoid_distance);
+             }
+         }*/
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, avoid_distance, obstacle_layer);
+        //Vector3 final = Vector3.zero;
+
+        // collision data
+        GameObject target = null;
+        float target_shortest_time = float.PositiveInfinity;
+        float target_min_separation = 0.0f;
+        float target_distance = 0.0f;
+        Vector3 target_relative_pos = Vector3.zero;
+        Vector3 target_relative_vel = Vector3.zero;
+
+        foreach (Collider col in colliders)
+        {
+            GameObject go = col.gameObject;
+
+            if (go == gameObject)
+                continue;
+
+            Move target_move = go.GetComponent<Move>();
+
+            if (target_move == null)
+                continue;
+
+            // calculate time to collision
+            Vector3 relative_pos = go.transform.position - transform.position;
+            Vector3 relative_vel = target_move.movement - move.movement;
+            float relative_speed = relative_vel.magnitude;
+            float time_to_collision = Vector3.Dot(relative_pos, relative_vel) / relative_speed * relative_speed;
+
+            // make sure there is a collision at all
+            float distance = relative_pos.magnitude;
+            float min_separation = distance - relative_speed * time_to_collision;
+            if (min_separation > 2.0f * avoid_distance)
+                continue;
+
+            if (time_to_collision > target_shortest_time)
+                continue;
+
+            Debug.Log("Avoiding " + go.name);
+            target = go;
+            target_shortest_time = time_to_collision;
+            target_min_separation = min_separation;
+            target_distance = distance;
+            target_relative_pos = relative_pos;
+            target_relative_vel = relative_vel;
+        }
+
+        //if we have a target, avoid collision
+        if (target != null)
+        {
+            Vector3 escape_pos;
+            if (target_min_separation <= 0.0f || target_distance < avoid_distance * 2.0f)
+                escape_pos = target.transform.position - transform.position;
+            else
+                escape_pos = target_relative_pos + target_relative_vel * target_shortest_time;
+
+            move.AccelerateMovement(-(escape_pos.normalized * move.max_mov_acceleration), priority);
         }
     }
 
@@ -104,7 +163,7 @@ public class SteeringObstacleAvoidance : Steering
         {
             // Display the explosion radius when selected
             Gizmos.color = Color.red;
-            float angle = Mathf.Atan2(move.current_velocity.x, move.current_velocity.z);
+            float angle = Mathf.Atan2(move.movement.x, move.movement.z);
             Quaternion q = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);
 
             foreach (OAray r in rays)

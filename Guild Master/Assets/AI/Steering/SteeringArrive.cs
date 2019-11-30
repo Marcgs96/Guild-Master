@@ -65,17 +65,17 @@ public class SteeringArrive : Steering {
 
         if (diff.magnitude < min_distance)
         {
-            move.SetMovementVelocity(Vector3.zero);
+            move.SetMovementVelocity(Vector3.zero,priority);
             return true;
         }
 
-        Vector3 wanted_velocity = diff.normalized * move.max_mov_speed;
+        Vector3 wanted_velocity = diff.normalized * move.max_mov_velocity;
         if (diff.magnitude <= slow_distance)
         {
             wanted_velocity *= diff.magnitude / slow_distance;
         }
 
-        Vector3 desired_acceleration = (wanted_velocity - move.current_velocity) / time_to_target;
+        Vector3 desired_acceleration = (wanted_velocity - move.movement) / time_to_target;
         Vector3 clamped_acceleration = desired_acceleration.normalized * Mathf.Clamp(desired_acceleration.magnitude, 0.0f, move.max_mov_acceleration);
         move.AccelerateMovement(clamped_acceleration, priority);
 

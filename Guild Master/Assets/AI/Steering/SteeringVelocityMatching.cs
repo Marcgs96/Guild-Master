@@ -21,10 +21,10 @@ public class SteeringVelocityMatching : Steering
 		if(target_move)
 		{
 			// Create a vector that describes the ideal velocity
-			Vector3 ideal_movement = target_move.current_velocity;
+			Vector3 ideal_movement = target_move.movement;
 
 			// Calculate acceleration needed to match that velocity
-			Vector3 acceleration = ideal_movement - move.current_velocity;
+			Vector3 acceleration = ideal_movement - move.movement;
 			acceleration /= time_to_target;
 
 			// Cap acceleration

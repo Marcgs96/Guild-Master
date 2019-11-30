@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612fefe37772540c8bb2bcc1639f521e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 1
+  priority: 3
 --- !u!114 &2497343187157295039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13ae3cbc54e44631ae987b5486c59f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 1
+  priority: 2
   min_distance: 1
   slow_distance: 3
   time_to_target: 0.1
@@ -523,8 +523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a2539257a3a4efeb46289d1eb08300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 1
-  min_angle: 1
+  priority: 0
+  min_angle: 2
   slow_angle: 0.1
   time_to_accel: 0.1
 --- !u!114 &2497343187157295033
@@ -539,7 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb11e672eda6f945b918a515c6a1407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 1
+  priority: 2
   min_distance: 0.5
 --- !u!114 &2497343187157295037
 MonoBehaviour:
@@ -555,12 +555,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   aim: {fileID: 0}
-  max_mov_speed: 5
+  arrow: {fileID: 0}
+  max_mov_velocity: 5
   max_mov_acceleration: 0.1
-  max_rot_speed: 100
-  max_rot_acceleration: 1
-  current_velocity: {x: 0, y: 0, z: 0}
-  current_rotation_speed: 0
+  max_rot_velocity: 20
+  max_rot_acceleration: 2
+  movement: {x: 0, y: 0, z: 0}
+  rotation: 0
 --- !u!65 &265613403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -586,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782558cc3a6d845a990f61f72475c82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 2
+  priority: 0
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -627,7 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e3618e1707546a19fff3fb11d7c9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 2
+  priority: 0
   obstacle_layer:
     serializedVersion: 2
     m_Bits: 1024
@@ -662,6 +663,7 @@ MonoBehaviour:
   steer: {fileID: 0}
   wander: {fileID: 0}
   task_time: 10
+  assigned_position: {fileID: 0}
   weapon: {fileID: 2497343186906324776}
   model: {fileID: 2497343187157324995}
   target_animal: {fileID: 0}
@@ -754,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e439e859d063a4ca9983e1f7bb60411a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 0
+  priority: 1
   offset: {x: 0, y: 0, z: 0}
   radius: 15
 --- !u!1 &2497343187157337693

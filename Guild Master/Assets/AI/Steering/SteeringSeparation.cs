@@ -50,7 +50,7 @@ public class SteeringSeparation : Steering {
 
     public void Steer()
     {
-        if (coll.enabled)
+        /*if (coll.enabled)
         {
             Collider[] hit_agents = Physics.OverlapSphere(transform.position, search_radius, mask.value);
             Vector3 sum_vector = Vector3.zero;
@@ -65,6 +65,35 @@ public class SteeringSeparation : Steering {
             }
             Vector3 result = Vector3.Normalize(sum_vector) * (Mathf.Clamp(sum_vector.magnitude, 0, move.max_mov_acceleration));
             move.AccelerateMovement(result, priority);
+        }*/
+
+        if (!coll.enabled)
+            return;
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, search_radius, mask);
+        Vector3 final = Vector3.zero;
+
+        foreach (Collider col in colliders)
+        {
+            GameObject go = col.gameObject;
+
+            if (go == gameObject)
+                continue;
+
+            Vector3 diff = transform.position - go.transform.position;
+            diff.y = 0;
+            float distance = diff.magnitude;
+            float acceleration = (1.0f - strength.Evaluate(distance / search_radius)) * move.max_mov_acceleration;
+
+            final += diff.normalized * acceleration;
+        }
+
+        float final_strength = final.magnitude;
+        if (final_strength > 0.0f)
+        {
+            if (final_strength > move.max_mov_acceleration)
+                final = final.normalized * move.max_mov_acceleration;
+            move.AccelerateMovement(final, priority);
         }
     }
 

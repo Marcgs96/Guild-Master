@@ -122,7 +122,7 @@ public class Quest
 
         while (elapsed_time < real_time_duration)
         {
-            elapsed_time += Time.fixedDeltaTime;
+            elapsed_time += Time.deltaTime;
 
             if (total_food_checks > 0) //Roll for a food check if thers any left
             {
@@ -138,7 +138,7 @@ public class Quest
             for (int i = 0; i < party.Count; i++)
             {
                 //Decrease stamina basic
-                party[i].DecreaseStamina(stamina_ratios[i] * Time.fixedDeltaTime);
+                party[i].DecreaseStamina(stamina_ratios[i] * Time.deltaTime);
 
                 if (food_check) //Eat food if there is any left otherwise lose stamina
                 {              
@@ -178,7 +178,7 @@ public class Quest
                 food_check = false;
             }
 
-            food_check_chance += 0.5f * Time.fixedDeltaTime;
+            food_check_chance += 0.5f * Time.deltaTime;
 
             yield return new WaitForEndOfFrame();
         }

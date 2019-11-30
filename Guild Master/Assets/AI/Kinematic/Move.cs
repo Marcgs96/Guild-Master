@@ -1,101 +1,116 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using System.Collections;
 
-public class Move : MonoBehaviour {
+public class Move : MonoBehaviour
+{
 
-	public GameObject target;
-	public GameObject aim;
-//	public Slider arrow;
-	public float max_mov_speed = 5.0f;
-	public float max_mov_acceleration = 0.1f;
-	public float max_rot_speed = 10.0f; // in degrees / second
-	public float max_rot_acceleration = 0.1f; // in degrees
-
-    Vector3[] movement_velocity;
-    float[] rotation_velocity;
+    public GameObject target;
+    public GameObject aim;
+    public Slider arrow;
+    public float max_mov_velocity = 5.0f;
+    public float max_mov_acceleration = 0.1f;
+    public float max_rot_velocity = 10.0f; // in degrees / second
+    public float max_rot_acceleration = 0.1f; // in degrees
 
     [Header("-------- Read Only --------")]
-	public Vector3 current_velocity = Vector3.zero;
-	public float current_rotation_speed = 0.0f; // degrees
+    public Vector3 movement = Vector3.zero;
+    public float rotation = 0.0f; // degrees
 
-    void Start()
+    private Vector3[] movement_velocity;
+    private float[] angular_velocity;
+
+    public void Start()
     {
         movement_velocity = new Vector3[SteeringConf.num_priorities];
-        rotation_velocity = new float[SteeringConf.num_priorities];
+        angular_velocity = new float[SteeringConf.num_priorities];
+
+        ResetPriorities();
     }
-	// Methods for behaviours to set / add velocities
-	public void SetMovementVelocity (Vector3 velocity) 
-	{
-        current_velocity = velocity;
-	}
 
-	public void AccelerateMovement (Vector3 acceleration, int prio) 
-	{
-        movement_velocity[prio] += acceleration;
-	}
+    // Methods for behaviours to set / add velocities
+    public void SetMovementVelocity(Vector3 velocity, int priority)
+    {
+        movement = velocity;
+    }
 
-	public void SetRotationVelocity (float rotation_speed) 
-	{
-        current_rotation_speed = rotation_speed;
-	}
+    public void AccelerateMovement(Vector3 velocity, int priority)
+    {
+        movement_velocity[priority] += velocity;
+    }
 
-	public void AccelerateRotation (float rotation_acceleration, int prio) 
-	{
-        rotation_velocity[prio] += rotation_acceleration;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-        for(int i = SteeringConf.num_priorities-1; i>=0; i--)
-        {
-            if(movement_velocity[i].magnitude > 0.0f)
-            {
-                current_velocity += movement_velocity[i];
-                break;
-            }
-        }
+    public void SetRotationVelocity(float rotation_velocity, int priority)
+    {
+        rotation = rotation_velocity;
+    }
 
-        for (int i = SteeringConf.num_priorities - 1; i >= 0; i--)
-        {
-            if (rotation_velocity[i] != 0.0f)
-            {
-                current_rotation_speed += rotation_velocity[i];
-                break;
-            }
-        }
+    public void AccelerateRotation(float rotation_acceleration, int priority)
+    {
+        angular_velocity[priority] += rotation_acceleration;
+    }
 
-        // cap velocity
-        if (current_velocity.magnitude > max_mov_speed)
-		{
-            current_velocity = current_velocity.normalized * max_mov_speed;
-		}
-
-        // cap rotation
-        current_rotation_speed = Mathf.Clamp(current_rotation_speed, -max_rot_speed, max_rot_speed);
-
-		// rotate the arrow
-		float angle = Mathf.Atan2(current_velocity.x, current_velocity.z);
-        //aim.transform.rotation = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);
-
-        // strech it
-        //arrow.value = current_velocity.magnitude * 4;
-
-        // final rotate
-		transform.rotation *= Quaternion.AngleAxis(current_rotation_speed * Time.deltaTime, Vector3.up);
-
-		// finally move
-		transform.position += current_velocity * Time.deltaTime;
-
-
-        for (int i = SteeringConf.num_priorities - 1; i > 0; i--)
+    public void ResetPriorities()
+    {
+        for (int i = 0; i < SteeringConf.num_priorities; ++i)
         {
             movement_velocity[i] = Vector3.zero;
+            angular_velocity[i] = 0.0f;
         }
-        for (int i = SteeringConf.num_priorities - 1; i >= 0; i--)
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector3 new_movement_velocity = Vector3.zero;
+        float new_angular_velocity = 0.0f;
+
+        // Pick the lowest priority level
+        foreach (Vector3 v in movement_velocity)
         {
-            rotation_velocity[i] = 0.0f;
+            if (Mathf.Approximately(v.magnitude, 0.0f) == false)
+            {
+                new_movement_velocity = v;
+                break;
+            }
         }
+
+
+        foreach (float f in angular_velocity)
+        {
+            if (Mathf.Approximately(f, 0.0f) == false)
+            {
+                new_angular_velocity = f;
+                break;
+            }
+        }
+
+        ResetPriorities();
+
+        // Apply
+        movement += new_movement_velocity;
+        rotation += new_angular_velocity;
+
+        // cap velocity
+        if (movement.magnitude > max_mov_velocity)
+        {
+            movement.Normalize();
+            movement *= max_mov_velocity;
+        }
+
+        // cap rotation
+        Mathf.Clamp(rotation, -max_rot_velocity, max_rot_velocity);
+
+        // rotate the arrow
+     //   float angle = Mathf.Atan2(movement.x, movement.z);
+      //  aim.transform.rotation = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);
+
+        // strech it
+      //  arrow.value = movement.magnitude * 4;
+
+        // final rotate
+        transform.rotation *= Quaternion.AngleAxis(rotation * Time.deltaTime, Vector3.up);
+
+        // finally move
+        transform.position += movement * Time.deltaTime;
     }
 }

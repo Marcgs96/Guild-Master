@@ -26,7 +26,7 @@ public class SteeringPursue : Steering
 		Vector3 diff = target - transform.position;
 
 		float distance = diff.magnitude;
-		float current_speed = move.current_velocity.magnitude;
+		float current_speed = move.movement.magnitude;
 		float prediction;
 
 		// is the speed too small ?
