@@ -71,6 +71,13 @@ public class UIManager : MonoBehaviour
         quests_panel.SetActive(false);
     }
 
+    internal void RemoveMemberListing(Member old_member)
+    {
+        Destroy(member_listings[old_member]);
+        member_listings.Remove(old_member);
+        UpdateMemberCountText();
+    }
+
     public void OnQuestSelection(Quest new_quest)
     {
         quest_preparation.SetActive(true);

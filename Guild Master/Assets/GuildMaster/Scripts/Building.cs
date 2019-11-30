@@ -64,6 +64,9 @@ public class Building : MonoBehaviour
 
     public void RequestExit(Member agent)
     {
+        if (agent == null)
+            return;
+
         foreach (Member a in members_inside)
         {
             if(a == agent)
@@ -75,6 +78,9 @@ public class Building : MonoBehaviour
 
     void ReleaseAgent(Member agent)
     {
+        if (agent == null)
+            return;
+
         members_inside.Remove(agent);
         agent.OnBuildingExit();
         OnMemberInteraction();
@@ -135,5 +141,10 @@ public class Building : MonoBehaviour
     internal uint GetLevel()
     {
         return level;
+    }
+
+    internal void RemoveMember(Member member)
+    {
+        members_inside.Remove(member);
     }
 }

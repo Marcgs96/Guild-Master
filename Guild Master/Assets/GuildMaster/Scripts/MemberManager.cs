@@ -70,4 +70,11 @@ public class MemberManager : MonoBehaviour
     {
         return member_cap;
     }
+
+    public void RemoveMember(Member old_member)
+    {
+        members.Remove(old_member);
+        GameManager.manager.ui.RemoveMemberListing(old_member);
+        Destroy(old_member.gameObject);
+    }
 }
