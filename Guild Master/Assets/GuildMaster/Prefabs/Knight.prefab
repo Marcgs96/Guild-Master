@@ -1,5 +1,146 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &795881892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 795881893}
+  - component: {fileID: 795881895}
+  - component: {fileID: 795881894}
+  m_Layer: 5
+  m_Name: Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &795881893
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795881892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1574737894}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 13, y: 75}
+  m_SizeDelta: {x: 244.1, y: 244.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &795881895
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795881892}
+  m_CullTransparentMesh: 0
+--- !u!114 &795881894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795881892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!1 &1574737893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574737894}
+  - component: {fileID: 1574737896}
+  - component: {fileID: 1574737895}
+  m_Layer: 5
+  m_Name: Bubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1574737894
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574737893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 795881893}
+  m_Father: {fileID: 1760066548}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 87.7, y: -151.2}
+  m_SizeDelta: {x: 537.6, y: 545.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1574737896
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574737893}
+  m_CullTransparentMesh: 0
+--- !u!114 &1574737895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574737893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 1e318f9afca2c1f4daf5bd85c9998fe7, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &1760066547
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,6 +173,7 @@ RectTransform:
   m_LocalScale: {x: 0.0026634133, y: 0.0026634133, z: 0.0026634133}
   m_Children:
   - {fileID: 1214258146843500033}
+  - {fileID: 1574737894}
   m_Father: {fileID: 3653527565381585231}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -618,7 +760,7 @@ MonoBehaviour:
   steer: {fileID: 0}
   wander: {fileID: 0}
   production_slider: {fileID: 3743570151653699489}
-  bubbles: {fileID: 0}
+  bubble_icon: {fileID: 795881894}
   dueling: 0
   opponent: {fileID: 0}
 --- !u!114 &661362119459741753
@@ -633,38 +775,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-3449.0,"y":-3313.0},"zoomFactor":0.6577901,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-3351.0,"y":-3021.0},"zoomFactor":0.6372554,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
     to the Dungeon"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4918.0,"y":5438.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Fighting
     enemies"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5291.0,"y":5436.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"15"},{"_position":{"x":5902.0,"y":5346.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"23"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5291.0,"y":5436.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"15"},{"_position":{"x":5941.0,"y":5336.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"23"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
     to Train"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5655.0,"y":5438.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"24"},{"_nestedFSM":{"_value":1},"_position":{"x":5971.0,"y":5454.0},"$type":"NodeCanvas.BehaviourTrees.NestedFSM","$id":"33"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_name":"night_value","_targetVariableID":"ce28a0b5-902c-4f42-b80a-d846f1e4cee4"}],"failChance":{},"_position":{"x":7126.0,"y":5268.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"35"},{"_position":{"x":6485.0,"y":5325.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"42"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Getting
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5683.0,"y":5439.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"24"},{"_nestedFSM":{"_value":1},"_position":{"x":6025.0,"y":5446.0},"$type":"NodeCanvas.BehaviourTrees.NestedFSM","$id":"33"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_name":"night_value","_targetVariableID":"ce28a0b5-902c-4f42-b80a-d846f1e4cee4"}],"failChance":{},"_position":{"x":7126.0,"y":5268.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"35"},{"_position":{"x":6485.0,"y":5325.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"43"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Getting
     to the Tavern"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6198.0,"y":5395.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"43"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Eating"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"$type":"GuildMaster.EnterBuilding"},{"waitTime":{"_value":80.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6431.0,"y":5497.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"52"},{"_position":{"x":6778.0,"y":5527.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"62"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6198.0,"y":5395.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"44"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Eating"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"$type":"GuildMaster.EnterBuilding"},{"waitTime":{"_value":80.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6436.0,"y":5491.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"53"},{"_position":{"x":6778.0,"y":5527.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"63"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
     fishing"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"},{"method":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"parameters":[{"_type":"UnityEngine.GameObject"}],"parameterIsByRef":[false],"returnValue":{"_type":"UnityEngine.GameObject","_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},{"functionWrapper":{"p1":{"_value":"Picking
     a fishing rod"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"method":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"parameters":[{"_type":"UnityEngine.GameObject"}],"parameterIsByRef":[false],"returnValue":{"_type":"UnityEngine.GameObject","_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},{"functionWrapper":{"p1":{"_value":"Looking
     for a spot"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Fishing"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"waitTime":{"_value":60.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6540.0,"y":5616.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"63"},{"_position":{"x":7156.0,"y":5460.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"102"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"waitTime":{"_value":60.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6520.0,"y":5617.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"64"},{"_position":{"x":7156.0,"y":5460.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"103"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
     to the Market"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Checking
     the shops"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7032.0,"y":5548.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"103"},{"repeatTimes":{"_value":5},"_position":{"x":7385.0,"y":5543.0},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"116"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0}],"failChance":{},"_position":{"x":7386.0,"y":5631.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"118"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7032.0,"y":5548.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"104"},{"repeatTimes":{"_value":5},"_position":{"x":7385.0,"y":5543.0},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"117"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0}],"failChance":{},"_position":{"x":7386.0,"y":5631.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"119"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6986.0,"y":5712.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"125"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6986.0,"y":5712.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"126"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7189.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"137"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7189.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"138"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7426.0,"y":5724.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"149"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7426.0,"y":5724.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"150"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7719.0,"y":5834.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"161"},{"_position":{"x":7713.0,"y":5356.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"173"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7719.0,"y":5834.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"162"},{"_position":{"x":7520.0,"y":5441.0},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"174"},{"timeout":{"_value":60.0},"_position":{"x":7551.0,"y":5508.0},"$type":"NodeCanvas.BehaviourTrees.Timeout","$id":"175"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Walking
+    around"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"min_distance":30.0,"$type":"GuildMaster.WalkAround"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7605.0,"y":5596.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"177"},{"_position":{"x":7911.0,"y":5336.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"185"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
     to GuildHall"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7445.0,"y":5419.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"174"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Sleeping"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"$type":"GuildMaster.EnterBuilding"},{"waitTime":{"_value":120.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7652.0,"y":5526.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"183"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"42"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"102"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"173"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"52"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"102"},"_targetNode":{"$ref":"103"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"102"},"_targetNode":{"$ref":"116"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"116"},"_targetNode":{"$ref":"118"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"118"},"_targetNode":{"$ref":"125"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"118"},"_targetNode":{"$ref":"137"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"118"},"_targetNode":{"$ref":"149"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"118"},"_targetNode":{"$ref":"161"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"173"},"_targetNode":{"$ref":"174"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"173"},"_targetNode":{"$ref":"183"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7738.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"186"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Sleeping"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"$type":"GuildMaster.EnterBuilding"},{"waitTime":{"_value":120.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":8071.0,"y":5425.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"195"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"103"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"174"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"185"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"63"},"_targetNode":{"$ref":"64"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"103"},"_targetNode":{"$ref":"104"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"103"},"_targetNode":{"$ref":"117"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"117"},"_targetNode":{"$ref":"119"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"119"},"_targetNode":{"$ref":"126"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"119"},"_targetNode":{"$ref":"138"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"119"},"_targetNode":{"$ref":"150"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"119"},"_targetNode":{"$ref":"162"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"174"},"_targetNode":{"$ref":"175"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"175"},"_targetNode":{"$ref":"177"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"185"},"_targetNode":{"$ref":"186"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"185"},"_targetNode":{"$ref":"195"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
     Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   boundGraphObjectReferences:
   - {fileID: 0}

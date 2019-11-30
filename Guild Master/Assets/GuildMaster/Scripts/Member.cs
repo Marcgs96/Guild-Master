@@ -50,7 +50,7 @@ public class Member : MonoBehaviour
     [SerializeField]
     protected Slider production_slider;
     [SerializeField]
-    protected GameObject bubbles;
+    protected RawImage bubble_icon;
 
     // Start is called before the first frame update
     protected void Start()
@@ -212,5 +212,16 @@ public class Member : MonoBehaviour
                 break;
         }
         return ret;
+    }
+
+    public void ActivateBubble(int icon_id)
+    {
+        bubble_icon.texture = GameManager.manager.ui.resource_images[icon_id];
+        bubble_icon.gameObject.transform.parent.gameObject.SetActive(true);
+    }
+    
+    public void DisableBubble()
+    {
+        bubble_icon.gameObject.transform.parent.gameObject.SetActive(false);
     }
 }
