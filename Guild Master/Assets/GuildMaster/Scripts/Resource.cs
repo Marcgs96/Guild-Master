@@ -17,9 +17,9 @@ public class Resource
     [SerializeField]
     private ResourceType type;
     [SerializeField]
-    private uint amount;
+    private int amount;
 
-    public uint GetAmount()
+    public int GetAmount()
     {
         return amount;
     }
@@ -28,20 +28,20 @@ public class Resource
         return type;
     }
 
-    public Resource(ResourceType type, uint amount)
+    public Resource(ResourceType type, int amount)
     {
         this.type = type;
         this.amount = amount;
     }
 
-    internal void Decrease(uint v)
+    internal void Decrease(int v)
     {
         amount -= v;
         if (amount < 0)
             amount = 0;
     }
 
-    internal void Increase(uint v)
+    internal void Increase(int v)
     {
         amount += v;
     }

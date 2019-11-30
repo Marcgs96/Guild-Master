@@ -19,6 +19,10 @@ public class Member : MonoBehaviour
     public string action_string;
     public float night_value = 0;
     public bool producing = false;
+    /// <summary>
+    /// In game hours it takes to produce one resource.
+    /// </summary>
+    public float production_time;
 
     protected float production_stamina_cost;
     [SerializeField]
@@ -31,7 +35,6 @@ public class Member : MonoBehaviour
     public SteeringFollowNavMeshPath steer;
     public SteeringWander wander;
     protected Collider coll;
-    public float task_time;
     public GameObject assigned_position;
 
     public GameObject weapon;
@@ -59,12 +62,18 @@ public class Member : MonoBehaviour
         state = (MEMBER_STATE)UnityEngine.Random.Range((int)MEMBER_STATE.WORK, (int)MEMBER_STATE.NONE);
         production_stamina_cost = production_total_cycle_cost / GameManager.manager.time.InGameHoursToSeconds(production_hours_cycle);
 
+
         //Setup state
         anim.SetInteger("char_type", (int)type);
     }
 
     // Update is called once per frame
-    protected void Update()
+    void Update()
+    {
+        MemberUpdate();
+    }
+    
+    virtual protected void MemberUpdate()
     {
         anim.SetFloat("speed", move.movement.magnitude);
 
@@ -73,7 +82,6 @@ public class Member : MonoBehaviour
         else if (state == MEMBER_STATE.REST)
             IncreaseStamina(production_stamina_cost * Time.deltaTime);
     }
-
     protected void ChangeNightValue(bool night)
     {
         if (night)

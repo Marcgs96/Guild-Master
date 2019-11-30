@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class ResourceManager : MonoBehaviour
 {
     [SerializeField]
-    Resource gold, crowns, shields, potions, meat;
-    public Text gold_txt, crowns_txt, shields_txt, potions_txt, meat_txt;
+    Resource gold, crowns, shields, potions, meat, flames;
+    public Text gold_txt, crowns_txt, shields_txt, potions_txt, meat_txt, flames_txt;
 
     void Start()
     {
@@ -17,9 +17,10 @@ public class ResourceManager : MonoBehaviour
         shields_txt.text = shields.GetAmount().ToString();
         potions_txt.text = potions.GetAmount().ToString();
         meat_txt.text = meat.GetAmount().ToString();
+        flames_txt.text = flames.GetAmount().ToString();
     }
 
-    public void IncreaseResource(Resource.ResourceType type, uint amount)
+    public void IncreaseResource(Resource.ResourceType type, int amount)
     {
         switch (type)
         {
@@ -43,12 +44,16 @@ public class ResourceManager : MonoBehaviour
                 meat.Increase(amount);
                 meat_txt.text = meat.GetAmount().ToString();
                 break;
+            case Resource.ResourceType.Flame:
+                flames.Increase(amount);
+                flames_txt.text = flames.GetAmount().ToString();
+                break;
             default:
                 break;
         }
     }
 
-    public void DecreaseResource(Resource.ResourceType type, uint amount)
+    public void DecreaseResource(Resource.ResourceType type, int amount)
     {
         switch (type)
         {
@@ -72,12 +77,16 @@ public class ResourceManager : MonoBehaviour
                 meat.Decrease(amount);
                 meat_txt.text = meat.GetAmount().ToString();
                 break;
+            case Resource.ResourceType.Flame:
+                flames.Decrease(amount);
+                flames_txt.text = flames.GetAmount().ToString();
+                break;
             default:
                 break;
         }
     }
 
-    internal bool HaveAmount(Resource.ResourceType type, uint amount)
+    internal bool HaveAmount(Resource.ResourceType type, int amount)
     {
         switch (type)
         {
@@ -91,6 +100,8 @@ public class ResourceManager : MonoBehaviour
                 return potions.GetAmount() >= amount;
             case Resource.ResourceType.Meat:
                 return meat.GetAmount() >= amount;
+            case Resource.ResourceType.Flame:
+                return flames.GetAmount() >= amount;
         }
 
         return false;
@@ -110,6 +121,8 @@ public class ResourceManager : MonoBehaviour
                 return potions;
             case Resource.ResourceType.Meat:
                 return meat;
+            case Resource.ResourceType.Flame:
+                return flames;
         }
 
         return null;

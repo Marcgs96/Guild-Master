@@ -589,11 +589,11 @@ MonoBehaviour:
   action_string: 
   night_value: 0
   producing: 0
+  production_time: 1
   production_hours_cycle: 8
   production_total_cycle_cost: 75
   steer: {fileID: 0}
   wander: {fileID: 0}
-  task_time: 3
   assigned_position: {fileID: 0}
   weapon: {fileID: 5803403313378560017}
   model: {fileID: 6084457698102769950}
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-3624.0,"y":-4102.0},"zoomFactor":0.7500225,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"5f33928d-752c-4576-ba80-b0dfc3420c48"},"_position":{"x":5409.0,"y":5441.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":4731.0,"y":5666.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-2571.531,"y":-2796.485},"zoomFactor":0.5455582,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"5f33928d-752c-4576-ba80-b0dfc3420c48"},"_position":{"x":5409.0,"y":5441.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":4731.0,"y":5666.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Going
     to the Dungeon"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4448.0,"y":5738.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":"Throwing
     fireballs"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
@@ -666,10 +666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serializedBlackboard: '{"_variables":{"task_time":{"_propertyPath":"MageMember.task_time","_name":"task_time","_id":"80e5cc1a-fb8a-4519-a8c4-95c6fe43bd6b","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  _serializedBlackboard: '{"_variables":{"production_time":{"_propertyPath":"MageMember.production_time","_name":"production_time","_id":"80e5cc1a-fb8a-4519-a8c4-95c6fe43bd6b","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"state":{"_propertyPath":"Member.state","_name":"state","_id":"5f33928d-752c-4576-ba80-b0dfc3420c48","$type":"NodeCanvas.Framework.Variable`1[[Member+MEMBER_STATE,
-    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"action_string":{"_propertyPath":"MageMember.action_string","_name":"action_string","_id":"4a50cc54-4165-423a-9e90-da9e360da252","$type":"NodeCanvas.Framework.Variable`1[[System.String,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"night_value":{"_propertyPath":"MageMember.night_value","_name":"night_value","_id":"ba7fb04e-29b1-45cd-9bb5-b131c9adcf9c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"night_value":{"_propertyPath":"MageMember.night_value","_name":"night_value","_id":"ba7fb04e-29b1-45cd-9bb5-b131c9adcf9c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"producing":{"_propertyPath":"MageMember.producing","_name":"producing","_id":"1d745a23-fdbc-4f6a-b2d1-83d15b977467","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"assigned_position":{"_name":"assigned_position","_id":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"recipe_location":{"_name":"recipe_location","_id":"522237ba-508c-488c-ab49-0027d30d69d7","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
