@@ -15,6 +15,14 @@ public class HunterMember : Member
         type = MEMBER_TYPE.HUNTER;
     }
 
+    public override void ChangeState(MEMBER_STATE state, bool force = false)
+    {
+        base.ChangeState(state, force);
+
+        if (target_animal != null)
+            DespawnAnimal();
+    }
+
     public void RequestAnimal()
     {
         target_animal = spawner.SpawnAnimal(this);
@@ -28,5 +36,6 @@ public class HunterMember : Member
     public void DespawnAnimal()
     {
         target_animal.GetComponent<Animator>().SetBool("despawn", true);
+        target_animal = null;
     }
 }

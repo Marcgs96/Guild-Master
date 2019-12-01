@@ -115,6 +115,8 @@ public class Member : MonoBehaviour
 
         GameManager.manager.ui.UpdateStateButtonText(this);
 
+        //reset variables 
+        anim.SetBool("type_action", false);
         producing = false;
         production_progress = 0.0f;
         production_slider.gameObject.SetActive(false);
