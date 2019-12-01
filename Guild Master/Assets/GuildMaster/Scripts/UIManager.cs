@@ -137,6 +137,8 @@ public class UIManager : MonoBehaviour
     {
         if (quest_preparation.activeSelf && !GameManager.manager.quests.IsInParty(member))
             AddMemberToQuest(member);
+        else if (!quest_preparation.activeSelf)
+            Camera.main.GetComponent<CameraControls>().SetFocus(member.gameObject);
     }
 
     public void OnStateClick(Member member)
