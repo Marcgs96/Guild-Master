@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: KnightSFM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-3579.056,"y":-3893.059},"zoomFactor":0.7500061,"nodes":[{"_actionList":{"actions":[{"functionWrapper":{"p1":{"_value":"Picking
+  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-4927.0,"y":-5011.0},"nodes":[{"_actionList":{"actions":[{"functionWrapper":{"p1":{"_value":"Picking
     a Weapon"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_name":"weaponlocation","_targetVariableID":"49d163d1-9c9e-431f-9629-dc4c001de953"},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,

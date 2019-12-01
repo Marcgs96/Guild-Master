@@ -35,10 +35,9 @@ public class SteeringFollowNavMeshPath : Steering
     // Update is called once per frame
     void Update()
     {
-        align.Steer(current_position);
-
         if (path.corners.Length > 0 && !reached)
         {
+            align.Steer(current_position);
             separation.Steer();
 
             if (current_point != path.corners.Length - 1)
@@ -52,7 +51,7 @@ public class SteeringFollowNavMeshPath : Steering
             }
             else
             {
-                if (arrive.Steer(path.corners[current_point]))
+                if (arrive.Steer(path.corners[current_point]) && align.Steer(current_position))
                 {
                     reached = true;
                 }

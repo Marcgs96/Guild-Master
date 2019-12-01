@@ -19,7 +19,7 @@ public class SteeringAlign : Steering
 	{
     }
 
-    public void Steer(Vector3 target)
+    public bool Steer(Vector3 target)
     {
          // Orientation we are trying to match
          float delta_angle = Vector3.SignedAngle(transform.forward, target - transform.position, new Vector3(0.0f, 1.0f, 0.0f));
@@ -29,7 +29,7 @@ public class SteeringAlign : Steering
          if(diff_absolute < min_angle)
          {
              move.SetRotationVelocity(0.0f, priority);
-             return;
+             return true;
          }
 
          float ideal_rotation_speed = move.max_rot_velocity;
@@ -45,14 +45,14 @@ public class SteeringAlign : Steering
 
          move.AccelerateRotation(Mathf.Clamp(angular_acceleration, -move.max_rot_acceleration, move.max_rot_acceleration), priority);
 
+        return false;
 
+       /* float angle = Vector3.SignedAngle(transform.forward, Vector3.Normalize(target - transform.position), Vector3.up);
 
-        /* float angle = Vector3.SignedAngle(transform.forward, target - transform.position, Vector3.up);
-
-         if (Mathf.Abs(angle) < min_angle)
+         if (Mathf.Abs(angle) <= min_angle)
          {
              move.SetRotationVelocity(0, priority);
-             return;
+             return true;
          }
 
          float angular_acceleration = move.max_rot_velocity / time_to_accel;
@@ -61,6 +61,8 @@ public class SteeringAlign : Steering
              angular_acceleration = -angular_acceleration;
 
          float clamped_acceleration = Mathf.Clamp(angular_acceleration, -move.max_rot_acceleration, move.max_rot_acceleration);
-         move.AccelerateRotation(clamped_acceleration, priority);*/
+         move.AccelerateRotation(clamped_acceleration, priority);
+
+        return false;*/
     }
 }
