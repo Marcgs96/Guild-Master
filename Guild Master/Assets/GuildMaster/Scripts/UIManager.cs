@@ -283,7 +283,7 @@ public class UIManager : MonoBehaviour
 
     private void CheckPopups()
     {
-        if(current_popup == null)
+        if(current_popup == null && popup_queue.Count > 0)
         {
             GameObject popup = popup_queue.Dequeue();
             current_popup = popup;
