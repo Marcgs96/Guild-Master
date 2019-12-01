@@ -15,14 +15,10 @@ public class SteeringFollowNavMeshPath : Steering
     SteeringSeparation separation;
     NavMeshPath path;
 
-
     public float min_distance;
     int current_point = 1;
     bool reached = false;
     Vector3 current_position;
-
-    public delegate void ReachAction();
-    public event ReachAction OnReachEnd;
 
 
     void Awake()

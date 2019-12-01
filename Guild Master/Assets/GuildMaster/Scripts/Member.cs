@@ -26,7 +26,7 @@ public class Member : MonoBehaviour
     [Header("Production")]
     public Resource.ResourceType product;
     [SerializeField]
-    private int product_amount;
+    private int product_amount = 1;
     public bool producing = false;
     public float production_time_game_hours;
     public int production_steps;

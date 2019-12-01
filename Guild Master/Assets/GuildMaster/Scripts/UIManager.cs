@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     public GameObject quest_inventory_resources;
     public GameObject quest_provisions_resources;
 
+    public GameObject quest_result_popup;
+
     //members list stuff
     public GameObject members_list_panel;
     public GameObject member_listing;
@@ -34,13 +36,18 @@ public class UIManager : MonoBehaviour
     public GameObject resource_prefab;
     public GameObject slot_prefab;
     public GameObject resource_cost_prefab;
+    public GameObject member_result_prefab;
     public List<Texture2D> portraits;
     public List<Texture2D> resource_images;
+
+    Queue<GameObject> popup_queue;
+    GameObject current_popup = null;
 
     void Awake()
     {
         member_listings = new Dictionary<Member, GameObject>();
         quest_listings = new Dictionary<Quest, GameObject>();
+        popup_queue = new Queue<GameObject>();
 
         MemberManager.OnMemberAdd += CreateMemberListing;
         QuestManager.OnQuestAdd += CreateQuestListing;
@@ -233,6 +240,63 @@ public class UIManager : MonoBehaviour
         UpdateMemberCountText();
     }
 
+    internal void CreateQuestResultPopup(Quest quest, bool receive_rewards, List<Member> survivors)
+    {
+        GameObject popup = Instantiate(quest_result_popup);
+
+        popup.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(OnPopUpClose);
+
+        if (receive_rewards)
+        {
+            popup.transform.GetChild(0).GetComponentInChildren<Text>().text = "Victory";
+            Transform rewards = popup.transform.GetChild(1).GetChild(1);
+
+            foreach (Resource resource in quest.rewards)
+            {
+                GameObject new_resource = Instantiate(resource_prefab);
+                new_resource.GetComponent<RawImage>().texture = resource_images[(int)resource.GetResourceType()];
+                new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
+                new_resource.transform.SetParent(rewards);
+            }
+        }
+
+        Transform members = popup.transform.GetChild(1).GetChild(0);
+        foreach (Member member in quest.party)
+        {
+            GameObject new_member_result = Instantiate(member_result_prefab);
+            new_member_result.transform.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)member.type];
+            new_member_result.transform.GetChild(1).GetComponent<Text>().text = member.member_name;
+            if (survivors.Contains(member))
+                new_member_result.transform.GetChild(2).GetComponent<Text>().text = "Survived the dungeon";
+            else
+                new_member_result.transform.GetChild(2).GetComponent<Text>().text = "Couldn't make it out alive";
+
+            new_member_result.transform.SetParent(members);
+        }
+
+        popup.transform.SetParent(this.transform);
+        popup.transform.position = Vector3.zero;
+        popup_queue.Enqueue(popup);
+        CheckPopups();
+    }
+
+    private void CheckPopups()
+    {
+        if(current_popup == null)
+        {
+            GameObject popup = popup_queue.Dequeue();
+            current_popup = popup;
+            popup.SetActive(true);
+        }
+    }
+
+    public void OnPopUpClose()
+    {
+        Destroy(current_popup);
+        current_popup = null;
+        CheckPopups();
+    }
+
     public void UpdateStateButtonText(Member member)
     {
         if (member.state == Member.MEMBER_STATE.WORK)
@@ -362,6 +426,11 @@ public class UIManager : MonoBehaviour
     public void OnGuildHouseLevelUp(uint lvl)
     {
         UpdateGuildHallPanel();
+    }
+
+    public void PrepareQuestResultPanel(Quest quest)
+    {
+
     }
 
     public void UpdateGuildHallPanel()

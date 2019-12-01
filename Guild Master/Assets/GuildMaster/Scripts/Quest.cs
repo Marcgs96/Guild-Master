@@ -119,7 +119,7 @@ public class Quest
 
     private IEnumerator QuestActivity()
     {
-        Debug.Log("Starting quest activity of" + quest_name);
+        Debug.Log("Starting quest activity of " + quest_name);
         float food_check_chance = 0;
         bool food_check = false;
         float elapsed_time = 0.0f;
@@ -192,32 +192,34 @@ public class Quest
 
     private void FinishQuest()
     {
+        bool receive_rewards = false;
+        List<Member> survivors = new List<Member>();
+
         foreach (Member member in party)
         {
             if (member.stamina == 0)
             {
-                if (UnityEngine.Random.Range(1, 2) == 1)
+                if (UnityEngine.Random.Range(0, 3) > 0) //Roll for chance to die
                 {
-                    //Todo: Kill member/Remove from game
                     Debug.Log(member.member_name + " couldn't make it out alive.");
                     GameManager.manager.buildings[(int)Building.BUILDING_TYPE.DUNGEON].RemoveMember(member);
                     GameManager.manager.members.RemoveMember(member);
-
                     continue;
                 }
-                else
-                    Debug.Log(member.member_name + " escaped death.");
             }
-            //give xp to member
+
             member.ChangeState(Member.MEMBER_STATE.REST, true);
+            receive_rewards = true;
+            survivors.Add(member);
         }
 
-        //only do if someone survived
-        foreach (Resource resource in rewards)
+        if(receive_rewards) //if at least 1 survivor, receive rewards
         {
-            GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
+            foreach (Resource resource in rewards)
+                GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
         }
 
+        GameManager.manager.ui.CreateQuestResultPopup(this, receive_rewards, survivors);
         GameManager.manager.quests.RemoveQuest(this);
     }
 
