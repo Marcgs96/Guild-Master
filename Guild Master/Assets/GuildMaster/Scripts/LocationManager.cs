@@ -47,7 +47,7 @@ public class LocationManager : MonoBehaviour
                 duel_location.positions[position.Key] = true;
 
                 ReleasePosition(agent_1.assigned_position);
-                ReleasePosition(agent_2.assigned_position);
+                ReleasePosition(agent_1.assigned_position);
 
                 agent_1.assigned_position = position.Key.transform.GetChild(0).gameObject;
                 agent_2.assigned_position = position.Key.transform.GetChild(1).gameObject;

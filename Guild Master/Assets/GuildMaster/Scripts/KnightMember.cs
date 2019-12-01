@@ -18,17 +18,24 @@ public class KnightMember : Member
 
     override public void ChangeState(MEMBER_STATE state, bool force = false)
     {
-        base.ChangeState(state, force);
-
-        free_members.Remove(this);
-
-        if(dueling && opponent)
+        if (this.state == MEMBER_STATE.WORK)
         {
-            dueling = false;
-            opponent.dueling = false;
+            if (dueling && opponent)
+            {
+                GameManager.manager.locations.ReleasePosition(assigned_position.transform.parent.gameObject);
+                GameManager.manager.locations.ReleasePosition(opponent.assigned_position.transform.parent.gameObject);
 
-            opponent.opponent = null;
-            opponent = null;
+                dueling = false;
+                opponent.dueling = false;
+
+                opponent.opponent = null;
+                opponent = null;
+
+            }
+            else
+                free_members.Remove(this);
         }
+
+        base.ChangeState(state, force);
     }
 }

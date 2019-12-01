@@ -1,16 +1,15 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 namespace GuildMaster{
 
 	[Category("Custom")]
-	public class FindOpponent : ActionTask<KnightMember>{
+	[Description("Waits for other agent to reach destination")]
+	public class WaitForOther : ActionTask<Member>{
 
-        public BBParameter<List<KnightMember>> free_members;
+        public BBParameter<Member> target;
+
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
@@ -22,15 +21,24 @@ namespace GuildMaster{
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute(){
-            foreach (KnightMember free_agent in free_members.value)
-            {
-                GameManager.manager.locations.AssignDuelLocations(free_agent, agent);
-                free_members.value.Remove(free_agent);
+            if(target.value.steer.ReachedDestination())
+			    EndAction(true);
+		}
+
+		//Called once per frame while the action is active.
+		protected override void OnUpdate(){
+            if (target.value.steer.ReachedDestination())
                 EndAction(true);
-                return;
-            }
-            free_members.value.Add(agent);
-            EndAction(true);
         }
+
+		//Called when the task is disabled.
+		protected override void OnStop(){
+			
+		}
+
+		//Called when the task is paused.
+		protected override void OnPause(){
+			
+		}
 	}
 }

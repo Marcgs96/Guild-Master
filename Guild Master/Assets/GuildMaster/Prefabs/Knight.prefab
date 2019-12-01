@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 0
-  min_angle: 2
+  min_angle: 3
   slow_angle: 0.1
   time_to_accel: 0.1
 --- !u!114 &5781074457761497669
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-5419.0,"y":-5022.0},"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-3439.0,"y":-3204.0},"zoomFactor":0.6556188,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
     to the Dungeon"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4918.0,"y":5438.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"KnightMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Fighting
@@ -847,7 +847,8 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"production_progress":{"_propertyPath":"KnightMember.production_progress","_name":"production_progress","_id":"8185e08d-9bb4-4bc5-aeae-15a622112178","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"free_members":{"_propertyPath":"KnightMember.free_members","_name":"free_members","_id":"27f5e6ac-321d-411b-94d7-6a40451f343e","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[KnightMember,
     Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
-    Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
+    Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"opponent":{"_propertyPath":"KnightMember.opponent","_name":"opponent","_id":"5d875f10-f277-4f10-a050-f434822c7bda","$type":"NodeCanvas.Framework.Variable`1[[KnightMember,
+    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences: []
 --- !u!1 &3708804778651799092
 GameObject:
