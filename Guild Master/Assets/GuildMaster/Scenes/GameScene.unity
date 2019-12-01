@@ -324,7 +324,6 @@ GameObject:
   - component: {fileID: 35600146}
   - component: {fileID: 35600148}
   - component: {fileID: 35600149}
-  - component: {fileID: 35600150}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -467,24 +466,6 @@ MonoBehaviour:
   locations: []
   locations_parent: {fileID: 345948596}
   knight_fight_location: {fileID: 1395745332}
---- !u!114 &35600150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35600143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac615fbde4bf32f4cb6ddf377a286d14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _serializedBlackboard: '{"_name":"GameManager_BB","_variables":{"free_knight_members":{"_value":[],"_name":"free_knight_members","_id":"bd90df10-5619-4335-a3da-7db8e4877645","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[KnightMember,
-    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
-    Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"resources":{"_propertyPath":"GameManager.resources","_name":"resources","_id":"e0a701f8-fe5e-4efc-8916-4b18c5194153","$type":"NodeCanvas.Framework.Variable`1[[ResourceManager,
-    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
-  _objectReferences: []
-  dontDestroy: 1
 --- !u!1 &36532385
 GameObject:
   m_ObjectHideFlags: 0
@@ -10828,7 +10809,7 @@ PrefabInstance:
     - target: {fileID: 661362119459741753, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
         type: 3}
       propertyPath: boundGraphSerialization
-      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4207.0,"y":-3720.0},"zoomFactor":0.7497518,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-3972.0,"y":-3730.0},"zoomFactor":0.7497518,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
         to the Dungeon"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":1},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4918.0,"y":5438.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"KnightMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Fighting
@@ -10951,6 +10932,11 @@ PrefabInstance:
       propertyPath: boundGraphObjectReferences.Array.data[16]
       value: 
       objectReference: {fileID: 1836525768}
+    - target: {fileID: 661362119459741753, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
+        type: 3}
+      propertyPath: firstActivation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5020096918008599635, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
         type: 3}
       propertyPath: _objectReferences.Array.size
@@ -10968,6 +10954,8 @@ PrefabInstance:
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"dummylocation":{"_value":2,"_name":"dummylocation","_id":"c50f2b56-1185-4b26-9b91-77e5d7073c28","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"stamina":{"_propertyPath":"KnightMember.stamina","_name":"stamina","_id":"6713b94d-fd32-4f04-b2b9-bd68915f8554","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"production_progress":{"_propertyPath":"KnightMember.production_progress","_name":"production_progress","_id":"8185e08d-9bb4-4bc5-aeae-15a622112178","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"free_members":{"_propertyPath":"KnightMember.free_members","_name":"free_members","_id":"27f5e6ac-321d-411b-94d7-6a40451f343e","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[KnightMember,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
       objectReference: {fileID: 0}
     - target: {fileID: 5020096918008599635, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
@@ -12040,6 +12028,11 @@ PrefabInstance:
       propertyPath: boundGraphObjectReferences.Array.data[16]
       value: 
       objectReference: {fileID: 1836525768}
+    - target: {fileID: 9141441269803450274, guid: bdac0e0654792474e9b2a72cca6f01d2,
+        type: 3}
+      propertyPath: firstActivation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 600882461, guid: bdac0e0654792474e9b2a72cca6f01d2, type: 3}
       propertyPath: spawner
       value: 
@@ -19063,6 +19056,11 @@ PrefabInstance:
       propertyPath: boundGraphObjectReferences.Array.data[16]
       value: 
       objectReference: {fileID: 1836525768}
+    - target: {fileID: 2246033019795271706, guid: 917685ca3ed193549ac39a7adbac5950,
+        type: 3}
+      propertyPath: firstActivation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1784941013477514498, guid: 917685ca3ed193549ac39a7adbac5950,
         type: 3}
       propertyPath: _objectReferences.Array.size

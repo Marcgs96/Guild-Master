@@ -7,6 +7,7 @@ public class KnightMember : Member
     [Header("Knight")]
     public bool dueling = false;
     public KnightMember opponent;
+    public static List<KnightMember> free_members = new List<KnightMember>();
 
     override public void GenerateInfo()
     {
@@ -18,6 +19,8 @@ public class KnightMember : Member
     override public void ChangeState(MEMBER_STATE state, bool force = false)
     {
         base.ChangeState(state, force);
+
+        free_members.Remove(this);
 
         if(dueling && opponent)
         {
