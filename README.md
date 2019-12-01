@@ -1,90 +1,51 @@
 ### Guild Master
 
-Guild Master is a fantasy game where the player takes control of a collective of heroes who are part of a brotherhood. The game consists of the heroes collecting the necessary resources to complete the daily mission allowing the player gather rewards to improve the guild house building. Improving the guild house allows the player to recuit more heroes for the brotherhood making the guild stronger and respected.
-
-## Game areas
-
-* ### Guild house 
-
-Sleep area.
-
-* ### Tavern
-
-Eating area.
-
-* ### Blacksmith
-
-Place where the player can use resources to buy items that have a passive effect in the heroes statistics.
-
-* ### Training camp (Warriors only)
-
-Warrior training zone, warriors training makes them gain a battle shout that increases the succes chance in the daily quest.
-
-* ### Alchemy tower (Wizards only)
-
-Training and manufacturing potions zone for magicians.
-
-* ### Forest (Hunters only)
-
-Training zone and collection of skins / meats for hunters.
-
-## AI Archetypes
-
-* ### Warrior
-
-**Routine:** 
-
-* 6:00 : Wake up and go tavern for breakfast.
-* 9:00 : Goes to the training camp and train.
-* 13:00 : Goes to the tavern for lunch.
-* 15:00 : Goes to the training camp and train.
-* 19:00 : Goes to the blacksmith and repairs his armor.
-* 21:00 : Goes to the tavern for dinner.
-* 23:00 : Goes to the guild house for sleep.
-
-* ### Wizard
-
-**Routine:*
-
-* 6:00 : Wake up and go tavern for breakfast.
-* 8:00 : Goes to the Alchemy tower and crafts some potions.
-* 11:00 : Goes to the blacksmith and trades with the blacksmith guy.
-* 14:00 : Goes to the tavern for lunch.
-* 16:00 : Goes to the Alchemy tower and crafts some potions.
-* 19:00 : Goes to the tavern for dinner.
-* 22:00 : Goes to the guild house for sleep.
-
-* ### Hunter: 
-
-**Routine:** 
-
-* 6:00 : Wake up and go tavern for breakfast.
-* 8:00 : Goes to the blacksmith and buy some arrows.
-* 10:00 : Goes to the Forest and hunts for some food.
-* 13:00 : Goes to the tavern for lunch.
-* 17:00 : Goes to the Forest and hunts for some food.
-* 21:00 : Goes to the tavern for dinner.
-* 22:00 : Goes to the guild house for sleep.
+Guild Master is a fantasy game where the player takes control of a collective of heroes who are part of a brotherhood. The player needs to recruit members for the guild, whom will be able to produce different type of resources. These resources will be used as provisions to send the members to the Dungeon, on different kind of quests, giving them various benefits. These Dungeon quests will reward the player with special resources used to upgrade the guild buildings like the hall or blacksmith, allowing access to more members and improvements for them. The end goal is to defeat the boss of the dungeon before the day limit.
 
 ## Controls
 
-You can move the camera by moving the mouse pointer to the limits of the screen. You can also scroll for zoom. (The camera does not have limits yet)
+You can move the camera by moving the mouse pointer to the limits of the screen. You can also scroll for zoom. By clicking a member in the member panel the camera will focus him.
 
-## Sound
-
-The game areas emit different sounds when active by any agent. You must focus the building to hear it. You can zoom in to increment the volume.
-
- ## Player Interactions
+## Player Interactions
  
 The player is able to:
 
- * Select the heroes and resources necessaries to start the daily quest.
+ * Send agents to quest. You can do this by clicking the quest button (Scroll) selecting a mission in the table and assigning memebers by clicking them in the right side member panel. You can also bring provisions with them by clicking the icons in the provision panel.
  
- * Upgrade the guild house and the blacksmith building using the resources gathered by the quests.
+ * Upgrade the guild house and the blacksmith building using the resources gathered by the quests. You can do this by clicking the blacksmith(anvil)/guild hall(banner) buttons and then clicking the green arrow.
  
- * Recuit heroes to expand the guild.
+ * Recuit heroes to expand the guild. You can do this by opening the guild hall panel and selecting the member you want to recruit (if you have slots available)
+  
+ * Make a member work or rest with the click of the state button in their portrait inside the member list panel.
  
- * Buy upgrades from the blacksmith to strengthen his guild members.
+ ## AI Archetypes
+
+Every agent follows this Behaviour tree, When resting and when they are in quest they do the same, but every agent has it's own FSM when working nested in their Behaviour tree.
+
+When resting, the agents recover stamina.
+
+While daylight agents have a 25% of going to 4 different places:
+
+* The market: agent walks around the market and visits 4 diferent spots.
+* Fishing: agent walks to the fishing spot, picks a fishing pole and starts fishing.
+* The tavern: agent walks to the tavern and enters.
+* Walk: agent goes for a walk and visit random spots in the map while chilling.
+
+While night agent has a 55% chance of going to sleep and rest % is divided between the rest of the options above.
+
+When in quest, the agent moves to the dungeon and enters in it, when the quest is complete they apear again and a resume .
+
+* ### Knight
+
+While working knights go to the warrior training area, pick up a weapon and try to find a couple, if they have no couple to fight with they fight solo. If someone is free he will fight him.
+
+* ### Mage
+
+Mages go to the Alchemy tower while working, they create potions by going to a recipe shelf and selecting a recipe, then they go to a material shelf and pickup the materials needed, at last they go to the alchemy table and craft the potion and repeat.
+
+* ### Hunter
+
+Hunters while working they gather meat, to do it, they go to the forest and wander for a prey, after they spot one, they kill it and moves towards it, then gather the meat and go again.
 
 ## Authors
 
@@ -95,6 +56,13 @@ https://github.com/Marcgs96
 ## Axel Alavedra
 
 https://github.com/AxelAlavedra
+
+## Repository
+
+https://github.com/Marcgs96/AI_Game
+
+https://github.com/Marcgs96/AI_Game/wiki
+
 ## License 
 
 MIT License
