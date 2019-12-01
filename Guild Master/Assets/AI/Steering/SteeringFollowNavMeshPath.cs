@@ -51,7 +51,7 @@ public class SteeringFollowNavMeshPath : Steering
             }
             else
             {
-                if (arrive.Steer(path.corners[current_point]) && align.Steer(current_position))
+                if (arrive.Steer(path.corners[current_point]))
                 {
                     reached = true;
                 }

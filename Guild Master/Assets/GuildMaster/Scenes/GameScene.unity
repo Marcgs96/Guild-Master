@@ -5594,7 +5594,7 @@ MonoBehaviour:
   min_z: 110
   max_x: 140
   min_x: -10
-  center_offset: -10
+  center_offset: -15
   center_zoom: 10
 --- !u!82 &534669910
 AudioSource:
