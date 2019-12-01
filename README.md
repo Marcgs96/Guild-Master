@@ -56,6 +56,13 @@ https://github.com/Marcgs96
 ## Axel Alavedra
 
 https://github.com/AxelAlavedra
+
+## Repository
+
+https://github.com/Marcgs96/AI_Game
+
+https://github.com/Marcgs96/AI_Game/wiki
+
 ## License 
 
 MIT License
