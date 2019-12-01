@@ -15,6 +15,8 @@ The player is able to:
  * Upgrade the guild house and the blacksmith building using the resources gathered by the quests. You can do this by clicking the blacksmith(anvil)/guild hall(banner) buttons and then clicking the green arrow.
  
  * Recuit heroes to expand the guild. You can do this by opening the guild hall panel and selecting the member you want to recruit (if you have slots available)
+  
+ * Make a member work or rest with the click of the state button in their portrait inside the member list panel.
  
  ## AI Archetypes
 
