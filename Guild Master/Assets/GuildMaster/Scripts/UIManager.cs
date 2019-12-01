@@ -211,7 +211,6 @@ public class UIManager : MonoBehaviour
             new_resource.transform.SetParent(rewards);
         }
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnQuestSelection(new_quest); });
-        new_listing.transform.position = Vector3.zero;
         new_listing.transform.SetParent(quests_list.transform);
 
         quest_listings.Add(new_quest, new_listing);
@@ -276,9 +275,8 @@ public class UIManager : MonoBehaviour
 
             new_member_result.transform.SetParent(members);
         }
-
         popup.transform.SetParent(this.transform);
-        popup.transform.position = Vector3.zero;
+        popup.GetComponent<RectTransform>().localPosition = Vector3.zero;
         popup_queue.Enqueue(popup);
         CheckPopups();
     }
