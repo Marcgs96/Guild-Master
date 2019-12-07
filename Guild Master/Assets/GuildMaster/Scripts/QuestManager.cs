@@ -56,7 +56,7 @@ public class QuestManager : MonoBehaviour
 
     public void AddMemberToQuest(Member new_member)
     {
-        selected_quest.party.Add(new_member);
+        selected_quest.AddMemberToParty(new_member);
     }
 
     public void RemoveMemberFromQuest(Member old_member)

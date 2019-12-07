@@ -6,20 +6,13 @@ using UnityEngine;
 [System.Serializable]
 public class Quest
 {
-    public enum EnemyType { SKELETON, BANDIT, ORC, TOTAL };
     public enum QuestType { BOUNTY, ADVENTURE, RAID };
-    public struct QuestEnemy
-    {
-        public string name;
-        public uint lvl;
-        public EnemyType type;
-    }
 
     public string quest_name;
     public uint lvl;
     public uint xp;
     public QuestType type;
-    public List<QuestEnemy> enemies;
+    public List<Enemy> enemies;
     public List<Resource> rewards;
     public List<Member> party;
     public List<Resource> provisions;
@@ -40,7 +33,7 @@ public class Quest
         lvl = level;
         coroutine = QuestActivity();
 
-        enemies = new List<QuestEnemy>();
+        enemies = new List<Enemy>();
         rewards = new List<Resource>();
         provisions = new List<Resource>();
         provisions.Add(new Resource(Resource.ResourceType.Potion, 0));
@@ -63,6 +56,26 @@ public class Quest
         }
     }
 
+    internal void AddMemberToParty(Member new_member)
+    {
+        party.Add(new_member);
+        CheckEnemyCounter(new_member);
+    }
+
+    private void CheckEnemyCounter(Member new_member)
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i].type == (Enemy.EnemyType)((int)new_member.type))
+            {
+                enemies[i].countered = true;
+                GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i]);
+                return;
+            }
+
+        }
+    }
+
     internal void OnDungeonEnter(Member member)
     {
         if (!party.Contains(member))
@@ -82,13 +95,19 @@ public class Quest
 
         for (int i = 0; i < GetMemberSizeFromType(type); i++)
         {
-            enemies.Add(CreateEnemy(lvl));
+            GenerateEnemy();
         }
 
         //Todo: Create function for reward setup to be semi randomized
         rewards.Add(new Resource(Resource.ResourceType.Gold, 500));
         rewards.Add(new Resource(Resource.ResourceType.Shield, 10));
         rewards.Add(new Resource(Resource.ResourceType.Crown, 10));
+    }
+
+    private void GenerateEnemy()
+    {
+        Enemy.EnemyType random_type = (Enemy.EnemyType)UnityEngine.Random.Range((int)Enemy.EnemyType.SKELETON, (int)Enemy.EnemyType.TOTAL);
+        enemies.Add(new Enemy(random_type, lvl));
     }
 
     private void CreateBounty()
@@ -98,7 +117,7 @@ public class Quest
         quest_duration = 3;
         total_stamina_cost = 50.0f;
 
-        enemies.Add(CreateEnemy(lvl));
+        GenerateEnemy();
 
         //Todo: Create function for reward setup
         rewards.Add(new Resource(Resource.ResourceType.Gold, 250));
@@ -221,17 +240,6 @@ public class Quest
 
         GameManager.manager.ui.CreateQuestResultPopup(this, receive_rewards, survivors);
         GameManager.manager.quests.RemoveQuest(this);
-    }
-
-    QuestEnemy CreateEnemy(uint lvl)
-    {
-        //Todo: improve enemy creation related with quest type and difficulty.
-        QuestEnemy enemy;
-        enemy.name = "Bobo";
-        enemy.lvl = lvl;
-        enemy.type = (EnemyType)UnityEngine.Random.Range((int)EnemyType.SKELETON, (int)EnemyType.TOTAL);
-
-        return enemy;
     }
 
     public uint GetMemberSizeFromType(QuestType type)

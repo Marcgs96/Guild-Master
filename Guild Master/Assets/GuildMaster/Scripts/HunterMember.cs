@@ -8,13 +8,13 @@ public class HunterMember : Member
     public GameObject target_animal;
     public AnimalSpawner spawner;
 
-    List<string> names = new List<string> { "Huntard","Hawkeye","Rexxar","Windrunner","Hemet",
+    List<string> names = new List<string> { "Yapo","Hawkeye","Rexxar","Windrunner","Hemet",
         "Nathanos","Robin","Arrow","Hanzo","Rowan","Rulf","Jhin","Draven","Lucian","Twitch"};
 
     override public void GenerateInfo()
     {
         base.GenerateInfo();
-        member_name = names[UnityEngine.Random.Range(0, names.Count)];
+        member_name = names[Random.Range(0, names.Count)];
         type = MEMBER_TYPE.HUNTER;
     }
 

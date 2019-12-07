@@ -10,7 +10,7 @@ public class MageMember : Member
     override public void GenerateInfo()
     {
         base.GenerateInfo();
-        member_name = names[UnityEngine.Random.Range(0, names.Count)];
+        member_name = names[Random.Range(0, names.Count)];
         type = MEMBER_TYPE.MAGE;
     }
 }

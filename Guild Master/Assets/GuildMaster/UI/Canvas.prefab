@@ -3754,15 +3754,7 @@ MonoBehaviour:
   guild_upgrade_costs: {fileID: 7296811956529779927}
   blacksmith_panel: {fileID: 7296811955287758200}
   blacksmith_upgrade_costs: {fileID: 7296811955261958075}
-  quests_panel: {fileID: 7296811956641455240}
-  quests_list: {fileID: 7296811955256684477}
-  quest_preparation: {fileID: 7296811956209739919}
-  quest_listing: {fileID: 8020847394701365470, guid: 7b9ca1691255aba4b941e791c5c98d25,
-    type: 3}
-  quest_inventory_resources: {fileID: 7296811955652083667}
-  quest_provisions_resources: {fileID: 7296811954695679310}
-  quest_result_popup: {fileID: 8441996654189704022, guid: e1f62200821c7cc44a4cf7e52665439f,
-    type: 3}
+  quest_panel: {fileID: 1011931057}
   members_list_panel: {fileID: 7296811954737182316}
   member_listing: {fileID: 2045466834875720009, guid: 24f7650cd2ccfe248aca79ab401c31cb,
     type: 3}
@@ -3793,6 +3785,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 6a7d00b025ada6b4890d3b405bc929fb, type: 3}
   - {fileID: 2800000, guid: d114d25ac2c21b34189f28d717043abc, type: 3}
   - {fileID: 2800000, guid: f2d0310bd3aa3f24e9ad3d1c898b5319, type: 3}
+  quest_result_popup: {fileID: 8441996654189704022, guid: e1f62200821c7cc44a4cf7e52665439f,
+    type: 3}
 --- !u!1 &7296811955561692604
 GameObject:
   m_ObjectHideFlags: 0
@@ -5197,7 +5191,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7296811955524761892}
+      - m_Target: {fileID: 1011931057}
         m_MethodName: SendParty
         m_Mode: 1
         m_Arguments:
@@ -8307,6 +8301,7 @@ GameObject:
   - component: {fileID: 7296811956641455247}
   - component: {fileID: 7296811956641455245}
   - component: {fileID: 7296811956641455246}
+  - component: {fileID: 1011931057}
   m_Layer: 5
   m_Name: QuestsPanel
   m_TagString: Untagged
@@ -8373,6 +8368,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1011931057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296811956641455240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65bd7a97a4027184f8bdeb8faf4a4e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests_list: {fileID: 7296811955256684477}
+  quest_preparation: {fileID: 7296811956209739919}
+  quest_listing: {fileID: 8020847394701365470, guid: 7b9ca1691255aba4b941e791c5c98d25,
+    type: 3}
+  quest_inventory_resources: {fileID: 7296811955652083667}
+  quest_provisions_resources: {fileID: 7296811954695679310}
 --- !u!1 &7296811956652384649
 GameObject:
   m_ObjectHideFlags: 0
@@ -9150,7 +9163,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7296811955524761892}
+      objectReference: {fileID: 1011931057}
     - target: {fileID: 2681580679440994446, guid: 9525d79eb19781c4d869dddde167290e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -9315,7 +9328,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7296811955524761892}
+      objectReference: {fileID: 1011931057}
     - target: {fileID: 2681580679440994446, guid: 9525d79eb19781c4d869dddde167290e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -9480,7 +9493,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7296811955524761892}
+      objectReference: {fileID: 1011931057}
     - target: {fileID: 2681580679440994446, guid: 9525d79eb19781c4d869dddde167290e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -9645,7 +9658,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7296811955524761892}
+      objectReference: {fileID: 1011931057}
     - target: {fileID: 2681580679440994446, guid: 9525d79eb19781c4d869dddde167290e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -9805,7 +9818,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7296811955524761892}
+      objectReference: {fileID: 1011931057}
     - target: {fileID: 2681580679440994446, guid: 9525d79eb19781c4d869dddde167290e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -9970,7 +9983,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7296811955524761892}
+      objectReference: {fileID: 1011931057}
     - target: {fileID: 2681580679440994446, guid: 9525d79eb19781c4d869dddde167290e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
