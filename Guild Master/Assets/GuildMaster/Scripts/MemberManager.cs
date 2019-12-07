@@ -24,11 +24,6 @@ public class MemberManager : MonoBehaviour
         members = new List<Member>();
         SetMemberCap(GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE].GetLevel());
         GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE].OnLevelUp += SetMemberCap;
-
-        AddMember(Member.MEMBER_TYPE.KNIGHT);
-        AddMember(Member.MEMBER_TYPE.MAGE);
-        AddMember(Member.MEMBER_TYPE.HUNTER);
-
     }
 
     public void AddMember(Member.MEMBER_TYPE type)

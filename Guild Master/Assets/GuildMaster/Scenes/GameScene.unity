@@ -27416,7 +27416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8626b87630891dd41998f2ff3308bf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 1
   type: 0
   level_costs:
   - resources:
