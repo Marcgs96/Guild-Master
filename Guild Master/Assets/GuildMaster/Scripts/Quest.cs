@@ -56,23 +56,45 @@ public class Quest
         }
     }
 
+    internal void ResetCounters()
+    {
+        foreach (Enemy enemy in enemies)
+        {
+            enemy.countered = false;
+        }
+    }
+
+    internal void RemoveMemberFromParty(Member old_member)
+    {
+        party.Remove(old_member);
+        CheckEnemyCounter(old_member, false);
+    }
+
     internal void AddMemberToParty(Member new_member)
     {
         party.Add(new_member);
-        CheckEnemyCounter(new_member);
+        CheckEnemyCounter(new_member, true);
     }
 
-    private void CheckEnemyCounter(Member new_member)
+    private void CheckEnemyCounter(Member new_member, bool counter)
     {
         for (int i = 0; i < enemies.Count; i++)
         {
             if (enemies[i].type == (Enemy.EnemyType)((int)new_member.type))
             {
-                enemies[i].countered = true;
-                GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i]);
-                return;
+                if(counter && !enemies[i].countered)
+                {
+                    enemies[i].countered = counter;
+                    GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], counter);
+                    return;
+                }
+                else if(!counter && enemies[i].countered)
+                {
+                    enemies[i].countered = counter;
+                    GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], counter);
+                    return;
+                }           
             }
-
         }
     }
 

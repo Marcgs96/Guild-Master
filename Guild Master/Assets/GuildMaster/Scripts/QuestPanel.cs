@@ -8,14 +8,18 @@ public class QuestPanel : MonoBehaviour
 {
     public GameObject quests_list;
     public GameObject quest_preparation;
-    public GameObject quest_listing;
-    Dictionary<Quest, GameObject> quest_listings;
     public GameObject quest_inventory_resources;
     public GameObject quest_provisions_resources;
+
+    public GameObject quest_listing_prefab;
+
+    Dictionary<Quest, GameObject> quest_listings;
+    Dictionary<Enemy, GameObject> enemy_slots;
 
     public void Start()
     {
         quest_listings = new Dictionary<Quest, GameObject>();
+        enemy_slots = new Dictionary<Enemy, GameObject>();
     }
 
     internal void OnQuestSelection(Quest new_quest)
@@ -30,7 +34,11 @@ public class QuestPanel : MonoBehaviour
 
     internal void CloseQuestPreparation()
     {
-        if (GameManager.manager.quests.selected_quest != null) ResetInventory();
+        if (GameManager.manager.quests.selected_quest != null)
+        {
+            ResetInventory();
+            GameManager.manager.quests.ResetCounters();
+        }
 
         quest_preparation.SetActive(false);
         quests_list.SetActive(true);
@@ -39,7 +47,7 @@ public class QuestPanel : MonoBehaviour
     //Quest list
     public void CreateQuestListing(Quest new_quest)
     {
-        GameObject new_listing = Instantiate(quest_listing);
+        GameObject new_listing = Instantiate(quest_listing_prefab);
         new_listing.transform.GetChild(0).GetComponent<Text>().text = new_quest.lvl.ToString();
         new_listing.transform.GetChild(1).GetComponent<Text>().text = new_quest.quest_name;
 
@@ -83,14 +91,15 @@ public class QuestPanel : MonoBehaviour
         quest_inventory_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = new_quest.provisions[2].GetAmount().ToString();
 
         //Enemies
-        Transform enemies = quest_preparation.transform.GetChild(2).GetChild(0);
-        for (int i = 0; i < enemies.childCount; i++)
+        foreach (KeyValuePair<Enemy, GameObject> enemy in enemy_slots)
         {
-            Destroy(enemies.GetChild(i).gameObject);
+            Destroy(enemy.Value);
         }
+        enemy_slots.Clear();
+
+        Transform enemies = quest_preparation.transform.GetChild(2).GetChild(0);
         foreach (Enemy enemy in new_quest.enemies)
         {
-            Debug.Log(enemy.name);
             GameObject new_enemy = Instantiate(GameManager.manager.ui.slot_prefab);
 
             RawImage enemy_image = new_enemy.transform.GetChild(0).GetComponent<RawImage>();
@@ -100,6 +109,8 @@ public class QuestPanel : MonoBehaviour
             new_enemy.transform.GetComponentInChildren<Text>().text = enemy.name;
 
             new_enemy.transform.SetParent(enemies);
+
+            enemy_slots.Add(enemy, new_enemy);
         }
 
         //Members
@@ -176,9 +187,9 @@ public class QuestPanel : MonoBehaviour
         }
     }
 
-    internal void OnEnemyCounter(Enemy enemy)
+    internal void OnEnemyCounter(Enemy enemy, bool state)
     {
-
+        enemy_slots[enemy].transform.GetChild(2).gameObject.SetActive(state);
     }
 
     public void OnSlotClick(GameObject slot, Member member)

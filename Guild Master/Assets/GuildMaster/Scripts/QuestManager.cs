@@ -32,12 +32,6 @@ public class QuestManager : MonoBehaviour
         //Todo: Create random quests depending of set parameteres like highest lvl member, amount of members, etc.
         CreateQuest(Quest.QuestType.BOUNTY, 1);
         CreateQuest(Quest.QuestType.ADVENTURE, 2);
-        CreateQuest(Quest.QuestType.BOUNTY, 1);
-        CreateQuest(Quest.QuestType.ADVENTURE, 2);
-        CreateQuest(Quest.QuestType.BOUNTY, 1);
-        CreateQuest(Quest.QuestType.ADVENTURE, 2);
-        CreateQuest(Quest.QuestType.BOUNTY, 1);
-        CreateQuest(Quest.QuestType.ADVENTURE, 2);
     }
 
     void CreateQuest(Quest.QuestType type, uint lvl)
@@ -54,6 +48,11 @@ public class QuestManager : MonoBehaviour
         selected_quest = new_quest;
     }
 
+    internal void ResetCounters()
+    {
+        selected_quest.ResetCounters();
+    }
+
     public void AddMemberToQuest(Member new_member)
     {
         selected_quest.AddMemberToParty(new_member);
@@ -61,7 +60,7 @@ public class QuestManager : MonoBehaviour
 
     public void RemoveMemberFromQuest(Member old_member)
     {
-        selected_quest.party.Remove(old_member);
+        selected_quest.RemoveMemberFromParty(old_member);
     }
 
     public bool IsInParty(Member member)
