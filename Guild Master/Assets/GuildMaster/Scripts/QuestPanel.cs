@@ -176,7 +176,7 @@ public class QuestPanel : MonoBehaviour
                 member_slot_button.onClick.AddListener(delegate { OnSlotClick(members.GetChild(i).gameObject, selected_member); });
 
                 GameManager.manager.quests.AddMemberToQuest(selected_member);
-                if (i == members.childCount - 1)
+                if (GameManager.manager.quests.selected_quest.IsFull())
                 {
                     Transform send_button = quest_preparation.transform.GetChild(1).GetChild(2);
                     send_button.GetComponent<Button>().interactable = true;
@@ -284,6 +284,7 @@ public class QuestPanel : MonoBehaviour
 
     private void OnDisable()
     {
-        CloseQuestPreparation();
+        if(quest_preparation.activeSelf)
+            CloseQuestPreparation();
     }
 }

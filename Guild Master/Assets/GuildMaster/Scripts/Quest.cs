@@ -67,35 +67,71 @@ public class Quest
     internal void RemoveMemberFromParty(Member old_member)
     {
         party.Remove(old_member);
-        CheckEnemyCounter(old_member, false);
+        UnCounterEnemy(old_member);
     }
 
     internal void AddMemberToParty(Member new_member)
     {
         party.Add(new_member);
-        CheckEnemyCounter(new_member, true);
+        CounterEnemy(new_member);
     }
 
-    private void CheckEnemyCounter(Member new_member, bool counter)
+    private void CounterEnemy(Member counterer)
     {
         for (int i = 0; i < enemies.Count; i++)
         {
-            if (enemies[i].type == (Enemy.EnemyType)((int)new_member.type))
+            if (enemies[i].type == (Enemy.EnemyType)((int)counterer.type))
             {
-                if(counter && !enemies[i].countered)
+                if (!enemies[i].countered)
                 {
-                    enemies[i].countered = counter;
-                    GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], counter);
+                    enemies[i].countered = true;
+                    enemies[i].counterer = counterer;
+                    GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], true);
                     return;
                 }
-                else if(!counter && enemies[i].countered)
-                {
-                    enemies[i].countered = counter;
-                    GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], counter);
-                    return;
-                }           
             }
         }
+    }
+
+    private void UnCounterEnemy(Member member)
+    {
+        foreach (Enemy enemy in enemies)
+        {
+            if (enemy.counterer == member && !CheckPartyCounters(enemy))
+            {
+                enemy.countered = false;
+                enemy.counterer = null;
+                GameManager.manager.ui.quest_panel.OnEnemyCounter(enemy, false);
+                return;
+            }
+        }
+    }
+
+    internal bool CheckPartyCounters(Enemy enemy)
+    {
+        foreach (Member m in party)
+        {
+            if (enemy.type == (Enemy.EnemyType)((int)m.type))
+            {
+                bool candidate = true;
+
+                foreach (Enemy e in enemies)
+                {
+                    if (e.counterer == m)
+                    {
+                        candidate = false;
+                        break;
+                    }
+                }
+                if (candidate)
+                {
+                    enemy.counterer = m;
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     internal void OnDungeonEnter(Member member)
@@ -144,6 +180,13 @@ public class Quest
         //Todo: Create function for reward setup
         rewards.Add(new Resource(Resource.ResourceType.Gold, 250));
         rewards.Add(new Resource(Resource.ResourceType.Shield, 5));
+    }
+
+    public bool IsFull()
+    {
+        if (party.Count == enemies.Count)
+            return true;
+        else return false;
     }
 
     public void SendParty()
