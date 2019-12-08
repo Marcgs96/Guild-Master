@@ -445,8 +445,8 @@ MonoBehaviour:
   selected_quest:
     quest_name: 
     lvl: 0
-    xp: 0
     type: 0
+    size: 0
     rewards: []
     party: []
     provisions: []

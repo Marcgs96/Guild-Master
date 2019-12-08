@@ -1718,7 +1718,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100%
+  m_Text: 0%
 --- !u!1 &7033651725880833649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,6 +2816,7 @@ MonoBehaviour:
   quest_provisions_resources: {fileID: 7033651726977887101}
   quest_listing_prefab: {fileID: 8020847394701365470, guid: 7b9ca1691255aba4b941e791c5c98d25,
     type: 3}
+  quest_success: {fileID: 7033651725871614984}
 --- !u!1 &7033651726120347578
 GameObject:
   m_ObjectHideFlags: 0

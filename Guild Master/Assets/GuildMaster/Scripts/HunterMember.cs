@@ -8,8 +8,8 @@ public class HunterMember : Member
     public GameObject target_animal;
     public AnimalSpawner spawner;
 
-    List<string> names = new List<string> { "Yapo","Hawkeye","Rexxar","Windrunner","Hemet",
-        "Nathanos","Robin","Arrow","Hanzo","Rowan","Rulf","Jhin","Draven","Lucian","Twitch"};
+    List<string> names = new List<string> { "Yapo","Hawkeye","Rexxar","Windrunner","Hemet","Alejandro",
+        "Nathanos","Robin","Arrow","Hanzo","Rowan","Rulf","Twitch"};
 
     override public void GenerateInfo()
     {

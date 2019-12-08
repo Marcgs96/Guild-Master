@@ -39,21 +39,19 @@ public class QuestManager : MonoBehaviour
 
     void CreateQuest(Quest.QuestSize type, uint lvl)
     {
-        Quest quest = new Quest(type,lvl);
+        Quest quest = new Quest(type, lvl);
         quests.Add(quest);
         OnQuestAdd?.Invoke(quest);
     }
 
     public void SelectQuest(Quest new_quest)
     {
-        if(selected_quest != null)
-            selected_quest.party.Clear();
         selected_quest = new_quest;
     }
 
     internal void ResetCounters()
     {
-        selected_quest.ResetCounters();
+        selected_quest.Reset();
     }
 
     public void AddMemberToQuest(Member new_member)

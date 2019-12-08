@@ -17,7 +17,7 @@ public class Quest
     public List<Resource> rewards;
     public List<Member> party;
     public List<Resource> provisions;
-    public int total_success = 0;
+    int total_success = 0;
     int resources_success;
     int members_success;
     int enemies_success;
@@ -37,6 +37,7 @@ public class Quest
         this.size = size;
         lvl = level;
         type = (QuestType) UnityEngine.Random.Range(0, 2);
+        quest_name = "Test";
         coroutine = QuestActivity();
 
         enemies = new List<Enemy>();
@@ -82,12 +83,25 @@ public class Quest
         }
     }
 
-    internal void ResetCounters()
+    internal void Reset()
     {
+        party.Clear();
+
+        foreach(Resource provision in provisions)
+        {
+            provision.SetAmount(0);
+        }
+
         foreach (Enemy enemy in enemies)
         {
             enemy.countered = false;
+            enemy.counterer = null;
         }
+
+        members_success = 0;
+        resources_success = 0;
+        enemies_success = 0;
+        total_success = 0;
     }
 
     internal void RemoveMemberFromParty(Member old_member)
@@ -96,6 +110,9 @@ public class Quest
         members_success -= (int)(old_member.lvl / lvl) * (40 / (int)size);
 
         UnCounterEnemy(old_member);
+
+        total_success = members_success + enemies_success + resources_success;
+        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
     }
 
     internal void AddMemberToParty(Member new_member)
@@ -104,6 +121,9 @@ public class Quest
         members_success += (int)(new_member.lvl / lvl) * (40 / (int)size);
 
         CounterEnemy(new_member);
+
+        total_success = members_success + enemies_success + resources_success;
+        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
     }
 
     private void CounterEnemy(Member counterer)
@@ -116,6 +136,8 @@ public class Quest
                 {
                     enemies[i].countered = true;
                     enemies[i].counterer = counterer;
+                    enemies_success += (40 / (int)size);
+
                     GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], true);
                     return;
                 }
@@ -131,6 +153,8 @@ public class Quest
             {
                 enemy.countered = false;
                 enemy.counterer = null;
+                enemies_success -= (40 / (int)size);
+
                 GameManager.manager.ui.quest_panel.OnEnemyCounter(enemy, false);
                 return;
             }
@@ -253,17 +277,72 @@ public class Quest
             }
 
             member.ChangeState(Member.MEMBER_STATE.REST, true);
-            receive_rewards = true;
             survivors.Add(member);
         }
 
-        if(receive_rewards) //if at least 1 survivor, receive rewards
+        if(survivors.Count > 0) //if at least 1 survivor, roll mission success chance
         {
-            foreach (Resource resource in rewards)
-                GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
+            receive_rewards = UnityEngine.Random.Range(0, 100) < total_success ? true : false;
+            if(receive_rewards)
+            {
+                foreach (Resource resource in rewards)
+                    GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
+            }
         }
 
         GameManager.manager.ui.CreateQuestResultPopup(this, receive_rewards, survivors);
         GameManager.manager.quests.RemoveQuest(this);
+    }
+
+    internal void AddResource(Resource.ResourceType type, int amount)
+    {
+        if(this.type == QuestType.ADVENTURE)
+        {
+            resources_success += (int)(type == Resource.ResourceType.Meat ? 5/lvl : 1/lvl);
+        }
+        else
+            resources_success += (int)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
+
+        switch (type)
+        {
+            case Resource.ResourceType.Potion:
+                provisions[0].Increase(amount);
+                break;
+            case Resource.ResourceType.Meat:
+                provisions[1].Increase(amount);
+                break;
+            case Resource.ResourceType.Flame:
+                provisions[2].Increase(amount);
+                break;
+        }
+
+        total_success = members_success + enemies_success + resources_success;
+        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
+    }
+
+    internal void RemoveResource(Resource.ResourceType type, int amount)
+    {
+        if (this.type == QuestType.ADVENTURE)
+        {
+            resources_success -= (int)(type == Resource.ResourceType.Meat ? 5 / lvl : 1 / lvl);
+        }
+        else
+            resources_success -= (int)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
+
+        switch (type)
+        {
+            case Resource.ResourceType.Potion:
+                provisions[0].Decrease(amount);
+                break;
+            case Resource.ResourceType.Meat:
+                provisions[1].Decrease(amount);
+                break;
+            case Resource.ResourceType.Flame:
+                provisions[2].Decrease(amount);
+                break;
+        }
+
+        total_success = members_success + enemies_success + resources_success;
+        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
     }
 }
