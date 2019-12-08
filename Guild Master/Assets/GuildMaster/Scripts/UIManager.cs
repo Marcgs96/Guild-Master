@@ -12,8 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject guild_upgrade_costs;
 
     //Blacksmith panel stuff
-    public GameObject blacksmith_panel;
-    public GameObject blacksmith_upgrade_costs;
+    public BlackSmithPanel blacksmith_panel;
 
     //quests panel stuff
     public QuestPanel quest_panel;
@@ -40,14 +39,12 @@ public class UIManager : MonoBehaviour
     {
         member_listings = new Dictionary<Member, GameObject>();
         popup_queue = new Queue<GameObject>();
+
         quest_panel.Start();
+        blacksmith_panel.Start();
 
         MemberManager.OnMemberAdd += CreateMemberListing;
-        QuestManager.OnQuestAdd += quest_panel.CreateQuestListing;
         GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE].OnLevelUp += OnGuildHouseLevelUp;
-        GameManager.manager.buildings[(int)Building.BUILDING_TYPE.BLACKSMITH].OnLevelUp += OnBlacksmithLevelUp;
-
-        UpdateBlacksmithPanel();
         UpdateGuildHallPanel();
     }
 
@@ -56,18 +53,18 @@ public class UIManager : MonoBehaviour
     {
         quest_panel.gameObject.SetActive(!quest_panel.gameObject.activeSelf);
         guild_panel.SetActive(false);
-        blacksmith_panel.SetActive(false);
+        blacksmith_panel.gameObject.SetActive(false);
     }
 
     public void ActivateGuildPanel()
     {
         guild_panel.SetActive(!guild_panel.activeSelf);
         quest_panel.gameObject.SetActive(false);
-        blacksmith_panel.SetActive(false);
+        blacksmith_panel.gameObject.SetActive(false);
     }
     public void ActivateBlacksmithPanel()
     {
-        blacksmith_panel.SetActive(!blacksmith_panel.activeSelf);
+        blacksmith_panel.gameObject.SetActive(!blacksmith_panel.gameObject.activeSelf);
         guild_panel.SetActive(false);
         quest_panel.gameObject.SetActive(false);
     }
@@ -96,7 +93,7 @@ public class UIManager : MonoBehaviour
 
     public void CloseBlacksmithPanel()
     {
-        blacksmith_panel.SetActive(false);
+        blacksmith_panel.gameObject.SetActive(false);
     }
 
     public void CloseQuestPreparation()
@@ -120,7 +117,12 @@ public class UIManager : MonoBehaviour
 
     public void OnMemberClick(Member member)
     {
-        quest_panel.AddMemberToQuest(member);          
+        if (quest_panel.gameObject.activeSelf)
+            quest_panel.AddMemberToQuest(member);
+        else if (blacksmith_panel.gameObject.activeSelf)
+            blacksmith_panel.OnMemberSelect(member);
+        else
+            Camera.main.GetComponent<CameraControls>().SetFocus(member.gameObject);
     }
 
     public void OnStateClick(Member member)
@@ -286,36 +288,6 @@ public class UIManager : MonoBehaviour
             }
         }
         else
-            guild_upgrade_costs.transform.parent.GetComponent<Button>().enabled = false;
-    }
-
-    public void OnBlacksmithLevelUp(uint level)
-    {
-        UpdateBlacksmithPanel();
-    }
-
-    public void UpdateBlacksmithPanel()
-    {
-        Building blacksmith = GameManager.manager.buildings[(int)Building.BUILDING_TYPE.BLACKSMITH];
-        blacksmith_panel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = blacksmith.GetLevel().ToString();
-
-        for (int i = 0; i < blacksmith_upgrade_costs.transform.childCount; i++)
-        {
-            Destroy(blacksmith_upgrade_costs.transform.GetChild(i).gameObject);
-        }  
-
-        if(!blacksmith.IsMaxLevel())
-        {
-            List<Resource> resources = blacksmith.GetResourcesCost();
-            foreach (Resource resource in resources)
-            {
-                GameObject resource_go = Instantiate(resource_cost_prefab);
-                resource_go.GetComponent<RawImage>().texture = resource_images[(int)resource.GetResourceType()];
-                resource_go.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
-                resource_go.transform.SetParent(blacksmith_upgrade_costs.transform);
-            }
-        }
-        else
-            blacksmith_upgrade_costs.transform.parent.GetComponent<Button>().enabled = false;
+            guild_upgrade_costs.transform.parent.GetComponent<Button>().interactable = false;
     }
 }

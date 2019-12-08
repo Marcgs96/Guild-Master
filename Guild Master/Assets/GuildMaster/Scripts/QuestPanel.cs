@@ -20,6 +20,8 @@ public class QuestPanel : MonoBehaviour
     {
         quest_listings = new Dictionary<Quest, GameObject>();
         enemy_slots = new Dictionary<Enemy, GameObject>();
+
+        QuestManager.OnQuestAdd += CreateQuestListing;
     }
 
     internal void OnQuestSelection(Quest new_quest)
@@ -148,9 +150,7 @@ public class QuestPanel : MonoBehaviour
     internal void AddMemberToQuest(Member member)
     {
         if (quest_preparation.activeSelf && !GameManager.manager.quests.IsInParty(member))
-            AddMember(member);
-        else if (!quest_preparation.activeSelf)
-            Camera.main.GetComponent<CameraControls>().SetFocus(member.gameObject);
+            AddMember(member);        
     }
 
     void AddMember(Member selected_member)
@@ -280,5 +280,10 @@ public class QuestPanel : MonoBehaviour
         GameManager.manager.quests.selected_quest.provisions[0].SetAmount(0);
         GameManager.manager.quests.selected_quest.provisions[1].SetAmount(0);
         GameManager.manager.quests.selected_quest.provisions[2].SetAmount(0);
+    }
+
+    private void OnDisable()
+    {
+        CloseQuestPreparation();
     }
 }

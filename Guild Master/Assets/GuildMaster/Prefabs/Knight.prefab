@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   member_name: 
-  lvl: 0
+  lvl: 1
   xp: 0
   equipment_lvl: 0
   stamina: 0
