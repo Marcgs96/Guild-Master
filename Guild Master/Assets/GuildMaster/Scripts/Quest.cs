@@ -95,7 +95,7 @@ public class Quest
         party.Remove(old_member);
         members_success -= (int)(old_member.lvl / lvl) * (40 / (int)size);
 
-        CheckEnemyCounter(old_member, false);
+        UnCounterEnemy(old_member);
     }
 
     internal void AddMemberToParty(Member new_member)
@@ -103,29 +103,65 @@ public class Quest
         party.Add(new_member);
         members_success += (int)(new_member.lvl / lvl) * (40 / (int)size);
 
-        CheckEnemyCounter(new_member, true);
+        CounterEnemy(new_member);
     }
 
-    private void CheckEnemyCounter(Member new_member, bool counter)
+    private void CounterEnemy(Member counterer)
     {
         for (int i = 0; i < enemies.Count; i++)
         {
-            if (enemies[i].type == (Enemy.EnemyType)((int)new_member.type))
+            if (enemies[i].type == (Enemy.EnemyType)((int)counterer.type))
             {
-                if(counter && !enemies[i].countered)
+                if (!enemies[i].countered)
                 {
-                    enemies[i].countered = counter;
-                    GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], counter);
+                    enemies[i].countered = true;
+                    enemies[i].counterer = counterer;
+                    GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], true);
                     return;
                 }
-                else if(!counter && enemies[i].countered)
-                {
-                    enemies[i].countered = counter;
-                    GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], counter);
-                    return;
-                }           
             }
         }
+    }
+
+    private void UnCounterEnemy(Member member)
+    {
+        foreach (Enemy enemy in enemies)
+        {
+            if (enemy.counterer == member && !CheckPartyCounters(enemy))
+            {
+                enemy.countered = false;
+                enemy.counterer = null;
+                GameManager.manager.ui.quest_panel.OnEnemyCounter(enemy, false);
+                return;
+            }
+        }
+    }
+
+    internal bool CheckPartyCounters(Enemy enemy)
+    {
+        foreach (Member m in party)
+        {
+            if (enemy.type == (Enemy.EnemyType)((int)m.type))
+            {
+                bool candidate = true;
+
+                foreach (Enemy e in enemies)
+                {
+                    if (e.counterer == m)
+                    {
+                        candidate = false;
+                        break;
+                    }
+                }
+                if (candidate)
+                {
+                    enemy.counterer = m;
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     internal void OnDungeonEnter(Member member)
@@ -142,6 +178,13 @@ public class Quest
     {
         Enemy.EnemyType random_type = (Enemy.EnemyType)UnityEngine.Random.Range((int)Enemy.EnemyType.SKELETON, (int)Enemy.EnemyType.TOTAL);
         enemies.Add(new Enemy(random_type, lvl));
+    }
+
+    public bool IsFull()
+    {
+        if (party.Count == enemies.Count)
+            return true;
+        else return false;
     }
 
     public void SendParty()

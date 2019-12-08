@@ -6,6 +6,7 @@
     public uint lvl;
     public EnemyType type;
     public bool countered = false;
+    public Member counterer;
 
     public Enemy(EnemyType type, uint lvl = 1)
     {
