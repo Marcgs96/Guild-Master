@@ -122,7 +122,7 @@ public class QuestPanel : MonoBehaviour
             Destroy(members.GetChild(i).gameObject);
         }
 
-        uint size = new_quest.GetMemberSizeFromType(new_quest.type);
+        int size = (int)new_quest.size;
         for (int i = 0; i < size; i++)
         {
             GameObject new_member_slot = Instantiate(GameManager.manager.ui.slot_prefab);

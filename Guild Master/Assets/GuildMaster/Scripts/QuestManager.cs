@@ -30,11 +30,14 @@ public class QuestManager : MonoBehaviour
     void GenerateQuests()
     {
         //Todo: Create random quests depending of set parameteres like highest lvl member, amount of members, etc.
-        CreateQuest(Quest.QuestType.BOUNTY, 1);
-        CreateQuest(Quest.QuestType.ADVENTURE, 2);
+        CreateQuest(Quest.QuestSize.ONE, 1);
+        CreateQuest(Quest.QuestSize.ONE, 1);
+        CreateQuest(Quest.QuestSize.ONE, 1);
+        CreateQuest(Quest.QuestSize.THREE, 1);
+        CreateQuest(Quest.QuestSize.THREE, 1);
     }
 
-    void CreateQuest(Quest.QuestType type, uint lvl)
+    void CreateQuest(Quest.QuestSize type, uint lvl)
     {
         Quest quest = new Quest(type,lvl);
         quests.Add(quest);
