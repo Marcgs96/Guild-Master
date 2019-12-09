@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraControls : MonoBehaviour
 {
     public float movement_speed;
-    public float offset;
+    //public float offset;
     public float zoom_speed;
 
     public float min_y = 5.0f;
@@ -29,11 +29,11 @@ public class CameraControls : MonoBehaviour
         }
 
         Vector3 pos = transform.position;
-        float x = Input.mousePosition.x;
-        float y = Input.mousePosition.y;
+       // float x = Input.mousePosition.x;
+       // float y = Input.mousePosition.y;
 
         //MOVE
-        if (x <= 0 + offset)
+       /* if (x <= 0 + offset)
             pos.z += movement_speed * Time.deltaTime;
         else if (x >= Screen.width - offset)
             pos.z -= movement_speed * Time.deltaTime;
@@ -41,6 +41,16 @@ public class CameraControls : MonoBehaviour
         if (y <= 0 + offset)
             pos.x -= movement_speed * Time.deltaTime;
         else if (y >= Screen.height - offset)
+            pos.x += movement_speed * Time.deltaTime;*/
+
+        if (Input.GetKey(KeyCode.A))
+            pos.z += movement_speed * Time.deltaTime;
+        else if (Input.GetKey(KeyCode.D))
+            pos.z -= movement_speed * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.S))
+            pos.x -= movement_speed * Time.deltaTime;
+        else if (Input.GetKey(KeyCode.W))
             pos.x += movement_speed * Time.deltaTime;
 
         //LIMIT

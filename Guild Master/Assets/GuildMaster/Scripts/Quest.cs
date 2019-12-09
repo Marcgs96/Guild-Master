@@ -17,10 +17,10 @@ public class Quest
     public List<Resource> rewards;
     public List<Member> party;
     public List<Resource> provisions;
-    int total_success = 0;
-    int resources_success;
-    int members_success;
-    int enemies_success;
+    float total_success = 0;
+    float resources_success;
+    float members_success;
+    float enemies_success;
 
     /// <summary>
     /// Quest duration in game hours
@@ -114,23 +114,29 @@ public class Quest
     internal void RemoveMemberFromParty(Member old_member)
     {
         party.Remove(old_member);
-        members_success -= (int)(old_member.lvl / lvl) * (40 / (int)size);
+
+        float lvl_multiplier = (float)old_member.lvl / (float)lvl;
+        float member_value = (float)40 / (float)size;
+        members_success -= lvl_multiplier * member_value;
 
         UnCounterEnemy(old_member);
 
         total_success = members_success + enemies_success + resources_success;
-        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
+        GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);
     }
 
     internal void AddMemberToParty(Member new_member)
     {
         party.Add(new_member);
-        members_success += (int)(new_member.lvl / lvl) * (40 / (int)size);
+
+        float lvl_multiplier = (float)new_member.lvl / (float)lvl;
+        float member_value = (float)40 / (float)size;
+        members_success += lvl_multiplier * member_value;
 
         CounterEnemy(new_member);
 
         total_success = members_success + enemies_success + resources_success;
-        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
+        GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);
     }
 
     private void CounterEnemy(Member counterer)
@@ -143,7 +149,7 @@ public class Quest
                 {
                     enemies[i].countered = true;
                     enemies[i].counterer = counterer;
-                    enemies_success += (40 / (int)size);
+                    enemies_success += (float)40 / (float)size;
 
                     GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], true);
                     return;
@@ -160,7 +166,7 @@ public class Quest
             {
                 enemy.countered = false;
                 enemy.counterer = null;
-                enemies_success -= (40 / (int)size);
+                enemies_success -= (float)40 / (float)size;
 
                 GameManager.manager.ui.quest_panel.OnEnemyCounter(enemy, false);
                 return;
@@ -324,7 +330,7 @@ public class Quest
         }
 
         total_success = members_success + enemies_success + resources_success;
-        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
+        GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);
     }
 
     internal void RemoveResource(Resource.ResourceType type, int amount)
@@ -363,7 +369,7 @@ public class Quest
                 resources_success -= (int)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
 
             total_success = members_success + enemies_success + resources_success;
-            GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
+            GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);
         }
     }
 }

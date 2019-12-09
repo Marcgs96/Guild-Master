@@ -25,6 +25,17 @@ public class QuestPanel : MonoBehaviour
         QuestManager.OnQuestAdd += CreateQuestListing;
     }
 
+    internal void ClearListings()
+    {
+        foreach (KeyValuePair<Quest, GameObject> quest in quest_listings)
+        {
+            Destroy(quest.Value);
+        }
+        quest_listings.Clear();
+
+        CloseQuestPreparation();
+    }
+
     internal void OnQuestSelection(Quest new_quest)
     {
         quest_preparation.SetActive(true);
