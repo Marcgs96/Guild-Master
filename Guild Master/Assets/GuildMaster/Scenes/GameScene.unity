@@ -668,6 +668,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5640555849084959045}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &83678704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 188728, guid: 24d7aad3affa8b14e9f614f718865734,
+    type: 3}
+  m_PrefabInstance: {fileID: 1547934560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &95551514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,6 +2784,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00f27e31f6ca1f24b834fd597918c520, type: 3}
+--- !u!1 &350763358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 148858, guid: b8792c505c772cf498ffb6338e774d50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1482566772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &354207952
 GameObject:
   m_ObjectHideFlags: 0
@@ -9593,6 +9605,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1546746417449383717}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &944774665 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3166223936779935600, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
+    type: 3}
+  m_PrefabInstance: {fileID: 1084428263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &949661892
 GameObject:
   m_ObjectHideFlags: 0
@@ -10434,6 +10452,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1051341432}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1051442245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147296, guid: 7bb2471add437164e8944b7cb6b11b0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1504849262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1053124166
 GameObject:
   m_ObjectHideFlags: 0
@@ -10741,6 +10765,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 3080580846285390954, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3653527565381585231, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10804,7 +10833,7 @@ PrefabInstance:
     - target: {fileID: 661362119459741753, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
         type: 3}
       propertyPath: boundGraphSerialization
-      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4753.0,"y":-4943.0},"zoomFactor":0.9872221,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4216.0,"y":-3259.0},"zoomFactor":0.6674557,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"e2862b0a-53d6-48fa-a9bd-3008055e1fc2"},"_position":{"x":5902.0,"y":5067.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5231.0,"y":5339.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
         to the Dungeon"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":1},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4918.0,"y":5438.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"KnightMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Fighting
@@ -10820,30 +10849,30 @@ PrefabInstance:
         fishing"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":7},"$type":"GuildMaster.MoveTo"},{"method":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"parameters":[{"_type":"UnityEngine.GameObject","_value":{"$content":8,"$type":"UnityEngine.GameObject"}}],"parameterIsByRef":[false],"returnValue":{"_type":"UnityEngine.GameObject","_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},{"functionWrapper":{"p1":{"_value":"Picking
         a fishing rod"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":8,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"method":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"parameters":[{"_type":"UnityEngine.GameObject","_value":{"$content":9,"$type":"UnityEngine.GameObject"}}],"parameterIsByRef":[false],"returnValue":{"_type":"UnityEngine.GameObject","_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},{"functionWrapper":{"p1":{"_value":"Looking
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"go_to_enable":{"_name":"fishing_pole","_targetVariableID":"8ece9ac2-2f71-4382-baa8-78e7964b768d"},"$type":"NodeCanvas.Tasks.Actions.EnableGameObject"},{"target":{"_value":8,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"method":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"parameters":[{"_type":"UnityEngine.GameObject","_value":{"$content":9,"$type":"UnityEngine.GameObject"}}],"parameterIsByRef":[false],"returnValue":{"_type":"UnityEngine.GameObject","_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},{"functionWrapper":{"p1":{"_value":"Looking
         for a spot"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":9,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Fishing"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"waitTime":{"_value":60.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"functionWrapper":{"_targetMethod":{"_baseInfo":"KnightMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6527.0,"y":5690.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"85"},{"_position":{"x":7156.0,"y":5460.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"131"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"waitTime":{"_value":60.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"functionWrapper":{"_targetMethod":{"_baseInfo":"KnightMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"go_to_disable":{"_name":"fishing_pole","_targetVariableID":"8ece9ac2-2f71-4382-baa8-78e7964b768d"},"$type":"NodeCanvas.Tasks.Actions.DisableGameObject"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6527.0,"y":5690.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"85"},{"_position":{"x":7156.0,"y":5460.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"135"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
         to the Market"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":10},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Checking
         the shops"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6967.0,"y":5546.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"132"},{"repeatTimes":{"_value":5},"_position":{"x":7385.0,"y":5543.0},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"149"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0}],"failChance":{},"_position":{"x":7386.0,"y":5631.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"151"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":11},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6967.0,"y":5546.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"136"},{"repeatTimes":{"_value":5},"_position":{"x":7385.0,"y":5543.0},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"153"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0}],"failChance":{},"_position":{"x":7386.0,"y":5631.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"155"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":11},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":11,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6986.0,"y":5712.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"158"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":12},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":11,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6986.0,"y":5712.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"162"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":12},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":12,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7189.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"170"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":13},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":12,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7189.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"174"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":13},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":13,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7426.0,"y":5724.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"182"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":14},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":13,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7426.0,"y":5724.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"186"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":14},"result":{"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"_targetMethod":{"_baseInfo":"KnightMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":14,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7719.0,"y":5834.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"194"},{"_position":{"x":7520.0,"y":5441.0},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"206"},{"timeout":{"_value":60.0},"_position":{"x":7551.0,"y":5508.0},"$type":"NodeCanvas.BehaviourTrees.Timeout","$id":"207"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":9},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":14,"_name":"assigned_position","_targetVariableID":"7e656c2c-ba80-4cbe-b1e3-7c0f785fde48"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7719.0,"y":5834.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"198"},{"_position":{"x":7520.0,"y":5441.0},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"210"},{"timeout":{"_value":60.0},"_position":{"x":7551.0,"y":5508.0},"$type":"NodeCanvas.BehaviourTrees.Timeout","$id":"211"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":9},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Walking
         around"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"min_distance":30.0,"$type":"GuildMaster.WalkAround"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7605.0,"y":5596.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"209"},{"_position":{"x":7911.0,"y":5336.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"221"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":10},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"min_distance":30.0,"$type":"GuildMaster.WalkAround"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7605.0,"y":5596.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"213"},{"_position":{"x":7911.0,"y":5336.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"225"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":10},"_targetMethod":{"_baseInfo":"KnightMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
         to GuildHall"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":15},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7738.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"222"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"KnightMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Sleeping"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"building":16,"time_inside":100.0,"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":8072.0,"y":5423.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"235"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"49"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"47"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"57"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"84"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"131"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"206"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"221"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"57"},"_targetNode":{"$ref":"58"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"57"},"_targetNode":{"$ref":"73"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"84"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"131"},"_targetNode":{"$ref":"132"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"131"},"_targetNode":{"$ref":"149"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"149"},"_targetNode":{"$ref":"151"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"151"},"_targetNode":{"$ref":"158"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"151"},"_targetNode":{"$ref":"170"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"151"},"_targetNode":{"$ref":"182"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"151"},"_targetNode":{"$ref":"194"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"206"},"_targetNode":{"$ref":"207"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"207"},"_targetNode":{"$ref":"209"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"221"},"_targetNode":{"$ref":"222"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"221"},"_targetNode":{"$ref":"235"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":15},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7738.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"226"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"KnightMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Sleeping"},"_targetMethod":{"_baseInfo":"KnightMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"building":16,"time_inside":100.0,"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":8072.0,"y":5423.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"239"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"49"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"47"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"57"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"84"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"135"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"210"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"225"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"57"},"_targetNode":{"$ref":"58"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"57"},"_targetNode":{"$ref":"73"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"84"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"135"},"_targetNode":{"$ref":"136"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"135"},"_targetNode":{"$ref":"153"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"153"},"_targetNode":{"$ref":"155"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"155"},"_targetNode":{"$ref":"162"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"155"},"_targetNode":{"$ref":"174"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"155"},"_targetNode":{"$ref":"186"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"155"},"_targetNode":{"$ref":"198"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"210"},"_targetNode":{"$ref":"211"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"211"},"_targetNode":{"$ref":"213"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"225"},"_targetNode":{"$ref":"226"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"225"},"_targetNode":{"$ref":"239"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
         Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 661362119459741753, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
@@ -10947,7 +10976,9 @@ PrefabInstance:
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"free_members":{"_propertyPath":"KnightMember.free_members","_name":"free_members","_id":"27f5e6ac-321d-411b-94d7-6a40451f343e","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[KnightMember,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"opponent":{"_propertyPath":"KnightMember.opponent","_name":"opponent","_id":"5d875f10-f277-4f10-a050-f434822c7bda","$type":"NodeCanvas.Framework.Variable`1[[KnightMember,
-        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"sword_gameobject":{"_propertyPath":"KnightMember.sword","_name":"sword_gameobject","_id":"b108e8c4-bcf2-4a94-9b0a-b7cf883f163c","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"fishing_pole":{"_propertyPath":"KnightMember.fishing_pole","_name":"fishing_pole","_id":"8ece9ac2-2f71-4382-baa8-78e7964b768d","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
       objectReference: {fileID: 0}
     - target: {fileID: 5020096918008599635, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
         type: 3}
@@ -10968,6 +10999,16 @@ PrefabInstance:
       propertyPath: equipment_lvl
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2860521199266104478, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1319322866}
+    - target: {fileID: 2860521199266104478, guid: cd5d0cbb587ebf34eb6da3e789fcf793,
+        type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 1319322866}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd5d0cbb587ebf34eb6da3e789fcf793, type: 3}
 --- !u!1001 &1087563788
@@ -11834,6 +11875,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hunter
       objectReference: {fileID: 0}
+    - target: {fileID: 2497343187157337579, guid: bdac0e0654792474e9b2a72cca6f01d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2497343187157676881, guid: bdac0e0654792474e9b2a72cca6f01d2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11897,7 +11943,7 @@ PrefabInstance:
     - target: {fileID: 9141441269803450274, guid: bdac0e0654792474e9b2a72cca6f01d2,
         type: 3}
       propertyPath: boundGraphSerialization
-      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-3828.0,"y":-3957.0},"zoomFactor":0.7696169,"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"9c009fce-0ff9-49ef-adc4-f401443d0c25"},"_position":{"x":5681.0,"y":5369.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5005.0,"y":5516.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"HunterMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-6103.0,"y":-5234.0},"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"9c009fce-0ff9-49ef-adc4-f401443d0c25"},"_position":{"x":5681.0,"y":5369.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":5005.0,"y":5516.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"HunterMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Moving
         to the Dungeon"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":1},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4733.0,"y":5588.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"HunterMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"method":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"parameters":[{"_type":"System.String","_value":{"$content":"Sniping
@@ -11915,32 +11961,32 @@ PrefabInstance:
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Picking
         a fishing rod"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":8,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":9},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"go_to_enable":{"_name":"fishing_pole","_targetVariableID":"7ef62246-ea1e-4868-81df-7c51cffb88a5"},"$type":"NodeCanvas.Tasks.Actions.EnableGameObject"},{"target":{"_value":8,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":9},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Picking
         a spot"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":9,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Fishing"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"waitTime":{"_value":60.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"functionWrapper":{"_targetMethod":{"_baseInfo":"HunterMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6171.0,"y":5668.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"86"},{"_position":{"x":6736.0,"y":5635.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"130"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"_targetMethod":{"_baseInfo":"HunterMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"waitTime":{"_value":60.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"functionWrapper":{"_targetMethod":{"_baseInfo":"HunterMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"go_to_disable":{"_name":"fishing_pole","_targetVariableID":"7ef62246-ea1e-4868-81df-7c51cffb88a5"},"$type":"NodeCanvas.Tasks.Actions.DisableGameObject"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6171.0,"y":5668.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"86"},{"_position":{"x":6736.0,"y":5635.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"134"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"_targetMethod":{"_baseInfo":"HunterMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Moving
         to the Market"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":10},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Checking
         the shops"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6602.0,"y":5737.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"131"},{"repeatTimes":{"_value":5},"_position":{"x":6936.0,"y":5737.0},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"148"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0}],"failChance":{},"_position":{"x":6936.0,"y":5850.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"150"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":11},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6602.0,"y":5737.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"135"},{"repeatTimes":{"_value":5},"_position":{"x":6936.0,"y":5737.0},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"152"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0}],"failChance":{},"_position":{"x":6936.0,"y":5850.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"154"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":11},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":11,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6253.0,"y":5915.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"157"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":12},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":11,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6253.0,"y":5915.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"161"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":12},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":12,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6465.0,"y":6027.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"169"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":13},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":12,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6465.0,"y":6027.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"173"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":13},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":13,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6846.0,"y":6004.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"181"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":14},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":13,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6846.0,"y":6004.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"185"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":14},"result":{"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"_targetMethod":{"_baseInfo":"HunterMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":14,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7239.0,"y":5971.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"193"},{"_position":{"x":7060.0,"y":5642.0},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"205"},{"timeout":{"_value":60.0},"_position":{"x":7096.0,"y":5717.0},"$type":"NodeCanvas.BehaviourTrees.Timeout","$id":"206"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":9},"_targetMethod":{"_baseInfo":"HunterMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":14,"_name":"assigned_position","_targetVariableID":"b7ba4ba3-8ff8-49de-9001-a804c691c143"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7239.0,"y":5971.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"197"},{"_position":{"x":7060.0,"y":5642.0},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"209"},{"timeout":{"_value":60.0},"_position":{"x":7096.0,"y":5717.0},"$type":"NodeCanvas.BehaviourTrees.Timeout","$id":"210"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":9},"_targetMethod":{"_baseInfo":"HunterMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Walking
         around"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"min_distance":30.0,"$type":"GuildMaster.WalkAround"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7129.0,"y":5805.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"208"},{"_position":{"x":7507.0,"y":5582.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"220"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":10},"_targetMethod":{"_baseInfo":"HunterMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"min_distance":30.0,"$type":"GuildMaster.WalkAround"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7129.0,"y":5805.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"212"},{"_position":{"x":7507.0,"y":5582.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"224"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":10},"_targetMethod":{"_baseInfo":"HunterMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
         to the Guild Hall"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":15},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7287.0,"y":5681.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"221"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"HunterMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Resting"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"building":16,"time_inside":100.0,"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7653.0,"y":5672.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"234"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"51"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"61"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"130"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"205"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"220"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"61"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"61"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"130"},"_targetNode":{"$ref":"131"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"130"},"_targetNode":{"$ref":"148"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"148"},"_targetNode":{"$ref":"150"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"150"},"_targetNode":{"$ref":"157"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"150"},"_targetNode":{"$ref":"169"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"150"},"_targetNode":{"$ref":"181"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"150"},"_targetNode":{"$ref":"193"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"205"},"_targetNode":{"$ref":"206"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"206"},"_targetNode":{"$ref":"208"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"220"},"_targetNode":{"$ref":"221"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"220"},"_targetNode":{"$ref":"234"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":15},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7287.0,"y":5681.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"225"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"HunterMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Resting"},"_targetMethod":{"_baseInfo":"HunterMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"building":16,"time_inside":100.0,"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7653.0,"y":5672.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"238"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"51"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"61"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"134"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"209"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"224"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"61"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"61"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"134"},"_targetNode":{"$ref":"135"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"134"},"_targetNode":{"$ref":"152"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"152"},"_targetNode":{"$ref":"154"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"154"},"_targetNode":{"$ref":"161"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"154"},"_targetNode":{"$ref":"173"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"154"},"_targetNode":{"$ref":"185"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"154"},"_targetNode":{"$ref":"197"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"209"},"_targetNode":{"$ref":"210"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"210"},"_targetNode":{"$ref":"212"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"224"},"_targetNode":{"$ref":"225"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"224"},"_targetNode":{"$ref":"238"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
         Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 9141441269803450274, guid: bdac0e0654792474e9b2a72cca6f01d2,
@@ -12028,10 +12074,33 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 644855860}
+    - target: {fileID: 600882461, guid: bdac0e0654792474e9b2a72cca6f01d2, type: 3}
+      propertyPath: bow
+      value: 
+      objectReference: {fileID: 1272179331}
     - target: {fileID: 2086428777, guid: bdac0e0654792474e9b2a72cca6f01d2, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 534669904}
+    - target: {fileID: -4736523880351700497, guid: bdac0e0654792474e9b2a72cca6f01d2,
+        type: 3}
+      propertyPath: _serializedBlackboard
+      value: '{"_variables":{"production_time":{"_propertyPath":"HunterMember.production_step_time_rt","_name":"production_time","_id":"a07c6b32-0e64-4fc2-9c14-8f6667e6f6c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"target_animal":{"_propertyPath":"HunterMember.target_animal","_name":"target_animal","_id":"36ad6eed-8af5-441a-9200-b43641fd7609","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"state":{"_propertyPath":"HunterMember.state","_name":"state","_id":"9c009fce-0ff9-49ef-adc4-f401443d0c25","$type":"NodeCanvas.Framework.Variable`1[[Member+MEMBER_STATE,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"night_value":{"_propertyPath":"HunterMember.night_value","_name":"night_value","_id":"2dfe03eb-1962-4601-a650-3ea0c4caa36c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"producing":{"_propertyPath":"HunterMember.producing","_name":"producing","_id":"09e99ec5-65fb-488e-bc2d-e97fa89c4ccc","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"assigned_position":{"_name":"assigned_position","_id":"b7ba4ba3-8ff8-49de-9001-a804c691c143","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"stamina":{"_propertyPath":"HunterMember.stamina","_name":"stamina","_id":"ddf8771a-a4b0-4197-b1e4-d5ea8677508a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"bow_gameobject":{"_propertyPath":"HunterMember.bow","_name":"bow_gameobject","_id":"39aa7909-0b63-485c-b57e-23ea492908a6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"fishing_pole":{"_propertyPath":"HunterMember.fishing_pole","_name":"fishing_pole","_id":"7ef62246-ea1e-4868-81df-7c51cffb88a5","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497343186906324776, guid: bdac0e0654792474e9b2a72cca6f01d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdac0e0654792474e9b2a72cca6f01d2, type: 3}
 --- !u!1 &1167842065 stripped
@@ -18856,6 +18925,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage
       objectReference: {fileID: 0}
+    - target: {fileID: 6084457698102720306, guid: 917685ca3ed193549ac39a7adbac5950,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6084457698102525580, guid: 917685ca3ed193549ac39a7adbac5950,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18919,7 +18993,7 @@ PrefabInstance:
     - target: {fileID: 2246033019795271706, guid: 917685ca3ed193549ac39a7adbac5950,
         type: 3}
       propertyPath: boundGraphSerialization
-      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4336.0,"y":-5489.0},"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"5f33928d-752c-4576-ba80-b0dfc3420c48"},"_position":{"x":5409.0,"y":5441.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":4731.0,"y":5666.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"MageMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+      value: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-5189.0,"y":-5402.0},"nodes":[{"dynamic":true,"selectionMode":"EnumBased","intCase":{},"enumCase":{"_type":"System.Enum","_name":"state","_targetVariableID":"5f33928d-752c-4576-ba80-b0dfc3420c48"},"_position":{"x":5409.0,"y":5441.0},"$type":"NodeCanvas.BehaviourTrees.Switch","$id":"2"},{"_position":{"x":4731.0,"y":5666.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":6},"_targetMethod":{"_baseInfo":"MageMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
         to the Dungeon"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":1},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4448.0,"y":5738.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"MageMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Throwing
@@ -18938,32 +19012,32 @@ PrefabInstance:
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Picking
         a fishing pole"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":8,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":9},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"go_to_enable":{"_name":"fishing_pole","_targetVariableID":"81a84295-f08c-4867-9884-6df7196f060e"},"$type":"NodeCanvas.Tasks.Actions.EnableGameObject"},{"target":{"_value":8,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":9},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Looking
         for aspot"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":9,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Fishing"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"waitTime":{"_value":60.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"functionWrapper":{"_targetMethod":{"_baseInfo":"MageMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5863.0,"y":5828.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"84"},{"_position":{"x":6401.0,"y":5812.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"128"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"_targetMethod":{"_baseInfo":"MageMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"waitTime":{"_value":60.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"functionWrapper":{"_targetMethod":{"_baseInfo":"MageMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"go_to_disable":{"_name":"fishing_pole","_targetVariableID":"81a84295-f08c-4867-9884-6df7196f060e"},"$type":"NodeCanvas.Tasks.Actions.DisableGameObject"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5863.0,"y":5828.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"84"},{"_position":{"x":6401.0,"y":5812.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"132"},{"_action":{"actions":[{"functionWrapper":{"p1":{},"_targetMethod":{"_baseInfo":"MageMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
         to the Market"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":10},"$type":"GuildMaster.MoveTo"},{"functionWrapper":{"p1":{"_value":"Checking
         the shops"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6301.0,"y":5905.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"129"},{"repeatTimes":{"_value":5},"_position":{"x":6635.0,"y":5897.0},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"146"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0}],"failChance":{},"_position":{"x":6635.0,"y":6022.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"148"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":11},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6301.0,"y":5905.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"133"},{"repeatTimes":{"_value":5},"_position":{"x":6635.0,"y":5897.0},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"150"},{"childWeights":[{"_value":1.0},{"_value":1.0},{"_value":1.0},{"_value":1.0}],"failChance":{},"_position":{"x":6635.0,"y":6022.0},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"152"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":11},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":11,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6068.0,"y":6078.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"155"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":12},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":11,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6068.0,"y":6078.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"159"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":12},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":12,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6203.0,"y":6207.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"167"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":13},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":12,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6203.0,"y":6207.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"171"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":13},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":13,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6569.0,"y":6118.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"179"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":14},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":13,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6569.0,"y":6118.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"183"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":14},"result":{"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"_targetMethod":{"_baseInfo":"MageMember|RequestPosition|UnityEngine.GameObject","_paramsInfo":"UnityEngine.GameObject"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":14,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6971.0,"y":6127.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"191"},{"_position":{"x":6773.0,"y":5810.0},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"203"},{"timeout":{"_value":60.0},"_position":{"x":6809.0,"y":5885.0},"$type":"NodeCanvas.BehaviourTrees.Timeout","$id":"204"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":9},"_targetMethod":{"_baseInfo":"MageMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":14,"_name":"assigned_position","_targetVariableID":"f1097f0b-2fb7-4e30-91c6-f06495fe13c6"},"$type":"GuildMaster.MoveTo"},{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6971.0,"y":6127.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"195"},{"_position":{"x":6773.0,"y":5810.0},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"207"},{"timeout":{"_value":60.0},"_position":{"x":6809.0,"y":5885.0},"$type":"NodeCanvas.BehaviourTrees.Timeout","$id":"208"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":9},"_targetMethod":{"_baseInfo":"MageMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Walking
         around"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"min_distance":30.0,"$type":"GuildMaster.WalkAround"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6857.0,"y":5974.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"206"},{"_position":{"x":7038.0,"y":5746.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"218"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":10},"_targetMethod":{"_baseInfo":"MageMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"min_distance":30.0,"$type":"GuildMaster.WalkAround"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6857.0,"y":5974.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"210"},{"_position":{"x":7038.0,"y":5746.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"222"},{"_action":{"actions":[{"functionWrapper":{"p1":{"_value":10},"_targetMethod":{"_baseInfo":"MageMember|ActivateBubble|System.Void","_paramsInfo":"System.Int32"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Going
         to the Guild Hall"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":15},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6994.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"219"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"MageMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Meditating"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"building":16,"time_inside":100.0,"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7365.0,"y":5841.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"232"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"51"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"49"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"59"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"84"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"128"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"203"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"218"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"59"},"_targetNode":{"$ref":"60"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"59"},"_targetNode":{"$ref":"73"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"128"},"_targetNode":{"$ref":"129"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"128"},"_targetNode":{"$ref":"146"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"146"},"_targetNode":{"$ref":"148"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"148"},"_targetNode":{"$ref":"155"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"148"},"_targetNode":{"$ref":"167"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"148"},"_targetNode":{"$ref":"179"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"148"},"_targetNode":{"$ref":"191"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"203"},"_targetNode":{"$ref":"204"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"204"},"_targetNode":{"$ref":"206"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"218"},"_targetNode":{"$ref":"219"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"218"},"_targetNode":{"$ref":"232"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"target":{"_value":15},"$type":"GuildMaster.MoveTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6994.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"223"},{"_action":{"actions":[{"functionWrapper":{"_targetMethod":{"_baseInfo":"MageMember|DisableBubble|System.Void","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedAction"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"functionWrapper":{"p1":{"_value":"Meditating"},"_targetMethod":{"_baseInfo":"MageMember|ChangeActionString|System.Void","_paramsInfo":"System.String"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[System.String,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},{"building":16,"time_inside":100.0,"$type":"GuildMaster.EnterBuilding"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":7365.0,"y":5841.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"236"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"51"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"49"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"59"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"84"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"132"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"207"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"222"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"59"},"_targetNode":{"$ref":"60"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"59"},"_targetNode":{"$ref":"73"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"132"},"_targetNode":{"$ref":"133"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"132"},"_targetNode":{"$ref":"150"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"150"},"_targetNode":{"$ref":"152"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"152"},"_targetNode":{"$ref":"159"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"152"},"_targetNode":{"$ref":"171"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"152"},"_targetNode":{"$ref":"183"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"152"},"_targetNode":{"$ref":"195"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"207"},"_targetNode":{"$ref":"208"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"208"},"_targetNode":{"$ref":"210"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"222"},"_targetNode":{"$ref":"223"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"222"},"_targetNode":{"$ref":"236"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
         Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 2246033019795271706, guid: 917685ca3ed193549ac39a7adbac5950,
@@ -19064,7 +19138,11 @@ PrefabInstance:
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"material_location":{"_value":2,"_name":"material_location","_id":"00c7e094-9509-4bc8-aa57-fa5318f6efa1","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"alchemy_location":{"_value":3,"_name":"alchemy_location","_id":"f99e3aa9-e6cf-4552-8606-dd136424e46b","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"stamina":{"_propertyPath":"MageMember.stamina","_name":"stamina","_id":"4b1e800e-a854-4770-824c-c1c8b71f3baf","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"potion_gameobject":{"_propertyPath":"MageMember.potion","_name":"potion_gameobject","_id":"9844afa4-6adf-4b64-8aa3-9af05003d8c6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"recipe_gameobject":{"_propertyPath":"MageMember.recipe","_name":"recipe_gameobject","_id":"75fc37d2-d9a4-4731-9fc1-f82d6d2884dc","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"material_gameobject":{"_propertyPath":"MageMember.material","_name":"material_gameobject","_id":"1e85062a-eced-44fd-bd16-0529f6627374","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"fishing_pole":{"_propertyPath":"MageMember.fishing_pole","_name":"fishing_pole","_id":"81a84295-f08c-4867-9884-6df7196f060e","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
       objectReference: {fileID: 0}
     - target: {fileID: -1784941013477514498, guid: 917685ca3ed193549ac39a7adbac5950,
         type: 3}
@@ -19088,6 +19166,23 @@ PrefabInstance:
     - target: {fileID: 1275908031, guid: 917685ca3ed193549ac39a7adbac5950, type: 3}
       propertyPath: equipment_lvl
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275908031, guid: 917685ca3ed193549ac39a7adbac5950, type: 3}
+      propertyPath: recipe
+      value: 
+      objectReference: {fileID: 1051442245}
+    - target: {fileID: 1275908031, guid: 917685ca3ed193549ac39a7adbac5950, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 350763358}
+    - target: {fileID: 1275908031, guid: 917685ca3ed193549ac39a7adbac5950, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 83678704}
+    - target: {fileID: 5803403313378560017, guid: 917685ca3ed193549ac39a7adbac5950,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 917685ca3ed193549ac39a7adbac5950, type: 3}
@@ -19135,6 +19230,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.9999995, y: 9.1882, z: 5.6153426}
   m_Center: {x: -2.4999998, y: 3.373609, z: -2.4999998}
+--- !u!4 &1241139226 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6084457698102580760, guid: 917685ca3ed193549ac39a7adbac5950,
+    type: 3}
+  m_PrefabInstance: {fileID: 1231736509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1242636918 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 489508, guid: baed7906d997fb54ba9e2c78c155e0db,
@@ -19488,6 +19589,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 427514, guid: 127daafb00ba1604f8669edf932ac16d,
     type: 3}
   m_PrefabInstance: {fileID: 5640555848694866267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1272179331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2497343186906324776, guid: bdac0e0654792474e9b2a72cca6f01d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1167808986}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1272315402
 GameObject:
@@ -19999,6 +20106,12 @@ Transform:
   m_Father: {fileID: 157455140}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1319322866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 122752, guid: 1301648bc2a0e6443be3b1e3412da51b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1486571718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1324570038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 134988, guid: f61eac853436d3c499c8e062eb67bfbd,
@@ -24119,12 +24232,134 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5640555848983880832}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1482566772
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1683379669}
+    m_Modifications:
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 148858, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_Name
+      value: SM_Prop_Potion_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 148858, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
 --- !u!4 &1484418518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477258, guid: 7b3ae5d7b9a7b564fb503f8d707b922e,
     type: 3}
   m_PrefabInstance: {fileID: 8410069977082369092}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1486571718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 944774665}
+    m_Modifications:
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.085
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.073
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 435478, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 122752, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_Name
+      value: SF_Wep_WoodSword_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 122752, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1301648bc2a0e6443be3b1e3412da51b, type: 3}
 --- !u!4 &1488321250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400902, guid: 43bb48f07d067d848b1d4c90aa160d5d,
@@ -24344,6 +24579,67 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.1378994, y: 3.6509476, z: 1.2103257}
   m_Center: {x: 0, y: 1.8254738, z: 0.000015258789}
+--- !u!1001 &1504849262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1683379669}
+    m_Modifications:
+    - target: {fileID: 147296, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_Name
+      value: SM_Prop_Book_Open_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 147296, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493020, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bb2471add437164e8944b7cb6b11b0a, type: 3}
 --- !u!1 &1505660639
 GameObject:
   m_ObjectHideFlags: 0
@@ -24673,6 +24969,67 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5640555849073768219}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1547934560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1241139226}
+    m_Modifications:
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1.7686425e-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 5.987704e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -4.4417164e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 188728, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_Name
+      value: SM_Prop_Crystals_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 188728, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
 --- !u!1 &1549974408 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 118566, guid: 579c39c4c6f0fd14bae8f4c04d373678,
@@ -25755,6 +26112,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 455192, guid: b388ed4d8389d6b46955639e1f4bcdb5,
     type: 3}
   m_PrefabInstance: {fileID: 5640555847507830452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1683379669 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6084457698102580326, guid: 917685ca3ed193549ac39a7adbac5950,
+    type: 3}
+  m_PrefabInstance: {fileID: 1231736509}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687039990
 GameObject:

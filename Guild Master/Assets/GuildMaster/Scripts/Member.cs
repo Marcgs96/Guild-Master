@@ -20,7 +20,7 @@ public class Member : MonoBehaviour
     public string action_string;
     public float night_value = 0;
     public GameObject assigned_position;
-    public GameObject weapon;
+    public GameObject fishing_pole;
     public GameObject model;
 
     [Header("Production")]
