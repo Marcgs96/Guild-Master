@@ -6147,10 +6147,10 @@ MonoBehaviour:
   zoom_speed: 200
   min_y: 5
   max_y: 55
-  max_z: 270
-  min_z: 110
+  max_z: 280
+  min_z: 100
   max_x: 140
-  min_x: -10
+  min_x: -15
   center_offset: -15
   center_zoom: 10
 --- !u!82 &534669910
