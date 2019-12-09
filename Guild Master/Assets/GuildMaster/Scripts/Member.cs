@@ -120,6 +120,7 @@ public class Member : MonoBehaviour
         producing = false;
         production_progress = 0.0f;
         production_slider.gameObject.SetActive(false);
+        fishing_pole.SetActive(false);
         GameManager.manager.locations.ReleasePosition(assigned_position);
     }
     virtual public void GenerateInfo()

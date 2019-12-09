@@ -26,6 +26,8 @@ public class HunterMember : Member
         if (target_animal != null)
             DespawnAnimal();
 
+        GetComponent<Animator>().SetBool("fishing", false);
+        GetComponent<Animator>().SetBool("talking", false);
 
         bow.SetActive(false);
     }
