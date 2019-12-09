@@ -37,7 +37,6 @@ public class Quest
         this.size = size;
         lvl = level;
         type = (QuestType) UnityEngine.Random.Range(0, 2);
-        quest_name = "Test";
         coroutine = QuestActivity();
 
         enemies = new List<Enemy>();
@@ -58,12 +57,14 @@ public class Quest
             case QuestSize.ONE:
                 quest_duration = 3;
                 total_stamina_cost = 50.0f;
+                quest_name = "One Man " + GetTypeString();
 
                 rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
                 break;
             case QuestSize.THREE:
                 quest_duration = 5;
                 total_stamina_cost = 60.0f;
+                quest_name = "Three Man " + GetTypeString();
 
                 rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
                 rewards.Add(new Resource((Resource.ResourceType)UnityEngine.Random.Range(3,5), 1 * (int)level));
@@ -71,6 +72,7 @@ public class Quest
             case QuestSize.FIVE:
                 quest_duration = 7;
                 total_stamina_cost = 70.0f;
+                quest_name = "Five Man " + GetTypeString();
 
                 rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
                 rewards.Add(new Resource(Resource.ResourceType.Crown, 1 * (int)level));
@@ -81,6 +83,11 @@ public class Quest
                 total_stamina_cost = 75.0f;
                 break;
         }
+    }
+
+    private string GetTypeString()
+    {
+        return type == QuestType.ADVENTURE ? "Adventure" : "Bounty";
     }
 
     internal void Reset()
@@ -322,27 +329,41 @@ public class Quest
 
     internal void RemoveResource(Resource.ResourceType type, int amount)
     {
-        if (this.type == QuestType.ADVENTURE)
-        {
-            resources_success -= (int)(type == Resource.ResourceType.Meat ? 5 / lvl : 1 / lvl);
-        }
-        else
-            resources_success -= (int)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
-
+        bool changed = false;
         switch (type)
         {
             case Resource.ResourceType.Potion:
-                provisions[0].Decrease(amount);
+                if(provisions[0].GetAmount() > 0)
+                {
+                    provisions[0].Decrease(amount);
+                    changed = true;
+                }                  
                 break;
             case Resource.ResourceType.Meat:
-                provisions[1].Decrease(amount);
+                if (provisions[1].GetAmount() > 0)
+                {
+                    provisions[1].Decrease(amount);
+                    changed = true;
+                }
                 break;
             case Resource.ResourceType.Flame:
-                provisions[2].Decrease(amount);
+                if (provisions[2].GetAmount() > 0)
+                {
+                    provisions[2].Decrease(amount);
+                    changed = true;
+                }
                 break;
         }
 
-        total_success = members_success + enemies_success + resources_success;
-        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
+        if(changed)
+        {
+            if (this.type == QuestType.ADVENTURE)
+                resources_success -= (int)(type == Resource.ResourceType.Meat ? 5 / lvl : 1 / lvl);
+            else
+                resources_success -= (int)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
+
+            total_success = members_success + enemies_success + resources_success;
+            GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
+        }
     }
 }
