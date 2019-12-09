@@ -448,6 +448,9 @@ MonoBehaviour:
     type: 0
     size: 0
     rewards: []
+    bonus_reward:
+      type: 0
+      amount: 0
     party: []
     provisions: []
     quest_duration: 0
@@ -5581,6 +5584,7 @@ MonoBehaviour:
   main_light: {fileID: 170076734}
   lights: []
   hours_text: {fileID: 162312919109664996}
+  day: 1
   skybox_materials:
   - {fileID: 2100000, guid: 0b846be1b116429409a7669cacf2a62e, type: 2}
   - {fileID: 2100000, guid: 1cf32c17fea93ef4fb120e8e0cdfbef1, type: 2}
@@ -5598,7 +5602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement_speed: 50
-  offset: 30
   zoom_speed: 200
   min_y: 5
   max_y: 55

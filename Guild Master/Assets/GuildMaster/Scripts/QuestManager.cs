@@ -19,22 +19,67 @@ public class QuestManager : MonoBehaviour
     {
         active_quests = new List<Quest>();
         quests = new List<Quest>();
-        GenerateQuests();
+        DayNightCicle.OnDayChange += GenerateQuests;
+
+        GenerateQuests(true);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GameManager.manager.time.day++;
+            GenerateQuests(true);
+        }
     }
 
     void CleanQuests()
     {
         selected_quest = null;
+
+        GameManager.manager.ui.quest_panel.ClearListings();
+        quests.Clear();
     }
 
-    void GenerateQuests()
+    void GenerateQuests(bool night)
     {
-        //Todo: Create random quests depending of set parameteres like highest lvl member, amount of members, etc.
-        CreateQuest(Quest.QuestSize.ONE, 1);
-        CreateQuest(Quest.QuestSize.ONE, 1);
-        CreateQuest(Quest.QuestSize.ONE, 1);
-        CreateQuest(Quest.QuestSize.THREE, 1);
-        CreateQuest(Quest.QuestSize.THREE, 1);
+        CleanQuests();
+        // Todo: Create random quests depending of set parameteres like highest lvl member, amount of members, etc. 
+        // Right now we have set quest size and levels for progression curve finishing on day 5.
+        switch (GameManager.manager.time.day)
+        {
+            case 1:
+                CreateQuest(Quest.QuestSize.ONE, 1);
+                CreateQuest(Quest.QuestSize.ONE, 1);
+                CreateQuest(Quest.QuestSize.ONE, 1);
+                CreateQuest(Quest.QuestSize.THREE, 1);
+                CreateQuest(Quest.QuestSize.THREE, 1);
+                break;
+            case 2:
+                CreateQuest(Quest.QuestSize.ONE, 2);
+                CreateQuest(Quest.QuestSize.ONE, 3);
+                CreateQuest(Quest.QuestSize.THREE, 2);
+                CreateQuest(Quest.QuestSize.THREE, 1);
+                CreateQuest(Quest.QuestSize.FIVE, 2);
+                break;
+            case 3:
+                CreateQuest(Quest.QuestSize.ONE, 4);
+                CreateQuest(Quest.QuestSize.ONE, 3);
+                CreateQuest(Quest.QuestSize.THREE, 3);
+                CreateQuest(Quest.QuestSize.THREE, 3);
+                CreateQuest(Quest.QuestSize.FIVE, 3);
+                break;
+            case 4:
+                CreateQuest(Quest.QuestSize.ONE, 5);
+                CreateQuest(Quest.QuestSize.ONE, 4);
+                CreateQuest(Quest.QuestSize.THREE, 4);
+                CreateQuest(Quest.QuestSize.THREE, 5);
+                CreateQuest(Quest.QuestSize.FIVE, 4);
+                break;
+            case 5:
+                CreateQuest(Quest.QuestSize.TEN, 6);
+                break;
+        }
     }
 
     void CreateQuest(Quest.QuestSize type, uint lvl)

@@ -12,8 +12,6 @@ public class Member : MonoBehaviour
     [Header("Member Information")]
     public string member_name;
     public uint lvl;
-    public uint xp;
-    public uint equipment_lvl;
     public float stamina;
     public MEMBER_TYPE type;
     public MEMBER_STATE state = MEMBER_STATE.REST;
@@ -126,7 +124,6 @@ public class Member : MonoBehaviour
     virtual public void GenerateInfo()
     {
         lvl = 1;
-        xp = 0;
         stamina = 100;
     }
 

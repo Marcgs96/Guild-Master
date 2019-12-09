@@ -125,6 +125,11 @@ public class UIManager : MonoBehaviour
             Camera.main.GetComponent<CameraControls>().SetFocus(member.gameObject);
     }
 
+    public void OnMemberLevelUp(Member member)
+    {
+        member_listings[member].transform.GetChild(4).GetComponentInChildren<Text>().text = member.lvl.ToString();
+    }
+
     public void OnStateClick(Member member)
     {
         if (member.state == Member.MEMBER_STATE.QUEST)
@@ -179,7 +184,7 @@ public class UIManager : MonoBehaviour
         UpdateMemberCountText();
     }
 
-    internal void CreateQuestResultPopup(Quest quest, bool receive_rewards, List<Member> survivors)
+    internal void CreateQuestResultPopup(Quest quest, bool receive_rewards, bool receive_bonus, List<Member> survivors)
     {
         GameObject popup = Instantiate(quest_result_popup);
 
@@ -197,6 +202,12 @@ public class UIManager : MonoBehaviour
                 new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
                 new_resource.transform.SetParent(rewards);
             }
+        }
+        if (receive_bonus)
+        {
+            GameObject bonus = popup.transform.GetChild(1).GetChild(3).gameObject;
+            bonus.SetActive(true);
+            bonus.transform.GetChild(0).GetComponent<Text>().text = quest.bonus_reward.GetAmount().ToString();
         }
 
         Transform members = popup.transform.GetChild(1).GetChild(0);

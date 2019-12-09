@@ -55,7 +55,8 @@ public class BlackSmithPanel : MonoBehaviour
         if(selected_member != null && GameManager.manager.resources.HaveAmount(Resource.ResourceType.Gold, upgrade_costs[upgrade-2]))
         {
             GameManager.manager.resources.DecreaseResource(Resource.ResourceType.Gold, upgrade_costs[upgrade - 2]);
-            selected_member.equipment_lvl = (uint)upgrade;
+            selected_member.lvl = (uint)upgrade;
+            GameManager.manager.ui.OnMemberLevelUp(selected_member);
             UpgradeButtonSetup();
         }
     }
@@ -64,7 +65,7 @@ public class BlackSmithPanel : MonoBehaviour
     {
         for (int i = 0; i < blacksmith.GetLevel() - 1; i++)
         {
-            if (blacksmith.GetLevel() > selected_member.equipment_lvl && selected_member.equipment_lvl == (i+1))
+            if (blacksmith.GetLevel() > selected_member.lvl && selected_member.lvl == (i+1))
                 upgrade_buttons[i].interactable = true;
             else
                 upgrade_buttons[i].interactable = false;
