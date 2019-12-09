@@ -9,6 +9,7 @@ public class KnightMember : Member
     public bool dueling = false;
     public KnightMember opponent;
     public static List<KnightMember> free_members = new List<KnightMember>();
+    public GameObject sword;
 
     List<string> names = new List<string> { "Byron","Tybalt","Uther","Arthas","Jarvan",
         "Quinn","Leo","Doran","Tristan","Arthur","Marcos","Quijote","Tirant","Geralt","Tirion"};
@@ -39,6 +40,8 @@ public class KnightMember : Member
             else
                 free_members.Remove(this);
         }
+
+        sword.SetActive(false);
 
         base.ChangeState(state, force);
     }

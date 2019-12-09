@@ -7,6 +7,7 @@ public class HunterMember : Member
     [Header("Hunter")]
     public GameObject target_animal;
     public AnimalSpawner spawner;
+    public GameObject bow;
 
     List<string> names = new List<string> { "Yapo","Hawkeye","Rexxar","Windrunner","Hemet",
         "Nathanos","Robin","Arrow","Hanzo","Rowan","Rulf","Jhin","Draven","Lucian","Twitch"};
@@ -24,6 +25,9 @@ public class HunterMember : Member
 
         if (target_animal != null)
             DespawnAnimal();
+
+
+        bow.SetActive(false);
     }
 
     public void RequestAnimal()
