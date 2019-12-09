@@ -6,31 +6,38 @@ using UnityEngine;
 [System.Serializable]
 public class Quest
 {
-    public enum QuestType { BOUNTY, ADVENTURE, RAID };
+    public enum QuestType { BOUNTY, ADVENTURE};
+    public enum QuestSize { ONE = 1, THREE = 3, FIVE = 5, TEN = 10};
 
     public string quest_name;
     public uint lvl;
-    public uint xp;
     public QuestType type;
+    public QuestSize size;
     public List<Enemy> enemies;
     public List<Resource> rewards;
     public List<Member> party;
     public List<Resource> provisions;
+    int total_success = 0;
+    int resources_success;
+    int members_success;
+    int enemies_success;
+
     /// <summary>
     /// Quest duration in game hours
     /// </summary>
     public uint quest_duration;
     private float total_stamina_cost;
     private List<float> stamina_ratios;
-    private uint total_food_checks = 1;
     private IEnumerator coroutine;
     private uint members_inside_dungeon = 0;
     private float real_time_duration;
 
-    public Quest(QuestType type, uint level)
+    public Quest(QuestSize size, uint level)
     {
-        this.type = type;
+        this.size = size;
         lvl = level;
+        type = (QuestType) UnityEngine.Random.Range(0, 2);
+        quest_name = "Test";
         coroutine = QuestActivity();
 
         enemies = new List<Enemy>();
@@ -42,38 +49,81 @@ public class Quest
 
         party = new List<Member>();
 
-        switch (type)
+        for (int i = 0; i < (int)size; i++)
         {
-            case QuestType.BOUNTY:
-                CreateBounty();
+            GenerateEnemy();
+        }
+        switch (size)
+        {
+            case QuestSize.ONE:
+                quest_duration = 3;
+                total_stamina_cost = 50.0f;
+
+                rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
                 break;
-            case QuestType.ADVENTURE:
-                CreateAdventure();
+            case QuestSize.THREE:
+                quest_duration = 5;
+                total_stamina_cost = 60.0f;
+
+                rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
+                rewards.Add(new Resource((Resource.ResourceType)UnityEngine.Random.Range(3,5), 1 * (int)level));
                 break;
-            case QuestType.RAID:
-                //todo
+            case QuestSize.FIVE:
+                quest_duration = 7;
+                total_stamina_cost = 70.0f;
+
+                rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
+                rewards.Add(new Resource(Resource.ResourceType.Crown, 1 * (int)level));
+                rewards.Add(new Resource(Resource.ResourceType.Shield, 1 * (int)level));
+                break;
+            case QuestSize.TEN:
+                quest_duration = 9;
+                total_stamina_cost = 75.0f;
                 break;
         }
     }
 
-    internal void ResetCounters()
+    internal void Reset()
     {
+        party.Clear();
+
+        foreach(Resource provision in provisions)
+        {
+            provision.SetAmount(0);
+        }
+
         foreach (Enemy enemy in enemies)
         {
             enemy.countered = false;
+            enemy.counterer = null;
         }
+
+        members_success = 0;
+        resources_success = 0;
+        enemies_success = 0;
+        total_success = 0;
     }
 
     internal void RemoveMemberFromParty(Member old_member)
     {
         party.Remove(old_member);
+        members_success -= (int)(old_member.lvl / lvl) * (40 / (int)size);
+
         UnCounterEnemy(old_member);
+
+        total_success = members_success + enemies_success + resources_success;
+        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
     }
 
     internal void AddMemberToParty(Member new_member)
     {
         party.Add(new_member);
+        members_success += (int)(new_member.lvl / lvl) * (40 / (int)size);
+
         CounterEnemy(new_member);
+
+        total_success = members_success + enemies_success + resources_success;
+        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
     }
 
     private void CounterEnemy(Member counterer)
@@ -86,6 +136,8 @@ public class Quest
                 {
                     enemies[i].countered = true;
                     enemies[i].counterer = counterer;
+                    enemies_success += (40 / (int)size);
+
                     GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], true);
                     return;
                 }
@@ -101,6 +153,8 @@ public class Quest
             {
                 enemy.countered = false;
                 enemy.counterer = null;
+                enemies_success -= (40 / (int)size);
+
                 GameManager.manager.ui.quest_panel.OnEnemyCounter(enemy, false);
                 return;
             }
@@ -144,42 +198,10 @@ public class Quest
             GameManager.manager.quests.StartCoroutine(coroutine);
     }
 
-    private void CreateAdventure()
-    {
-        quest_name = "Adventure"; //Todo: Create function for name randomization
-        xp = 500;
-        quest_duration = 5;
-        total_stamina_cost = 75.0f;
-
-        for (int i = 0; i < GetMemberSizeFromType(type); i++)
-        {
-            GenerateEnemy();
-        }
-
-        //Todo: Create function for reward setup to be semi randomized
-        rewards.Add(new Resource(Resource.ResourceType.Gold, 500));
-        rewards.Add(new Resource(Resource.ResourceType.Shield, 10));
-        rewards.Add(new Resource(Resource.ResourceType.Crown, 10));
-    }
-
     private void GenerateEnemy()
     {
         Enemy.EnemyType random_type = (Enemy.EnemyType)UnityEngine.Random.Range((int)Enemy.EnemyType.SKELETON, (int)Enemy.EnemyType.TOTAL);
         enemies.Add(new Enemy(random_type, lvl));
-    }
-
-    private void CreateBounty()
-    {
-        quest_name = "Bounty"; //Todo: Create function for name randomization
-        xp = 200;
-        quest_duration = 3;
-        total_stamina_cost = 50.0f;
-
-        GenerateEnemy();
-
-        //Todo: Create function for reward setup
-        rewards.Add(new Resource(Resource.ResourceType.Gold, 250));
-        rewards.Add(new Resource(Resource.ResourceType.Shield, 5));
     }
 
     public bool IsFull()
@@ -197,53 +219,23 @@ public class Quest
         foreach (Member member in party)
         {
             member.ChangeState(Member.MEMBER_STATE.QUEST);
-            stamina_ratios.Add(total_stamina_cost / real_time_duration); //Todo: Makes this be affected by quest diffculty, member lvl, and member equipment lvl.
+            stamina_ratios.Add(total_stamina_cost / real_time_duration);
         }
     }
 
     private IEnumerator QuestActivity()
     {
         Debug.Log("Starting quest activity of " + quest_name);
-        float food_check_chance = 0;
-        bool food_check = false;
         float elapsed_time = 0.0f;
 
         while (elapsed_time < real_time_duration)
         {
             elapsed_time += Time.deltaTime;
 
-            if (total_food_checks > 0) //Roll for a food check if thers any left
-            {
-                int roll = UnityEngine.Random.Range((int)food_check_chance, 100);
-                if (roll == 100)
-                {
-                    Debug.Log("Food check");
-                    food_check = true;
-                    food_check_chance = 0;
-                }
-            }
-
             for (int i = 0; i < party.Count; i++)
             {
                 //Decrease stamina basic
                 party[i].DecreaseStamina(stamina_ratios[i] * Time.deltaTime);
-
-                if (food_check) //Eat food if there is any left otherwise lose stamina
-                {              
-                    foreach (Resource provision in provisions)
-                    {
-                        if (provision.GetResourceType() == Resource.ResourceType.Meat && provision.GetAmount() > 0)
-                        {
-                            Debug.Log(party[i].member_name + " ate a piece of meat.");
-                            provision.Decrease(1);
-                        }
-                        else
-                        {
-                            Debug.Log(party[i].member_name + " couldn't eat, loses 25 stamina.");
-                            party[i].DecreaseStamina(25);
-                        }
-                    }
-                }
 
                 //If stamina too low, try to recover with a potion
                 if (party[i].stamina < 25)
@@ -259,14 +251,6 @@ public class Quest
                     }
                 }
             }
-
-            if (food_check) //Reset food check
-            {
-                total_food_checks--;
-                food_check = false;
-            }
-
-            food_check_chance += 0.5f * Time.deltaTime;
 
             yield return new WaitForEndOfFrame();
         }
@@ -293,32 +277,72 @@ public class Quest
             }
 
             member.ChangeState(Member.MEMBER_STATE.REST, true);
-            receive_rewards = true;
             survivors.Add(member);
         }
 
-        if(receive_rewards) //if at least 1 survivor, receive rewards
+        if(survivors.Count > 0) //if at least 1 survivor, roll mission success chance
         {
-            foreach (Resource resource in rewards)
-                GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
+            receive_rewards = UnityEngine.Random.Range(0, 100) < total_success ? true : false;
+            if(receive_rewards)
+            {
+                foreach (Resource resource in rewards)
+                    GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
+            }
         }
 
         GameManager.manager.ui.CreateQuestResultPopup(this, receive_rewards, survivors);
         GameManager.manager.quests.RemoveQuest(this);
     }
 
-    public uint GetMemberSizeFromType(QuestType type)
+    internal void AddResource(Resource.ResourceType type, int amount)
     {
+        if(this.type == QuestType.ADVENTURE)
+        {
+            resources_success += (int)(type == Resource.ResourceType.Meat ? 5/lvl : 1/lvl);
+        }
+        else
+            resources_success += (int)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
+
         switch (type)
         {
-            case QuestType.BOUNTY:
-                return 1;
-            case QuestType.ADVENTURE:
-                return 3;
-            case QuestType.RAID:
-                return 10;
+            case Resource.ResourceType.Potion:
+                provisions[0].Increase(amount);
+                break;
+            case Resource.ResourceType.Meat:
+                provisions[1].Increase(amount);
+                break;
+            case Resource.ResourceType.Flame:
+                provisions[2].Increase(amount);
+                break;
         }
 
-        return 1;
+        total_success = members_success + enemies_success + resources_success;
+        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
+    }
+
+    internal void RemoveResource(Resource.ResourceType type, int amount)
+    {
+        if (this.type == QuestType.ADVENTURE)
+        {
+            resources_success -= (int)(type == Resource.ResourceType.Meat ? 5 / lvl : 1 / lvl);
+        }
+        else
+            resources_success -= (int)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
+
+        switch (type)
+        {
+            case Resource.ResourceType.Potion:
+                provisions[0].Decrease(amount);
+                break;
+            case Resource.ResourceType.Meat:
+                provisions[1].Decrease(amount);
+                break;
+            case Resource.ResourceType.Flame:
+                provisions[2].Decrease(amount);
+                break;
+        }
+
+        total_success = members_success + enemies_success + resources_success;
+        GameManager.manager.ui.quest_panel.UpdateSuccess(total_success);
     }
 }

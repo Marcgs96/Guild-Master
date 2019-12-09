@@ -12,11 +12,12 @@ public class QuestPanel : MonoBehaviour
     public GameObject quest_provisions_resources;
 
     public GameObject quest_listing_prefab;
+    public Text quest_success;
 
     Dictionary<Quest, GameObject> quest_listings;
     Dictionary<Enemy, GameObject> enemy_slots;
 
-    public void Start()
+    public void Init()
     {
         quest_listings = new Dictionary<Quest, GameObject>();
         enemy_slots = new Dictionary<Enemy, GameObject>();
@@ -29,7 +30,7 @@ public class QuestPanel : MonoBehaviour
         quest_preparation.SetActive(true);
 
         SetupQuestPreparation(new_quest);
-        GameManager.manager.quests.SelectQuest(new_quest);
+        GameManager.manager.quests.selected_quest = new_quest;
 
         quests_list.SetActive(false);
     }
@@ -38,9 +39,10 @@ public class QuestPanel : MonoBehaviour
     {
         if (GameManager.manager.quests.selected_quest != null)
         {
-            ResetInventory();
-            GameManager.manager.quests.ResetCounters();
+            GameManager.manager.quests.selected_quest.Reset();
         }
+        Transform send_button = quest_preparation.transform.GetChild(1).GetChild(2);
+        send_button.GetComponent<Button>().interactable = false;
 
         quest_preparation.SetActive(false);
         quests_list.SetActive(true);
@@ -69,11 +71,8 @@ public class QuestPanel : MonoBehaviour
 
     void RemoveQuestListing(Quest old_quest)
     {
-        GameObject listing;
-        quest_listings.TryGetValue(old_quest, out listing);
+        Destroy(quest_listings[old_quest]);
         quest_listings.Remove(old_quest);
-
-        Destroy(listing);
     }
 
     //QUEST PREPARATION
@@ -122,7 +121,7 @@ public class QuestPanel : MonoBehaviour
             Destroy(members.GetChild(i).gameObject);
         }
 
-        uint size = new_quest.GetMemberSizeFromType(new_quest.type);
+        int size = (int)new_quest.size;
         for (int i = 0; i < size; i++)
         {
             GameObject new_member_slot = Instantiate(GameManager.manager.ui.slot_prefab);
@@ -145,6 +144,13 @@ public class QuestPanel : MonoBehaviour
             new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
             new_resource.transform.SetParent(rewards);
         }
+
+        UpdateSuccess(0);
+    }
+
+    internal void UpdateSuccess(int total_success)
+    {
+        quest_success.text = total_success.ToString() + "%";
     }
 
     internal void AddMemberToQuest(Member member)
@@ -205,34 +211,31 @@ public class QuestPanel : MonoBehaviour
     public void SendParty()
     {
         SendQuestResources();
-        RemoveQuestListing(GameManager.manager.quests.GetSelectedQuest());
+        RemoveQuestListing(GameManager.manager.quests.selected_quest);
         GameManager.manager.quests.StartQuest();
         CloseQuestPreparation();
     }
-
 
     //QUEST PREPARATION RESOURCE MANAGEMENT
     public void IncreaseResourceInInventory(int type)
     {
         int resource_value;
         Resource.ResourceType enum_type = (Resource.ResourceType)type;
+        GameManager.manager.quests.selected_quest.AddResource(enum_type, 1);
 
         switch (enum_type)
         {
             case Resource.ResourceType.Potion:
-                GameManager.manager.quests.selected_quest.provisions[0].Increase(1);
                 resource_value = GameManager.manager.resources.potions.GetAmount() - GameManager.manager.quests.selected_quest.provisions[0].GetAmount();
                 quest_provisions_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = resource_value.ToString();
                 quest_inventory_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[0].GetAmount().ToString();
                 break;
             case Resource.ResourceType.Meat:
-                GameManager.manager.quests.selected_quest.provisions[1].Increase(1);
                 resource_value = GameManager.manager.resources.meat.GetAmount() - GameManager.manager.quests.selected_quest.provisions[1].GetAmount();
                 quest_provisions_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = resource_value.ToString();
                 quest_inventory_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[1].GetAmount().ToString();
                 break;
             case Resource.ResourceType.Flame:
-                GameManager.manager.quests.selected_quest.provisions[2].Increase(1);
                 resource_value = GameManager.manager.resources.flames.GetAmount() - GameManager.manager.quests.selected_quest.provisions[2].GetAmount();
                 quest_provisions_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = resource_value.ToString();
                 quest_inventory_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[2].GetAmount().ToString();
@@ -244,23 +247,21 @@ public class QuestPanel : MonoBehaviour
     {
         int resource_value;
         Resource.ResourceType enum_type = (Resource.ResourceType)type;
+        GameManager.manager.quests.selected_quest.RemoveResource(enum_type, 1);
 
         switch (enum_type)
         {
             case Resource.ResourceType.Potion:
-                GameManager.manager.quests.selected_quest.provisions[0].Decrease(1);
                 resource_value = GameManager.manager.resources.potions.GetAmount() - GameManager.manager.quests.selected_quest.provisions[0].GetAmount();
                 quest_provisions_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = resource_value.ToString();
                 quest_inventory_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[0].GetAmount().ToString();
                 break;
             case Resource.ResourceType.Meat:
-                GameManager.manager.quests.selected_quest.provisions[1].Decrease(1);
                 resource_value = GameManager.manager.resources.meat.GetAmount() - GameManager.manager.quests.selected_quest.provisions[1].GetAmount();
                 quest_provisions_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = resource_value.ToString();
                 quest_inventory_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[1].GetAmount().ToString();
                 break;
             case Resource.ResourceType.Flame:
-                GameManager.manager.quests.selected_quest.provisions[2].Decrease(1);
                 resource_value = GameManager.manager.resources.flames.GetAmount() - GameManager.manager.quests.selected_quest.provisions[2].GetAmount();
                 quest_provisions_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = resource_value.ToString();
                 quest_inventory_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[2].GetAmount().ToString();
@@ -273,13 +274,6 @@ public class QuestPanel : MonoBehaviour
         GameManager.manager.resources.DecreaseResource(Resource.ResourceType.Potion, GameManager.manager.quests.selected_quest.provisions[0].GetAmount());
         GameManager.manager.resources.DecreaseResource(Resource.ResourceType.Meat, GameManager.manager.quests.selected_quest.provisions[1].GetAmount());
         GameManager.manager.resources.DecreaseResource(Resource.ResourceType.Flame, GameManager.manager.quests.selected_quest.provisions[2].GetAmount());
-    }
-
-    public void ResetInventory()
-    {
-        GameManager.manager.quests.selected_quest.provisions[0].SetAmount(0);
-        GameManager.manager.quests.selected_quest.provisions[1].SetAmount(0);
-        GameManager.manager.quests.selected_quest.provisions[2].SetAmount(0);
     }
 
     private void OnDisable()

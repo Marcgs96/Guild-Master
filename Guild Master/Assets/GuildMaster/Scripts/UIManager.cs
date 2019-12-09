@@ -40,8 +40,8 @@ public class UIManager : MonoBehaviour
         member_listings = new Dictionary<Member, GameObject>();
         popup_queue = new Queue<GameObject>();
 
-        quest_panel.Start();
-        blacksmith_panel.Start();
+        quest_panel.Init();
+        blacksmith_panel.Init();
 
         MemberManager.OnMemberAdd += CreateMemberListing;
         GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE].OnLevelUp += OnGuildHouseLevelUp;

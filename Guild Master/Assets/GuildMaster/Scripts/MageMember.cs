@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MageMember : Member
 {
-    List<string> names = new List<string> { "Alejandro","Merlin","Gandalf","Magox","Ziqo",
+    List<string> names = new List<string> { "Cere","Merlin","Gandalf","Magox","Ziqo",
         "Medivh","Antonidas","Veigar","Ryze","Tal Rasha","Lazarus","Zoltun","Vyr","Khadgar","Kel'Thuzad"};
 
     [Header("Mage")]

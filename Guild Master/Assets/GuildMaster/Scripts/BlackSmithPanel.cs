@@ -17,7 +17,7 @@ public class BlackSmithPanel : MonoBehaviour
     List<Button> upgrade_buttons;
     Member selected_member;
 
-    internal void Start()
+    internal void Init()
     {
         upgrade_buttons = new List<Button>();
 
