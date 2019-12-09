@@ -125,6 +125,11 @@ public class UIManager : MonoBehaviour
             Camera.main.GetComponent<CameraControls>().SetFocus(member.gameObject);
     }
 
+    public void OnMemberLevelUp(Member member)
+    {
+        member_listings[member].transform.GetChild(4).GetComponentInChildren<Text>().text = member.lvl.ToString();
+    }
+
     public void OnStateClick(Member member)
     {
         if (member.state == Member.MEMBER_STATE.QUEST)

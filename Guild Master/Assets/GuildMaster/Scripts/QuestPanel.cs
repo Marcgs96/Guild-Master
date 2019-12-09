@@ -233,21 +233,30 @@ public class QuestPanel : MonoBehaviour
     {
         int resource_value;
         Resource.ResourceType enum_type = (Resource.ResourceType)type;
-        GameManager.manager.quests.selected_quest.AddResource(enum_type, 1);
+
 
         switch (enum_type)
         {
             case Resource.ResourceType.Potion:
+                if (GameManager.manager.resources.potions.GetAmount() == 0)
+                    return;
+                GameManager.manager.quests.selected_quest.AddResource(enum_type, 1);
                 resource_value = GameManager.manager.resources.potions.GetAmount() - GameManager.manager.quests.selected_quest.provisions[0].GetAmount();
                 quest_provisions_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = resource_value.ToString();
                 quest_inventory_resources.transform.GetChild(0).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[0].GetAmount().ToString();
                 break;
             case Resource.ResourceType.Meat:
+                if (GameManager.manager.resources.meat.GetAmount() == 0)
+                    return;
+                GameManager.manager.quests.selected_quest.AddResource(enum_type, 1);
                 resource_value = GameManager.manager.resources.meat.GetAmount() - GameManager.manager.quests.selected_quest.provisions[1].GetAmount();
                 quest_provisions_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = resource_value.ToString();
                 quest_inventory_resources.transform.GetChild(1).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[1].GetAmount().ToString();
                 break;
             case Resource.ResourceType.Flame:
+                if (GameManager.manager.resources.flames.GetAmount() == 0)
+                    return;
+                GameManager.manager.quests.selected_quest.AddResource(enum_type, 1);
                 resource_value = GameManager.manager.resources.flames.GetAmount() - GameManager.manager.quests.selected_quest.provisions[2].GetAmount();
                 quest_provisions_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = resource_value.ToString();
                 quest_inventory_resources.transform.GetChild(2).GetComponentInChildren<Text>().text = GameManager.manager.quests.selected_quest.provisions[2].GetAmount().ToString();

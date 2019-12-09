@@ -56,6 +56,7 @@ public class BlackSmithPanel : MonoBehaviour
         {
             GameManager.manager.resources.DecreaseResource(Resource.ResourceType.Gold, upgrade_costs[upgrade - 2]);
             selected_member.lvl = (uint)upgrade;
+            GameManager.manager.ui.OnMemberLevelUp(selected_member);
             UpgradeButtonSetup();
         }
     }
