@@ -1483,14 +1483,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6084457698102580326}
     m_Modifications:
-    - target: {fileID: 148858, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
-      propertyPath: m_Name
-      value: SM_Prop_Potion_03
-      objectReference: {fileID: 0}
-    - target: {fileID: 148858, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 430750, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
@@ -1535,6 +1527,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 148858, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_Name
+      value: SM_Prop_Potion_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 148858, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8792c505c772cf498ffb6338e774d50, type: 3}
 --- !u!1 &288794547 stripped
@@ -1556,14 +1556,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6084457698102580760}
     m_Modifications:
-    - target: {fileID: 188728, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
-      propertyPath: m_Name
-      value: SM_Prop_Crystals_04
-      objectReference: {fileID: 0}
-    - target: {fileID: 188728, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 494772, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -1608,6 +1600,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 188728, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_Name
+      value: SM_Prop_Crystals_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 188728, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24d7aad3affa8b14e9f614f718865734, type: 3}
 --- !u!4 &355391849 stripped
@@ -1629,6 +1629,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 881498381}
     m_Modifications:
+    - target: {fileID: 462296530706020350, guid: 9b06cb655ae18f74f956cbda83ff6675,
+        type: 3}
+      propertyPath: m_Name
+      value: ProductionSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 462296530706020350, guid: 9b06cb655ae18f74f956cbda83ff6675,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1214258146874063440, guid: 9b06cb655ae18f74f956cbda83ff6675,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1749,16 +1759,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 11.508
       objectReference: {fileID: 0}
-    - target: {fileID: 462296530706020350, guid: 9b06cb655ae18f74f956cbda83ff6675,
-        type: 3}
-      propertyPath: m_Name
-      value: ProductionSlider
-      objectReference: {fileID: 0}
-    - target: {fileID: 462296530706020350, guid: 9b06cb655ae18f74f956cbda83ff6675,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7211317092692118179, guid: 9b06cb655ae18f74f956cbda83ff6675,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1876,6 +1876,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6084457698102580326}
     m_Modifications:
+    - target: {fileID: 106418, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
+      propertyPath: m_Name
+      value: SF_Wep_Human_Staff_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 106418, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 447242, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.09
@@ -1931,14 +1939,6 @@ PrefabInstance:
     - target: {fileID: 447242, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.3551
-      objectReference: {fileID: 0}
-    - target: {fileID: 106418, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
-      propertyPath: m_Name
-      value: SF_Wep_Human_Staff_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 106418, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}

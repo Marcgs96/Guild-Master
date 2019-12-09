@@ -57,14 +57,14 @@ public class Quest
         switch (size)
         {
             case QuestSize.ONE:
-                quest_duration = 3;
+                quest_duration = 2;
                 total_stamina_cost = 50.0f;
                 quest_name = "One Man " + GetTypeString();
                 rewards.Add(new Resource(Resource.ResourceType.Gold, 150 * (int)level));
                 bonus_reward = new Resource(Resource.ResourceType.Gold, 100 * (int)level);
                 break;
             case QuestSize.THREE:
-                quest_duration = 5;
+                quest_duration = 3;
                 total_stamina_cost = 60.0f;
                 quest_name = "Three Man " + GetTypeString();
 
@@ -73,7 +73,7 @@ public class Quest
                 bonus_reward = new Resource(Resource.ResourceType.Gold, 150 * (int)level);
                 break;
             case QuestSize.FIVE:
-                quest_duration = 5;
+                quest_duration = 4;
                 total_stamina_cost = 60.0f;
                 quest_name = "Five Man " + GetTypeString();
 
@@ -84,7 +84,7 @@ public class Quest
                 break;
             case QuestSize.TEN:
                 quest_name = "The Final Quest";
-                quest_duration = 8;
+                quest_duration = 5;
                 total_stamina_cost = 75.0f;
 
                 rewards.Add(new Resource(Resource.ResourceType.Gold, 300 * (int)level));
@@ -330,10 +330,10 @@ public class Quest
     {
         if(this.type == QuestType.ADVENTURE)
         {
-            resources_success += (float)(type == Resource.ResourceType.Meat ? 5/lvl : 1/lvl);
+            resources_success += type == Resource.ResourceType.Meat ? 10 : 2;
         }
         else
-            resources_success += (float)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
+            resources_success += type == Resource.ResourceType.Flame ? 10 : 2;
 
         switch (type)
         {
@@ -383,9 +383,9 @@ public class Quest
         if(changed)
         {
             if (this.type == QuestType.ADVENTURE)
-                resources_success -= (float)(type == Resource.ResourceType.Meat ? 5 / lvl : 1 / lvl);
+                resources_success -= type == Resource.ResourceType.Meat ? 10 : 2;
             else
-                resources_success -= (float)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
+                resources_success -= type == Resource.ResourceType.Flame ? 10 : 2;
 
             total_success = members_success + enemies_success + resources_success;
             GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);

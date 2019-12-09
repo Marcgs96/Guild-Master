@@ -1399,6 +1399,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1760066548}
     m_Modifications:
+    - target: {fileID: 462296530706020350, guid: 9b06cb655ae18f74f956cbda83ff6675,
+        type: 3}
+      propertyPath: m_Name
+      value: ProductionSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 462296530706020350, guid: 9b06cb655ae18f74f956cbda83ff6675,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1214258146874063440, guid: 9b06cb655ae18f74f956cbda83ff6675,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1518,16 +1528,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 11.508
-      objectReference: {fileID: 0}
-    - target: {fileID: 462296530706020350, guid: 9b06cb655ae18f74f956cbda83ff6675,
-        type: 3}
-      propertyPath: m_Name
-      value: ProductionSlider
-      objectReference: {fileID: 0}
-    - target: {fileID: 462296530706020350, guid: 9b06cb655ae18f74f956cbda83ff6675,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7211317092692118179, guid: 9b06cb655ae18f74f956cbda83ff6675,
         type: 3}
