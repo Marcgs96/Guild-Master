@@ -379,22 +379,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold:
     type: 0
-    amount: 5000
+    amount: 0
   crowns:
-    type: 1
-    amount: 50
-  shields:
-    type: 2
-    amount: 50
-  potions:
     type: 3
-    amount: 50
-  meat:
+    amount: 0
+  shields:
     type: 4
-    amount: 50
+    amount: 0
+  potions:
+    type: 1
+    amount: 0
+  meat:
+    type: 2
+    amount: 0
   flames:
     type: 5
-    amount: 50
+    amount: 0
   gold_txt: {fileID: 162312917512247094}
   crowns_txt: {fileID: 162312917650777772}
   shields_txt: {fileID: 162312917732268269}

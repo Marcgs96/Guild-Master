@@ -54,35 +54,46 @@ public class Quest
             GenerateEnemy();
         }
 
-        rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
         switch (size)
         {
             case QuestSize.ONE:
                 quest_duration = 3;
                 total_stamina_cost = 50.0f;
                 quest_name = "One Man " + GetTypeString();
+                rewards.Add(new Resource(Resource.ResourceType.Gold, 150 * (int)level));
+                bonus_reward = new Resource(Resource.ResourceType.Gold, 100 * (int)level);
                 break;
             case QuestSize.THREE:
                 quest_duration = 5;
                 total_stamina_cost = 60.0f;
                 quest_name = "Three Man " + GetTypeString();
 
-                rewards.Add(new Resource((Resource.ResourceType)UnityEngine.Random.Range(3,5), 1 * (int)level));
+                rewards.Add(new Resource(Resource.ResourceType.Gold, 200 * (int)level));
+                rewards.Add(new Resource((Resource.ResourceType)UnityEngine.Random.Range(3,5), 5 * (int)level));
+                bonus_reward = new Resource(Resource.ResourceType.Gold, 150 * (int)level);
                 break;
             case QuestSize.FIVE:
-                quest_duration = 7;
-                total_stamina_cost = 70.0f;
+                quest_duration = 5;
+                total_stamina_cost = 60.0f;
                 quest_name = "Five Man " + GetTypeString();
 
-                rewards.Add(new Resource(Resource.ResourceType.Crown, 1 * (int)level));
-                rewards.Add(new Resource(Resource.ResourceType.Shield, 1 * (int)level));
+                rewards.Add(new Resource(Resource.ResourceType.Gold, 250 * (int)level));
+                rewards.Add(new Resource(Resource.ResourceType.Crown, 5 * (int)level));
+                rewards.Add(new Resource(Resource.ResourceType.Shield, 5 * (int)level));
+                bonus_reward = new Resource(Resource.ResourceType.Gold, 200 * (int)level);
                 break;
             case QuestSize.TEN:
-                quest_duration = 9;
+                quest_name = "The Final Quest";
+                quest_duration = 8;
                 total_stamina_cost = 75.0f;
+
+                rewards.Add(new Resource(Resource.ResourceType.Gold, 300 * (int)level));
+                rewards.Add(new Resource(Resource.ResourceType.Crown, 5 * (int)level));
+                rewards.Add(new Resource(Resource.ResourceType.Shield, 5 * (int)level));
+
+                bonus_reward = new Resource(Resource.ResourceType.Gold, 250 * (int)level);
                 break;
         }
-        bonus_reward = new Resource(Resource.ResourceType.Gold, 50 * (int)level);
     }
 
     private string GetTypeString()
@@ -116,7 +127,7 @@ public class Quest
         party.Remove(old_member);
 
         float lvl_multiplier = (float)old_member.lvl / (float)lvl;
-        float member_value = (float)40 / (float)size;
+        float member_value = (float)50 / (float)size;
         members_success -= lvl_multiplier * member_value;
 
         UnCounterEnemy(old_member);
@@ -130,7 +141,7 @@ public class Quest
         party.Add(new_member);
 
         float lvl_multiplier = (float)new_member.lvl / (float)lvl;
-        float member_value = (float)40 / (float)size;
+        float member_value = (float)50 / (float)size;
         members_success += lvl_multiplier * member_value;
 
         CounterEnemy(new_member);
@@ -149,7 +160,7 @@ public class Quest
                 {
                     enemies[i].countered = true;
                     enemies[i].counterer = counterer;
-                    enemies_success += (float)40 / (float)size;
+                    enemies_success += (float)50 / (float)size;
 
                     GameManager.manager.ui.quest_panel.OnEnemyCounter(enemies[i], true);
                     return;
@@ -166,7 +177,7 @@ public class Quest
             {
                 enemy.countered = false;
                 enemy.counterer = null;
-                enemies_success -= (float)40 / (float)size;
+                enemies_success -= (float)50 / (float)size;
 
                 GameManager.manager.ui.quest_panel.OnEnemyCounter(enemy, false);
                 return;
@@ -319,10 +330,10 @@ public class Quest
     {
         if(this.type == QuestType.ADVENTURE)
         {
-            resources_success += (int)(type == Resource.ResourceType.Meat ? 5/lvl : 1/lvl);
+            resources_success += (float)(type == Resource.ResourceType.Meat ? 5/lvl : 1/lvl);
         }
         else
-            resources_success += (int)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
+            resources_success += (float)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
 
         switch (type)
         {
@@ -372,9 +383,9 @@ public class Quest
         if(changed)
         {
             if (this.type == QuestType.ADVENTURE)
-                resources_success -= (int)(type == Resource.ResourceType.Meat ? 5 / lvl : 1 / lvl);
+                resources_success -= (float)(type == Resource.ResourceType.Meat ? 5 / lvl : 1 / lvl);
             else
-                resources_success -= (int)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
+                resources_success -= (float)(type == Resource.ResourceType.Flame ? 5 / lvl : 1 / lvl);
 
             total_success = members_success + enemies_success + resources_success;
             GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);
