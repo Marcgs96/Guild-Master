@@ -29,6 +29,7 @@ public class MageMember : Member
 
         GetComponent<Animator>().SetBool("fishing", false);
         GetComponent<Animator>().SetBool("talking", false);
+        GetComponent<Animator>().SetBool("thinking", false);
     }   
 
 }
