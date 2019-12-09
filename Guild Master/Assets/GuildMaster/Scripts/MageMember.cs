@@ -26,6 +26,9 @@ public class MageMember : Member
         potion.SetActive(false);
         recipe.SetActive(false);
         material.SetActive(false);
+
+        GetComponent<Animator>().SetBool("fishing", false);
+        GetComponent<Animator>().SetBool("talking", false);
     }   
 
 }

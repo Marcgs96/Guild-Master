@@ -43,6 +43,9 @@ public class KnightMember : Member
 
         sword.SetActive(false);
 
+        GetComponent<Animator>().SetBool("fishing", false);
+        GetComponent<Animator>().SetBool("talking", false);
+
         base.ChangeState(state, force);
     }
 }
