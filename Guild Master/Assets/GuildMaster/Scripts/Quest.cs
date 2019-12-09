@@ -330,10 +330,10 @@ public class Quest
     {
         if(this.type == QuestType.ADVENTURE)
         {
-            resources_success += type == Resource.ResourceType.Meat ? 10 : 2;
+            resources_success += type == Resource.ResourceType.Meat ? (float)(10 / lvl) : (float)(2 / lvl);
         }
         else
-            resources_success += type == Resource.ResourceType.Flame ? 10 : 2;
+            resources_success += type == Resource.ResourceType.Flame ? (float)(10 / lvl) : (float)(2 / lvl);
 
         switch (type)
         {
@@ -383,9 +383,9 @@ public class Quest
         if(changed)
         {
             if (this.type == QuestType.ADVENTURE)
-                resources_success -= type == Resource.ResourceType.Meat ? 10 : 2;
+                resources_success -= type == Resource.ResourceType.Meat ? (float)(10 / lvl) : (float)(2 / lvl);
             else
-                resources_success -= type == Resource.ResourceType.Flame ? 10 : 2;
+                resources_success -= type == Resource.ResourceType.Flame ? (float)(10 / lvl) : (float)(2 / lvl);
 
             total_success = members_success + enemies_success + resources_success;
             GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);

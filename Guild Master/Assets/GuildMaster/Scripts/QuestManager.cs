@@ -73,14 +73,14 @@ public class QuestManager : MonoBehaviour
                 CreateQuest(Quest.QuestSize.ONE, 4);
                 CreateQuest(Quest.QuestSize.THREE, 3);
                 CreateQuest(Quest.QuestSize.THREE, 4);
-                CreateQuest(Quest.QuestSize.THREE, 3);
+                CreateQuest(Quest.QuestSize.THREE, 5);
                 CreateQuest(Quest.QuestSize.FIVE, 4);
                 break;
             case 5:
                 CreateQuest(Quest.QuestSize.TEN, 6);
                 CreateQuest(Quest.QuestSize.ONE, 5);
                 CreateQuest(Quest.QuestSize.FIVE, 5);
-                CreateQuest(Quest.QuestSize.THREE, 5);
+                CreateQuest(Quest.QuestSize.THREE, 4);
                 CreateQuest(Quest.QuestSize.THREE, 5);
                 break;
         }

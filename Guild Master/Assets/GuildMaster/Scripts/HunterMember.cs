@@ -35,11 +35,13 @@ public class HunterMember : Member
     public void RequestAnimal()
     {
         target_animal = spawner.SpawnAnimal(this);
+        move.SetMovementVelocity(new Vector3(0, 0), 0);
     }
 
     public void KillAnimal()
     {
-        target_animal.GetComponent<Animator>().SetBool("dead", true);
+        if(target_animal)
+            target_animal.GetComponent<Animator>().SetBool("dead", true);
     }
 
     public void DespawnAnimal()
