@@ -155,6 +155,7 @@ public class QuestPanel : MonoBehaviour
             new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
             new_resource.transform.SetParent(rewards);
         }
+        quest_preparation.transform.GetChild(1).GetChild(3).GetChild(0).GetComponent<Text>().text = new_quest.bonus_reward.GetAmount().ToString();
 
         UpdateSuccess(0);
     }

@@ -179,7 +179,7 @@ public class UIManager : MonoBehaviour
         UpdateMemberCountText();
     }
 
-    internal void CreateQuestResultPopup(Quest quest, bool receive_rewards, List<Member> survivors)
+    internal void CreateQuestResultPopup(Quest quest, bool receive_rewards, bool receive_bonus, List<Member> survivors)
     {
         GameObject popup = Instantiate(quest_result_popup);
 
@@ -197,6 +197,12 @@ public class UIManager : MonoBehaviour
                 new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
                 new_resource.transform.SetParent(rewards);
             }
+        }
+        if (receive_bonus)
+        {
+            GameObject bonus = popup.transform.GetChild(1).GetChild(3).gameObject;
+            bonus.SetActive(true);
+            bonus.transform.GetChild(0).GetComponent<Text>().text = quest.bonus_reward.GetAmount().ToString();
         }
 
         Transform members = popup.transform.GetChild(1).GetChild(0);

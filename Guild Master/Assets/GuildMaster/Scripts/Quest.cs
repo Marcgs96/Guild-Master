@@ -15,6 +15,7 @@ public class Quest
     public QuestSize size;
     public List<Enemy> enemies;
     public List<Resource> rewards;
+    public Resource bonus_reward;
     public List<Member> party;
     public List<Resource> provisions;
     float total_success = 0;
@@ -52,21 +53,20 @@ public class Quest
         {
             GenerateEnemy();
         }
+
+        rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
         switch (size)
         {
             case QuestSize.ONE:
                 quest_duration = 3;
                 total_stamina_cost = 50.0f;
                 quest_name = "One Man " + GetTypeString();
-
-                rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
                 break;
             case QuestSize.THREE:
                 quest_duration = 5;
                 total_stamina_cost = 60.0f;
                 quest_name = "Three Man " + GetTypeString();
 
-                rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
                 rewards.Add(new Resource((Resource.ResourceType)UnityEngine.Random.Range(3,5), 1 * (int)level));
                 break;
             case QuestSize.FIVE:
@@ -74,7 +74,6 @@ public class Quest
                 total_stamina_cost = 70.0f;
                 quest_name = "Five Man " + GetTypeString();
 
-                rewards.Add(new Resource(Resource.ResourceType.Gold, 100 * (int)level));
                 rewards.Add(new Resource(Resource.ResourceType.Crown, 1 * (int)level));
                 rewards.Add(new Resource(Resource.ResourceType.Shield, 1 * (int)level));
                 break;
@@ -83,6 +82,7 @@ public class Quest
                 total_stamina_cost = 75.0f;
                 break;
         }
+        bonus_reward = new Resource(Resource.ResourceType.Gold, 50 * (int)level);
     }
 
     private string GetTypeString()
@@ -274,6 +274,7 @@ public class Quest
     private void FinishQuest()
     {
         bool receive_rewards = false;
+        bool receive_bonus = false;
         List<Member> survivors = new List<Member>();
 
         foreach (Member member in party)
@@ -300,10 +301,17 @@ public class Quest
             {
                 foreach (Resource resource in rewards)
                     GameManager.manager.resources.IncreaseResource(resource.GetResourceType(), resource.GetAmount());
+
+                if(total_success > 100)
+                {
+                    receive_bonus = UnityEngine.Random.Range(0, 100) < (total_success - 100) ? true : false;
+                    if(receive_bonus)
+                        GameManager.manager.resources.IncreaseResource(bonus_reward.GetResourceType(), bonus_reward.GetAmount());
+                }
             }
         }
 
-        GameManager.manager.ui.CreateQuestResultPopup(this, receive_rewards, survivors);
+        GameManager.manager.ui.CreateQuestResultPopup(this, receive_rewards, receive_bonus, survivors);
         GameManager.manager.quests.RemoveQuest(this);
     }
 
