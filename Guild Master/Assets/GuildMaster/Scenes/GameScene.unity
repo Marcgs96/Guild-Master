@@ -1957,6 +1957,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 9.1882, z: 5.615343}
   m_Center: {x: -2.5, y: 3.373609, z: -2.5}
+--- !u!114 &205473150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1916709876587477005, guid: cff469fbbb25aa64c856a22986bfc30b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7195672792753806855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &205488416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6126,6 +6138,7 @@ MonoBehaviour:
   main_light: {fileID: 170076734}
   lights: []
   hours_text: {fileID: 162312919109664996}
+  day_text: {fileID: 205473150}
   day: 1
   skybox_materials:
   - {fileID: 2100000, guid: 0b846be1b116429409a7669cacf2a62e, type: 2}
@@ -81651,21 +81664,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1255282311}
-    - target: {fileID: 744769664054149977, guid: cff469fbbb25aa64c856a22986bfc30b,
-        type: 3}
-      propertyPath: blacksmith_upgrade_costs
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 744769664054149977, guid: cff469fbbb25aa64c856a22986bfc30b,
-        type: 3}
-      propertyPath: buttons_go
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 744769664054149977, guid: cff469fbbb25aa64c856a22986bfc30b,
-        type: 3}
-      propertyPath: tooltip
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cff469fbbb25aa64c856a22986bfc30b, type: 3}
 --- !u!1001 &7241520457364103366

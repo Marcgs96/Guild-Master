@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/GuildMaster/Scenes/MainMenu.unity
+    guid: 42366bb96102da241910ce02047b89a3
+  - enabled: 1
     path: Assets/GuildMaster/Scenes/GameScene.unity
     guid: 6269a03073b1b284a97605e94abbe5fc
   m_configObjects: {}
