@@ -310,7 +310,7 @@ public class UIManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        GameManager.manager = null;
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainMenu");
     }
 

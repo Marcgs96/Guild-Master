@@ -21,6 +21,8 @@ public class MemberManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        KnightMember.free_members.Clear();
+
         members = new List<Member>();
         SetMemberCap(GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE].GetLevel());
         GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE].OnLevelUp += SetMemberCap;

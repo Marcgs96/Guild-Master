@@ -363,7 +363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &35600146
 MonoBehaviour:
@@ -379,22 +379,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold:
     type: 0
-    amount: 0
+    amount: 99999
   crowns:
     type: 3
-    amount: 0
+    amount: 50
   shields:
     type: 4
-    amount: 0
+    amount: 50
   potions:
     type: 1
-    amount: 0
+    amount: 50
   meat:
     type: 2
-    amount: 0
+    amount: 50
   flames:
     type: 5
-    amount: 0
+    amount: 50
   gold_txt: {fileID: 162312917512247094}
   crowns_txt: {fileID: 162312917650777772}
   shields_txt: {fileID: 162312917732268269}
@@ -1677,7 +1677,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 61.583004, y: 39.88, z: -18.119001}
 --- !u!1 &174963090 stripped
 GameObject:
@@ -6112,7 +6112,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30, y: 90, z: 0}
 --- !u!45 &534669907
 Skybox:
@@ -25663,7 +25663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1502511808
 GameObject:
@@ -67908,7 +67908,7 @@ Transform:
   - {fileID: 5640555847700409003}
   - {fileID: 3954996750219698398}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5640555848893630006
 PrefabInstance:
@@ -81407,7 +81407,7 @@ PrefabInstance:
     - target: {fileID: 7033651727270264598, guid: cff469fbbb25aa64c856a22986bfc30b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7033651727270264598, guid: cff469fbbb25aa64c856a22986bfc30b,
         type: 3}

@@ -22,7 +22,7 @@ public class QuestPanel : MonoBehaviour
         quest_listings = new Dictionary<Quest, GameObject>();
         enemy_slots = new Dictionary<Enemy, GameObject>();
 
-        QuestManager.OnQuestAdd += CreateQuestListing;
+        GameManager.manager.quests.OnQuestAdd += CreateQuestListing;
     }
 
     internal void ClearListings()

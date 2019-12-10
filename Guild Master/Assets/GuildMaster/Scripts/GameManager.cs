@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     //make locations/buildings manager ?
     public Building[] buildings;
     public AudioSource[] audios;
+    internal bool finished;
 
     void Awake()
     {
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     internal void FinishGame(bool state)
     {
+        finished = true;
         ui.ShowFinishPanel(state);
         Time.timeScale = 0;
     }
