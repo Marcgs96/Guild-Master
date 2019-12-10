@@ -11,7 +11,7 @@ public class DayNightCicle : MonoBehaviour
     public Text hours_text;
     public Text day_text;
     float light_intensity;
-    int hour = 0; // 1 hour equals 15 seconds
+    public int hour = 0; // 1 hour equals 15 seconds
     int minute = -1;
     float hour_count = 0.0f;
     public int day = 1;

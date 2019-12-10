@@ -57,6 +57,17 @@ public class MemberManager : MonoBehaviour
         OnMemberAdd?.Invoke(new_member);
     }
 
+    internal int GetMemberScore()
+    {
+        int levels = 0;
+        foreach (Member member in members)
+        {
+            levels += (int)member.lvl;
+        }
+
+        return levels * members.Count;
+    }
+
     internal void SetMemberCap(uint level)
     {
         member_cap = member_cap_lvl[level-1];

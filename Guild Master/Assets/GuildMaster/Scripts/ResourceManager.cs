@@ -53,6 +53,20 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
+    internal int GetResourcesScore()
+    {
+        int resources_score = 0;
+
+        resources_score += gold.GetAmount() * 2;
+        resources_score += crowns.GetAmount() * 4;
+        resources_score += shields.GetAmount() * 4;
+        resources_score += potions.GetAmount() * 2;
+        resources_score += flames.GetAmount() * 2;
+        resources_score += meat.GetAmount() * 2;
+
+        return resources_score;
+    }
+
     public void DecreaseResource(Resource.ResourceType type, int amount)
     {
         switch (type)

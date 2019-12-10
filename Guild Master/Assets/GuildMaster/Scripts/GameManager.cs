@@ -41,4 +41,21 @@ public class GameManager : MonoBehaviour
         ui.ShowFinishPanel(state);
         PauseGame();
     }
+
+    internal int GetScore()
+    {
+        int time_score = ((time.day - 1) * 10) + (time.hour * 60);
+        int member_score = members.GetMemberScore();
+        int building_score = (int)(buildings[0].GetLevel() + buildings[1].GetLevel()) * 2;
+        int resource_score = resources.GetResourcesScore();
+
+        Debug.Log(time_score + " " + member_score + " " + building_score + " " + resource_score);
+
+        int total_score = member_score + building_score + resource_score - time_score;
+
+        if (total_score < 0)
+            total_score = 0;
+
+        return total_score;
+    }
 }

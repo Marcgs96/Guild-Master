@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public GameObject final_panel;
     public GameObject start_panel;
     public GameObject quest_info_panel;
+    public Text score_text;
 
     //members list stuff
     public GameObject members_list_panel;
@@ -366,7 +367,10 @@ public class UIManager : MonoBehaviour
 
         final_panel.SetActive(true);
         if (state)
+        {
             final_panel.transform.GetChild(1).gameObject.SetActive(true);
+            final_panel.transform.GetChild(4).GetComponent<Text>().text = "Score: " + GameManager.manager.GetScore().ToString();
+        }
         else
         {
             final_panel.transform.GetChild(2).gameObject.SetActive(true);
