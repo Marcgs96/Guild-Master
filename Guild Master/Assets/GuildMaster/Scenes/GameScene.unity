@@ -81485,15 +81485,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1255282311}
-    - target: {fileID: 662997414, guid: cff469fbbb25aa64c856a22986bfc30b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1308906602826018262, guid: cff469fbbb25aa64c856a22986bfc30b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7033651726831355096, guid: cff469fbbb25aa64c856a22986bfc30b,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -81672,11 +81663,6 @@ PrefabInstance:
     - target: {fileID: 7033651726048317181, guid: cff469fbbb25aa64c856a22986bfc30b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526375452470425657, guid: cff469fbbb25aa64c856a22986bfc30b,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
