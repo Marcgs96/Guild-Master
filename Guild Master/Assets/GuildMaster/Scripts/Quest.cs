@@ -35,9 +35,29 @@ public class Quest
 
     public Quest(QuestSize size, uint level)
     {
+        SetupQuest(size, level);
+
+        for (int i = 0; i < (int)size; i++)
+        {
+            GenerateEnemy();
+        }
+    }
+
+    public Quest(QuestSize size, uint level, Enemy.EnemyType enemy)
+    {
+        SetupQuest(size, level);
+
+        for (int i = 0; i < (int)size; i++)
+        {
+            GenerateEnemy(enemy);
+        }
+    }
+
+    private void SetupQuest(QuestSize size, uint level)
+    {
         this.size = size;
         lvl = level;
-        type = (QuestType) UnityEngine.Random.Range(0, 2);
+        type = (QuestType)UnityEngine.Random.Range(0, 2);
         coroutine = QuestActivity();
 
         enemies = new List<Enemy>();
@@ -48,11 +68,6 @@ public class Quest
         provisions.Add(new Resource(Resource.ResourceType.Flame, 0));
 
         party = new List<Member>();
-
-        for (int i = 0; i < (int)size; i++)
-        {
-            GenerateEnemy();
-        }
 
         switch (size)
         {
@@ -69,7 +84,7 @@ public class Quest
                 quest_name = "Three Man " + GetTypeString();
 
                 rewards.Add(new Resource(Resource.ResourceType.Gold, 200 * (int)level));
-                rewards.Add(new Resource((Resource.ResourceType)UnityEngine.Random.Range(3,5), 5 * (int)level));
+                rewards.Add(new Resource((Resource.ResourceType)UnityEngine.Random.Range(3, 5), 5 * (int)level));
                 bonus_reward = new Resource(Resource.ResourceType.Gold, 150 * (int)level);
                 break;
             case QuestSize.FIVE:
@@ -94,6 +109,17 @@ public class Quest
                 bonus_reward = new Resource(Resource.ResourceType.Gold, 250 * (int)level);
                 break;
         }
+    }
+
+    private void GenerateEnemy()
+    {
+        Enemy.EnemyType random_type = (Enemy.EnemyType)UnityEngine.Random.Range((int)Enemy.EnemyType.SKELETON, (int)Enemy.EnemyType.TOTAL);
+        enemies.Add(new Enemy(random_type, lvl));
+    }
+
+    private void GenerateEnemy(Enemy.EnemyType enemy)
+    {
+        enemies.Add(new Enemy(enemy, lvl));
     }
 
     private string GetTypeString()
@@ -222,12 +248,6 @@ public class Quest
             GameManager.manager.quests.StartCoroutine(coroutine);
     }
 
-    private void GenerateEnemy()
-    {
-        Enemy.EnemyType random_type = (Enemy.EnemyType)UnityEngine.Random.Range((int)Enemy.EnemyType.SKELETON, (int)Enemy.EnemyType.TOTAL);
-        enemies.Add(new Enemy(random_type, lvl));
-    }
-
     public bool IsFull()
     {
         if (party.Count == enemies.Count)
@@ -324,6 +344,14 @@ public class Quest
 
         GameManager.manager.ui.CreateQuestResultPopup(this, receive_rewards, receive_bonus, survivors);
         GameManager.manager.quests.RemoveQuest(this);
+
+        if(size == QuestSize.TEN)
+        {
+            if (receive_rewards)
+                GameManager.manager.FinishGame(true);
+            else
+                GameManager.manager.FinishGame(false);
+        }
     }
 
     internal void AddResource(Resource.ResourceType type, int amount)

@@ -28,8 +28,7 @@ public class QuestManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            GameManager.manager.time.day++;
-            GenerateQuests(true);
+            GameManager.manager.time.AdvanceDay();
         }
     }
 
@@ -49,9 +48,9 @@ public class QuestManager : MonoBehaviour
         switch (GameManager.manager.time.day)
         {
             case 1:
-                CreateQuest(Quest.QuestSize.ONE, 1);
-                CreateQuest(Quest.QuestSize.ONE, 1);
-                CreateQuest(Quest.QuestSize.ONE, 1);
+                CreateQuest(Quest.QuestSize.ONE, 1, Enemy.EnemyType.SKELETON);
+                CreateQuest(Quest.QuestSize.ONE, 1, Enemy.EnemyType.ORC);
+                CreateQuest(Quest.QuestSize.ONE, 1, Enemy.EnemyType.BANDIT);
                 CreateQuest(Quest.QuestSize.THREE, 1);
                 CreateQuest(Quest.QuestSize.THREE, 1);
                 break;
@@ -83,7 +82,29 @@ public class QuestManager : MonoBehaviour
                 CreateQuest(Quest.QuestSize.THREE, 4);
                 CreateQuest(Quest.QuestSize.THREE, 5);
                 break;
+            case 6:
+                bool end_game = true;
+                foreach (Quest quest in active_quests)
+                {
+                    if (quest.size == Quest.QuestSize.TEN)
+                    {
+                        end_game = false;
+                        break;
+                    }
+                }
+
+                if (end_game)
+                    GameManager.manager.FinishGame(false);
+
+                break;
         }
+    }
+
+    private void CreateQuest(Quest.QuestSize type, uint lvl, Enemy.EnemyType enemy)
+    {
+        Quest quest = new Quest(type, lvl, enemy);
+        quests.Add(quest);
+        OnQuestAdd?.Invoke(quest);
     }
 
     void CreateQuest(Quest.QuestSize type, uint lvl)

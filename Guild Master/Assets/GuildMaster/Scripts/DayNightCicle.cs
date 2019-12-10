@@ -9,6 +9,7 @@ public class DayNightCicle : MonoBehaviour
     public Light main_light;
     public GameObject[] lights;
     public Text hours_text;
+    public Text day_text;
     float light_intensity;
     int hour = 0; // 1 hour equals 15 seconds
     int minute = -1;
@@ -39,12 +40,20 @@ public class DayNightCicle : MonoBehaviour
         main_light.intensity = light_intensity;
 
 
-        hours_text.text = "Current time: " + Mathf.FloorToInt(hour) + ":" + minute;
+        hours_text.text = "Hour: " + Mathf.FloorToInt(hour) + ":" + minute;
     }
 
     public float InGameHoursToSeconds(float hour)
     {
         return 15.0f * hour;
+    }
+
+    public void AdvanceDay()
+    {
+        day++;
+        hour = 0;
+        day_text.text = "Day: " + day.ToString();
+        OnDayChange?.Invoke(true);
     }
 
     void IncreaseTime()
@@ -54,11 +63,8 @@ public class DayNightCicle : MonoBehaviour
         {
             hour++;
             if (hour == 24)
-            {
-                day++;
-                hour = 0;
-                OnDayChange?.Invoke(true);
-            }
+                AdvanceDay();
+
             hour_count = 0;
             minute = -1;
         }
