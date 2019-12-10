@@ -328,26 +328,29 @@ public class Quest
 
     internal void AddResource(Resource.ResourceType type, int amount)
     {
-        if(this.type == QuestType.ADVENTURE)
-        {
-            resources_success += type == Resource.ResourceType.Meat ? (float)(10 / lvl) : (float)(2 / lvl);
-        }
-        else
-            resources_success += type == Resource.ResourceType.Flame ? (float)(10 / lvl) : (float)(2 / lvl);
-
+        float increase_value = 2.0f;
+        int resource_pos = 0;
         switch (type)
         {
             case Resource.ResourceType.Potion:
                 provisions[0].Increase(amount);
+                resource_pos = 0;
                 break;
             case Resource.ResourceType.Meat:
                 provisions[1].Increase(amount);
+                resource_pos = 1;
+                if (this.type == QuestType.ADVENTURE)
+                        increase_value = 10.0f;
                 break;
             case Resource.ResourceType.Flame:
                 provisions[2].Increase(amount);
+                resource_pos = 2;
+                if (this.type == QuestType.BOUNTY)
+                        increase_value = 10.0f;
                 break;
         }
 
+        resources_success += (float)increase_value * (float)Math.Pow((1.0f - .15f), provisions[resource_pos].GetAmount()-1);
         total_success = members_success + enemies_success + resources_success;
         GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);
     }
@@ -355,11 +358,14 @@ public class Quest
     internal void RemoveResource(Resource.ResourceType type, int amount)
     {
         bool changed = false;
+        float increase_value = 2.0f;
+        int resource_pos = 0;
         switch (type)
         {
             case Resource.ResourceType.Potion:
                 if(provisions[0].GetAmount() > 0)
                 {
+                    resource_pos = 0;
                     provisions[0].Decrease(amount);
                     changed = true;
                 }                  
@@ -367,26 +373,28 @@ public class Quest
             case Resource.ResourceType.Meat:
                 if (provisions[1].GetAmount() > 0)
                 {
+                    resource_pos = 1;
                     provisions[1].Decrease(amount);
                     changed = true;
+                    if (this.type == QuestType.ADVENTURE)
+                        increase_value = 10.0f;
                 }
                 break;
             case Resource.ResourceType.Flame:
                 if (provisions[2].GetAmount() > 0)
                 {
+                    resource_pos = 2;
                     provisions[2].Decrease(amount);
                     changed = true;
+                    if (this.type == QuestType.BOUNTY)
+                        increase_value = 10.0f;
                 }
                 break;
         }
 
         if(changed)
         {
-            if (this.type == QuestType.ADVENTURE)
-                resources_success -= type == Resource.ResourceType.Meat ? (float)(10 / lvl) : (float)(2 / lvl);
-            else
-                resources_success -= type == Resource.ResourceType.Flame ? (float)(10 / lvl) : (float)(2 / lvl);
-
+            resources_success -= (float)increase_value * (float)Math.Pow((1.0f - .15f),provisions[resource_pos].GetAmount());
             total_success = members_success + enemies_success + resources_success;
             GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);
         }

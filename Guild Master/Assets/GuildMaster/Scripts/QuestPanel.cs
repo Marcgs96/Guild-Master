@@ -238,7 +238,7 @@ public class QuestPanel : MonoBehaviour
         switch (enum_type)
         {
             case Resource.ResourceType.Potion:
-                if (GameManager.manager.resources.potions.GetAmount() > 0)
+                if (GameManager.manager.resources.potions.GetAmount() - GameManager.manager.quests.selected_quest.provisions[0].GetAmount() > 0)
                 {
                     GameManager.manager.quests.selected_quest.AddResource(enum_type, 1);
                     resource_value = GameManager.manager.resources.potions.GetAmount() - GameManager.manager.quests.selected_quest.provisions[0].GetAmount();
@@ -247,7 +247,7 @@ public class QuestPanel : MonoBehaviour
                 }
                 break;
             case Resource.ResourceType.Meat:
-                if (GameManager.manager.resources.meat.GetAmount() > 0)
+                if (GameManager.manager.resources.potions.GetAmount() - GameManager.manager.quests.selected_quest.provisions[1].GetAmount() > 0)
                 {
                     GameManager.manager.quests.selected_quest.AddResource(enum_type, 1);
                     resource_value = GameManager.manager.resources.meat.GetAmount() - GameManager.manager.quests.selected_quest.provisions[1].GetAmount();
@@ -256,7 +256,7 @@ public class QuestPanel : MonoBehaviour
                 }
                 break;
             case Resource.ResourceType.Flame:
-                if (GameManager.manager.resources.flames.GetAmount() > 0)
+                if (GameManager.manager.resources.potions.GetAmount() - GameManager.manager.quests.selected_quest.provisions[2].GetAmount() > 0)
                 {
                     GameManager.manager.quests.selected_quest.AddResource(enum_type, 1);
                     resource_value = GameManager.manager.resources.flames.GetAmount() - GameManager.manager.quests.selected_quest.provisions[2].GetAmount();
