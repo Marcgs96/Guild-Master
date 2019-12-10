@@ -232,16 +232,19 @@ public class UIManager : MonoBehaviour
         popup.transform.SetParent(this.transform);
         popup.GetComponent<RectTransform>().localPosition = Vector3.zero;
         popup_queue.Enqueue(popup);
+
         CheckPopups();
     }
 
     private void CheckPopups()
     {
-        if(current_popup == null && popup_queue.Count > 0)
+        if (current_popup)
+            return;
+
+        if(popup_queue.Count > 0)
         {
-            GameObject popup = popup_queue.Dequeue();
-            current_popup = popup;
-            popup.SetActive(true);
+            current_popup = popup_queue.Dequeue();
+            current_popup.SetActive(true);
         }
     }
 

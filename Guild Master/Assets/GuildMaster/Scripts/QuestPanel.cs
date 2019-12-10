@@ -220,7 +220,7 @@ public class QuestPanel : MonoBehaviour
         slot.GetComponentInChildren<Text>().text = "";
         GameManager.manager.quests.RemoveMemberFromQuest(member);
 
-        Transform send_button = quest_preparation.transform.GetChild(1).GetChild(2);
+        Transform send_button = quest_preparation.transform.GetChild(3).GetChild(2);
         send_button.GetComponent<Button>().interactable = false;
     }
 
