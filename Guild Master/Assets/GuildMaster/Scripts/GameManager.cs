@@ -22,14 +22,23 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         manager = this;
+        PauseGame();
+    }
 
+    public void PauseGame()
+    {
         Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
     }
 
     internal void FinishGame(bool state)
     {
         finished = true;
         ui.ShowFinishPanel(state);
-        Time.timeScale = 0;
+        PauseGame();
     }
 }

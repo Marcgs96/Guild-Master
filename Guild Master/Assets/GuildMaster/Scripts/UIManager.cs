@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject final_panel;
     public GameObject start_panel;
+    public GameObject quest_info_panel;
 
     //members list stuff
     public GameObject members_list_panel;
@@ -53,6 +54,13 @@ public class UIManager : MonoBehaviour
         GameManager.manager.members.OnMemberAdd += CreateMemberListing;
         GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE].OnLevelUp += OnGuildHouseLevelUp;
         UpdateGuildHallPanel();
+    }
+
+    internal void ActivateQuestInfoPanel()
+    {
+        quest_info_panel.SetActive(true);
+        quest_panel.transform.GetChild(3).GetComponent<Button>().interactable = false;
+        quest_panel.transform.GetChild(2).GetChild(0).GetComponentInChildren<Button>().interactable = false;
     }
 
     #region ButtonFuctions
@@ -125,12 +133,29 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         Destroy(start_panel);
-        Time.timeScale = 1.0f;
 
+        GameManager.manager.ResumeGame();
+
+        SetButtonsInteractable(true);
+    }
+
+    public void ContinueGame()
+    {
+        Destroy(quest_info_panel);
+
+        GameManager.manager.ResumeGame();
+        quest_panel.transform.GetChild(3).GetComponent<Button>().interactable = true;
+        quest_panel.transform.GetChild(2).GetChild(0).GetComponentInChildren<Button>().interactable = true;
+
+        SetButtonsInteractable(true);
+    }
+
+    public void SetButtonsInteractable(bool value)
+    {
         Button[] buttons = transform.GetChild(0).GetChild(0).GetComponentsInChildren<Button>();
         foreach (Button button in buttons)
         {
-            button.interactable = true;
+            button.interactable = value;
         }
     }
 
@@ -337,11 +362,7 @@ public class UIManager : MonoBehaviour
         CloseGuildPanel();
         CloseQuestsPanel();
 
-        Button[] buttons = transform.GetChild(0).GetChild(0).GetComponentsInChildren<Button>();
-        foreach (Button button in buttons)
-        {
-            button.interactable = false;
-        }
+        SetButtonsInteractable(false);
 
         final_panel.SetActive(true);
         if (state)

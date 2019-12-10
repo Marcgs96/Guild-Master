@@ -15,6 +15,8 @@ public class QuestPanel : MonoBehaviour
     public Text quest_success;
     public Text quest_bonus;
 
+    bool first_time = true;
+
     Dictionary<Quest, GameObject> quest_listings;
     Dictionary<Enemy, GameObject> enemy_slots;
 
@@ -45,6 +47,14 @@ public class QuestPanel : MonoBehaviour
         GameManager.manager.quests.selected_quest = new_quest;
 
         quests_list.SetActive(false);
+
+        if (first_time)
+        {
+            GameManager.manager.PauseGame();
+            GameManager.manager.ui.ActivateQuestInfoPanel();
+            GameManager.manager.ui.SetButtonsInteractable(false);
+            first_time = false;
+        }        
     }
 
     internal void CloseQuestPreparation()
@@ -226,6 +236,9 @@ public class QuestPanel : MonoBehaviour
 
     public void SendParty()
     {
+        if (GameManager.manager.ui.quest_info_panel.activeSelf)
+            GameManager.manager.ui.ContinueGame();
+
         SendQuestResources();
         RemoveQuestListing(GameManager.manager.quests.selected_quest);
         GameManager.manager.quests.StartQuest();
