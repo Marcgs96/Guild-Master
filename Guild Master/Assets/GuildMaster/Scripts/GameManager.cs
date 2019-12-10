@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         manager = this;
+
+        Time.timeScale = 0;
     }
 
     internal void FinishGame(bool state)

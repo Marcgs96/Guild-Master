@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public QuestPanel quest_panel;
 
     public GameObject final_panel;
+    public GameObject start_panel;
 
     //members list stuff
     public GameObject members_list_panel;
@@ -119,6 +120,18 @@ public class UIManager : MonoBehaviour
 
         if(listing)
             listing.transform.GetChild(2).GetComponent<Slider>().value = (int)member.stamina;
+    }
+
+    public void StartGame()
+    {
+        Destroy(start_panel);
+        Time.timeScale = 1.0f;
+
+        Button[] buttons = transform.GetChild(0).GetChild(0).GetComponentsInChildren<Button>();
+        foreach (Button button in buttons)
+        {
+            button.interactable = true;
+        }
     }
 
     public void OnMemberClick(Member member)
