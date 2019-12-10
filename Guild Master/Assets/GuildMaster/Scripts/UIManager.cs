@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // TODO: Split UI Manager into smaller UI sections for each panel. This is getting too big.
 public class UIManager : MonoBehaviour
@@ -17,10 +18,13 @@ public class UIManager : MonoBehaviour
     //quests panel stuff
     public QuestPanel quest_panel;
 
+    public GameObject final_panel;
+
     //members list stuff
     public GameObject members_list_panel;
     public GameObject member_listing;
     Dictionary<Member, GameObject> member_listings;
+
     Member selected_member;
 
     //other prefabs
@@ -302,5 +306,33 @@ public class UIManager : MonoBehaviour
         }
         else
             guild_upgrade_costs.transform.parent.GetComponent<Button>().interactable = false;
+    }
+
+    public void LoadMainMenu()
+    {
+        GameManager.manager = null;
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    internal void ShowFinishPanel(bool state)
+    {
+        CloseBlacksmithPanel();
+        CloseGuildPanel();
+        CloseQuestsPanel();
+
+        Button[] buttons = transform.GetChild(0).GetChild(0).GetComponentsInChildren<Button>();
+        foreach (Button button in buttons)
+        {
+            button.interactable = false;
+        }
+
+        final_panel.SetActive(true);
+        if (state)
+            final_panel.transform.GetChild(1).gameObject.SetActive(true);
+        else
+        {
+            final_panel.transform.GetChild(2).gameObject.SetActive(true);
+            final_panel.transform.GetChild(0).GetComponentInChildren<Text>().text = "Defeat";
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,5 +21,11 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         manager = this;
+    }
+
+    internal void FinishGame(bool state)
+    {
+        ui.ShowFinishPanel(state);
+        Time.timeScale = 0;
     }
 }
