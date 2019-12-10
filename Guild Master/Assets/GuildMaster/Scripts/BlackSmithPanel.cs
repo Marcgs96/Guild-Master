@@ -10,8 +10,10 @@ public class BlackSmithPanel : MonoBehaviour
     public GameObject buttons_go;
     public Text level_text;
     public RawImage member_image;
-    public Text member_text;
+    public Text member_name;
+    public Text member_level;
     public List<int> upgrade_costs;
+    public GameObject tooltip;
 
     Building blacksmith;
     List<Button> upgrade_buttons;
@@ -40,12 +42,15 @@ public class BlackSmithPanel : MonoBehaviour
 
     public void OnMemberSelect(Member member)
     {
+        tooltip.SetActive(false);
         selected_member = member;
 
         member_image.texture = GameManager.manager.ui.portraits[(int)selected_member.type];
         member_image.enabled = true;
-        member_text.text = selected_member.member_name;
-        member_text.enabled = true;
+        member_name.text = selected_member.member_name;
+        member_name.enabled = true;
+        member_level.text = "Level " + selected_member.lvl.ToString();
+        member_level.enabled = true;
 
         UpgradeButtonSetup();
     }
@@ -55,7 +60,8 @@ public class BlackSmithPanel : MonoBehaviour
         if(selected_member != null && GameManager.manager.resources.HaveAmount(Resource.ResourceType.Gold, upgrade_costs[upgrade-2]))
         {
             GameManager.manager.resources.DecreaseResource(Resource.ResourceType.Gold, upgrade_costs[upgrade - 2]);
-            selected_member.lvl = (uint)upgrade;
+            selected_member.lvl = (uint) upgrade;
+            member_level.text = "Level " + selected_member.lvl.ToString();
             GameManager.manager.ui.OnMemberLevelUp(selected_member);
             UpgradeButtonSetup();
         }
@@ -102,8 +108,10 @@ public class BlackSmithPanel : MonoBehaviour
     private void OnDisable()
     {
         selected_member = null;
-        member_image.enabled = false;
-        member_text.enabled = false;
+        member_image.texture = GameManager.manager.ui.backgrounds[0];
+        member_name.enabled = false;
+        member_level.enabled = false;
+        tooltip.SetActive(true);
 
         foreach (Button button in upgrade_buttons)
         {

@@ -19,11 +19,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (manager != null)
-            Destroy(manager);
-        else
-            manager = this;
-
-        DontDestroyOnLoad(this);
+        manager = this;
     }
 }

@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
     public GameObject member_result_prefab;
     public List<Texture2D> portraits;
     public List<Texture2D> resource_images;
+    public List<Texture2D> backgrounds;
     public GameObject quest_result_popup;
 
     Queue<GameObject> popup_queue;
@@ -265,6 +266,7 @@ public class UIManager : MonoBehaviour
     {
         string member_count = GameManager.manager.members.GetMemberCount().ToString() + "/" + GameManager.manager.members.GetMemberCap().ToString();
         members_list_panel.transform.GetChild(0).GetComponentInChildren<Text>().text = member_count;
+        guild_panel.transform.GetChild(2).GetChild(0).GetChild(1).GetComponent<Text>().text = member_count;
     }
 
     public void UpdateStateIcon(int state, Member member)
