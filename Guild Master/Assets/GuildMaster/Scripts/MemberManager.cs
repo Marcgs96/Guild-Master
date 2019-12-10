@@ -16,7 +16,7 @@ public class MemberManager : MonoBehaviour
     public Transform spawn_location;
 
     public delegate void MemberAdded(Member new_member);
-    public static event MemberAdded OnMemberAdd;
+    public event MemberAdded OnMemberAdd;
 
     // Start is called before the first frame update
     void Start()

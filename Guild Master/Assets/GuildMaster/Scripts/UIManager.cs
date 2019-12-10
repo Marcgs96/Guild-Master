@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
         quest_panel.Init();
         blacksmith_panel.Init();
 
-        MemberManager.OnMemberAdd += CreateMemberListing;
+        GameManager.manager.members.OnMemberAdd += CreateMemberListing;
         GameManager.manager.buildings[(int)Building.BUILDING_TYPE.GUILD_HOUSE].OnLevelUp += OnGuildHouseLevelUp;
         UpdateGuildHallPanel();
     }

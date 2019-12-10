@@ -378,7 +378,7 @@ public class Quest
                 break;
         }
 
-        resources_success += (float)increase_value * (float)Math.Pow((1.0f - .15f), provisions[resource_pos].GetAmount()-1);
+        resources_success += (float)increase_value * (float)Math.Pow((1.0f - .3f), provisions[resource_pos].GetAmount()-1);
         total_success = members_success + enemies_success + resources_success;
         GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);
     }
@@ -422,7 +422,7 @@ public class Quest
 
         if(changed)
         {
-            resources_success -= (float)increase_value * (float)Math.Pow((1.0f - .15f),provisions[resource_pos].GetAmount());
+            resources_success -= (float)increase_value * (float)Math.Pow((1.0f - .3f),provisions[resource_pos].GetAmount());
             total_success = members_success + enemies_success + resources_success;
             GameManager.manager.ui.quest_panel.UpdateSuccess((int)total_success);
         }
