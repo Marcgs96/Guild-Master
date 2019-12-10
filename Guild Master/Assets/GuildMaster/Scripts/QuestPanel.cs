@@ -13,6 +13,7 @@ public class QuestPanel : MonoBehaviour
 
     public GameObject quest_listing_prefab;
     public Text quest_success;
+    public Text quest_bonus;
 
     Dictionary<Quest, GameObject> quest_listings;
     Dictionary<Enemy, GameObject> enemy_slots;
@@ -52,7 +53,7 @@ public class QuestPanel : MonoBehaviour
         {
             GameManager.manager.quests.selected_quest.Reset();
         }
-        Transform send_button = quest_preparation.transform.GetChild(1).GetChild(2);
+        Transform send_button = quest_preparation.transform.GetChild(3).GetChild(2);
         send_button.GetComponent<Button>().interactable = false;
 
         quest_preparation.SetActive(false);
@@ -109,7 +110,7 @@ public class QuestPanel : MonoBehaviour
         }
         enemy_slots.Clear();
 
-        Transform enemies = quest_preparation.transform.GetChild(2).GetChild(0);
+        Transform enemies = quest_preparation.transform.GetChild(1).GetChild(0);
         foreach (Enemy enemy in new_quest.enemies)
         {
             GameObject new_enemy = Instantiate(GameManager.manager.ui.slot_prefab);
@@ -126,7 +127,7 @@ public class QuestPanel : MonoBehaviour
         }
 
         //Members
-        Transform members = quest_preparation.transform.GetChild(2).GetChild(1);
+        Transform members = quest_preparation.transform.GetChild(1).GetChild(1);
         for (int i = 0; i < members.childCount; i++)
         {
             Destroy(members.GetChild(i).gameObject);
@@ -143,7 +144,7 @@ public class QuestPanel : MonoBehaviour
         }
 
         //Rewards
-        Transform rewards = quest_preparation.transform.GetChild(1).GetChild(1);
+        Transform rewards = quest_preparation.transform.GetChild(3).GetChild(1);
         for (int i = 0; i < rewards.childCount; i++)
         {
             Destroy(rewards.GetChild(i).gameObject);
@@ -155,7 +156,7 @@ public class QuestPanel : MonoBehaviour
             new_resource.transform.GetChild(0).GetComponent<Text>().text = resource.GetAmount().ToString();
             new_resource.transform.SetParent(rewards);
         }
-        quest_preparation.transform.GetChild(1).GetChild(3).GetChild(0).GetComponent<Text>().text = new_quest.bonus_reward.GetAmount().ToString();
+        quest_preparation.transform.GetChild(3).GetChild(3).GetChild(0).GetComponent<Text>().text = new_quest.bonus_reward.GetAmount().ToString();
 
         UpdateSuccess(0);
     }
@@ -163,6 +164,9 @@ public class QuestPanel : MonoBehaviour
     internal void UpdateSuccess(int total_success)
     {
         quest_success.text = total_success.ToString() + "%";
+
+        float bonus = total_success - 100;
+        quest_bonus.text = bonus > 0? bonus.ToString() + "%": "0%";
     }
 
     internal void AddMemberToQuest(Member member)
@@ -176,7 +180,7 @@ public class QuestPanel : MonoBehaviour
         if (GameManager.manager.quests.IsOnActiveQuest(selected_member))
             return;
 
-        Transform members = quest_preparation.transform.GetChild(2).GetChild(1);
+        Transform members = quest_preparation.transform.GetChild(1).GetChild(1);
         for (int i = 0; i < members.childCount; i++)
         {
             RawImage member_image = members.GetChild(i).GetChild(0).GetComponent<RawImage>();
@@ -196,7 +200,7 @@ public class QuestPanel : MonoBehaviour
                 GameManager.manager.quests.AddMemberToQuest(selected_member);
                 if (GameManager.manager.quests.selected_quest.IsFull())
                 {
-                    Transform send_button = quest_preparation.transform.GetChild(1).GetChild(2);
+                    Transform send_button = quest_preparation.transform.GetChild(3).GetChild(2);
                     send_button.GetComponent<Button>().interactable = true;
                 }
 
