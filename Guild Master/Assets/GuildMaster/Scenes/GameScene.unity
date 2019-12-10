@@ -379,22 +379,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold:
     type: 0
-    amount: 10000
+    amount: 8000
   crowns:
     type: 3
-    amount: 75
+    amount: 50
   shields:
     type: 4
-    amount: 75
+    amount: 50
   potions:
     type: 1
-    amount: 30
+    amount: 0
   meat:
     type: 2
-    amount: 30
+    amount: 0
   flames:
     type: 5
-    amount: 30
+    amount: 0
   gold_txt: {fileID: 162312917512247094}
   crowns_txt: {fileID: 162312917650777772}
   shields_txt: {fileID: 162312917732268269}
@@ -26075,6 +26075,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5640555847391867212}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1533368136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7957880502445018579, guid: cff469fbbb25aa64c856a22986bfc30b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7195672792753806855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1546074109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 447764, guid: fd98358094c06e9478f5082b6a95487e,
@@ -81365,6 +81377,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7033651727270264599, guid: cff469fbbb25aa64c856a22986bfc30b,
+        type: 3}
+      propertyPath: score_text
+      value: 
+      objectReference: {fileID: 1533368136}
     - target: {fileID: 7033651727270264594, guid: cff469fbbb25aa64c856a22986bfc30b,
         type: 3}
       propertyPath: m_Name

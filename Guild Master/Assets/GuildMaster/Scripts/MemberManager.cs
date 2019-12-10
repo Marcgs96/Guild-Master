@@ -65,7 +65,7 @@ public class MemberManager : MonoBehaviour
             levels += (int)member.lvl;
         }
 
-        return levels * members.Count;
+        return (levels * members.Count) * 10;
     }
 
     internal void SetMemberCap(uint level)
