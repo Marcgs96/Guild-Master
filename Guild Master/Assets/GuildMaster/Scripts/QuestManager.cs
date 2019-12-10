@@ -13,13 +13,13 @@ public class QuestManager : MonoBehaviour
     public Quest selected_quest;
 
     public delegate void QuestAdded(Quest new_quest);
-    public static event QuestAdded OnQuestAdd;
+    public event QuestAdded OnQuestAdd;
 
     void Start()
     {
         active_quests = new List<Quest>();
         quests = new List<Quest>();
-        DayNightCicle.OnDayChange += GenerateQuests;
+        GameManager.manager.time.OnDayChange += GenerateQuests;
 
         GenerateQuests(true);
     }
@@ -29,6 +29,10 @@ public class QuestManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             GameManager.manager.time.AdvanceDay();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            GameManager.manager.FinishGame(true);
         }
     }
 

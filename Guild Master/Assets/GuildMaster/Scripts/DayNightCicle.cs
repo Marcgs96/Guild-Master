@@ -19,8 +19,8 @@ public class DayNightCicle : MonoBehaviour
     Skybox skybox;
 
     public delegate void DayAction(bool night);
-    public static event DayAction OnDayCycleChange;
-    public static event DayAction OnDayChange;
+    public event DayAction OnDayCycleChange;
+    public event DayAction OnDayChange;
 
     // Start is called before the first frame update
     void Start()

@@ -57,7 +57,7 @@ public class Member : MonoBehaviour
         move = this.GetComponent<Move>();
         anim = this.GetComponent<Animator>();
 
-        DayNightCicle.OnDayCycleChange += ChangeNightValue;
+        GameManager.manager.time.OnDayCycleChange += ChangeNightValue;
 
         steer = GetComponent<SteeringFollowNavMeshPath>();
         wander = GetComponent<SteeringWander>();

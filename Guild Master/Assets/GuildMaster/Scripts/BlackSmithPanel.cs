@@ -107,6 +107,9 @@ public class BlackSmithPanel : MonoBehaviour
 
     private void OnDisable()
     {
+        if (GameManager.manager.finished)
+            return;
+
         selected_member = null;
         member_image.texture = GameManager.manager.ui.backgrounds[0];
         member_name.enabled = false;
