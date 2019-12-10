@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
     public GameObject members_list_panel;
     public GameObject member_listing;
     Dictionary<Member, GameObject> member_listings;
+    public Sprite[] level_images;
 
     Member selected_member;
 
@@ -132,7 +133,7 @@ public class UIManager : MonoBehaviour
 
     public void OnMemberLevelUp(Member member)
     {
-        member_listings[member].transform.GetChild(4).GetComponentInChildren<Text>().text = member.lvl.ToString();
+        member_listings[member].transform.GetChild(4).GetComponentInChildren<Image>().sprite = level_images[member.lvl-1];
     }
 
     public void OnStateClick(Member member)
@@ -178,7 +179,7 @@ public class UIManager : MonoBehaviour
         new_listing.transform.GetChild(1).GetComponent<Text>().text = new_member.member_name;
         new_listing.transform.GetChild(0).GetComponent<RawImage>().texture = portraits[(int)new_member.type];
         new_listing.transform.GetChild(3).GetComponent<Text>().text = new_member.action_string;
-        new_listing.transform.GetChild(4).GetComponentInChildren<Text>().text = new_member.lvl.ToString();
+        new_listing.transform.GetChild(4).GetComponentInChildren<Image>().sprite = level_images[new_member.lvl - 1];
 
         new_listing.GetComponent<Button>().onClick.AddListener(delegate { OnMemberClick(new_member); });
         new_listing.transform.GetChild(5).GetComponent<Button>().onClick.AddListener(delegate { OnStateClick(new_member); });
