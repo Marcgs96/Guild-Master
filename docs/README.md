@@ -73,6 +73,7 @@ Hunters while working they gather meat, to do it, they go to the forest and wand
 * ### Potion
 
 Potions allow a member to heal 50% stamina when it's stamina drops below 25%. Obtainable from Mage work.
+
 ![Potion Icon](images/potion.png)
 
 * ### Meat
@@ -90,6 +91,7 @@ Flames greatly increase the success chance of Bounty Quests. Obtainable from War
 * ### Gold
 
 Gold is used to upgrade Buildings and level up Members. Obtainable from Quests.
+
 ![Gold Icon](images/gold.png)
 
 * ### Shield
