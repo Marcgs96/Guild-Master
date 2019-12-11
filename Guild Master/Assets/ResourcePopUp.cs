@@ -23,13 +23,13 @@ public class ResourcePopUp : MonoBehaviour
                 text_info = "Shields are a resource required to upgrade the Blacksmith. Obtainable via quests.";
                 break;
             case 4:
-                text_info = "Potions are a resource the player can assign to a quest, allowing a member to heal 50% stamina when its stamina drops below 25%. Obtainable via mage work.";
+                text_info = "Potions are a resource you can assign to a quest, allowing a member to heal 50% stamina when its stamina drops below 25%. Obtainable via mage work.";
                 break;
             case 5:
-                text_info = "Meats are a resource the player can assign to a quest, during the quest, a food check can happen, each member needs to eat 1 piece of meat, if there is no food left, stamina will decrease a 25% to each member who cant eat. Obtainable via hunter work.";
+                text_info = "Meats are a resource you can assign to a quest, during the quest, a food check can happen, each member needs to eat 1 piece of meat, if there is no food left, stamina will decrease a 25% to each member who cant eat. Obtainable via hunter work.";
                 break;
             case 6:
-                text_info = "Flames are a resource the player can assign to the quests to increase the rewards gained on succes. Obtainable via warrior work.";
+                text_info = "Flames are a resource you can assign to the quests to increase the rewards gained on succes. Obtainable via warrior work.";
                 break;
             default:
                 break;
