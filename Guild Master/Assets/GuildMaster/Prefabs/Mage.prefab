@@ -666,7 +666,7 @@ MonoBehaviour:
   production_steps: 3
   production_step_time_rt: 0
   production_progress: 0
-  production_hours_cycle: 8
+  production_hours_cycle: 4
   production_total_cycle_cost: 80
   steer: {fileID: 0}
   wander: {fileID: 0}
@@ -1876,14 +1876,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6084457698102580326}
     m_Modifications:
-    - target: {fileID: 106418, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
-      propertyPath: m_Name
-      value: SF_Wep_Human_Staff_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 106418, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 447242, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.09
@@ -1939,6 +1931,14 @@ PrefabInstance:
     - target: {fileID: 447242, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.3551
+      objectReference: {fileID: 0}
+    - target: {fileID: 106418, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
+      propertyPath: m_Name
+      value: SF_Wep_Human_Staff_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 106418, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1f2570eaa3eaa642b3cb180bdce37e7, type: 3}

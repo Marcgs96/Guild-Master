@@ -32,6 +32,7 @@ public class Move : MonoBehaviour
     public void SetMovementVelocity(Vector3 velocity, int priority)
     {
         movement = velocity;
+        ResetPriorities();
     }
 
     public void AccelerateMovement(Vector3 velocity, int priority)

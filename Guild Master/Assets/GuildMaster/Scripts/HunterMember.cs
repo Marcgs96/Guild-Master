@@ -35,7 +35,7 @@ public class HunterMember : Member
     public void RequestAnimal()
     {
         target_animal = spawner.SpawnAnimal(this);
-        move.SetMovementVelocity(new Vector3(0, 0), 0);
+        steer.ClearPath();
     }
 
     public void KillAnimal()

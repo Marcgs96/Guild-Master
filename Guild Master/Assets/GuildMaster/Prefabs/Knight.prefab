@@ -753,7 +753,7 @@ MonoBehaviour:
   production_steps: 1
   production_step_time_rt: 0
   production_progress: 0
-  production_hours_cycle: 8
+  production_hours_cycle: 4
   production_total_cycle_cost: 80
   steer: {fileID: 0}
   wander: {fileID: 0}
