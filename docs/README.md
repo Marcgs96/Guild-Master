@@ -5,17 +5,17 @@ These Dungeon quests will reward the player with special resources used to upgra
 
 The end goal is to defeat the Final Quest at day 5 or else the game will end in Defeat.
 
-You can download the our last build [here[https://github.com/Marcgs96/AI_Game/releases/tag/3.0]]
+You can download the our last build [here](https://github.com/Marcgs96/AI_Game/releases/tag/3.0)
 
 ## Authors
 
 ### Marc Guillén
 ![Marc](images/marc_image.jpg)
-[[Github Account]https://github.com/Marcgs96]
+[Github Account](https://github.com/Marcgs96)
 
 ## Axel Alavedra
 ![Marc](images/axel_image.jpeg)
-[[Github Account]https://github.com/AxelAlavedra]
+[Github Account](https://github.com/AxelAlavedra)
 
 ## Quests
 Quests are randomly generated every new day and have different resources as rewards depending on the difficulty and size of it.
