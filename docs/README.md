@@ -5,7 +5,7 @@ These Dungeon quests will reward the player with special resources used to upgra
 
 The end goal is to defeat the Final Quest at day 5 or else the game will end in Defeat.
 
-You can download the our last build [here](https://github.com/Marcgs96/AI_Game/releases/tag/3.0)
+You can download the latest build [here](https://github.com/Marcgs96/AI_Game/releases/tag/3.0)
 
 ## Authors
 
