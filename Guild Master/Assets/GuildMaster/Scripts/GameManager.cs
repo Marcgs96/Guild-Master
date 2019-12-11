@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +40,23 @@ public class GameManager : MonoBehaviour
                 else
                     PauseGame();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            manager.time.AdvanceDay();
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            manager.FinishGame(true);
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            manager.FinishGame(false);
+        }
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

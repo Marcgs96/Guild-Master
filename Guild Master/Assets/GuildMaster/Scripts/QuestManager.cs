@@ -24,18 +24,6 @@ public class QuestManager : MonoBehaviour
         GenerateQuests(true);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            GameManager.manager.time.AdvanceDay();
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            GameManager.manager.FinishGame(true);
-        }
-    }
-
     void CleanQuests()
     {
         selected_quest = null;

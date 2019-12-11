@@ -5,15 +5,17 @@ These Dungeon quests will reward the player with special resources used to upgra
 
 The end goal is to defeat the Final Quest at day 5 or else the game will end in Defeat.
 
+You can download the latest build [here](https://github.com/Marcgs96/AI_Game/releases/tag/3.0)
+
 ## Authors
 
 ### Marc Guillén
 ![Marc](images/marc_image.jpg)
-https://github.com/Marcgs96
+[Github Account](https://github.com/Marcgs96)
 
 ## Axel Alavedra
 ![Marc](images/axel_image.jpeg)
-https://github.com/AxelAlavedra
+[Github Account](https://github.com/AxelAlavedra)
 
 ## Quests
 Quests are randomly generated every new day and have different resources as rewards depending on the difficulty and size of it.
@@ -72,37 +74,37 @@ Hunters while working they gather meat, to do it, they go to the forest and wand
 
 * ### Potion
 
-Potions are a resource the player can assign to a quest, allowing a member to heal 50% stamina when its stamina drops below 25%. Obtainable via mage work.
+Potions allow a member to heal 50% stamina when it's stamina drops below 25%. Obtainable from Mage work.
 
 ![Potion Icon](images/potion.png)
 
 * ### Meat
 
-Meats are a resource the player can assign to a quest, during the quest, a food check can happen, each member needs to eat 1 piece of meat, if there is no food left, stamina will decrease a 25% to each member who cant eat. Obtainable via hunter work.
+Meat greatly increases the success chance of Adventure Quests. Obtainable from Hunter work.
 
 ![Meat Icon](images/meat2.png)
 
 * ### Flame
 
-Flames are a resource the player can assign to the quests to increase the rewards gained on succes. Obtainable via warrior work.
+Flames greatly increase the success chance of Bounty Quests. Obtainable from Warrior work.
 
 ![Flame Icon](images/flame.png)
 
 * ### Gold
 
-Gold is a resource required to upgrade buildings such as the Guild House and the Blacksmith. It can also be used to buy upgrades for the heroes equipment. Obtainable via quests.
+Gold is used to upgrade Buildings and level up Members. Obtainable from Quests.
 
 ![Gold Icon](images/gold.png)
 
 * ### Shield
 
-Shields are a resource required to upgrade the Blacksmith. Obtainable via quests.
+Shields are used to upgrade the Blacksmith. Obtainable from Quests.
 
 ![Shield Icon](images/shield.png)
 
 * ### Crown
 
-Crowns are a resource required to upgrade the Guildhall. Obtainable via quests.
+Crowns are used to upgrade the Guild Hall. Obtainable from Quests.
 
 ![Crown Icon](images/crown.png)
 
@@ -123,3 +125,32 @@ The player is able to:
 - Mouse wheel : Camera zoom
 - Spacebar: Pause
 - Click on a member from list : Focus camera on it
+- Debug Controls
+ - F1: Advance Day
+ - F2: Win Game
+ - F3: Lose Game
+ - F4: Go back to Main Menu
+ 
+## License 
+
+MIT License
+
+Copyright (c) 2019 ProboxAM
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
