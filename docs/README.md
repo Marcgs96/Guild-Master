@@ -72,37 +72,37 @@ Hunters while working they gather meat, to do it, they go to the forest and wand
 
 * ### Potion
 
-Potions are a resource the player can assign to a quest, allowing a member to heal 50% stamina when its stamina drops below 25%. Obtainable via mage work.
+Potions allow a member to heal 50% stamina when it's stamina drops below 25%. Obtainable from Mage work.
 
 ![Potion Icon](images/potion.png)
 
 * ### Meat
 
-Meats are a resource the player can assign to a quest, during the quest, a food check can happen, each member needs to eat 1 piece of meat, if there is no food left, stamina will decrease a 25% to each member who cant eat. Obtainable via hunter work.
+Meat greatly increases the success chance of Adventure Quests. Obtainable from Hunter work.
 
 ![Meat Icon](images/meat2.png)
 
 * ### Flame
 
-Flames are a resource the player can assign to the quests to increase the rewards gained on succes. Obtainable via warrior work.
+Flames greatly increase the success chance of Bounty Quests. Obtainable from Warrior work.
 
 ![Flame Icon](images/flame.png)
 
 * ### Gold
 
-Gold is a resource required to upgrade buildings such as the Guild House and the Blacksmith. It can also be used to buy upgrades for the heroes equipment. Obtainable via quests.
+Gold is used to upgrade Buildings and level up Members. Obtainable from Quests.
 
 ![Gold Icon](images/gold.png)
 
 * ### Shield
 
-Shields are a resource required to upgrade the Blacksmith. Obtainable via quests.
+Shields are used to upgrade the Blacksmith. Obtainable from Quests.
 
 ![Shield Icon](images/shield.png)
 
 * ### Crown
 
-Crowns are a resource required to upgrade the Guildhall. Obtainable via quests.
+Crowns are used to upgrade the Guild Hall. Obtainable from Quests.
 
 ![Crown Icon](images/crown.png)
 
