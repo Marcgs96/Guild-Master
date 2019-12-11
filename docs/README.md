@@ -123,3 +123,8 @@ The player is able to:
 - Mouse wheel : Camera zoom
 - Spacebar: Pause
 - Click on a member from list : Focus camera on it
+- Debug Controls
+ - F1: Advance Day
+ - F2: Win Game
+ - F3: Lose Game
+ - F4: Go back to Main Menu
