@@ -12,8 +12,22 @@ The end goal is to defeat the Final Quest at day 5 or else the game will end in 
 https://github.com/Marcgs96
 
 ## Axel Alavedra
-![Axel](images/axel_image.jpg)
+![Marc](images/axel_image.jpeg)
 https://github.com/AxelAlavedra
+
+## Quests
+Quests are randomly generated every new day and have different resources as rewards depending on the difficulty and size of it.
+There's one, three, five and ten men quests, also a Quest can be an Adventure or a Bounty. Bounties favor Flame resource as provision, Adventures favor meat.
+![Quests](images/quest_list.jpg)
+
+Each quest has enemies assigned to them, which the group will require to counter to improve their chances of finishing the quest. Each member class counters a different enemy.
+Warriors counter skeletons.
+Mages counter orcs.
+Hunters counter bandits.
+![Marc](images/quest_counter_image.jpg)
+
+The player can assign provisions to the quest to increase success chance and allow Members to heal stamina during it.
+At the end of a quest, each member with 0 stamina has a great chance of dying and be removed from the game completely.
 
 ## AI Archetypes
 
@@ -103,17 +117,6 @@ The player is able to:
  * Upgrade the guild house and the blacksmith building using the resources gathered doing quests.
  
  * Make a member work or rest with the click of a button.
-
-## Quests
-Quests are randomly generated every new day and have different resources as rewards depending on the difficulty and size of it.
-There's one, three, five and ten men quests, also a Quest can be an Adventure or a Bounty. Bounties favor Flame resource as provision, Adventures favor meat.
-
-Each quest has enemies assigned to them, which the group will require to counter to improve their chances of finishing the quest. Each member class counters a different enemy.
-Warriors counter skeletons.
-Mages counter orcs.
-Hunters counter bandits.
-
-At the end of a quest, each member with 0 stamina has a great chance of dying and be removed from the game completely.
 
 ## Controls
 - W, A, S, D : Camera movement
