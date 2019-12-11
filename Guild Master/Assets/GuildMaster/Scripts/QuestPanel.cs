@@ -53,6 +53,7 @@ public class QuestPanel : MonoBehaviour
             GameManager.manager.PauseGame();
             GameManager.manager.ui.ActivateQuestInfoPanel();
             GameManager.manager.ui.SetButtonsInteractable(false);
+            GameManager.manager.interrupted = true;
             first_time = false;
         }        
     }
@@ -236,7 +237,7 @@ public class QuestPanel : MonoBehaviour
 
     public void SendParty()
     {
-        if (GameManager.manager.ui.quest_info_panel.activeSelf)
+        if (GameManager.manager.ui.quest_info_panel)
             GameManager.manager.ui.ContinueGame();
 
         SendQuestResources();

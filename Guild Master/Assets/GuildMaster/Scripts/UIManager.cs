@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public GameObject start_panel;
     public GameObject quest_info_panel;
     public Text score_text;
+    public GameObject pause_panel;
 
     //members list stuff
     public GameObject members_list_panel;
@@ -134,17 +135,27 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         Destroy(start_panel);
+        start_panel = null;
 
         GameManager.manager.ResumeGame();
+        GameManager.manager.interrupted = false;
 
         SetButtonsInteractable(true);
+    }
+
+    public void SetPausePanel(bool state)
+    {
+        pause_panel.SetActive(state);
     }
 
     public void ContinueGame()
     {
         Destroy(quest_info_panel);
+        quest_info_panel = null;
 
         GameManager.manager.ResumeGame();
+        GameManager.manager.interrupted = false;
+
         quest_panel.transform.GetChild(3).GetComponent<Button>().interactable = true;
         quest_panel.transform.GetChild(2).GetChild(0).GetComponentInChildren<Button>().interactable = true;
 
@@ -153,7 +164,7 @@ public class UIManager : MonoBehaviour
 
     public void SetButtonsInteractable(bool value)
     {
-        Button[] buttons = transform.GetChild(0).GetChild(0).GetComponentsInChildren<Button>();
+        Button[] buttons = transform.GetChild(1).GetChild(0).GetComponentsInChildren<Button>();
         foreach (Button button in buttons)
         {
             button.interactable = value;
