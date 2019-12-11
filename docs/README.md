@@ -1,7 +1,9 @@
 # Guild Master
 
-Guild Master is a fantasy game where the player takes control of a collective of heroes who are part of a brotherhood. The player needs to recruit members for the guild, whom will be able to produce different type of resources. These resources will be used as provisions to send the members to the Dungeon, on different kind of quests, giving them various benefits. These Dungeon quests will reward the player with special resources used to upgrade the guild buildings like the hall or blacksmith, allowing access to more members and improvements for them. 
-The end goal is to defeat the boss of the dungeon before the day limit.
+Guild Master is a fantasy game where the player takes control of a collective of heroes who are part of a brotherhood. The player needs to recruit members for the guild, whom will be able to produce different type of resources. These resources will be used as provisions to send the members to the Dungeon, on different kind of quests, to increase their success chance.
+These Dungeon quests will reward the player with special resources used to upgrade the guild buildings like the hall or blacksmith, allowing access to more members and improvements for them. 
+
+The end goal is to defeat the Final Quest at day 5 or else the game will end in Defeat.
 
 ## Authors
 
@@ -90,7 +92,7 @@ Crowns are a resource required to upgrade the Guildhall. Obtainable via quests.
 
 ![Crown Icon](images/crown.png)
 
- ## Player Interactions
+## Player Interactions
  
 The player is able to:
 
@@ -105,6 +107,7 @@ The player is able to:
 ## Quests
 Quests are randomly generated every new day and have different resources as rewards depending on the difficulty and size of it.
 There's one, three, five and ten men quests, also a Quest can be an Adventure or a Bounty. Bounties favor Flame resource as provision, Adventures favor meat.
+
 Each quest has enemies assigned to them, which the group will require to counter to improve their chances of finishing the quest. Each member class counters a different enemy.
 Warriors counter skeletons.
 Mages counter orcs.
