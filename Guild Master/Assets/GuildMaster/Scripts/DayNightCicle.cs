@@ -68,11 +68,11 @@ public class DayNightCicle : MonoBehaviour
             hour_count = 0;
             minute = -1;
         }
-        if(hour <= 12)
+        if(hour < 12)
         {
             IncreaseIntensity();
         }
-        else
+        else if (hour > 12)
         {
             DecreaseIntensity();
         }
