@@ -11,11 +11,11 @@ You can download the our last build [here[https://github.com/Marcgs96/AI_Game/re
 
 ### Marc Guillén
 ![Marc](images/marc_image.jpg)
-https://github.com/Marcgs96
+[[Github Account]https://github.com/Marcgs96]
 
 ## Axel Alavedra
 ![Marc](images/axel_image.jpeg)
-https://github.com/AxelAlavedra
+[[Github Account]https://github.com/AxelAlavedra]
 
 ## Quests
 Quests are randomly generated every new day and have different resources as rewards depending on the difficulty and size of it.
